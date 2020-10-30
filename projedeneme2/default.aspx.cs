@@ -34,7 +34,7 @@ namespace projedeneme2
             {
                 //  Session["Kullanici"] = oku["KullaniciAdi"].ToString();
                 //  Response.Redirect("Default.aspx");
-                lblDurum.Text = "Kullanıcı adı yada şifre!!";
+                lblDurum.Text = "Kullanıcı adı ya da şifre1111123!!";
             }
             else
                 lblDurum.Text = "Kullanıcı adı yada şifre hatalı!";
