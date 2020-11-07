@@ -11,7 +11,7 @@ namespace projedeneme2
 {
     public partial class _default : System.Web.UI.Page
     {
-        //Burda kalması daha mantıklı, herhangi bir foooooooooooooonksiyonda kullanılırken tekrar yazılması gerekmez!
+        //Burda kalması daha mantıklı, herhangi bir fonksiyonda kullanılırken tekrar yazılması gerekmez!
         SqlConnection con = new SqlConnection(@"Data source=DESKTOP-4MS0SVU;Initial Catalog=Ders;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
