@@ -11,7 +11,7 @@ namespace projedeneme2
 {
     public partial class _default : System.Web.UI.Page
     {
-        //Burda kalması daha mantıklı, herhangi bir fonksiyonda kullanılırken tekrar yazılması gerekmez!
+        //This should be there so we dont need to initialize again and again.
         SqlConnection con = new SqlConnection(@"Data source=DESKTOP-4MS0SVU;Initial Catalog=Ders;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,13 +22,13 @@ namespace projedeneme2
         {
             con.Open();
        
-            string kullanici = txtAd.Text;
-            string sifre = txtSifre.Text;
+            string userName = txtAd.Text;
+            string userPassword = txtSifre.Text;
 
             SqlCommand sorgula = new SqlCommand("SELECT * FROM Kullanicilar WHERE KullaniciAdi=@KullaniciAdi AND Sifre=@Sifre", con);
 
-            sorgula.Parameters.AddWithValue("@KullaniciAdi", kullanici);
-            sorgula.Parameters.AddWithValue("@Sifre", sifre);
+            sorgula.Parameters.AddWithValue("@KullaniciAdi", userName);
+            sorgula.Parameters.AddWithValue("@Sifre", userPassword);
             SqlDataReader oku = sorgula.ExecuteReader();
             if (oku.Read())
             {
