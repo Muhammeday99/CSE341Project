@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage\BaseAdminPage.aspx" />
+    <Content Include="AdminPage\pageC.aspx" />
     <Content Include="default.aspx" />
     <Content Include="pageb2.aspx" />
     <Content Include="Web.config" />
@@ -79,6 +80,13 @@
     </Compile>
     <Compile Include="AdminPage\BaseAdminPage.aspx.designer.cs">
       <DependentUpon>BaseAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\pageC.aspx.cs">
+      <DependentUpon>pageC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\pageC.aspx.designer.cs">
+      <DependentUpon>pageC.aspx</DependentUpon>
     </Compile>
     <Compile Include="databaseConnect.cs" />
     <Compile Include="default.aspx.cs">

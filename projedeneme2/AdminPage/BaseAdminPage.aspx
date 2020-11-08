@@ -6,26 +6,19 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            height: 196px;
-            width: 168px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
-        <div class="auto-style1">
+        <div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Admin Page<br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="newUserButton" runat="server" Height="40px" OnClick="newUserButton_Click" Text="Yeni Kullanıcı" Width="160px" />
+            <asp:Button ID="newUserButton" runat="server" Height="40px" OnClick="newUserButton_Click" Text="Yeni Kullanıcı" Width="160px" PostBackUrl="~/AdminPage/pageC.aspx" />
             <br />
             <br />
-            <asp:Button ID="listUserButton" runat="server" Height="40px" OnClick="listUserButton_Click" Text="Kullanıcıları Listele" Width="160px" />
+            <asp:Button ID="listUserButton" runat="server" Height="40px" OnClick="listUserButton_Click" Text="Kullanıcıları Listele" Width="160px" PostBackUrl="~/pageb2.aspx" />
             <br />
             <br />
             <br />

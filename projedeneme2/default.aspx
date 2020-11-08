@@ -31,7 +31,7 @@
             <tr>
                 <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style4">
-                    <asp:Button ID="BtnGiris" runat="server" OnClick="BtnGiris_Click" Text="Giriş" Width="125px" style="margin-left: 0px" />
+                    <asp:Button ID="BtnGiris" runat="server" OnClick="BtnGiris_Click" Text="Giriş" Width="125px" style="margin-left: 0px" PostBackUrl="~/AdminPage/BaseAdminPage.aspx" />
                 </td>
             </tr>
             <tr>

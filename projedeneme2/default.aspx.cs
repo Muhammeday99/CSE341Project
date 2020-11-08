@@ -39,10 +39,11 @@ namespace projedeneme2
                 string v2 = oku[1].ToString(); //User Name
               
                 lblDurum.Text = v2;
-
+            
             }
             else
                 lblDurum.Text = "Kullanıcı adı yada şifre hatalı!";
+
             oku.Close();
             con.Close();
             con.Dispose();
