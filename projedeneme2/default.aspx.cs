@@ -12,7 +12,7 @@ namespace projedeneme2
     public partial class _default : System.Web.UI.Page
     {
         //This should be there so we dont need to initialize again and again.
-        SqlConnection con = new SqlConnection(@"Data source=DESKTOP-H4PMKBB;Initial Catalog=PROJECT_TRACKING_SYSTEM;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data source=DESKTOP-4MS0SVU;Initial Catalog=PROJECT_TRACKING_SYSTEM;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -34,7 +34,12 @@ namespace projedeneme2
             {
                 //  Session["Kullanici"] = oku["KullaniciAdi"].ToString();
                 //  Response.Redirect("Default.aspx");
-                lblDurum.Text = "Kullanıcı adı ya da password!!";
+                
+                string v = oku[0].ToString(); //Id
+                string v2 = oku[1].ToString(); //User Name
+              
+                lblDurum.Text = v2;
+
             }
             else
                 lblDurum.Text = "Kullanıcı adı yada şifre hatalı!";
@@ -42,5 +47,6 @@ namespace projedeneme2
             con.Close();
             con.Dispose();
         }
+
     }
 }
