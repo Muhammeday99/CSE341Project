@@ -12,7 +12,7 @@ namespace projedeneme2
     public partial class _default : System.Web.UI.Page
     {
         //This should be there so we dont need to initialize again and again.
-        SqlConnection con = new SqlConnection(@"Data source=DESKTOP-4MS0SVU;Initial Catalog=Ders;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data source=DESKTOP-H4PMKBB;Initial Catalog=PROJECT_TRACKING_SYSTEM;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -25,10 +25,10 @@ namespace projedeneme2
             string userName = txtAd.Text;
             string userPassword = txtSifre.Text;
 
-            SqlCommand sorgula = new SqlCommand("SELECT * FROM Kullanicilar WHERE KullaniciAdi=@KullaniciAdi AND Sifre=@Sifre", con);
+            SqlCommand sorgula = new SqlCommand("SELECT * FROM Users WHERE Username=@Username AND Password=@Password", con);
 
-            sorgula.Parameters.AddWithValue("@KullaniciAdi", userName);
-            sorgula.Parameters.AddWithValue("@Sifre", userPassword);
+            sorgula.Parameters.AddWithValue("@Username", userName);
+            sorgula.Parameters.AddWithValue("@Password", userPassword);
             SqlDataReader oku = sorgula.ExecuteReader();
             if (oku.Read())
             {
