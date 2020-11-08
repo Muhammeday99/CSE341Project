@@ -11,7 +11,7 @@ namespace projedeneme2
 {
     public partial class pageb2 : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data source=DESKTOP-4MS0SVU;Initial Catalog=PROJECT_TRACKING_SYSTEM;Integrated Security=True");
+        SqlConnection con = databaseConnect.connectToSQL();
         protected void Page_Load(object sender, EventArgs e)
         {
             con.Open();

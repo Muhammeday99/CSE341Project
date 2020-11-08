@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 namespace projedeneme2.AdminPage
 {
 
+    SqlConnection con = databaseConnect.connectToSQL();
+
     /**
      Base admin page class, admins will manage their stuff from
     there. 

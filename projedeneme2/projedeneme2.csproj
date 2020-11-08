@@ -80,6 +80,7 @@
     <Compile Include="AdminPage\BaseAdminPage.aspx.designer.cs">
       <DependentUpon>BaseAdminPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="databaseConnect.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
