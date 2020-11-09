@@ -34,17 +34,8 @@ namespace projedeneme2.AdminPage
         protected void newUserButton_Click(object sender, EventArgs e)
         {
 
-        }
-
-        protected void CheckBoxList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            Response.Redirect("ManageAccontPage.aspx");
 
         }
-
-        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

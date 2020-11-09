@@ -68,9 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage\BaseAdminPage.aspx" />
+    <Content Include="AdminPage\ManageAccountPage.aspx" />
     <Content Include="default.aspx" />
     <Content Include="pageb2.aspx" />
-    <Content Include="pageC.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +80,13 @@
     </Compile>
     <Compile Include="AdminPage\BaseAdminPage.aspx.designer.cs">
       <DependentUpon>BaseAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\ManageAccountPage.aspx.cs">
+      <DependentUpon>ManageAccountPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\ManageAccountPage.aspx.designer.cs">
+      <DependentUpon>ManageAccountPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="databaseConnect.cs" />
     <Compile Include="default.aspx.cs">
@@ -95,13 +102,6 @@
     </Compile>
     <Compile Include="pageb2.aspx.designer.cs">
       <DependentUpon>pageb2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pageC.aspx.cs">
-      <DependentUpon>pageC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pageC.aspx.designer.cs">
-      <DependentUpon>pageC.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

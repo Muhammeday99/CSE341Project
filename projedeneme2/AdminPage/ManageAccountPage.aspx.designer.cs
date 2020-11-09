@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projedeneme2
+namespace projedeneme2.AdminPage
 {
 
 
-    public partial class pageC
+    public partial class ManageAccountPage
     {
 
         /// <summary>
