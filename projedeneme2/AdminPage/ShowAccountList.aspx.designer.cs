@@ -7,11 +7,11 @@
 // </otomatik üretildi>
 //------------------------------------------------------------------------------
 
-namespace projedeneme2
+namespace projedeneme2.AdminPage
 {
 
 
-    public partial class pageb2
+    public partial class ShowAccountList
     {
 
         /// <summary>
