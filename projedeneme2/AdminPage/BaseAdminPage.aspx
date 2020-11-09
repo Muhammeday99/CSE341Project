@@ -15,7 +15,7 @@
 &nbsp;&nbsp;&nbsp;
             <br />
             <br />
-            <asp:Button ID="newUserButton" runat="server" Height="40px" OnClick="newUserButton_Click" Text="Yeni Kullanıcı" Width="160px" PostBackUrl="~/AdminPage/pageC.aspx" />
+            <asp:Button ID="newUserButton" runat="server" Height="40px" OnClick="newUserButton_Click" Text="Yeni Kullanıcı" Width="160px" PostBackUrl="~/pageC.aspx" />
             <br />
             <br />
             <asp:Button ID="listUserButton" runat="server" Height="40px" OnClick="listUserButton_Click" Text="Kullanıcıları Listele" Width="160px" PostBackUrl="~/pageb2.aspx" />
