@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ManageAccountPage.aspx.cs" Inherits="projedeneme2.AdminPage.ManageAccountPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAccountPage.aspx.cs" Inherits="projedeneme2.AdminPage.ManageAccountPage" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div>
             Kullanıcı
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="nameLabel" runat="server" Text="nameLabel"></asp:Label>
 &nbsp;düzenleme ekranı<br />
             <br />
             Yeni ad :
@@ -21,9 +21,10 @@
             Yeni şifre:<asp:TextBox ID="NewpassText" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="applyChanges" runat="server" OnClick="applyChanges" Text="Değişiklikleri Kaydet" />
+            <asp:Button ID="applyChanges" runat="server" OnClick="applyChanges_Click" Text="Değişiklikleri Kaydet" />
             <br />
             <br />
+            <asp:Label ID="errorLabel" runat="server" Text="Label"></asp:Label>
             <br />
             <br />
         </div>
