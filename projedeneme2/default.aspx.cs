@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2
 {
-    public partial class _default : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
         //This should be there so we dont need to initialize again and again.
-        SqlConnection con = databaseConnect.connectToSQL();
+        SqlConnection con = new SqlConnection(@"Data source=DESKTOP-LG9NTD0;Initial Catalog=PROJECT_TRACKING_SYSTEM;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -34,20 +34,13 @@ namespace projedeneme2
             {
                 //  Session["Kullanici"] = oku["KullaniciAdi"].ToString();
                 //  Response.Redirect("Default.aspx");
-                
-                string v = oku[0].ToString(); //Id
-                string v2 = oku[1].ToString(); //User Name
-              
-                lblDurum.Text = v2;
-            
+                lblDurum.Text = "Kullanıcı adı ya da password!!";
             }
             else
                 lblDurum.Text = "Kullanıcı adı yada şifre hatalı!";
-
             oku.Close();
             con.Close();
             con.Dispose();
         }
-
     }
 }
