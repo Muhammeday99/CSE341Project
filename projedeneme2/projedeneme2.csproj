@@ -106,7 +106,6 @@
     </Compile>
     <Compile Include="pageA.aspx.cs">
       <DependentUpon>pageA.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pageA.aspx.designer.cs">
       <DependentUpon>pageA.aspx</DependentUpon>
