@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -7,7 +8,6 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2.AdminPage
 {
-
     /**
      Base admin page class, admins will manage their stuff from
     there. 
@@ -16,15 +16,18 @@ namespace projedeneme2.AdminPage
      */
     public partial class BaseAdminPage : System.Web.UI.Page
     {
+
+        protected SqlConnection conn = databaseConnect.connectToSQL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         /**This function loads a new page that lists all users on our database.*/
         protected void listUserButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         /**This button loads a new page to add a new user on our database.*/

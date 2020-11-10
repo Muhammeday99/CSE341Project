@@ -11,7 +11,7 @@ namespace projedeneme2.AdminPage
 {
 
 
-    public partial class BaseAdminPage
+    public partial class ShowAccountList
     {
 
         /// <summary>
@@ -24,21 +24,12 @@ namespace projedeneme2.AdminPage
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// newUserButton denetimi.
+        /// pageb denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button newUserButton;
-
-        /// <summary>
-        /// listUserButton denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button listUserButton;
+        protected global::System.Web.UI.WebControls.GridView pageb;
     }
 }
