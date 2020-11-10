@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="projedeneme2.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="projedeneme2._default" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
             <tr>
                 <td class="auto-style5">Kullanıcı Adı</td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="txtAd" runat="server" style="height: 22px"></asp:TextBox>
+                    <asp:TextBox ID="txtAd" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>

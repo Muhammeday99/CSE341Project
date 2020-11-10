@@ -11,7 +11,7 @@ namespace projedeneme2
 {
 
 
-    public partial class Default
+    public partial class _default
     {
 
         /// <summary>

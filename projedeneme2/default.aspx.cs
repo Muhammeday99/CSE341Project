@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class _default : System.Web.UI.Page
     {
         //This should be there so we dont need to initialize again and again.
-        SqlConnection con = new SqlConnection(@"Data source=DESKTOP-LG9NTD0;Initial Catalog=PROJECT_TRACKING_SYSTEM;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data source=DESKTOP-H4PMKBB;Initial Catalog=PROJECT_TRACKING_SYSTEM;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             
