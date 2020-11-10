@@ -17,7 +17,7 @@ namespace projedeneme2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //comment
         }
 
         protected void Button1_Click(object sender, EventArgs e)
