@@ -14,7 +14,7 @@
             <asp:Label ID="nameLabel" runat="server" Text="nameLabel"></asp:Label>
 &nbsp;düzenleme ekranı<br />
             <br />
-            Yeni ad :
+            Yeni email :
             <asp:TextBox ID="NewnameText" runat="server"></asp:TextBox>
             <br />
             <br />

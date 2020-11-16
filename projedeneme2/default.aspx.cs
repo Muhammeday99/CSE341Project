@@ -9,6 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2
 {
+
+    /**OUR MAIN WEB FORM. 
+    This web form makes the log-in with primary error handles. 
+    
+    ---Enter email
+    ---Enter password
+    ---ENTER
+     */
     public partial class Default : System.Web.UI.Page
     {
         //This should be there so we dont need to initialize again and again.
@@ -21,34 +29,41 @@ namespace projedeneme2
 
         protected void BtnGiris_Click(object sender, EventArgs e)
         {
+            //Opens the database.
             con.Open();
-       
-            string userName = txtAd.Text;
+
+            string userEmail = txtAd.Text;
             string userPassword = txtSifre.Text;
 
-            SqlCommand sorgula = new SqlCommand("SELECT * FROM Users WHERE UserEmail=@UserEmail AND Password=@Password", con);
+            //IF because user can enter nothing to textboxes.
+            if(!(userEmail.Length < 1 || userPassword.Length < 1)){
 
-            sorgula.Parameters.AddWithValue("@UserEmail", userName);
-            sorgula.Parameters.AddWithValue("@Password", userPassword);
-            SqlDataReader oku = sorgula.ExecuteReader();
-            if (oku.Read())
-            {
-                //  Session["Kullanici"] = oku["KullaniciAdi"].ToString();
-                //  Response.Redirect("Default.aspx");
-                
-                string v = oku[0].ToString(); //Id
-                string v2 = oku[1].ToString(); //User Name
-              
-                lblDurum.Text = v2;
-            
+                SqlCommand sorgula = new SqlCommand("SELECT * FROM Users WHERE UserEmail=@UserEmail AND Password=@Password", con);
+
+                sorgula.Parameters.AddWithValue("@UserEmail", userEmail);
+                sorgula.Parameters.AddWithValue("@Password", userPassword);
+                SqlDataReader oku = sorgula.ExecuteReader();
+                if (oku.Read())
+                {
+                    //  Session["Kullanici"] = oku["KullaniciAdi"].ToString();
+                    //  Response.Redirect("Default.aspx");
+
+                    string v = oku[0].ToString(); //Id
+                    string v2 = oku[1].ToString(); //Email
+
+                    lblDurum.Text = v2;
+                }
+                else
+                    lblDurum.Text = "Email yada şifre hatalı!";
+
+                oku.Close();
             }
-            else
-                lblDurum.Text = "Kullanıcı adı yada şifre hatalı!";
+            else{
+                lblDurum.Text = "Lütfen Email ve şifreyi giriniz!";
+            }
 
-            oku.Close();
             con.Close();
             con.Dispose();
         }
-
     }
 }
