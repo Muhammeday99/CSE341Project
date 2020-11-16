@@ -12,7 +12,8 @@ namespace projedeneme2
     public partial class Default : System.Web.UI.Page
     {
         //This should be there so we dont need to initialize again and again.
-        SqlConnection con = databaseConnect.connectToSQL();
+        protected SqlConnection con = databaseConnect.connectToSQL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             

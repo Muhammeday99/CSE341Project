@@ -13,7 +13,7 @@ namespace projedeneme2
          
          It is in the namespace so we can use in all classes using that namespace.*/
         static public SqlConnection connectToSQL(){
-            return new SqlConnection(@"Data source=5m-macro.database.windows.net;Initial Catalog=Project_Tracking_System;Integrated Security=False");
+            return new SqlConnection(@"Data source=DESKTOP-H4PMKBB;Initial Catalog=PROJECT_TRACING_SYSTEM;Integrated Security=True");
         }
     }
 }
