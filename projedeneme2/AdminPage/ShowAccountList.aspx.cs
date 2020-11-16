@@ -26,7 +26,6 @@ namespace projedeneme2.AdminPage
         protected void lnkSelect_Click(object sender, EventArgs e)
         {
             //  int id = Convert.ToInt32((sender as LinkButton).CommandArgument);
-
         }
     }
 }
