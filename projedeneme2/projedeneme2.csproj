@@ -84,7 +84,6 @@
     <Content Include="AdminPage\ManageAccountPage.aspx" />
     <Content Include="AdminPage\ShowAccountList.aspx" />
     <Content Include="default.aspx" />
-    <Content Include="pageA.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -116,12 +115,6 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pageA.aspx.cs">
-      <DependentUpon>pageA.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pageA.aspx.designer.cs">
-      <DependentUpon>pageA.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
