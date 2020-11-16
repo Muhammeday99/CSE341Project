@@ -48,10 +48,7 @@ namespace projedeneme2
                     //  Session["Kullanici"] = oku["KullaniciAdi"].ToString();
                     //  Response.Redirect("Default.aspx");
 
-                    string v = oku[0].ToString(); //Id
-                    string v2 = oku[1].ToString(); //Email
-
-                    statusLabel.Text = v2;
+                    Response.Redirect("Homepage/Homepage.aspx");
                 }
                 else
                     statusLabel.Text = "Email yada şifre hatalı!";

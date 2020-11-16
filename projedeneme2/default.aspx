@@ -45,7 +45,7 @@ A company uses this software will easily track their process by using features o
                                                 <div class="form-check"><input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1"><label class="form-check-label custom-control-label" for="formCheck-1">Remember Me</label></div>
                                             </div>
                                         </div><asp:Button class="btn btn-primary btn-block text-white btn-user" type="submit" OnClick="LoginButton_Click" style="background: rgb(49,115,163);color: rgb(0,85,164);" text="Login" runat="server"/>
-                                        <asp:Label ID="lblDurum" Text="deneme" runat="server"></asp:Label>
+                                        <asp:Label ID="statusLabel" Text="deneme" runat="server"></asp:Label>
                                         <hr>
                                     </form>
                                     <div class="text-center"><a class="small" href="forgot-password.html" style="color: rgb(0,85,164);">Forgot Password?</a></div>
