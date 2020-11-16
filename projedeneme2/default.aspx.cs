@@ -27,13 +27,13 @@ namespace projedeneme2
             
         }
 
-        protected void BtnGiris_Click(object sender, EventArgs e)
+        protected void LoginButton_Click(object sender, EventArgs e)
         {
             //Opens the database.
             con.Open();
 
-            string userEmail = txtAd.Text;
-            string userPassword = txtSifre.Text;
+            string userEmail = InputEmail.Text;
+            string userPassword = InputPassword.Text;
 
             //IF because user can enter nothing to textboxes.
             if(!(userEmail.Length < 1 || userPassword.Length < 1)){
