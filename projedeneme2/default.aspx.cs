@@ -51,15 +51,15 @@ namespace projedeneme2
                     string v = oku[0].ToString(); //Id
                     string v2 = oku[1].ToString(); //Email
 
-                    lblDurum.Text = v2;
+                    statusLabel.Text = v2;
                 }
                 else
-                    lblDurum.Text = "Email yada şifre hatalı!";
+                    statusLabel.Text = "Email yada şifre hatalı!";
 
                 oku.Close();
             }
             else{
-                lblDurum.Text = "Lütfen Email ve şifreyi giriniz!";
+                statusLabel.Text = "Lütfen Email ve şifreyi giriniz!";
             }
 
             con.Close();
