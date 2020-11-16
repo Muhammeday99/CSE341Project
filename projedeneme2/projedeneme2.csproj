@@ -83,8 +83,8 @@
     <Content Include="AdminPage\BaseAdminPage.aspx" />
     <Content Include="AdminPage\ManageAccountPage.aspx" />
     <Content Include="AdminPage\ShowAccountList.aspx" />
+    <Content Include="CompanyPage\ShowAndUpdateCompanyInfo.aspx" />
     <Content Include="default.aspx" />
-    <Content Include="pageA.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +109,13 @@
     <Compile Include="AdminPage\ShowAccountList.aspx.designer.cs">
       <DependentUpon>ShowAccountList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CompanyPage\ShowAndUpdateCompanyInfo.aspx.cs">
+      <DependentUpon>ShowAndUpdateCompanyInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyPage\ShowAndUpdateCompanyInfo.aspx.designer.cs">
+      <DependentUpon>ShowAndUpdateCompanyInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="databaseConnect.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -116,12 +123,6 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pageA.aspx.cs">
-      <DependentUpon>pageA.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pageA.aspx.designer.cs">
-      <DependentUpon>pageA.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
