@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPage\AddAccount.aspx" />
     <Content Include="AdminPage\BaseAdminPage.aspx" />
     <Content Include="AdminPage\ManageAccountPage.aspx" />
     <Content Include="AdminPage\ShowAccountList.aspx" />
@@ -89,6 +90,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPage\AddAccount.aspx.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\AddAccount.aspx.designer.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPage\BaseAdminPage.aspx.cs">
       <DependentUpon>BaseAdminPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
