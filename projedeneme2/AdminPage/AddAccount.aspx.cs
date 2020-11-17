@@ -26,7 +26,7 @@ namespace projedeneme2.AdminPage
             string uPassword = passwordBox.Text;
             Boolean isAdmin = adminOrNot.Checked;
 
-            if (!uEmail.Contains('@'){
+            if (!uEmail.Contains('@')){
                 errorLabel.Text = "Your email should contain @, and password needs to be longer than 1 character.";
             }
             else{

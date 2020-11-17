@@ -19,7 +19,7 @@ namespace projedeneme2.CompanyPage
 {
     public partial class ShowAndUpdateCompanyInfo : System.Web.UI.Page
     {
-        SqlConnection con = databaseConnect.connectToSQL();        
+        SqlConnection con = databaseConnect.connectToSQL();     
         protected void Page_Load(object sender, EventArgs e)
         {
             //To restore the page so that data is not lost and overlaid 
@@ -54,14 +54,14 @@ namespace projedeneme2.CompanyPage
             //Simdilik burda kalsin, ileride lazim olabilir..@mertbesirli
             //    Label id = GridView1.Rows[e.RowIndex].FindControl("lbl_ID") as Label;
             //Finding the controls from Gridview for the row which is going to update  
-            TextBox name = GridView1.Rows[e.RowIndex].FindControl("txt_Name") as TextBox;
-            TextBox url = GridView1.Rows[e.RowIndex].FindControl("txt_SiteURL") as TextBox;
-            TextBox phonecode = GridView1.Rows[e.RowIndex].FindControl("txt_PhoneCode") as TextBox;
-            TextBox phonenumber = GridView1.Rows[e.RowIndex].FindControl("txt_PhoneNumber") as TextBox;
-            TextBox iban = GridView1.Rows[e.RowIndex].FindControl("txt_Iban") as TextBox;
-            TextBox desc = GridView1.Rows[e.RowIndex].FindControl("txt_Description") as TextBox;
-            TextBox taxadmin = GridView1.Rows[e.RowIndex].FindControl("txt_TaxAdmin") as TextBox;
-            TextBox taxnumber = GridView1.Rows[e.RowIndex].FindControl("txt_TaxNumber") as TextBox;
+            TextBox name = GridView1.Rows[e.RowIndex].FindControl("nameTextBox") as TextBox;
+            TextBox url = GridView1.Rows[e.RowIndex].FindControl("urlTextBox") as TextBox;
+            TextBox phonecode = GridView1.Rows[e.RowIndex].FindControl("phoneCodeTextBox") as TextBox;
+            TextBox phonenumber = GridView1.Rows[e.RowIndex].FindControl("phoneNumberTextBox") as TextBox;
+            TextBox iban = GridView1.Rows[e.RowIndex].FindControl("ibanTextBox") as TextBox;
+            TextBox desc = GridView1.Rows[e.RowIndex].FindControl("descriptionTextBox") as TextBox;
+            TextBox taxadmin = GridView1.Rows[e.RowIndex].FindControl("taxAdminTextBox") as TextBox;
+            TextBox taxnumber = GridView1.Rows[e.RowIndex].FindControl("taxNumberText") as TextBox;
             con.Open();
             //Update to databese CompanyInfo  
             SqlCommand cmd = new SqlCommand("Update CompanyInfo set Name='" + name.Text + "',SiteURL='" + url.Text + "',PhoneContryCode='" + phonecode.Text + "',PhoneNumber='" + phonenumber.Text + "',IBAN='" + iban.Text + "',Company_Description='" + desc.Text + "',Tax_Admin='" + taxadmin.Text + "',Tax_number='" + taxnumber.Text + "'", con);

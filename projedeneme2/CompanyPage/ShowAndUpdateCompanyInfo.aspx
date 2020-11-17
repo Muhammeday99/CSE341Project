@@ -16,75 +16,75 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
             <Columns>  
                 <asp:TemplateField>  
                     <ItemTemplate>  
-                        <asp:Button ID="btn_Edit" runat="server" Text="Edit" CommandName="Edit" />  
+                        <asp:Button ID="editButton" runat="server" Text="Edit" CommandName="Edit" />  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:Button ID="btn_Update" runat="server" Text="Update" CommandName="Update"/>  
-                        <asp:Button ID="btn_Cancel" runat="server" Text="Cancel" CommandName="Cancel"/>  
+                        <asp:Button ID="updateButton" runat="server" Text="Update" CommandName="Update"/>  
+                        <asp:Button ID="cancelButton" runat="server" Text="Cancel" CommandName="Cancel"/>  
                     </EditItemTemplate>  
                 </asp:TemplateField>  
                 <asp:TemplateField HeaderText="Name">  
                     <ItemTemplate>  
-                        <asp:Label ID="lbl_Name" runat="server" Text='<%#Eval("Name") %>'></asp:Label>  
+                        <asp:Label ID="nameLabel" runat="server" Text='<%#Eval("Name") %>'></asp:Label>  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:TextBox ID="txt_Name" runat="server" Text='<%#Eval("Name") %>'></asp:TextBox>  
+                        <asp:TextBox ID="nameTextBox" runat="server" Text='<%#Eval("Name") %>'></asp:TextBox>  
                     </EditItemTemplate>  
                 </asp:TemplateField>  
                 <asp:TemplateField HeaderText="SiteURL">  
                     <ItemTemplate>  
-                        <asp:Label ID="lbl_URL" runat="server" Text='<%#Eval("SiteURL") %>'></asp:Label>  
+                        <asp:Label ID="URLLabel" runat="server" Text='<%#Eval("SiteURL") %>'></asp:Label>  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:TextBox ID="txt_SiteURL" runat="server" Text='<%#Eval("SiteURL") %>'></asp:TextBox>  
+                        <asp:TextBox ID="urlTextBox" runat="server" Text='<%#Eval("SiteURL") %>'></asp:TextBox>  
                     </EditItemTemplate>  
                 </asp:TemplateField>  
                 <asp:TemplateField HeaderText="PhoneContryCode">  
                     <ItemTemplate>  
-                        <asp:Label ID="lbl_PhoneCode" runat="server" Text='<%#Eval("PhoneContryCode") %>'></asp:Label>  
+                        <asp:Label ID="phoneCodeLabel" runat="server" Text='<%#Eval("PhoneContryCode") %>'></asp:Label>  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:TextBox ID="txt_PhoneCode" runat="server" Text='<%#Eval("PhoneContryCode") %>'></asp:TextBox>  
+                        <asp:TextBox ID="phoneCodeTextBox" runat="server" Text='<%#Eval("PhoneContryCode") %>'></asp:TextBox>  
                     </EditItemTemplate>  
                 </asp:TemplateField> 
                 <asp:TemplateField HeaderText="PhoneNumber">  
                     <ItemTemplate>  
-                        <asp:Label ID="lbl_PhoneNumber" runat="server" Text='<%#Eval("PhoneNumber") %>'></asp:Label>  
+                        <asp:Label ID="phoneNumberLabel" runat="server" Text='<%#Eval("PhoneNumber") %>'></asp:Label>  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:TextBox ID="txt_PhoneNumber" runat="server" Text='<%#Eval("PhoneNumber") %>'></asp:TextBox>  
+                        <asp:TextBox ID="phoneNumberTextBox" runat="server" Text='<%#Eval("PhoneNumber") %>'></asp:TextBox>  
                     </EditItemTemplate>  
                 </asp:TemplateField>  
                 <asp:TemplateField HeaderText="IBAN">  
                     <ItemTemplate>  
-                        <asp:Label ID="lbl_Iban" runat="server" Text='<%#Eval("IBAN") %>'></asp:Label>  
+                        <asp:Label ID="ibanLabel" runat="server" Text='<%#Eval("IBAN") %>'></asp:Label>  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:TextBox ID="txt_Iban" runat="server" Text='<%#Eval("IBAN") %>'></asp:TextBox>  
+                        <asp:TextBox ID="ibanTextBox" runat="server" Text='<%#Eval("IBAN") %>'></asp:TextBox>  
                     </EditItemTemplate>  
                 </asp:TemplateField>  
                 <asp:TemplateField HeaderText="Company_Description">  
                     <ItemTemplate>  
-                        <asp:Label ID="lbl_Description" runat="server" Text='<%#Eval("Company_Description") %>'></asp:Label>  
+                        <asp:Label ID="descriptionLabel" runat="server" Text='<%#Eval("Company_Description") %>'></asp:Label>  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:TextBox ID="txt_Description" runat="server" Text='<%#Eval("Company_Description") %>'></asp:TextBox>  
+                        <asp:TextBox ID="descriptionTextBox" runat="server" Text='<%#Eval("Company_Description") %>'></asp:TextBox>  
                     </EditItemTemplate>  
                 </asp:TemplateField>
                  <asp:TemplateField HeaderText="Tax_Admin">  
                     <ItemTemplate>  
-                        <asp:Label ID="lbl_TaxAdmin" runat="server" Text='<%#Eval("Tax_Admin") %>'></asp:Label>  
+                        <asp:Label ID="taxAdminLabel" runat="server" Text='<%#Eval("Tax_Admin") %>'></asp:Label>  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:TextBox ID="txt_TaxAdmin" runat="server" Text='<%#Eval("Tax_Admin") %>'></asp:TextBox>  
+                        <asp:TextBox ID="taxAdminTextBox" runat="server" Text='<%#Eval("Tax_Admin") %>'></asp:TextBox>  
                     </EditItemTemplate>  
                 </asp:TemplateField>
                  <asp:TemplateField HeaderText="Tax_number">  
                     <ItemTemplate>  
-                        <asp:Label ID="lbl_TaxNumber" runat="server" Text='<%#Eval("Tax_number") %>'></asp:Label>  
+                        <asp:Label ID="taxNumberLabel" runat="server" Text='<%#Eval("Tax_number") %>'></asp:Label>  
                     </ItemTemplate>  
                     <EditItemTemplate>  
-                        <asp:TextBox ID="txt_TaxNumber" runat="server" Text='<%#Eval("Tax_number") %>'></asp:TextBox>  
+                        <asp:TextBox ID="taxNumberText" runat="server" Text='<%#Eval("Tax_number") %>'></asp:TextBox>  
                     </EditItemTemplate>  
                 </asp:TemplateField>
             </Columns>  
