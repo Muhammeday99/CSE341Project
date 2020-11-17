@@ -3,41 +3,96 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">  
-        <title>Untitled Page</title>  
-        <style type="text/css">  
-            .Gridview {  
-                font-family: Verdana;  
-                font-size: 10pt;  
-                font-weight: normal;  
-                color: black;  
-            }  
-        </style>  
-        <script type="text/javascript">  
-        </script>  
-    </head>  
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">  
+    <div>      
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit"   
   
-    <body>  
-        <form id="form1" runat="server">  
-            <div>  
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="Name" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">  
-                    <Columns>  
-                        <asp:BoundField DataField="Name" HeaderText="Name" />  
-                        <asp:BoundField DataField="SiteURL" HeaderText="SiteURL" />  
-                        <asp:BoundField DataField="PhoneContryCode" HeaderText="PhoneContryCode" />  
-                        <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />  
-                        <asp:BoundField DataField="IBAN" HeaderText="IBAN" />  
-                        <asp:BoundField DataField="Company_Description" HeaderText="Company_Description" />  
-                        <asp:BoundField DataField="Tax_Admin" HeaderText="Tax_Admin" />  
-                        <asp:BoundField DataField="Tax_number" HeaderText="Tax_number" />  
-                        <asp:CommandField ShowEditButton="true" />  
-                        <asp:CommandField ShowDeleteButton="true" /> </Columns>  
-                </asp:GridView>  
-            </div>  
-            <div>  
-                <asp:Label ID="lblresult" runat="server"></asp:Label>  
-            </div>  
-        </form>  
-    </body>  
-  
-    </html>  
+OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">  
+            <Columns>  
+                <asp:TemplateField>  
+                    <ItemTemplate>  
+                        <asp:Button ID="btn_Edit" runat="server" Text="Edit" CommandName="Edit" />  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:Button ID="btn_Update" runat="server" Text="Update" CommandName="Update"/>  
+                        <asp:Button ID="btn_Cancel" runat="server" Text="Cancel" CommandName="Cancel"/>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Name">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_Name" runat="server" Text='<%#Eval("Name") %>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_Name" runat="server" Text='<%#Eval("Name") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="SiteURL">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_URL" runat="server" Text='<%#Eval("SiteURL") %>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_SiteURL" runat="server" Text='<%#Eval("SiteURL") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="PhoneContryCode">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_PhoneCode" runat="server" Text='<%#Eval("PhoneContryCode") %>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_PhoneCode" runat="server" Text='<%#Eval("PhoneContryCode") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                </asp:TemplateField> 
+                <asp:TemplateField HeaderText="PhoneNumber">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_PhoneNumber" runat="server" Text='<%#Eval("PhoneNumber") %>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_PhoneNumber" runat="server" Text='<%#Eval("PhoneNumber") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="IBAN">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_Iban" runat="server" Text='<%#Eval("IBAN") %>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_Iban" runat="server" Text='<%#Eval("IBAN") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Company_Description">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_Description" runat="server" Text='<%#Eval("Company_Description") %>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_Description" runat="server" Text='<%#Eval("Company_Description") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>
+                 <asp:TemplateField HeaderText="Tax_Admin">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_TaxAdmin" runat="server" Text='<%#Eval("Tax_Admin") %>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_TaxAdmin" runat="server" Text='<%#Eval("Tax_Admin") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>
+                 <asp:TemplateField HeaderText="Tax_number">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_TaxNumber" runat="server" Text='<%#Eval("Tax_number") %>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_TaxNumber" runat="server" Text='<%#Eval("Tax_number") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                </asp:TemplateField>
+            </Columns>  
+            <HeaderStyle BackColor="#663300" ForeColor="#ffffff"/>  
+            <RowStyle BackColor="#e7ceb6"/>  
+        </asp:GridView>  
+      
+    </div>  
+</form>  
+</body>
+</html>

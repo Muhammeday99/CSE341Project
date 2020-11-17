@@ -19,91 +19,64 @@ namespace projedeneme2.CompanyPage
 {
     public partial class ShowAndUpdateCompanyInfo : System.Web.UI.Page
     {
-        SqlConnection con = databaseConnect.connectToSQL();
+        SqlConnection con = databaseConnect.connectToSQL();        
         protected void Page_Load(object sender, EventArgs e)
         {
+            //To restore the page so that data is not lost and overlaid 
             if (!IsPostBack)
             {
-                start();
+                ShowData();
             }
         }
-        protected void start()
+        //ShowData method for Displaying Data in Gridview  
+        protected void ShowData()
         {
+            DataTable dt = new DataTable();
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from CompanyInfo", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            con.Close();
-            if (ds.Tables[0].Rows.Count > 0)
+            SqlDataAdapter adapt = new SqlDataAdapter("Select Name,SiteURL,PhoneContryCode,PhoneNumber,IBAN,Company_Description,Tax_Admin,Tax_number from CompanyInfo", con);
+            adapt.Fill(dt);
+            if (dt.Rows.Count > 0)
             {
-                GridView1.DataSource = ds;
+                GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
-            else
-            {
-                ds.Tables[0].Rows.Add(ds.Tables[0].NewRow());
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-                int columncount = GridView1.Rows[0].Cells.Count;
-                GridView1.Rows[0].Cells.Clear();
-                GridView1.Rows[0].Cells.Add(new TableCell());
-                GridView1.Rows[0].Cells[0].ColumnSpan = columncount;
-                GridView1.Rows[0].Cells[0].Text = "No Records Found";
-            }
-        }
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
-            Label lbldeleteid = (Label)row.FindControl("lblID");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("delete FROM CompanyInfo where Name='" + GridView1.DataKeys[e.RowIndex].Value.ToString() + "'", con);
-            cmd.ExecuteNonQuery();
             con.Close();
-            start();
         }
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
+            //NewEditIndex property used to determine the index of the row being edited.  
             GridView1.EditIndex = e.NewEditIndex;
-            start();
+            ShowData();
         }
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
-            long number = Convert.ToInt64(GridView1.DataKeys[e.RowIndex].Value.ToString());
-            GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
-            Label lblID = (Label)row.FindControl("lblID");
-            //TextBox txtname=(TextBox)gr.cell[].control[];  
-            TextBox textName = (TextBox)row.Cells[0].Controls[0];
-            TextBox textURL = (TextBox)row.Cells[1].Controls[0];
-            TextBox textPhonecode = (TextBox)row.Cells[2].Controls[0];
-            TextBox textPhoneNumber = (TextBox)row.Cells[3].Controls[0];
-            TextBox textIBAN = (TextBox)row.Cells[4].Controls[0];
-            TextBox textCompanyDescr = (TextBox)row.Cells[5].Controls[0];
-            TextBox textTaxadmin = (TextBox)row.Cells[6].Controls[0];
-            TextBox textTaxNumber = (TextBox)row.Cells[7].Controls[0];
-            //TextBox textadd = (TextBox)row.FindControl("txtadd");  
-            //TextBox textc = (TextBox)row.FindControl("txtc");  
-            GridView1.EditIndex = -1;
+
+            //Simdilik burda kalsin, ileride lazim olabilir..@mertbesirli
+            //    Label id = GridView1.Rows[e.RowIndex].FindControl("lbl_ID") as Label;
+            //Finding the controls from Gridview for the row which is going to update  
+            TextBox name = GridView1.Rows[e.RowIndex].FindControl("txt_Name") as TextBox;
+            TextBox url = GridView1.Rows[e.RowIndex].FindControl("txt_SiteURL") as TextBox;
+            TextBox phonecode = GridView1.Rows[e.RowIndex].FindControl("txt_PhoneCode") as TextBox;
+            TextBox phonenumber = GridView1.Rows[e.RowIndex].FindControl("txt_PhoneNumber") as TextBox;
+            TextBox iban = GridView1.Rows[e.RowIndex].FindControl("txt_Iban") as TextBox;
+            TextBox desc = GridView1.Rows[e.RowIndex].FindControl("txt_Description") as TextBox;
+            TextBox taxadmin = GridView1.Rows[e.RowIndex].FindControl("txt_TaxAdmin") as TextBox;
+            TextBox taxnumber = GridView1.Rows[e.RowIndex].FindControl("txt_TaxNumber") as TextBox;
             con.Open();
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM detail", conn);  
-            SqlCommand cmd = new SqlCommand("update CompanyInfo set Name='" + textName.Text + "',SiteURL='" + textURL.Text + "',PhoneContryCode='" + textPhonecode.Text + "',PhoneNumber='" + textPhoneNumber.Text + "',IBAN='" + textIBAN + "',Company_Description='" + textCompanyDescr + "',Tax_Admin='" + textTaxadmin + "',Tax_number='" + textTaxNumber + "'where PhoneNumber='" + number + "'", con);
+            //Update to databese CompanyInfo  
+            SqlCommand cmd = new SqlCommand("Update CompanyInfo set Name='" + name.Text + "',SiteURL='" + url.Text + "',PhoneContryCode='" + phonecode.Text + "',PhoneNumber='" + phonenumber.Text + "',IBAN='" + iban.Text + "',Company_Description='" + desc.Text + "',Tax_Admin='" + taxadmin.Text + "',Tax_number='" + taxnumber.Text + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
-            start();
-            //GridView1.DataBind();  
-
-
-
-        }
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridView1.PageIndex = e.NewPageIndex;
-            start();
-        }
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
+            //Setting the EditIndex property to -1 to cancel the Edit mode in Gridview  
             GridView1.EditIndex = -1;
-            start();
+            //Call ShowData method for displaying updated data  
+            ShowData();
+        }
+        protected void GridView1_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
+        {
+            //Setting the EditIndex property to -1 to cancel the Edit mode in Gridview  
+            GridView1.EditIndex = -1;
+            ShowData();
         }
     }
 }
