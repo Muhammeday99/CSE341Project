@@ -11,7 +11,8 @@ namespace projedeneme2.AdminPage
     public partial class AddAccount : System.Web.UI.Page
     {
 
-        protected SqlConnection con = databaseConnect.connectToSQL();
+        // protected SqlConnection con = databaseConnect.connectToSQL();
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-4MS0SVU;Integrated Security=true;Initial Catalog=PROJECT_TRACKING_SYSTEM");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,15 +32,15 @@ namespace projedeneme2.AdminPage
             }
             else{
 
-                String q = "INSERT INTO dbo.User (UserEmail,Password,ProfilePicture,Status) VALUES (@UserEmail, @Password,@ProfilePicture, @Status)";
+                String q = "INSERT INTO dbo.Users (Password,Status,ProfilePicture,UserEmail) VALUES (@Password, @Status,@ProfilePicture, @UserEmail)";
 
                 SqlCommand cmnd = new SqlCommand(q,con);
 
-                cmnd.Parameters.AddWithValue("@UserEmail", uEmail);
                 cmnd.Parameters.AddWithValue("@Password", uPassword);
-                cmnd.Parameters.AddWithValue("@ProfilePicture", "empty");
                 cmnd.Parameters.AddWithValue("@Status", isAdmin);
-
+                cmnd.Parameters.AddWithValue("@ProfilePicture", "empty");
+                cmnd.Parameters.AddWithValue("@UserEmail", uEmail);
+             
                 cmnd.ExecuteNonQuery();
             }
         }
