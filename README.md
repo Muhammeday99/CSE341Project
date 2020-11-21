@@ -9,7 +9,7 @@
 
 To Do's
 
-[x] LOGİN SCREEN
+-[x] LOGİN SCREEN
 	 [x] 1.1 - User  adminUser, standardUser 
 
 
