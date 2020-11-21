@@ -11,9 +11,8 @@ namespace projedeneme2.AdminPage
     public partial class AddAccount : System.Web.UI.Page
     {
 
-        // protected SqlConnection con = databaseConnect.connectToSQL();
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-4MS0SVU;Integrated Security=true;Initial Catalog=PROJECT_TRACKING_SYSTEM");
-
+        protected SqlConnection con = databaseConnect.connectToSQL();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
