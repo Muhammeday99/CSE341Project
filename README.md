@@ -2,7 +2,7 @@
 ## 5M Macro presents
 
 - Muhammed Salih Yılmaz
-- @ilkanmertokul
+- github.com/ilkanmertokul
 - Muhammet Fikret Atar
 - Mert Can Beşirli
 - Muhammed Eyüp
