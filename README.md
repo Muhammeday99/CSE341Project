@@ -9,8 +9,8 @@
 
 To Do's
 
--[x] LOGİN SCREEN
-	 [x] 1.1 - User  adminUser, standardUser 
+- [x] LOGİN SCREEN
+	1.1 - User  adminUser, standardUser 
 
 
 
