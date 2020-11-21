@@ -82,7 +82,6 @@
   <ItemGroup>
     <Content Include="AdminPage\AddAccount.aspx" />
     <Content Include="AdminPage\BaseAdminPage.aspx" />
-    <Content Include="AdminPage\ManageAccountPage.aspx" />
     <Content Include="AdminPage\ShowAccountList.aspx" />
     <Content Include="CompanyPage\ShowAndUpdateCompanyInfo.aspx" />
     <Content Include="default.aspx" />
@@ -103,13 +102,6 @@
     </Compile>
     <Compile Include="AdminPage\BaseAdminPage.aspx.designer.cs">
       <DependentUpon>BaseAdminPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPage\ManageAccountPage.aspx.cs">
-      <DependentUpon>ManageAccountPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminPage\ManageAccountPage.aspx.designer.cs">
-      <DependentUpon>ManageAccountPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPage\ShowAccountList.aspx.cs">
       <DependentUpon>ShowAccountList.aspx</DependentUpon>

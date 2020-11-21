@@ -57,7 +57,7 @@ namespace projedeneme2
             }
         }
         //Checks if you are logged in, email and password are correct
-        private bool IsValidLogin(string userEmail, string userPassword)
+        public bool IsValidLogin(string userEmail, string userPassword)
         {
   
             SqlCommand check = new SqlCommand("SELECT * FROM Users WHERE UserEmail=@userEmail AND Password=@userPassword", con);
@@ -80,7 +80,7 @@ namespace projedeneme2
            
         }
         //Checking whether the logged in person is an admin or a user
-        protected Boolean checkUser(string userEmail,string userPassword)
+        public Boolean checkUser(string userEmail,string userPassword)
         {
             //Opens the database.
             con.Open();
