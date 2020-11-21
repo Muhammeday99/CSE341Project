@@ -23,11 +23,11 @@ namespace projedeneme2.AdminPage
         protected void Page_Load(object sender, EventArgs e)
         {
             //To restore the page so that data is not lost and overlaid 
-            if (!IsPostBack)
-            {
+            if (!IsPostBack){
                 ShowData();
             }
         }
+
         //ShowData method for Displaying Data in Gridview  
         protected void ShowData()
         {
