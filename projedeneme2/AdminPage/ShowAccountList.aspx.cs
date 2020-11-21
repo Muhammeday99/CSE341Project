@@ -17,10 +17,9 @@ namespace projedeneme2.AdminPage
 {
     public partial class ShowAccountList : System.Web.UI.Page
     {
-        //SqlConnection con = new SqlConnection("Data Source=DESKTOP-LG9NTD0;Integrated Security=true;Initial Catalog=PROJECT_TRACKING_SYSTEM");
+       
         SqlConnection con = databaseConnect.connectToSQL();
 
-        // SqlConnection con = databaseConnect.connectToSQL();
         protected void Page_Load(object sender, EventArgs e)
         {
             //To restore the page so that data is not lost and overlaid 
@@ -54,15 +53,15 @@ namespace projedeneme2.AdminPage
             //Simdilik burda kalsin, ileride lazim olabilir..
             //Label id = GridView1.Rows[e.RowIndex].FindControl("lbl_ID") as Label
             //Finding the controls from Gridview for the row which is going to update  
-            TextBox name = GridView1.Rows[e.RowIndex].FindControl("passwordTextBox") as TextBox;
-            TextBox url = GridView1.Rows[e.RowIndex].FindControl("ProfileFotoTextBox") as TextBox;
-            TextBox phonecode = GridView1.Rows[e.RowIndex].FindControl("useremailTextBox") as TextBox;
+            TextBox password = GridView1.Rows[e.RowIndex].FindControl("passwordTextBox") as TextBox;
+            TextBox profilephoto = GridView1.Rows[e.RowIndex].FindControl("ProfileFotoTextBox") as TextBox;
+            TextBox email = GridView1.Rows[e.RowIndex].FindControl("useremailTextBox") as TextBox;
             //CheckBox Status = GridView1.Rows[e.RowIndex].FindControl("StatusCheckBox") as CheckBox;
             //Check Box not fix
             con.Open();
             
 
-            SqlCommand cmd = new SqlCommand("Update Users set Password='" + name.Text + "',ProfilePicture='" + url.Text + "',UserEmail='" + phonecode.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("Update Users set Password='" + password.Text + "',ProfilePicture='" + profilephoto.Text + "',UserEmail='" + email.Text + "'", con);
             cmd.ExecuteNonQuery();
 
             con.Close();
