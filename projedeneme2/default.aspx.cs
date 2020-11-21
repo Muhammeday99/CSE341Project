@@ -38,27 +38,22 @@ namespace projedeneme2
             //IF because user can enter nothing to textboxes.
             if(!(userEmail.Length < 1 || userPassword.Length < 1)){
 
-                SqlCommand sorgula = new SqlCommand("SELECT * FROM Users WHERE UserEmail=@UserEmail AND Password=@Password", con);
+                SqlCommand check = new SqlCommand("SELECT * FROM Users WHERE UserEmail=@UserEmail AND Password=@Password", con);
 
-                sorgula.Parameters.AddWithValue("@UserEmail", userEmail);
-                sorgula.Parameters.AddWithValue("@Password", userPassword);
-                SqlDataReader oku = sorgula.ExecuteReader();
-                if (oku.Read())
-                {
-                    //  Session["Kullanici"] = oku["KullaniciAdi"].ToString();
-                    //  Response.Redirect("Default.aspx");
+                check.Parameters.AddWithValue("@UserEmail", userEmail);
+                check.Parameters.AddWithValue("@Password", userPassword);
+                SqlDataReader sqlRead = check.ExecuteReader();
 
+                if (sqlRead.Read())
                     Response.Redirect("Homepage/Homepage.aspx");
-                }
                 else
                     statusLabel.Text = "Email yada şifre hatalı!";
 
-                oku.Close();
+                sqlRead.Close();
             }
-            else{
+            else
                 statusLabel.Text = "Lütfen Email ve şifreyi giriniz!";
-            }
-
+            
             con.Close();
             con.Dispose();
         }
