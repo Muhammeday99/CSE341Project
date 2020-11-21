@@ -27,13 +27,14 @@ namespace projedeneme2.AdminPage
         /**This function loads a new page that lists all users on our database.*/
         protected void listUserButton_Click(object sender, EventArgs e)
         {
-            
+        
+            Response.Redirect("AdminPage/ShowAccountList.aspx");
         }
 
         /**This button loads a new page to add a new user on our database.*/
         protected void newUserButton_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("AdminPage/AddAccount.aspx");
         }
     }
 }
