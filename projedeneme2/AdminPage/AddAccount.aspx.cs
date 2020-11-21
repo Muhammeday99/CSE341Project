@@ -31,13 +31,16 @@ namespace projedeneme2.AdminPage
             }
             else{
 
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                //SqlCommand command = new SqlCommand("Insert INTO Users ()")
-               
+                String q = "INSERT INTO dbo.User (UserEmail,Password,ProfilePicture,Status) VALUES (@UserEmail, @Password,@ProfilePicture, @Status)";
 
+                SqlCommand cmnd = new SqlCommand(q,con);
 
+                cmnd.Parameters.AddWithValue("@UserEmail", uEmail);
+                cmnd.Parameters.AddWithValue("@Password", uPassword);
+                cmnd.Parameters.AddWithValue("@ProfilePicture", "empty");
+                cmnd.Parameters.AddWithValue("@Status", isAdmin);
 
-
+                cmnd.ExecuteNonQuery();
             }
         }
     }
