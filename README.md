@@ -7,9 +7,6 @@
 - Mert Can Beşirli
 - Muhammed Eyüp
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
-
 To Do's
 
 LOGIN SCREEN
