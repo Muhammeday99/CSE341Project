@@ -10,7 +10,7 @@
 <body>
     <form id="form2" runat="server">  
     <div>      
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit" 
+        <asp:GridView ID="GridView1" runat="server" DataKeyNames="UserID" AutoGenerateColumns="False" CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit" 
   
 OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" BackColor="#000066">  
             <Columns>  

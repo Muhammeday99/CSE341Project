@@ -17,9 +17,9 @@ namespace projedeneme2.AdminPage
 {
     public partial class ShowAccountList : System.Web.UI.Page
     {
-       
-        SqlConnection con = databaseConnect.connectToSQL();
 
+        SqlConnection con = databaseConnect.connectToSQL();
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             //To restore the page so that data is not lost and overlaid 
@@ -50,8 +50,8 @@ namespace projedeneme2.AdminPage
         }
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
-            //Simdilik burda kalsin, ileride lazim olabilir..
-            //Label id = GridView1.Rows[e.RowIndex].FindControl("lbl_ID") as Label
+            
+            int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
             //Finding the controls from Gridview for the row which is going to update  
             TextBox password = GridView1.Rows[e.RowIndex].FindControl("passwordTextBox") as TextBox;
             TextBox profilephoto = GridView1.Rows[e.RowIndex].FindControl("ProfileFotoTextBox") as TextBox;
@@ -61,7 +61,7 @@ namespace projedeneme2.AdminPage
             con.Open();
             
 
-            SqlCommand cmd = new SqlCommand("Update Users set Password='" + password.Text + "',ProfilePicture='" + profilephoto.Text + "',UserEmail='" + email.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("Update Users set Password='" + password.Text + "',ProfilePicture='" + profilephoto.Text + "',UserEmail='" + email.Text + "'where UserID='" + id + "'", con);
             cmd.ExecuteNonQuery();
 
             con.Close();
