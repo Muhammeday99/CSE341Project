@@ -4,14 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//using projedeneme2.Homepage;
 
-namespace projedeneme2.Homepage
+
+namespace projedeneme2.CariKart
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm1 : projedeneme2.Homepage.WebForm1
     {
+        /*
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
         protected void Homepage_click(object sender, EventArgs e)
         {
@@ -92,6 +95,11 @@ namespace projedeneme2.Homepage
         protected void Hata_Tespit_click(object sender, EventArgs e)
         {
             Response.Redirect("../Homepage/Homepage.aspx");
+        }*/
+        
+        protected void Yeni_Cari_Kart_click(object sender, EventArgs e)
+        {
+            Response.Redirect("/CariKart/YeniCariKart.aspx");
         }
     }
 }

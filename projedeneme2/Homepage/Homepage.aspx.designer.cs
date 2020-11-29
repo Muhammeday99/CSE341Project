@@ -7,20 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projedeneme2.Homepage {
-    
-    
-    public partial class WebForm1 {
-        
-        /// <summary>
-        /// sidebarToggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sidebarToggle;
-        
+namespace projedeneme2.Homepage
+{
+
+
+    public partial class WebForm1
+    {
+
         /// <summary>
         /// sidebarToggleTop control.
         /// </summary>
@@ -29,7 +22,7 @@ namespace projedeneme2.Homepage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button sidebarToggleTop;
-        
+
         /// <summary>
         /// formCheck1 control.
         /// </summary>
@@ -38,7 +31,7 @@ namespace projedeneme2.Homepage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox formCheck1;
-        
+
         /// <summary>
         /// formCheck2 control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace projedeneme2.Homepage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox formCheck2;
-        
+
         /// <summary>
         /// formCheck3 control.
         /// </summary>
