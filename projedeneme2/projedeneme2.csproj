@@ -83,6 +83,7 @@
     <Content Include="AdminPage\AddAccount.aspx" />
     <Content Include="AdminPage\BaseAdminPage.aspx" />
     <Content Include="AdminPage\ShowAccountList.aspx" />
+    <Content Include="BillPage\AddBillInfo.aspx" />
     <Content Include="CariKart\CariKart.aspx" />
     <Content Include="CariKart\YeniCariKart.aspx" />
     <Content Include="CompanyPage\ShowAndUpdateCompanyInfo.aspx" />
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="AdminPage\ShowAccountList.aspx.designer.cs">
       <DependentUpon>ShowAccountList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillPage\AddBillInfo.aspx.cs">
+      <DependentUpon>AddBillInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillPage\AddBillInfo.aspx.designer.cs">
+      <DependentUpon>AddBillInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="CariKart\CariKart.aspx.cs">
       <DependentUpon>CariKart.aspx</DependentUpon>
