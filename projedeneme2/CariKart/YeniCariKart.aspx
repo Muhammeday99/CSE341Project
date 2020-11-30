@@ -315,7 +315,7 @@ A company uses this software will easily track their process by using features o
 									</div>
 								</div>
 							</div>
-						</div><button class="btn btn-primary" id="addEntityCard" type="button" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Add Entity Card</button></div>
+						</div><asp:Button runat="server" text="Add Entity Card" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;"></asp:Button></div>
 				</div>
 			</div>
 		</div>
