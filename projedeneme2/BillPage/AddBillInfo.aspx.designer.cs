@@ -96,12 +96,21 @@ namespace projedeneme2.BillPage
         protected global::System.Web.UI.WebControls.Button saveAccount;
 
         /// <summary>
-        /// errorLabel denetimi.
+        /// TotalamountTitle denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorLabel;
+        protected global::System.Web.UI.WebControls.Label TotalamountTitle;
+
+        /// <summary>
+        /// TotalAmount denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalAmount;
     }
 }

@@ -13,6 +13,8 @@ namespace projedeneme2.BillPage
 
         protected SqlConnection con = databaseConnect.connectToSQL();
 
+      
+
         protected void Page_Load(object sender, EventArgs e)
         {
             con.Open();
@@ -29,11 +31,13 @@ namespace projedeneme2.BillPage
             }
 
             entity.Text = temp;
+
+            reader.Close();
         }
 
         protected void saveButtonClick(object sender, EventArgs e)
         {
-            con.Open();
+            
 
             string BillNo = BillNoBox.Text;
             
@@ -43,11 +47,13 @@ namespace projedeneme2.BillPage
             string PaymentDate = DateTime.Now.ToString(PaymentDateBox.Text);
             string KDV = Convert.ToString(KDVBox.Text);
             string Amount = Convert.ToString(AmountBox.Text) ;
-            string EntityCode = string.Empty;
            
-           
+            
+            Double Kdvv = Convert.ToDouble(KDVBox.Text);
+            Double AAmount = Convert.ToDouble(AmountBox.Text);
 
-
+            TotalAmount.Text = Convert.ToString(((Kdvv*AAmount)/100)+AAmount);
+            TotalamountTitle.Text = "Total Amount:";
             String q = "INSERT INTO dbo.Bill_info (BillNo, BillDate,BillDescription,PaymentDate,KDV,Amount) VALUES (@BillNo, @BillDate, @BillDescription, @PaymentDate, @KDV, @Amount)";
 
             SqlCommand cmnd = new SqlCommand(q, con);
@@ -60,8 +66,10 @@ namespace projedeneme2.BillPage
             cmnd.Parameters.AddWithValue("@KDV", KDV);
             cmnd.Parameters.AddWithValue("@Amount", Amount);
 
+
+            
             cmnd.ExecuteNonQuery();
-           
+            con.Close();
         }
     }
 }

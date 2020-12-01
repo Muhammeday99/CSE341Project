@@ -32,7 +32,7 @@
          <asp:TextBox ID="PaymentDateBox" runat="server"></asp:TextBox>
         <br />
         <br />
-        KDV:<br />
+        KDV(%):<br />
          <asp:TextBox ID="KDVBox" runat="server"></asp:TextBox>
         <br />
         <br />
@@ -43,9 +43,13 @@
         <asp:Button ID="saveAccount" runat="server" OnClick="saveButtonClick" Text="Kaydet." />
         <br />
         <br />
-        <asp:Label ID="errorLabel" runat="server" Text="."></asp:Label>
+        <asp:Label ID="TotalamountTitle" runat="server" Text=""></asp:Label>
         <br />
         <br />
+        <asp:Label ID="TotalAmount" runat="server" Text=""></asp:Label>
+        <br />
+        <br />
+        
     </form>
 </body>
 </html>
