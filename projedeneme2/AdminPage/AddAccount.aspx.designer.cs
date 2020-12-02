@@ -51,6 +51,15 @@ namespace projedeneme2.AdminPage
         protected global::System.Web.UI.WebControls.FileUpload photoUpload;
 
         /// <summary>
+        /// Image1 denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
         /// adminOrNot denetimi.
         /// </summary>
         /// <remarks>

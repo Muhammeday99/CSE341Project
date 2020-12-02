@@ -24,6 +24,7 @@
         <asp:FileUpload ID="photoUpload" runat="server" />
         <br />
         <br />
+        <asp:Image ID="Image1" runat="server" Height = "100" Width = "100" />
         <br />
         <asp:CheckBox ID="adminOrNot" runat="server" Text="Admin yetkileri" />
         <br />

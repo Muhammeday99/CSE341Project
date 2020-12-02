@@ -24,6 +24,24 @@ namespace projedeneme2.AdminPage
         {
             con.Open();
 
+            string folderPath = Server.MapPath("~/Files/");
+
+            //Check whether Directory (Folder) exists.
+            if (!Directory.Exists(folderPath))
+            {
+                //If Directory (Folder) does not exists Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            //Save the File to the Directory (Folder).
+            photoUpload.SaveAs(folderPath + Path.GetFileName(photoUpload.FileName));
+
+            //Display the Picture in Image control.
+            Image1.ImageUrl = "~/Files/" + Path.GetFileName(photoUpload.FileName);
+
+
+
+
             string uEmail = emailBox.Text;
             string uPassword = passwordBox.Text;
             Boolean isAdmin = adminOrNot.Checked;
@@ -39,9 +57,9 @@ namespace projedeneme2.AdminPage
 
                 cmnd.Parameters.AddWithValue("@Password", uPassword);
                 cmnd.Parameters.AddWithValue("@Status", isAdmin);
-                cmnd.Parameters.AddWithValue("@ProfilePicture", "empty");
+                cmnd.Parameters.AddWithValue("@ProfilePicture", Image1.ImageUrl);
                 cmnd.Parameters.AddWithValue("@UserEmail", uEmail);
-             
+
                 cmnd.ExecuteNonQuery();
             }
         }
