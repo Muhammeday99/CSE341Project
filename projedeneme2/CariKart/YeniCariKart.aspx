@@ -19,6 +19,27 @@ A company uses this software will easily track their process by using features o
 	<link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
 	<link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
 	<link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
+    <style type="text/css">
+        .auto-style1 {
+            height: 28px;
+        }
+        .auto-style2 {
+            position: relative;
+            width: 100%;
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            padding-left: .75rem;
+            padding-right: .75rem;
+        }
+        .auto-style3 {
+            width: 20%;
+            height: 28px;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -200,8 +221,8 @@ A company uses this software will easily track their process by using features o
 														<td><input type="text" id="entityType" style="width: 100%;padding: 0px;"></td>
 													</tr>
 													<tr>
-														<td>Cari Adı<br></td>
-														<td><input type="text" id="entityName" style="width: 100%;padding: 0px;"></td>
+														<td class="auto-style1">Cari Adı<br></td>
+														<td class="auto-style1"><input type="text" id="entityName" style="width: 100%;padding: 0px;"></td>
 													</tr>
 													<tr>
 														<td>Cari Kodu<br></td>
@@ -236,8 +257,8 @@ A company uses this software will easily track their process by using features o
 														<td><input type="text" id="entityEmail" style="width: 100%;padding: 0px;"></td>
 													</tr>
 													<tr>
-														<td>Telefon No</td>
-														<td><input type="text" id="entityPhoneNumber" style="width: 100%;padding: 0px;"></td>
+														<td class="auto-style1">Telefon No</td>
+														<td class="auto-style1"><input type="text" id="entityPhoneNumber" style="width: 100%;padding: 0px;"></td>
 													</tr>
 													<tr>
 														<td>Faks No</td>
@@ -253,7 +274,7 @@ A company uses this software will easily track their process by using features o
 							</div>
 						</div>
 						<div class="row">
-							<div class="col" style="margin-bottom: 3%;height: 100%;">
+							<div class="auto-style2" style="margin-bottom: 3%;">
 								<div class="card">
 									<div class="card-body">
 										<h4 class="card-title">Banka Bilgileri</h4>
@@ -264,8 +285,8 @@ A company uses this software will easily track their process by using features o
 												</thead>
 												<tbody>
 													<tr>
-														<td style="width: 20%;">Vergi Dairesi</td>
-														<td><input type="text" id="entityTaxOffice" style="width: 100%;padding: 0px;"></td>
+														<td class="auto-style3">Vergi Dairesi</td>
+														<td class="auto-style1"><input type="text" id="entityTaxOffice" style="width: 100%;padding: 0px;"></td>
 													</tr>
 													<tr>
 														<td>Vergi Numarası</td>
@@ -315,7 +336,7 @@ A company uses this software will easily track their process by using features o
 									</div>
 								</div>
 							</div>
-						</div><asp:Button runat="server" text="Add Entity Card" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;"></asp:Button></div>
+						</div><asp:Button runat="server" text="Add Entity Card" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;" OnClick="button_Click"></asp:Button></div>
 				</div>
 			</div>
 		</div>
