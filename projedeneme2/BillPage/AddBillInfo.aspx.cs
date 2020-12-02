@@ -13,10 +13,15 @@ namespace projedeneme2.BillPage
 
         protected SqlConnection con = databaseConnect.connectToSQL();
 
-      
 
+        //SQLCommand – The 'SQLCommand' is a class defined within C#. 
+        //This class is used to perform operations of reading and writing into the database.
+        //Hence, the first step is to make sure that we create a variable type of this class. 
+        //This variable will then be used in subsequent steps of reading data from our database.
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+
             con.Open();
             SqlCommand check = new SqlCommand("SELECT [entityCode] FROM [dbo].[Entity_Card]");
             check.CommandType = System.Data.CommandType.Text;
@@ -24,7 +29,8 @@ namespace projedeneme2.BillPage
 
             string temp = "";
             SqlDataReader reader = check.ExecuteReader();
-
+            //The DataReader object is used to get all the data specified by the SQL query.
+            //We can then read all the table rows one by one using the data reader.
             while (reader.Read())
             {
                 temp = reader["entityCode"].ToString();
@@ -34,7 +40,7 @@ namespace projedeneme2.BillPage
 
             reader.Close();
         }
-
+        // In this we do get values from BillNo, BillDate,BillDescription,PaymentDate,KDV,Amount Textboxes:
         protected void saveButtonClick(object sender, EventArgs e)
         {
             
@@ -54,6 +60,7 @@ namespace projedeneme2.BillPage
 
             TotalAmount.Text = Convert.ToString(((Kdvv*AAmount)/100)+AAmount);
             TotalamountTitle.Text = "Total Amount:";
+            //In this part, the bill information received from the text box is added to the entity card db.
             String q = "INSERT INTO dbo.Bill_info (BillNo, BillDate,BillDescription,PaymentDate,KDV,Amount) VALUES (@BillNo, @BillDate, @BillDescription, @PaymentDate, @KDV, @Amount)";
 
             SqlCommand cmnd = new SqlCommand(q, con);

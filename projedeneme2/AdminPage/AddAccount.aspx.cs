@@ -5,7 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+//In this section, the new user is added. It is determined whether the new user will be in the admin status or not.
+//Also, the photo of the new user is added here so that users is gained identity .
 namespace projedeneme2.AdminPage
 {
     public partial class AddAccount : System.Web.UI.Page
@@ -18,6 +19,7 @@ namespace projedeneme2.AdminPage
 
         }
 
+        //In this section, the information received from the text box is saved in the database.
         protected void saveButtonClick(object sender, EventArgs e)
         {
             con.Open();

@@ -12,7 +12,7 @@ using System.Configuration;
 using System.Drawing;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-
+//Registered users are listed in this section. User information is only controlled and changed by admin.
 namespace projedeneme2.AdminPage
 {
     public partial class ShowAccountList : System.Web.UI.Page

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+//In this section, the admin provides access to users' information.
 namespace projedeneme2.AdminPage
 {
     /**

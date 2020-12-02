@@ -19,6 +19,7 @@ namespace projedeneme2.CompanyPage
 {
     public partial class ShowAndUpdateCompanyInfo : System.Web.UI.Page
     {
+        //The ShowAndUpdateCompanyInfo class derives from 5m-macro, which manages the database connection and changes in the data.
         SqlConnection con = databaseConnect.connectToSQL();     
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +29,7 @@ namespace projedeneme2.CompanyPage
                 ShowData();
             }
         }
+
         //ShowData method for Displaying Data in Gridview  
         protected void ShowData()
         {
@@ -42,12 +44,17 @@ namespace projedeneme2.CompanyPage
             }
             con.Close();
         }
+        
         protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
         {
             //NewEditIndex property used to determine the index of the row being edited.  
             GridView1.EditIndex = e.NewEditIndex;
             ShowData();
         }
+        //The RowUpdating event is raised when a row's Update button is clicked, 
+        //but before the GridView control updates the row. 
+        //This enables you to provide an event-handling 
+        //method that performs a custom routine, such as canceling the update operation, whenever this event occurs.
         protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
         {
 

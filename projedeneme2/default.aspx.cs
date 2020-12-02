@@ -26,10 +26,11 @@ namespace projedeneme2
         {
             
         }
-
+        //The registered user query is made on the login page.
+        //If the login is verified, the user logs into the system.
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-           
+            
             bool isLoggedIn = false;
             string userEmail = string.Empty;
             string userPassword = string.Empty;
