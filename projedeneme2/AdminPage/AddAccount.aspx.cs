@@ -5,6 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+
+
 //In this section, the new user is added. It is determined whether the new user will be in the admin status or not.
 //Also, the photo of the new user is added here so that users is gained identity .
 namespace projedeneme2.AdminPage
