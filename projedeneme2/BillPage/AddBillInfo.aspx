@@ -33,11 +33,11 @@
         <br />
         <br />
         KDV(%):<br />
-         <asp:TextBox ID="KDVBox" runat="server"></asp:TextBox>
+         <asp:TextBox ID="KDVBox" runat="server" AutoPostBack="True" OnTextChanged="totalAmountCalculator"></asp:TextBox>
         <br />
         <br />
        Amount:<br />
-         <asp:TextBox ID="AmountBox" runat="server"></asp:TextBox>
+         <asp:TextBox ID="AmountBox" runat="server" AutoPostBack="True" OnTextChanged="totalAmountCalculator"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="saveAccount" runat="server" OnClick="saveButtonClick" Text="Kaydet." />
@@ -48,6 +48,8 @@
         <br />
         <asp:Label ID="TotalAmount" runat="server" Text=""></asp:Label>
         <br />
+        <br />
+        <asp:Label ID="errorsLabel" runat="server"></asp:Label>
         <br />
         
     </form>

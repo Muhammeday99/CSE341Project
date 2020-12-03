@@ -17,7 +17,9 @@
         <br />
         <br />
         şifre:<br />
-        <asp:TextBox ID="passwordBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="passwordBox" runat="server" AutoPostBack="True" OnTextChanged="passwordtext_Changed"></asp:TextBox>
+        &nbsp;Şifre Gücü :
+        <asp:Label ID="passwordLevelLabel" runat="server" Text="Yok"></asp:Label>
         <br />
         <br />
         foto:<br />

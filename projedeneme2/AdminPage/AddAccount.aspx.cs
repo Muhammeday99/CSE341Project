@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using projedeneme2.InputControllers;
 
 
 //In this section, the new user is added. It is determined whether the new user will be in the admin status or not.
@@ -42,14 +43,15 @@ namespace projedeneme2.AdminPage
             //Display the Picture in Image control.
             Image1.ImageUrl = "~/Files/" + Path.GetFileName(photoUpload.FileName);
 
-
-
-
+            List<string> inputs = new List<string>();
             string uEmail = emailBox.Text;
+            inputs.Add(uEmail);
+
             string uPassword = passwordBox.Text;
+            inputs.Add(uPassword);
             Boolean isAdmin = adminOrNot.Checked;
 
-            if (!uEmail.Contains('@')){
+            if (!uEmail.Contains('@') || (!stringController.listStringController(inputs))){
                 errorLabel.Text = "Your email should contain @, and password needs to be longer than 1 character.";
             }
             else{
@@ -65,6 +67,32 @@ namespace projedeneme2.AdminPage
 
                 cmnd.ExecuteNonQuery();
             }
+        }
+
+        protected void passwordtext_Changed(object sender, EventArgs e)
+        {
+            string password = passwordBox.Text;
+            int securityLevel = stringController.passwordSecurity(password);
+
+            switch (securityLevel) {
+                case 0:
+                    passwordLevelLabel.Text = "UYARI: Şifre güvenliği çok düşük. Özel karakterler, büyük ve küçük karakterler kullanabilirsiniz.";
+                    break;
+                case 1:
+                    passwordLevelLabel.Text = "Şifre güvenliği : Düşük.";
+                    break;
+                case 2:
+                    passwordLevelLabel.Text = "Şifre güvenliği : Orta.";
+                    break;
+                case 3:
+                    passwordLevelLabel.Text = "Şifre güvenliği : İyi.";
+                    break;
+                case 4:
+                    passwordLevelLabel.Text = "Şifre güvenliği : Çok iyi.";
+                    break;
+            }
+
+
         }
     }
 }
