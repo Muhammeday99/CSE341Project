@@ -214,23 +214,23 @@ A company uses this software will easily track their process by using features o
 												<tbody>
 													<tr>
 														<td style="width: 20%;">Cari Türü<br></td>
-														<td><input type="text" id="entityKind" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityKind" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Cari Hesap Tipi<br></td>
-														<td><input type="text" id="entityType" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityType" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td class="auto-style1">Cari Adı<br></td>
-														<td class="auto-style1"><input type="text" id="entityName" style="width: 100%;padding: 0px;"></td>
+														<td class="auto-style1"><asp:TextBox runat="server" id="entityName" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Cari Kodu<br></td>
-														<td><input type="text" id="entityCode" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityCode" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Adresi<br></td>
-														<td><input type="text" id="entityAddress" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityAddress" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr></tr>
 													<tr></tr>
@@ -254,15 +254,15 @@ A company uses this software will easily track their process by using features o
 												<tbody>
 													<tr>
 														<td style="width: 20%;">E-posta</td>
-														<td><input type="text" id="entityEmail" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityEmail" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td class="auto-style1">Telefon No</td>
-														<td class="auto-style1"><input type="text" id="entityPhoneNumber" style="width: 100%;padding: 0px;"></td>
+														<td class="auto-style1"><asp:TextBox runat="server" id="entityPhoneNumber" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Faks No</td>
-														<td><input type="text" id="entityFaxNumber" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityFaxNumber" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr></tr>
 													<tr></tr>
@@ -286,15 +286,15 @@ A company uses this software will easily track their process by using features o
 												<tbody>
 													<tr>
 														<td class="auto-style3">Vergi Dairesi</td>
-														<td class="auto-style1"><input type="text" id="entityTaxOffice" style="width: 100%;padding: 0px;"></td>
+														<td class="auto-style1"><asp:TextBox runat="server" id="entityTaxOffice" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Vergi Numarası</td>
-														<td><input type="text" id="entityTaxNumber" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityTaxNumber" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Banka Numarası</td>
-														<td><input type="text" id="entityBankAccountNumber" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityBankAccountNumber" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr></tr>
 													<tr></tr>
@@ -318,15 +318,15 @@ A company uses this software will easily track their process by using features o
 												<tbody>
 													<tr>
 														<td style="width: 30%;">Karşı Tarafın İlgili Kişisi</td>
-														<td><input type="text" id="entityRelatedPerson" style="padding: 0px;width: 100%;"></td>
+														<td><asp:TextBox runat="server" id="entityRelatedPerson" style="padding: 0px;width: 100%;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Açıklama</td>
-														<td><input type="text" id="entityDescription" style="padding: 0px;width: 100%;"></td>
+														<td><asp:TextBox runat="server" id="entityDescription" style="padding: 0px;width: 100%;"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Vade Gün Sayısı</td>
-														<td><input type="text" id="entityPaymentTerm" style="width: 100%;padding: 0px;"></td>
+														<td><asp:TextBox runat="server" id="entityPaymentTerm" style="width: 100%;padding: 0px;"></asp:TextBox></td>
 													</tr>
 													<tr></tr>
 													<tr></tr>
@@ -336,7 +336,7 @@ A company uses this software will easily track their process by using features o
 									</div>
 								</div>
 							</div>
-						</div><asp:Button runat="server" text="Add Entity Card" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;" OnClick="button_Click"></asp:Button></div>
+						</div><asp:Button runat="server" text="Add Entity Card" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;" OnClick="addEntityCard_click"></asp:Button></div>
 				</div>
 			</div>
 		</div>

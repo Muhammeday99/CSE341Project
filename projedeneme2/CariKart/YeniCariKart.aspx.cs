@@ -19,6 +19,7 @@ namespace projedeneme2.YeniCariKart
 
         }
 
+        
         protected void addEntityCard_click(object sender, EventArgs e){
             con.Open();
 
@@ -32,8 +33,8 @@ namespace projedeneme2.YeniCariKart
             string n_phoneNumber = entityPhoneNumber.Text;
             string n_entityFaxNumber = entityFaxNumber.Text;
             string n_taxNumber;
-            string n_bankAccount = entityBankAccount.Text;
-            string n_relatedPerson = entityRelatedDescription.Text;
+            string n_bankAccountNumber = entityBankAccountNumber.Text;
+            string n_relatedPerson = entityRelatedPerson.Text;
             string n_Pr_description = entityDescription.Text;
             string n_paymentTerm = entityPaymentTerm.Text;
 
@@ -48,95 +49,12 @@ namespace projedeneme2.YeniCariKart
             cmnd.Parameters.AddWithValue("@entityEmail", n_entityEmail);
             cmnd.Parameters.AddWithValue("@phoneNumber", n_phoneNumber);
             cmnd.Parameters.AddWithValue("@entityFaxNumber", n_entityFaxNumber);
-            cmnd.Parameters.AddWithValue("@bankAccount", n_bankAccount);
+            cmnd.Parameters.AddWithValue("@bankAccountNumber", n_bankAccountNumber);
             cmnd.Parameters.AddWithValue("@relatedPerson", n_relatedPerson);
             cmnd.Parameters.AddWithValue("@Pr_description", n_Pr_description);
             cmnd.Parameters.AddWithValue("@paymentTerm", n_paymentTerm);
 
             cmnd.ExecuteNonQuery();
         }
-        
-        
-        /*
-         protected void Homepage_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void User_Profile_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Login_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Register_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Proje_Tanim_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Cari_Kart_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../CariKart/CariKart.aspx");
-         }
-         protected void Doviz_Kur_Tanim_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Masraf_Tanimi_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Fatura_Giris_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Proje_Odeme_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Fatura_Odeme_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Masraf_Odeme_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Cek_Giris_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Kasa_Giris_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Tedarikci_Borc_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Müsteri_Alacak_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Bakiye_Durumu_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Kod_Degistir_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Urun_Ara_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }
-         protected void Hata_Tespit_click(object sender, EventArgs e)
-         {
-             Response.Redirect("../Homepage/Homepage.aspx");
-         }*/
     }
 }
