@@ -131,6 +131,7 @@
     <Compile Include="CariKart\CariKart.aspx.designer.cs">
       <DependentUpon>CariKart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CariKart\EntityJsonConverter.cs" />
     <Compile Include="CariKart\YeniCariKart.aspx.cs">
       <DependentUpon>YeniCariKart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +165,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CariKart\EntityCards.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
