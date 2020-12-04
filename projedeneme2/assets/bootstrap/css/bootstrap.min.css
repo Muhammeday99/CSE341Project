@@ -11233,14 +11233,16 @@ a:focus {
 
 .sidebar .nav-item.dropdown .dropdown-toggle:after,
 .topbar .nav-item.dropdown .dropdown-toggle:after {
-	width: 1rem;
+	border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    width: 1rem;
 	text-align: center;
 	float: right;
 	vertical-align: 0;
-	border: 0;
 	font-weight: 900;
 	content: "\f105";
-	font-family: Font Awesome\ 5 Free
+	font-family: "Font Awesome 5 Free"
 }
 
 .sidebar .nav-item.dropdown.show .dropdown-toggle:after,
@@ -11529,7 +11531,7 @@ a:focus {
 .sidebar #sidebarToggle:after {
 	font-weight: 900;
 	content: "\f104";
-	font-family: Font Awesome\ 5 Free;
+	font-family: "Font Awesome 5 Free";
 	margin-right: .1rem
 }
 
@@ -11548,7 +11550,7 @@ a:focus {
 
 .sidebar.toggled #sidebarToggle:after {
 	content: "\f105";
-	font-family: Font Awesome\ 5 Free;
+	font-family: "Font Awesome 5 Free";
 	margin-left: .25rem
 }
 
@@ -11631,15 +11633,17 @@ a:focus {
 	}
 
 	.sidebar .nav-item .nav-link[data-toggle=collapse]:after {
-		width: 1rem;
+		border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    width: 1rem;
 		text-align: center;
 		float: right;
 		vertical-align: 0;
-		border: 0;
 		font-weight: 900;
 		content: "\f107";
-		font-family: Font Awesome\ 5 Free
-	}
+		font-family: "Font Awesome 5 Free"
+}
 
 	.sidebar .nav-item .nav-link[data-toggle=collapse].collapsed:after {
 		content: "\f105"
@@ -11905,7 +11909,7 @@ a:focus {
 	line-height: 51px;
 	font-weight: 900;
 	content: "\f107";
-	font-family: Font Awesome\ 5 Free;
+	font-family: "Font Awesome 5 Free";
 	color: #d1d3e2
 }
 

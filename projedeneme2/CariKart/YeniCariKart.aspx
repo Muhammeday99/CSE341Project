@@ -324,13 +324,7 @@ A company uses this software will easily track their process by using features o
 									</div>
 								</div>
 							</div>
-						</div><asp:Button runat="server" text="Add Entity Card" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;"></asp:Button></div>
-				</div>
-			</div>
-		</div>
-		<footer class="bg-white sticky-footer">
-			<div class="container my-auto">
-				<div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020t;background: rgb(49,115,163);margin-top: 2%;" OnClick="addEntityCard_click"></asp:Button></div>
+						</div><asp:Button runat="server" text="Add Entity Card" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;" OnClick= addEntityCard_click ></asp:Button></div>
 				</div>
 			</div>
 		</div>
