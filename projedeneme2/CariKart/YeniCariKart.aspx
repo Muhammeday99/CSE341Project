@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="YeniCariKart.aspx.cs" Inherits="projedeneme2.CariKart.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="YeniCariKart.aspx.cs" Inherits="projedeneme2.YeniCariKart.WebForm1" %>
 
 <!DOCTYPE html>
 <html>

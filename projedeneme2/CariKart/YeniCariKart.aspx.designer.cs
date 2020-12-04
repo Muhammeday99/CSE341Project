@@ -7,7 +7,7 @@
 // </otomatik üretildi>
 //------------------------------------------------------------------------------
 
-namespace projedeneme2.CariKart
+namespace projedeneme2.YeniCariKart
 {
 
 
