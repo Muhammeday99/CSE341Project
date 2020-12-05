@@ -51,7 +51,8 @@ namespace projedeneme2.YeniCariKart
             string n_entityFaxNumber = entityFaxNumber.Text;
             inputs.Add(n_entityFaxNumber);
 
-            //string n_taxNumber;
+            string n_taxNumber = entityTaxNumber.Text;
+            inputs.Add(n_taxNumber);
 
             string n_bankAccountNumber = entityBankAccountNumber.Text;
             inputs.Add(n_bankAccountNumber);
@@ -71,7 +72,7 @@ namespace projedeneme2.YeniCariKart
             }
             else
             {
-                String q = "INSER INTO dbo.Entity_Card (entityKind,entityType,entityName,entityCode,entityAddress,entityEmail,phoneNumber,entityFaxNumber,bankAccount,relatedPerson,Pr_description,paymentTerm) VALUES (@entityKind,@entityType,@entityName,@entityCode,@entityAddress,@entityEmail,@phoneNumber,@entityFaxNumber,@bankAccount,@relatedPerson,@Pr_description,@paymentTerm)";
+                String q = "INSERT INTO dbo.Entity_Card (entityKind,entityType,entityName,entityCode,entityAddress,entityEmail,phoneNumber,entityFaxNumber,taxNumber,bankAccountNumber,relatedPerson,Pr_description,paymentTerm) VALUES (@entityKind,@entityType,@entityName,@entityCode,@entityAddress,@entityEmail,@phoneNumber,@entityFaxNumber,@taxNumber,@bankAccountNumber,@relatedPerson,@Pr_description,@paymentTerm)";
                 SqlCommand cmnd = new SqlCommand(q, con);
 
                 cmnd.Parameters.AddWithValue("@entityKind", n_entityKind);
@@ -82,12 +83,16 @@ namespace projedeneme2.YeniCariKart
                 cmnd.Parameters.AddWithValue("@entityEmail", n_entityEmail);
                 cmnd.Parameters.AddWithValue("@phoneNumber", n_phoneNumber);
                 cmnd.Parameters.AddWithValue("@entityFaxNumber", n_entityFaxNumber);
+                cmnd.Parameters.AddWithValue("@taxNumber", n_taxNumber);
                 cmnd.Parameters.AddWithValue("@bankAccountNumber", n_bankAccountNumber);
                 cmnd.Parameters.AddWithValue("@relatedPerson", n_relatedPerson);
                 cmnd.Parameters.AddWithValue("@Pr_description", n_Pr_description);
                 cmnd.Parameters.AddWithValue("@paymentTerm", n_paymentTerm);
-
+                
+                //Exceptionleri Handle Et ve Cari kart eklendikten sonra Cari kart Syfasina donsun 
+                //Exceptionlerden biri Entity Codelar unique olmalari lazim iki ayni kod olamaz exception firlat
                 cmnd.ExecuteNonQuery();
+                
             }
 
             con.Close();
