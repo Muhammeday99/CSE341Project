@@ -21,6 +21,10 @@ LOGIN SCREEN
  - [ ] CARİ KART DÜZENLE
  - [ ] CARİ KART SİL
 
+ ## Requirements
+* __ASP.NET__
+* __C#__
+* __JavaScript__
 
 
 
