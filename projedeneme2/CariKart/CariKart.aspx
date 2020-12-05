@@ -212,24 +212,7 @@ A company uses this software will easily track their process by using features o
 								<tbody>
 									
 								</tbody>
-								<tfoot>
-									<tr>
-										<td><strong>Name</strong></td>
-										<td>Summary 2</td>
-										<td><strong>Position</strong></td>
-										<td><strong>Office</strong></td>
-										<td><strong>Age</strong></td>
-										<td><strong>Start date</strong></td>
-										<td><strong>Salary</strong></td>
-										<td>Summary 8</td>
-										<td>Summary 9</td>
-										<td>Summary 10</td>
-										<td>Summary 11</td>
-										<td>Summary 12</td>
-										<td>Summary 13</td>
-										<td>Summary 14</td>
-									</tr>
-								</tfoot>
+								
 							</table>
 						</div>
 						<div class="row">
