@@ -26,7 +26,7 @@ LOGIN SCREEN
 * __C#__
 * __JavaScript__
 
-A great system for:
+ ## A great system for :
 * __Company project system__
 * __Company website with multiple user or contributors__
 * __Companies need to tracking projects__
@@ -36,3 +36,8 @@ A great system for:
  
  ## Login Screen Page
  ![loginscreen](https://user-images.githubusercontent.com/43350594/101244874-00618300-371a-11eb-8d52-7957da811e0a.png)
+ 
+ ## Homepage Page(The net image will change later !)
+ ![homepagepic](https://user-images.githubusercontent.com/43350594/101244943-8aa9e700-371a-11eb-8f29-90de09ed0632.png)
+
+ 
