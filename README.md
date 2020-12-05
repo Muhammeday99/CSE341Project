@@ -26,7 +26,6 @@ LOGIN SCREEN
 * __C#__
 * __JavaScript__
 
-## FOR WHO, WHY IT'S MADE
 A great system for:
 	* __Company project system__
 	* __Company website with multiple user or contributors__
