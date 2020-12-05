@@ -8,17 +8,17 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Windows;
 
-namespace projedeneme2.CariKart
+namespace projedeneme2
 {
-    public class EntityJsonConverter
+    public class JsonConverter
     {
         protected SqlConnection con = databaseConnect.connectToSQL();
         protected SqlDataAdapter Dadapt;
         protected DataTable table = new DataTable();
         protected DataRow Drow;
-        public DataTable ToJson()
+        public DataTable ToJson(string TableName)
         {
-            Dadapt = new SqlDataAdapter("select * from Entity_Card", con);
+            Dadapt = new SqlDataAdapter("select * from " + TableName, con);
             
             Dadapt.Fill(table);
             return table;
@@ -31,12 +31,10 @@ namespace projedeneme2.CariKart
             return JSONString;
         }
 
-        public void WriteToJsonFile(string JSONString)
+        public void WriteToJsonFile(string JSONString, string FileName)
         {
-            
-            string userfolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             string p1 = HttpContext.Current.Server.MapPath(".") + "\\";
-            System.IO.File.WriteAllText(Path.Combine(p1, "EntityCards.json"), JSONString);
+            System.IO.File.WriteAllText(Path.Combine(p1, FileName), JSONString);
         }
     }
 }

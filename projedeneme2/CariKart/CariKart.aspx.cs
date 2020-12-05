@@ -14,10 +14,10 @@ namespace projedeneme2.CariKart
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EntityJsonConverter convert = new EntityJsonConverter();
-            DataTable table = convert.ToJson();
+            JsonConverter convert = new JsonConverter();
+            DataTable table = convert.ToJson("Entity_Card");
             string str = convert.DataTableToJSON(table);
-            convert.WriteToJsonFile(str);
+            convert.WriteToJsonFile(str,"EntityCards.json");
         }
         protected void Yeni_Cari_Kart_click(object sender, EventArgs e)
         {

@@ -93,6 +93,7 @@
     <Content Include="default.aspx" />
     <Content Include="DovizKurTanim\DovizKurTanim.aspx" />
     <Content Include="Homepage\Homepage.aspx" />
+    <Content Include="Scripts\listCurrency.js" />
     <Content Include="Scripts\listCards.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -132,7 +133,7 @@
     <Compile Include="CariKart\CariKart.aspx.designer.cs">
       <DependentUpon>CariKart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CariKart\EntityJsonConverter.cs" />
+    <Compile Include="JsonConverter.cs" />
     <Compile Include="CariKart\YeniCariKart.aspx.cs">
       <DependentUpon>YeniCariKart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CariKart\EntityCards.json" />
+    <Content Include="DovizKurTanim\ExchangeList.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

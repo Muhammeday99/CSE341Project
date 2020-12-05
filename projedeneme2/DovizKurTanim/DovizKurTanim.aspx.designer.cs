@@ -15,6 +15,24 @@ namespace projedeneme2.DovizKurTanim
     {
 
         /// <summary>
+        /// CurrencyExchangeDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl CurrencyExchangeDate;
+
+        /// <summary>
+        /// CurrencyExchangeRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CurrencyExchangeRate;
+
+        /// <summary>
         /// AddNewCurrencyExchange control.
         /// </summary>
         /// <remarks>

@@ -189,15 +189,15 @@ A company uses this software will easily track their process by using features o
 									<tbody>
 										<tr>
 											<td style="width: 20%;">Döviz Kodu<br></td>
-											<td><select id="CurrencyCode"><optgroup label="Currency Code"><option value="12" selected="">TRY</option><option value="13">USD</option><option value="14">EUR</option></optgroup></select></td>
+											<td><select id="CurrencyCode"><optgroup label="Currency Code"><option value="12" selected="">TRY</option><option value="13" >USD</option><option value="14" >EUR</option></optgroup></select></td>
 										</tr>
 										<tr>
 											<td>Giriş Tarihi<br></td>
-											<td><input id="CurrencyExchangeDate" type="date"></td>
+											<td><input id="CurrencyExchangeDate" type="date" runat="server"></td>
 										</tr>
 										<tr>
 											<td>Kur<br></td>
-											<td><input type="number" id="CurrencyExchangeRate"></td>
+											<td><asp:TextBox type="number" step="0.1" ID="CurrencyExchangeRate" runat="server"></asp:TextBox></td>
 										</tr>
 									</tbody>
 								</table>
@@ -218,7 +218,7 @@ A company uses this software will easily track their process by using features o
 							</div>
 						</div>
 						<div class="table-responsive table mt-2" id="currencyTable" role="grid" aria-describedby="currencyTable_info">
-							<table class="table my-0" id="dataTable">
+							<table class="table my-0" id="CurrencyDataTable">
 								<thead>
 									<tr>
 										<th>Döviz Kodu</th>
@@ -227,56 +227,7 @@ A company uses this software will easily track their process by using features o
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Dolar</td>
-										<td>5.78</td>
-										<td>Tokyo</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Euro</td>
-										<td>5.78<br></td>
-										<td>London</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Euro</td>
-										<td>5.78<br></td>
-										<td>San Francisco</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Dolar</td>
-										<td>5.78<br></td>
-										<td>London</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Euro</td>
-										<td>5.78<br></td>
-										<td>San Francisco</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg">Dolar</td>
-										<td>5.78<br></td>
-										<td>New York</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Dolar<br></td>
-										<td>5.78<br></td>
-										<td>London</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar3.jpeg">Dolar</td>
-										<td>5.78<br></td>
-										<td>New York</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar4.jpeg">Euro</td>
-										<td>5.78<br></td>
-										<td>New York</td>
-									</tr>
-									<tr>
-										<td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar5.jpeg">Dolar</td>
-										<td>5.78<br></td>
-										<td>Edinburgh</td>
-									</tr>
+									
 								</tbody>
 								<tfoot>
 									<tr>
@@ -319,6 +270,7 @@ A company uses this software will easily track their process by using features o
 	<script src="assets/js/bs-init.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
+	<script src="../Scripts/listCurrency.js"></script>
 	</form>
 </body>
 
