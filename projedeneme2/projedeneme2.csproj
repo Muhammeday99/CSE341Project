@@ -91,6 +91,7 @@
     <Content Include="CariKart\YeniCariKart.aspx" />
     <Content Include="CompanyPage\ShowAndUpdateCompanyInfo.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="Doviz Kur Tanim\DovizKurTanim.aspx" />
     <Content Include="Homepage\Homepage.aspx" />
     <Content Include="Scripts\listCards.js" />
     <Content Include="Web.config" />
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doviz Kur Tanim\DovizKurTanim.aspx.cs">
+      <DependentUpon>DovizKurTanim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doviz Kur Tanim\DovizKurTanim.aspx.designer.cs">
+      <DependentUpon>DovizKurTanim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Homepage\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
