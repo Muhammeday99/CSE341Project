@@ -39,7 +39,7 @@ namespace projedeneme2.Homepage
         }
         protected void Doviz_Kur_Tanim_click(object sender, EventArgs e)
         {
-            Response.Redirect("../Homepage/Homepage.aspx");
+            Response.Redirect("../DovizKurTanim/DovizKurTanim.aspx");
         }
         protected void Masraf_Tanimi_click(object sender, EventArgs e)
         {
