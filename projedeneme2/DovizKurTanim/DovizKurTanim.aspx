@@ -195,18 +195,17 @@ A company uses this software will easily track their process by using features o
 											<td>Giriş Tarihi<br></td>
 											<td><input id="CurrencyExchangeDate" type="date" runat="server"></td>
 										</tr>
-										<tr>
-											<td>Kur<br></td>
+										Kur<br></td>
 											<td><asp:TextBox type="number" step="0.1" ID="CurrencyExchangeRate" runat="server"></asp:TextBox></td>
 										</tr>
 									</tbody>
 								</table>
-							</div><asp:Button runat="server" text="Add Currency Exchange" class="btn btn-primary" id="AddNewCurrencyExchange" style="float: left;background: rgb(49,115,163);margin-top: 2%;"></asp:Button></div>
+							</div><asp:Button runat="server" text="Add Currency Exchange" class="btn btn-primary" id="AddNewCurrencyExchange" style="float: left;background: rgb(49,115,163);margin-top: 2%;" OnClick="AddNewCurrency_Click"></asp:Button></div>
 					</div>
 				</div>
 				<div class="card shadow">
 					<div class="card-header py-3">
-						<p class="text-primary m-0 font-weight-bold">Döviz Kur Tanımları</p>
+						<p class="text-primary m-0 font-weight-bold">Döviz Kur Tanımları">Döviz Kur Tanımları</p>
 					</div>
 					<div class="card-body">
 						<div class="row">

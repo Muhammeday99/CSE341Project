@@ -25,46 +25,61 @@ namespace projedeneme2.YeniCariKart
 
             List<string> inputs =new  List<string>();
 
+            /*
             string n_entityKind = entityKind.Text;
             inputs.Add(n_entityKind);
+            somehow it is a boolean.*/
+            bool n_entityKind = true;
 
+            /*
             string n_entityType = entityType.Text;
             inputs.Add(n_entityType);
+            somehow it is a boolean.*/
+            bool n_entityType = false;
 
+            //name of the entity.
             string n_entityName = entityName.Text;
             inputs.Add(n_entityName);
 
+            //code of the entity, as string
             string n_entityCode = entityCode.Text;
             inputs.Add(n_entityCode);
 
+            //adress of the entity, as string
             string n_entityAddress = entityAddress.Text;
             inputs.Add(n_entityAddress);
 
+            //email adress of the entity, as string
             string n_entityEmail = entityEmail.Text;
             inputs.Add(n_entityEmail);
 
-            //string n_phoneCountry;
+            //phone number of the entity, as integer
+            long n_phoneNumber = -1;
+            if (!Int64.TryParse(entityPhoneNumber.Text, out n_phoneNumber)) return;
 
-            string n_phoneNumber = entityPhoneNumber.Text;
-            inputs.Add(n_phoneNumber);
+            //fax number of the entity, as integer
+            long n_entityFaxNumber = -1;
+            if (!Int64.TryParse(entityFaxNumber.Text, out n_entityFaxNumber)) return;
 
-            string n_entityFaxNumber = entityFaxNumber.Text;
-            inputs.Add(n_entityFaxNumber);
+            //tax number of the entity, as integer.
+            long n_taxNumber = -1;
+            if (!Int64.TryParse(entityTaxNumber.Text, out n_taxNumber)) return;
 
-            string n_taxNumber = entityTaxNumber.Text;
-            inputs.Add(n_taxNumber);
+            //bank account number of the entity, as integer.
+            long n_bankAccountNumber = -1;
+            if (!Int64.TryParse(entityBankAccountNumber.Text,out n_bankAccountNumber)) return;     
 
-            string n_bankAccountNumber = entityBankAccountNumber.Text;
-            inputs.Add(n_bankAccountNumber);
-
+            //related person of the entity, as string
             string n_relatedPerson = entityRelatedPerson.Text;
             inputs.Add(n_relatedPerson);
 
+            //pr description of the entity, as string
             string n_Pr_description = entityDescription.Text;
             inputs.Add(n_Pr_description);
 
-            string n_paymentTerm = entityPaymentTerm.Text;
-            inputs.Add(n_paymentTerm);
+            //payment term of the entity, as integer.
+            long n_paymentTerm = -1;
+            if (!Int64.TryParse(entityPaymentTerm.Text, out n_paymentTerm)) return;    
 
             if (!stringController.listStringController(inputs))
             {
@@ -92,7 +107,6 @@ namespace projedeneme2.YeniCariKart
                 //Exceptionleri Handle Et ve Cari kart eklendikten sonra Cari kart Syfasina donsun 
                 //Exceptionlerden biri Entity Codelar unique olmalari lazim iki ayni kod olamaz exception firlat
                 cmnd.ExecuteNonQuery();
-                
             }
 
             con.Close();
