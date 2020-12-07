@@ -22,6 +22,13 @@ namespace projedeneme2.AdminPage
         {
 
         }
+        
+        protected string Encrypt(string clearText)
+        {
+            byte[] b = System.Text.ASCIIEncoding.ASCII.GetBytes(clearText);
+            string enc = Convert.ToBase64String(b);
+            return enc;
+        }
 
         //In this section, the information received from the text box is saved in the database.
         protected void saveButtonClick(object sender, EventArgs e)
@@ -60,7 +67,7 @@ namespace projedeneme2.AdminPage
 
                 SqlCommand cmnd = new SqlCommand(q,con);
 
-                cmnd.Parameters.AddWithValue("@Password", uPassword);
+                cmnd.Parameters.AddWithValue("@Password", Encrypt(uPassword));
                 cmnd.Parameters.AddWithValue("@Status", isAdmin);
                 cmnd.Parameters.AddWithValue("@ProfilePicture", Image1.ImageUrl);
                 cmnd.Parameters.AddWithValue("@UserEmail", uEmail);

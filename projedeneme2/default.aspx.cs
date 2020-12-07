@@ -6,6 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Security.Cryptography;
+using System.IO;
+using System.Text;
 
 namespace projedeneme2
 {
@@ -37,6 +41,7 @@ namespace projedeneme2
                   
             userEmail = InputEmail.Text;
             userPassword = InputPassword.Text;
+            
             isLoggedIn = IsValidLogin(userEmail, userPassword);
             if (isLoggedIn)
             {
@@ -57,10 +62,14 @@ namespace projedeneme2
                 statusLabel.Text = "Email yada şifre hatalı!";
             }
         }
+       
+
+
         //Checks if you are logged in, email and password are correct
         public bool IsValidLogin(string userEmail, string userPassword)
         {
-  
+            
+
             SqlCommand check = new SqlCommand("SELECT * FROM Users WHERE UserEmail=@userEmail AND Password=@userPassword", con);
             check.Parameters.AddWithValue("@userEmail", userEmail);
             check.Parameters.AddWithValue("@userPassword", userPassword);
