@@ -30,6 +30,20 @@ namespace projedeneme2
         {
             
         }
+        protected string decrypt(string str)
+        {
+            string _result = string.Empty;
+            char[] temp = str.ToCharArray();
+            foreach (var _singleChar in temp)
+            {
+                var i = (int)_singleChar;
+                i = i - 2;
+                _result += (char)i;
+            }
+            return _result;
+        }
+
+
         //The registered user query is made on the login page.
         //If the login is verified, the user logs into the system.
         protected void LoginButton_Click(object sender, EventArgs e)
@@ -40,8 +54,12 @@ namespace projedeneme2
             string userPassword = string.Empty;
                   
             userEmail = InputEmail.Text;
-            userPassword = InputPassword.Text;
+            userPassword = decrypt(InputPassword.Text);
+
             
+            Console.WriteLine("{0}", decrypt(userPassword));
+
+
             isLoggedIn = IsValidLogin(userEmail, userPassword);
             if (isLoggedIn)
             {
