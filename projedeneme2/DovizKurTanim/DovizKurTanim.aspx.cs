@@ -32,14 +32,25 @@ namespace projedeneme2.DovizKurTanim
             //CurrencyCode.Text;
             string n_CurrencyCode = "USD";
 
-            //Figuring out how to read date..
-            double n_CurrencyExchangeRate = Convert.ToDouble(CurrencyExchangeDate.Value);
+            //date of the currency
+            string n_CurrencyDate = CurrencyExchangeDate.Text;
 
-            string q = "INSERT INTO dbo.Currency (CurrencyCode, CurrencyExchangeRate) VALUES (@CurrencyCode, CurrencyExchangeRate)";
-            SqlCommand cmd = new SqlCommand(q, con);
+            double n_CurrencyExchangeRate = double.Parse(CurrencyExchangeRate.Text, System.Globalization.CultureInfo.InvariantCulture);
+            if (n_CurrencyExchangeRate < 0)
+            {
+                //error label
+            }
+            else
+            {
+                string q = "INSERT INTO dbo.Currency (CurrencyCode,CurrencyExchangeDate,CurrencyExchangeRate) VALUES (@CurrencyCode,@CurrencyExchangeDate,@CurrencyExchangeRate)";
+                SqlCommand cmd = new SqlCommand(q, con);
 
-            cmd.Parameters.AddWithValue("@CurrencyCode",n_CurrencyCode);
-            cmd.Parameters.AddWithValue("@CurrencyExchangeRate", n_CurrencyExchangeRate);
+                cmd.Parameters.AddWithValue("@CurrencyCode", n_CurrencyCode);
+                cmd.Parameters.AddWithValue("@CurrencyExchangeDate", n_CurrencyDate);
+                cmd.Parameters.AddWithValue("@CurrencyExchangeRate", n_CurrencyExchangeRate);
+
+                cmd.ExecuteNonQuery();
+            }
 
             con.Close();
         }

@@ -21,7 +21,7 @@ namespace projedeneme2.DovizKurTanim
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl CurrencyExchangeDate;
+        protected global::System.Web.UI.WebControls.TextBox CurrencyExchangeDate;
 
         /// <summary>
         /// CurrencyExchangeRate denetimi.

@@ -193,7 +193,7 @@ A company uses this software will easily track their process by using features o
 										</tr>
 										<tr>
 											<td>Giriş Tarihi<br></td>
-											<td><input id="CurrencyExchangeDate" type="date" runat="server"></td>
+											<td><asp:TextBox id="CurrencyExchangeDate" TextMode="Date" runat="server"></asp:TextBox></td>
 										</tr>
 										Kur<br></td>
 											<td><asp:TextBox type="number" step="0.1" ID="CurrencyExchangeRate" runat="server"></asp:TextBox></td>
