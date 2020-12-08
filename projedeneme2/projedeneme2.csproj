@@ -133,6 +133,7 @@
     <Compile Include="CariKart\CariKart.aspx.designer.cs">
       <DependentUpon>CariKart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InputControllers\encryption.cs" />
     <Compile Include="JsonConverter.cs" />
     <Compile Include="CariKart\YeniCariKart.aspx.cs">
       <DependentUpon>YeniCariKart.aspx</DependentUpon>
