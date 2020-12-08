@@ -22,21 +22,14 @@ namespace projedeneme2.AdminPage
         {
 
         }
-        
-        
-        protected string encrypt(string str)
+
+
+        public string EnryptString(string strEncrypted)
         {
-            string _result = string.Empty;
-            char[] temp = str.ToCharArray();
-            foreach (var _singleChar in temp)
-            {
-                var i = (int)_singleChar;
-                i = i - 2;
-                _result += (char)i;
-            }
-            return _result;
+            byte[] b = System.Text.ASCIIEncoding.ASCII.GetBytes(strEncrypted);
+            string encrypted = Convert.ToBase64String(b);
+            return encrypted;
         }
-        //In this section, the information received from the text box is saved in the database.
         protected void saveButtonClick(object sender, EventArgs e)
         {
             con.Open();
@@ -73,7 +66,7 @@ namespace projedeneme2.AdminPage
 
                 SqlCommand cmnd = new SqlCommand(q,con);
 
-                cmnd.Parameters.AddWithValue("@Password", encrypt(uPassword));
+                cmnd.Parameters.AddWithValue("@Password", EnryptString(uPassword));
                 cmnd.Parameters.AddWithValue("@Status", isAdmin);
                 cmnd.Parameters.AddWithValue("@ProfilePicture", Image1.ImageUrl);
                 cmnd.Parameters.AddWithValue("@UserEmail", uEmail);
