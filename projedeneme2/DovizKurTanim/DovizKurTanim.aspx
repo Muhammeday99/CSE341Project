@@ -195,7 +195,8 @@ A company uses this software will easily track their process by using features o
 											<td>Giriş Tarihi<br></td>
 											<td><asp:TextBox id="CurrencyExchangeDate" TextMode="Date" runat="server"></asp:TextBox></td>
 										</tr>
-										Kur<br></td>
+										<tr>
+											<td>Kur<br></td>
 											<td><asp:TextBox type="number" step="0.1" ID="CurrencyExchangeRate" runat="server"></asp:TextBox></td>
 										</tr>
 									</tbody>
