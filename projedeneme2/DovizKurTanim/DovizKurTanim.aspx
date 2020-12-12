@@ -189,7 +189,7 @@ A company uses this software will easily track their process by using features o
 									<tbody>
 										<tr>
 											<td style="width: 20%;">Döviz Kodu<br></td>
-											<td><select id="CurrencyCode"><optgroup label="Currency Code"><option value="12" selected="">TRY</option><option value="13" >USD</option><option value="14" >EUR</option></optgroup></select></td>
+											<td><select id="CurrencyCode" name="CurrencyCode"><optgroup label="Currency Code"><option value="TRY" selected="">TRY</option><option value="USD" >USD</option><option value="EUR" >EUR</option></optgroup></select></td>
 										</tr>
 										<tr>
 											<td>Giriş Tarihi<br></td>
@@ -206,7 +206,7 @@ A company uses this software will easily track their process by using features o
 				</div>
 				<div class="card shadow">
 					<div class="card-header py-3">
-						<p class="text-primary m-0 font-weight-bold">Döviz Kur Tanımları">Döviz Kur Tanımları</p>
+						<p class="text-primary m-0 font-weight-bold">Döviz Kur Tanımları</p>
 					</div>
 					<div class="card-body">
 						<div class="row">
