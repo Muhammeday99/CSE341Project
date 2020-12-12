@@ -214,11 +214,21 @@ A company uses this software will easily track their process by using features o
                                                 <tbody>
                                                     <tr>
                                                         <td style="width: 20%;">Cari Türü<br></td>
-                                                        <td><select id="entityKind" name="entityKind" style="min-width: 40%;"><optgroup label="Cari Türü"><option value="12" selected="">Firma</option><option value="13">Şahış</option></optgroup></select></td>
+                                                        <td><select id="entityKind" name="entityKind" style="min-width: 40%;">
+																<optgroup label="Cari Türü">
+																	<option value="12" selected="">Firma</option>
+																	<option value="13">Şahış</option>
+																</optgroup>
+                                                            </select></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Cari Hesap Tipi<br></td>
-                                                        <td><select id="entityType" name="entityType" style="min-width: 40%;"><optgroup label="Cari Hesap Tipi"><option value="12" selected="">Müşteri</option><option value="13">Tedarikçi</option></optgroup></select></td>
+                                                        <td><select id="entityType" name="entityType" style="min-width: 40%;">
+																<optgroup label="Cari Hesap Tipi">
+																	<option value="12" selected="">Müşteri</option>
+																	<option value="13">Tedarikçi</option>
+																</optgroup>
+                                                            </select></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Cari Adı<br></td>
