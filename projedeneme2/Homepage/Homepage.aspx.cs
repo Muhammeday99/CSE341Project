@@ -47,7 +47,7 @@ namespace projedeneme2.Homepage
         }
         protected void Fatura_Giris_click(object sender, EventArgs e)
         {
-            Response.Redirect("../Homepage/Homepage.aspx");
+            Response.Redirect("../FaturaGiris/FaturaGiris.aspx");
         }
         protected void Proje_Odeme_click(object sender, EventArgs e)
         {

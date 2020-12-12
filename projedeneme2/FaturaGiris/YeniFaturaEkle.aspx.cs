@@ -7,9 +7,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace projedeneme2.BillPage
+namespace projedeneme2.YeniFaturaEkle
 {
-    public partial class AddBillInfo : System.Web.UI.Page
+    
+    public partial class YeniFaturaEkleWebForm : projedeneme2.FaturaGiris.FaturaGirisWebForm
     {
 
         protected SqlConnection con = databaseConnect.connectToSQL();
@@ -22,7 +23,7 @@ namespace projedeneme2.BillPage
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /*
             con.Open();
             SqlCommand check = new SqlCommand("SELECT [entityCode] FROM [dbo].[Entity_Card]");
             check.CommandType = System.Data.CommandType.Text;
@@ -40,10 +41,21 @@ namespace projedeneme2.BillPage
             entity.Text = temp;
 
             reader.Close();
+            */
         }
-        // In this we do get values from BillNo, BillDate,BillDescription,PaymentDate,KDV,Amount Textboxes:
-        protected void saveButtonClick(object sender, EventArgs e)
+
+        
+
+        protected void AddNewInvoice_Click(object sender, EventArgs e)
         {
+            //AŞAĞIDAKİ ADDBILL_CLICK METODUNUN BURAYA TAŞINMASI GEREKİYOR. BUTONLARIN ID'LERİNDE DEĞİŞİKLİK YAPTIM. METODDAKİ ID'LERIN YENİSİNE GÖRE UPDATE EDİLMESİ LAZIM. 
+        }
+
+        /*
+        // In this we do get values from BillNo, BillDate,BillDescription,PaymentDate,KDV,Amount Textboxes:
+        protected void AddBill_click(object sender, EventArgs e)
+        {
+            
             List<string> inputs = new List<string>();
 
             string BillNo = BillNoBox.Text;
@@ -85,10 +97,12 @@ namespace projedeneme2.BillPage
                 
             }
             con.Close();
+            
         }
 
         protected void totalAmountCalculator(object sender, EventArgs e)
         {
+            /*
             string KDV = Convert.ToString(KDVBox.Text);
             string Amount = Convert.ToString(AmountBox.Text);
 
@@ -104,6 +118,8 @@ namespace projedeneme2.BillPage
 
             TotalAmount.Text = Convert.ToString(((Kdvv * AAmount) / 100) + AAmount);
             TotalamountTitle.Text = "Total Amount:";
+            
         }
+        */
     }
 }
