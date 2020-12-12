@@ -216,8 +216,8 @@ A company uses this software will easily track their process by using features o
                                                         <td style="width: 20%;">Cari Türü<br></td>
                                                         <td><select id="entityKind" name="entityKind" style="min-width: 40%;">
 																<optgroup label="Cari Türü">
-																	<option value="12" selected="">Firma</option>
-																	<option value="13">Şahış</option>
+																	<option value="Firma" selected="">Firma</option>
+																	<option value="Şahış">Şahış</option>
 																</optgroup>
                                                             </select></td>
                                                     </tr>
@@ -225,8 +225,8 @@ A company uses this software will easily track their process by using features o
                                                         <td>Cari Hesap Tipi<br></td>
                                                         <td><select id="entityType" name="entityType" style="min-width: 40%;">
 																<optgroup label="Cari Hesap Tipi">
-																	<option value="12" selected="">Müşteri</option>
-																	<option value="13">Tedarikçi</option>
+																	<option value="Müşteri" selected="">Müşteri</option>
+																	<option value="Tedarikçi">Tedarikçi</option>
 																</optgroup>
                                                             </select></td>
                                                     </tr>
@@ -338,7 +338,7 @@ A company uses this software will easily track their process by using features o
                                     </div>
                                 </div>
                             </div>
-                        </div><asp:LinkButton runat="server" OnClick="addEntityCard_click" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Cari Kart Ekle</asp:LinkButton></div>
+                        </div><asp:LinkButton runat="server" OnClick="AddEntityCard_click" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Cari Kart Ekle</asp:LinkButton></div>
                 </div>
             </div>
 		</div>
