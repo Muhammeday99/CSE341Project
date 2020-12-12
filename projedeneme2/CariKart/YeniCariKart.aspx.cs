@@ -29,12 +29,16 @@ namespace projedeneme2.YeniCariKart
             string n_entityKind = entityKind.Text;
             inputs.Add(n_entityKind);
             somehow it is a boolean.*/
+
+            //DÜZELTİMESİ LAZIM, ÇALIŞMAYACAK.
             bool n_entityKind = true;
 
             /*
             string n_entityType = entityType.Text;
             inputs.Add(n_entityType);
             somehow it is a boolean.*/
+
+            //DÜZELTİMESİ LAZIM, ÇALIŞMAYACAK.
             bool n_entityType = false;
 
             //name of the entity.
@@ -61,25 +65,28 @@ namespace projedeneme2.YeniCariKart
             long n_entityFaxNumber = -1;
             if (!Int64.TryParse(entityFaxNumber.Text, out n_entityFaxNumber)) return;
 
+            long n_taxOffice = -1;
+            if (!Int64.TryParse(taxOffice.Text, out n_taxOffice)) return;
+
             //tax number of the entity, as integer.
             long n_taxNumber = -1;
-            if (!Int64.TryParse(entityTaxNumber.Text, out n_taxNumber)) return;
+            if (!Int64.TryParse(taxNumber.Text, out n_taxNumber)) return;
 
             //bank account number of the entity, as integer.
             long n_bankAccountNumber = -1;
-            if (!Int64.TryParse(entityBankAccountNumber.Text,out n_bankAccountNumber)) return;     
+            if (!Int64.TryParse(bankAccountNumber.Text,out n_bankAccountNumber)) return;     
 
             //related person of the entity, as string
-            string n_relatedPerson = entityRelatedPerson.Text;
+            string n_relatedPerson = relatedPerson.Text;
             inputs.Add(n_relatedPerson);
 
             //pr description of the entity, as string
-            string n_Pr_description = entityDescription.Text;
+            string n_Pr_description = Pr_description.Text;
             inputs.Add(n_Pr_description);
 
             //payment term of the entity, as integer.
             long n_paymentTerm = -1;
-            if (!Int64.TryParse(entityPaymentTerm.Text, out n_paymentTerm)) return;    
+            if (!Int64.TryParse(paymentTerm.Text, out n_paymentTerm)) return;    
 
             if (!stringController.listStringController(inputs))
             {
