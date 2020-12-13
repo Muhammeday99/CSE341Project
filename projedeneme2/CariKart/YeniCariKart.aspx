@@ -197,136 +197,150 @@ A company uses this software will easily track their process by using features o
 			</div>
 			</nav>
 			<div class="container-fluid">
-				<h3 class="text-dark mb-4">Cari Kart Tanımı</h3>
-				<div class="card shadow">
-					<div class="card-header py-3"><span>Yeni Cari Kart Ekle</span></div>
-					<div class="card-body">
-						<div class="row" style="height: 100%;">
-							<div class="col" style="margin-bottom: 3%;">
-								<div class="card" style="height: 100%;">
-									<div class="card-body">
-										<h4 class="card-title">Temel Bilgiler</h4>
-										<div class="table-responsive">
-											<table class="table">
-												<thead>
-												</thead>
-												<tbody>
-													<tr>
-														<td style="width: 20%;">Cari Türü<br></td>
-														<td><asp:TextBox runat="server" id="entityKind" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td>Cari Hesap Tipi<br></td>
-														<td><asp:TextBox runat="server" id="entityType" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td class="auto-style1">Cari Adı<br></td>
-														<td class="auto-style1"><asp:TextBox runat="server" id="entityName" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td>Cari Kodu<br></td>
-														<td><asp:TextBox runat="server" id="entityCode" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td>Adresi<br></td>
-														<td><asp:TextBox runat="server" id="entityAddress" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col" style="margin-bottom: 3%;">
-								<div class="card" style="height: 100%;">
-									<div class="card-body" style="height: 100%;">
-										<h4 class="card-title">İletişim Bilgileri</h4>
-										<div class="table-responsive">
-											<table class="table">
-												<thead>
-												</thead>
-												<tbody>
-													<tr>
-														<td style="width: 20%;">E-posta</td>
-														<td><asp:TextBox runat="server" id="entityEmail" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td class="auto-style1">Telefon No</td>
-														<td class="auto-style1"><asp:TextBox runat="server" id="entityPhoneNumber" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td>Faks No</td>
-														<td><asp:TextBox runat="server" id="entityFaxNumber" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="auto-style2" style="margin-bottom: 3%;">
-								<div class="card">
-									<div class="card-body">
-										<h4 class="card-title">Banka Bilgileri</h4>
-										<div class="table-responsive">
-											<table class="table">
-												<thead>
-												</thead>
-												<tbody>
-													<tr>
-														<td class="auto-style3">Vergi Dairesi</td>
-														<td class="auto-style1"><asp:TextBox runat="server" id="entityTaxOffice" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td>Vergi Numarası</td>
-														<td><asp:TextBox runat="server" id="entityTaxNumber" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td>Banka Numarası</td>
-														<td><asp:TextBox runat="server" id="entityBankAccountNumber" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col" style="margin-bottom: 3%;">
-								<div class="card" style="height: 100%;">
-									<div class="card-body">
-										<h4 class="card-title">Diğer Bilgiler</h4>
-										<div class="table-responsive">
-											<table class="table">
-												<thead>
-												</thead>
-												<tbody>
-													<tr>
-														<td style="width: 30%;">Karşı Tarafın İlgili Kişisi</td>
-														<td><asp:TextBox runat="server" id="entityRelatedPerson" style="padding: 0px;width: 100%;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td>Açıklama</td>
-														<td><asp:TextBox runat="server" id="entityDescription" style="padding: 0px;width: 100%;"></asp:TextBox></td>
-													</tr>
-													<tr>
-														<td>Vade Gün Sayısı</td>
-														<td><asp:TextBox runat="server" id="entityPaymentTerm" style="width: 100%;padding: 0px;"></asp:TextBox></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div><asp:Button runat="server" text="Add Entity Card" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;" OnClick= addEntityCard_click ></asp:Button></div>
-				</div>
-			</div>
+                <h3 class="text-dark mb-4">Cari Kart Tanımı</h3>
+                <div class="card shadow">
+                    <div class="card-header py-3"><span>Yeni Cari Kart Ekle</span></div>
+                    <div class="card-body">
+                        <div class="row" style="height: 100%;">
+                            <div class="col">
+                                <div class="card" style="height: 97%;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Temel Bilgiler</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 20%;">Cari Türü<br></td>
+                                                        <td><select id="entityKind" name="entityKind" style="min-width: 40%;">
+																<optgroup label="Cari Türü">
+																	<option value="Firma" selected="">Firma</option>
+																	<option value="Şahış">Şahış</option>
+																</optgroup>
+                                                            </select></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cari Hesap Tipi<br></td>
+                                                        <td><select id="entityType" name="entityType" style="min-width: 40%;">
+																<optgroup label="Cari Hesap Tipi">
+																	<option value="Müşteri" selected="">Müşteri</option>
+																	<option value="Tedarikçi">Tedarikçi</option>
+																</optgroup>
+                                                            </select></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cari Adı<br></td>
+                                                        <td><asp:TextBox runat="server" id="entityName" placeholder="Entity Name" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cari Kodu<br></td>
+                                                        <td><asp:TextBox runat="server" id="entityCode" placeholder="Entity Code" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Adresi<br></td>
+                                                        <td><asp:TextBox runat="server" id="entityAddress" placeholder="Entity Address" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="height: 97%;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">İletişim Bilgileri</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 20%;">E-posta</td>
+                                                        <td><asp:TextBox runat="server" id="entityEmail" placeholder="E-mail" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Telefon No</td>
+                                                        <td><asp:TextBox runat="server" id="entityPhoneNumber" placeholder="Phone Number" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Faks No</td>
+                                                        <td><asp:TextBox runat="server" id="entityFaxNumber" placeholder="Fax Number" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr></tr>
+                                                    <tr></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 100%;">
+                            <div class="col">
+                                <div class="card" style="height: 97%;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Banka Bilgileri</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 20%;">Vergi Dairesi<br></td>
+                                                        <td><asp:TextBox runat="server" id="taxOffice" placeholder="Tax Office" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Vergi Numarası<br></td>
+                                                        <td><asp:TextBox runat="server" id="taxNumber" placeholder="Tax Number" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Banka Numarası<br></td>
+                                                        <td><asp:TextBox runat="server" id="bankAccountNumber" placeholder="Bank Account Number" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="height: 97%;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Diğer Bilgiler</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 20%;">Karşı Tarafın İlgili Kişisi<br></td>
+                                                        <td><asp:TextBox runat="server" id="relatedPerson" placeholder="Related Person" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Açıklama</td>
+                                                        <td><asp:TextBox runat="server" id="Pr_description" placeholder="Description" style="min-width: 100%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Vade Gün Sayısı</td>
+                                                        <td><asp:TextBox runat="server" type="number" id="paymentTerm" name="entityPaymentTerm" placeholder="Payment Term" min="0" step="1" style="max-width: 50%;"></asp:TextBox></td>
+                                                    </tr>
+                                                    <tr></tr>
+                                                    <tr></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><asp:LinkButton runat="server" OnClick="AddEntityCard_click" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Cari Kart Ekle</asp:LinkButton></div>
+                </div>
+            </div>
 		</div>
 		<footer class="bg-white sticky-footer">
 			<div class="container my-auto">

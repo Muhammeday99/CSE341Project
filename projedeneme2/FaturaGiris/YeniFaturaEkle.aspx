@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DovizKurTanim.aspx.cs" Inherits="projedeneme2.DovizKurTanim.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="YeniFaturaEkle.aspx.cs" Inherits="projedeneme2.YeniFaturaEkle.YeniFaturaEkleWebForm" %>
 
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,27 @@ A company uses this software will easily track their process by using features o
 	<link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
 	<link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
 	<link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
+    <style type="text/css">
+        .auto-style1 {
+            height: 28px;
+        }
+        .auto-style2 {
+            position: relative;
+            width: 100%;
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            padding-left: .75rem;
+            padding-right: .75rem;
+        }
+        .auto-style3 {
+            width: 20%;
+            height: 28px;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -176,91 +197,88 @@ A company uses this software will easily track their process by using features o
 			</div>
 			</nav>
 			<div class="container-fluid">
-				<h3 class="text-dark mb-4">Döviz Kur Tanımı</h3>
-				<div class="col" style="margin-bottom: 3%;padding-right: 0px;padding-left: 0px;">
-					<div class="card" style="height: 100%;">
-						<div class="card-body">
-							<h4 class="card-title">Yeni Döviz Kuru Ekle</h4>
-							<div class="table-responsive">
-								<table class="table">
-									<thead>
-										<tr></tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td style="width: 20%;">Döviz Kodu<br></td>
-											<td><select id="CurrencyCode" name="CurrencyCode">
-												<optgroup label="Currency Code">
-													<option value="TRY" selected="">TRY</option>
-													<option value="USD" >USD</option>
-													<option value="EUR" >EUR</option>
-												</optgroup>
-											    </select></td>
-										</tr>
-										<tr>
-											<td>Giriş Tarihi<br></td>
-											<td><asp:TextBox runat="server" TextMode="Date" ID="CurrencyExchangeDate" ></asp:TextBox></td>
-										</tr>
-										<tr>
-											<td>Kur<br></td>
-											<td><asp:TextBox runat="server" type="number" ID="CurrencyExchangeRate" min="0" step="0.01" placeholder="Exchange Rate"></asp:TextBox></td>
-										</tr>
-									</tbody>
-								</table>
-							</div><asp:Button runat="server" text="Add Currency Exchange" class="btn btn-primary" id="AddNewCurrencyExchange" style="float: left;background: rgb(49,115,163);margin-top: 2%;" OnClick="AddNewCurrency_Click"></asp:Button></div>
-					</div>
-				</div>
+				<h3 class="text-dark mb-4">Fatura Giriş</h3>
 				<div class="card shadow">
-					<div class="card-header py-3">
-						<p class="text-primary m-0 font-weight-bold">Döviz Kur Tanımları</p>
-					</div>
+					<div class="card-header py-3"><span>Yeni Fatura Ekle</span></div>
 					<div class="card-body">
-						<div class="row">
-							<div class="col-md-6 text-nowrap">
-								<div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm"><option value="10" selected="">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>&nbsp;</label></div>
+						<div class="row" style="height: 100%;">
+							<div class="col">
+								<div class="card" style="height: 97%;">
+									<div class="card-body">
+										<h4 class="card-title">Temel Bilgiler</h4>
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr></tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td style="width: 20%;">Fatura Numarası<br></td>
+														<td><asp:TextBox runat="server" id="InvoiceNumber" style="padding: 0px;min-width: 100%;" placeholder="Invoice Number"></asp:TextBox></td>
+													</tr>
+													<tr>
+														<td>Fatura Tarihi<br></td>
+														<td><asp:TextBox runat="server" id="InvoiceDate" type="date" name="InvoiceDate"></asp:TextBox></td>
+													</tr>
+													<tr>
+														<td>Cari Kodu<br></td>
+														<td><asp:TextBox runat="server" id="entityCode" style="padding: 0px;min-width: 100%;" placeholder="Entity Code"></asp:TextBox></td>
+													</tr>
+													<tr>
+														<td>Açıklama<br></td>
+														<td><asp:TextBox runat="server" id="InvoiceDescription" style="padding: 0px;min-width: 100%;" placeholder="Description"></asp:TextBox></td>
+													</tr>
+													<tr>
+														<td>Vade Tarihi<br></td>
+														<td><asp:TextBox runat="server" id="PaymentDate" type="date" name="PaymentDate"></asp:TextBox></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+							<div class="col">
+								<div class="card" style="height: 97%;">
+									<div class="card-body">
+										<h4 class="card-title">Tutar Bilgileri</h4>
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr></tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Döviz Kodu<br></td>
+														<td><select id="CurrencyCode" name="CurrencyCode">
+																<optgroup label="Döviz Kodu">
+																	<option value="TRY" selected="">TRY</option>
+																	<option value="USD">USD</option>
+																	<option value="EUR">EUR</option>
+																</optgroup>
+														    </select></td>
+													</tr>
+													<tr>
+														<td style="width: 20%;">Tutar</td>
+														<td><asp:TextBox runat="server" type="number" id="Amount" placeholder="Amount"></asp:TextBox></td>
+													</tr>
+													<tr>
+														<td>KDV (yüzde)</td>
+														<td><asp:TextBox runat="server" type="number" id="KDVpercentage" min="0" step="0.1" placeholder="KDV Percentage"></asp:TextBox></td>
+													</tr>
+													<tr>
+														<td>Toplam Tutar</td>
+														<td><asp:TextBox runat="server" type="number" id="TotalAmount" placeholder="Total Amount"></asp:TextBox></td>
+													</tr>
+													<tr></tr>
+													<tr></tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="table-responsive table mt-2" id="currencyTable" role="grid" aria-describedby="currencyTable_info">
-							<table class="table my-0" id="CurrencyDataTable">
-								<thead>
-									<tr>
-										<th>Döviz Kodu</th>
-										<th>Kur</th>
-										<th>Kur Tarihi</th>
-									</tr>
-								</thead>
-								<tbody>
-									
-								</tbody>
-								<tfoot>
-									<tr>
-										<td><strong>Döviz Kodu</strong></td>
-										<td><strong>Kur</strong></td>
-										<td><strong>Kur Tarihi</strong></td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-						<div class="row">
-							<div class="col-md-6 align-self-center">
-								<p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-							</div>
-							<div class="col-md-6">
-								<nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-									<ul class="pagination">
-										<li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-										<li class="page-item active"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item"><a class="page-link" href="#">3</a></li>
-										<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
+						</div><asp:LinkButton runat="server" OnClick="AddNewInvoice_Click" class="btn btn-primary" id="AddNewInvoice" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Fatura Ekle</asp:LinkButton></div>
 				</div>
 			</div>
 		</div>
@@ -276,7 +294,6 @@ A company uses this software will easily track their process by using features o
 	<script src="assets/js/bs-init.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
-	<script src="../Scripts/listCurrency.js"></script>
 	</form>
 </body>
 

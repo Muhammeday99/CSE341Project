@@ -86,7 +86,9 @@
     <Content Include="AdminPage\AddAccount.aspx" />
     <Content Include="AdminPage\BaseAdminPage.aspx" />
     <Content Include="AdminPage\ShowAccountList.aspx" />
-    <Content Include="BillPage\AddBillInfo.aspx" />
+    <Content Include="FaturaGiris\DeleteInvoice.aspx" />
+    <Content Include="FaturaGiris\FaturaGiris.aspx" />
+    <Content Include="FaturaGiris\YeniFaturaEkle.aspx" />
     <Content Include="CariKart\CariKart.aspx" />
     <Content Include="CariKart\YeniCariKart.aspx" />
     <Content Include="CompanyPage\ShowAndUpdateCompanyInfo.aspx" />
@@ -119,12 +121,26 @@
     <Compile Include="AdminPage\ShowAccountList.aspx.designer.cs">
       <DependentUpon>ShowAccountList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BillPage\AddBillInfo.aspx.cs">
-      <DependentUpon>AddBillInfo.aspx</DependentUpon>
+    <Compile Include="FaturaGiris\DeleteInvoice.aspx.cs">
+      <DependentUpon>DeleteInvoice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BillPage\AddBillInfo.aspx.designer.cs">
-      <DependentUpon>AddBillInfo.aspx</DependentUpon>
+    <Compile Include="FaturaGiris\DeleteInvoice.aspx.designer.cs">
+      <DependentUpon>DeleteInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaGiris\FaturaGiris.aspx.cs">
+      <DependentUpon>FaturaGiris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaturaGiris\FaturaGiris.aspx.designer.cs">
+      <DependentUpon>FaturaGiris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaGiris\YeniFaturaEkle.aspx.cs">
+      <DependentUpon>YeniFaturaEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaturaGiris\YeniFaturaEkle.aspx.designer.cs">
+      <DependentUpon>YeniFaturaEkle.aspx</DependentUpon>
     </Compile>
     <Compile Include="CariKart\CariKart.aspx.cs">
       <DependentUpon>CariKart.aspx</DependentUpon>

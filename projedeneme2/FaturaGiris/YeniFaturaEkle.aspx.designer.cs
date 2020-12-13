@@ -7,102 +7,75 @@
 // </otomatik üretildi>
 //------------------------------------------------------------------------------
 
-namespace projedeneme2.BillPage
+namespace projedeneme2.YeniFaturaEkle
 {
 
 
-    public partial class AddBillInfo
+    public partial class YeniFaturaEkleWebForm
     {
 
         /// <summary>
-        /// form1 denetimi.
+        /// InvoiceNumber denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox InvoiceNumber;
 
         /// <summary>
-        /// BillNoBox denetimi.
+        /// InvoiceDate denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BillNoBox;
+        protected global::System.Web.UI.WebControls.TextBox InvoiceDate;
 
         /// <summary>
-        /// BillDateBox denetimi.
+        /// entityCode denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BillDateBox;
+        protected global::System.Web.UI.WebControls.TextBox entityCode;
 
         /// <summary>
-        /// entity denetimi.
+        /// InvoiceDescription denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label entity;
+        protected global::System.Web.UI.WebControls.TextBox InvoiceDescription;
 
         /// <summary>
-        /// BillDescriptionBox denetimi.
+        /// PaymentDate denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BillDescriptionBox;
+        protected global::System.Web.UI.WebControls.TextBox PaymentDate;
 
         /// <summary>
-        /// PaymentDateBox denetimi.
+        /// Amount denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PaymentDateBox;
+        protected global::System.Web.UI.WebControls.TextBox Amount;
 
         /// <summary>
-        /// KDVBox denetimi.
+        /// KDVpercentage denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox KDVBox;
-
-        /// <summary>
-        /// AmountBox denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AmountBox;
-
-        /// <summary>
-        /// saveAccount denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button saveAccount;
-
-        /// <summary>
-        /// TotalamountTitle denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TotalamountTitle;
+        protected global::System.Web.UI.WebControls.TextBox KDVpercentage;
 
         /// <summary>
         /// TotalAmount denetimi.
@@ -111,15 +84,15 @@ namespace projedeneme2.BillPage
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TotalAmount;
+        protected global::System.Web.UI.WebControls.TextBox TotalAmount;
 
         /// <summary>
-        /// errorsLabel denetimi.
+        /// AddNewInvoice denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorsLabel;
+        protected global::System.Web.UI.WebControls.LinkButton AddNewInvoice;
     }
 }

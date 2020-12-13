@@ -15,24 +15,6 @@ namespace projedeneme2.YeniCariKart
     {
 
         /// <summary>
-        /// entityKind control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entityKind;
-
-        /// <summary>
-        /// entityType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entityType;
-
-        /// <summary>
         /// entityName control.
         /// </summary>
         /// <remarks>
@@ -87,58 +69,58 @@ namespace projedeneme2.YeniCariKart
         protected global::System.Web.UI.WebControls.TextBox entityFaxNumber;
 
         /// <summary>
-        /// entityTaxOffice control.
+        /// taxOffice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entityTaxOffice;
+        protected global::System.Web.UI.WebControls.TextBox taxOffice;
 
         /// <summary>
-        /// entityTaxNumber control.
+        /// taxNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entityTaxNumber;
+        protected global::System.Web.UI.WebControls.TextBox taxNumber;
 
         /// <summary>
-        /// entityBankAccountNumber control.
+        /// bankAccountNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entityBankAccountNumber;
+        protected global::System.Web.UI.WebControls.TextBox bankAccountNumber;
 
         /// <summary>
-        /// entityRelatedPerson control.
+        /// relatedPerson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entityRelatedPerson;
+        protected global::System.Web.UI.WebControls.TextBox relatedPerson;
 
         /// <summary>
-        /// entityDescription control.
+        /// Pr_description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entityDescription;
+        protected global::System.Web.UI.WebControls.TextBox Pr_description;
 
         /// <summary>
-        /// entityPaymentTerm control.
+        /// paymentTerm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entityPaymentTerm;
+        protected global::System.Web.UI.WebControls.TextBox paymentTerm;
 
         /// <summary>
         /// addEntityCard control.
@@ -147,6 +129,6 @@ namespace projedeneme2.YeniCariKart
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addEntityCard;
+        protected global::System.Web.UI.WebControls.LinkButton addEntityCard;
     }
 }

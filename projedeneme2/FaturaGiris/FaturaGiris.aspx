@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DovizKurTanim.aspx.cs" Inherits="projedeneme2.DovizKurTanim.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FaturaGiris.aspx.cs" Inherits="projedeneme2.FaturaGiris.FaturaGirisWebForm" %>
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<title>Table - 5M Macro</title>
+	<title>Dashboard - 5M Macro</title>
 	<meta name="description" content="In this software project we will make a project process tracking system for companies. The &quot;tracking&quot; means in this project is:
 
 ⦁	Progress for work 
@@ -22,7 +22,7 @@ A company uses this software will easily track their process by using features o
 </head>
 
 <body id="page-top">
-	<form runat="server">
+    <form runat="server">
 	<div id="wrapper">
 		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="color: rgb(0,85,164);background: rgb(49,115,163);min-width: auto;max-width: 250;">
 			<div class="container-fluid d-flex flex-column p-0">
@@ -176,44 +176,9 @@ A company uses this software will easily track their process by using features o
 			</div>
 			</nav>
 			<div class="container-fluid">
-				<h3 class="text-dark mb-4">Döviz Kur Tanımı</h3>
-				<div class="col" style="margin-bottom: 3%;padding-right: 0px;padding-left: 0px;">
-					<div class="card" style="height: 100%;">
-						<div class="card-body">
-							<h4 class="card-title">Yeni Döviz Kuru Ekle</h4>
-							<div class="table-responsive">
-								<table class="table">
-									<thead>
-										<tr></tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td style="width: 20%;">Döviz Kodu<br></td>
-											<td><select id="CurrencyCode" name="CurrencyCode">
-												<optgroup label="Currency Code">
-													<option value="TRY" selected="">TRY</option>
-													<option value="USD" >USD</option>
-													<option value="EUR" >EUR</option>
-												</optgroup>
-											    </select></td>
-										</tr>
-										<tr>
-											<td>Giriş Tarihi<br></td>
-											<td><asp:TextBox runat="server" TextMode="Date" ID="CurrencyExchangeDate" ></asp:TextBox></td>
-										</tr>
-										<tr>
-											<td>Kur<br></td>
-											<td><asp:TextBox runat="server" type="number" ID="CurrencyExchangeRate" min="0" step="0.01" placeholder="Exchange Rate"></asp:TextBox></td>
-										</tr>
-									</tbody>
-								</table>
-							</div><asp:Button runat="server" text="Add Currency Exchange" class="btn btn-primary" id="AddNewCurrencyExchange" style="float: left;background: rgb(49,115,163);margin-top: 2%;" OnClick="AddNewCurrency_Click"></asp:Button></div>
-					</div>
-				</div>
+				<h3 class="text-dark mb-4">Fatura Giriş</h3>
 				<div class="card shadow">
-					<div class="card-header py-3">
-						<p class="text-primary m-0 font-weight-bold">Döviz Kur Tanımları</p>
-					</div>
+					<div class="card-header py-3"><span>Fatura Listesi</span><asp:LinkButton OnClick="Yeni_Fatura_Ekle_click" class="text-center" runat="server"><span style="float: right;">Yeni Fatura Ekle</span></asp:LinkButton></div>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-6 text-nowrap">
@@ -223,23 +188,81 @@ A company uses this software will easily track their process by using features o
 								<div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
 							</div>
 						</div>
-						<div class="table-responsive table mt-2" id="currencyTable" role="grid" aria-describedby="currencyTable_info">
-							<table class="table my-0" id="CurrencyDataTable">
+						<div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+							<table class="table my-0" id="dataTable">
 								<thead>
 									<tr>
-										<th>Döviz Kodu</th>
-										<th>Kur</th>
-										<th>Kur Tarihi</th>
+										<th>Tip (Masraf/Proje)</th>
+										<th>Proje Kodu</th>
+										<th>Stok Türü</th>
+										<th>Stok Kodu</th>
+										<th>Stok Adı</th>
+										<th>Birim</th>
+										<th>Miktarı</th>
+										<th>Tutar</th>
+										<th>KDV Oranı</th>
+										<th>KDV miktarı</th>
+										<th>Toplam Tutar</th>
 									</tr>
 								</thead>
 								<tbody>
-									
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Angelica Ramos</td>
+										<td>Cell 2<br></td>
+										<td>Cell 3<br></td>
+										<td>London</td>
+										<td>47</td>
+										<td>2009/10/09<br></td>
+										<td>$1,200,000</td>
+										<td>Cell 8</td>
+										<td>Cell 9</td>
+										<td>Cell 10</td>
+										<td>Cell 11</td>
+									</tr>
+									<tr></tr>
+									<tr></tr>
+									<tr>
+										<td>Cell 1</td>
+										<td>Cell 2</td>
+										<td>Cell 3</td>
+										<td>Cell 4</td>
+										<td>Cell 5</td>
+										<td>Cell 6</td>
+										<td>Cell 7</td>
+										<td>Cell 8</td>
+										<td>Cell 9</td>
+										<td>Cell 10</td>
+										<td>Cell 11</td>
+									</tr>
 								</tbody>
 								<tfoot>
 									<tr>
-										<td><strong>Döviz Kodu</strong></td>
-										<td><strong>Kur</strong></td>
-										<td><strong>Kur Tarihi</strong></td>
+										<td><strong>Tip (Masraf/Proje)</strong><br></td>
+										<td><strong>Proje Kodu</strong><br></td>
+										<td><strong>Stok Türü</strong><br></td>
+										<td><strong>Stok Kodu</strong><br></td>
+										<td><strong>Stok Adı</strong><br></td>
+										<td><strong>Birim</strong><br></td>
+										<td><strong>Miktarı</strong><br></td>
+										<td><strong>Tutar</strong><br></td>
+										<td><strong>KDV Oranı</strong><br></td>
+										<td><strong>KDV miktarı</strong><br></td>
+										<td><strong>Toplam Tutar</strong><br></td>
 									</tr>
 								</tfoot>
 							</table>
@@ -276,7 +299,6 @@ A company uses this software will easily track their process by using features o
 	<script src="assets/js/bs-init.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
-	<script src="../Scripts/listCurrency.js"></script>
 	</form>
 </body>
 

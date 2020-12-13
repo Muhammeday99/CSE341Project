@@ -25,12 +25,12 @@ namespace projedeneme2.DovizKurTanim
         protected void AddNewCurrency_Click(object sender, EventArgs e)
         {
             con.Open();
-
+          
             //We have 3 inputs: CODE, DATE, RATE.
 
             //Currently this label is not readable.
-            //CurrencyCode.Text;
-            string n_CurrencyCode = "USD";
+            
+            string n_CurrencyCode = Request.Form["CurrencyCode"];
 
             //date of the currency
             string n_CurrencyDate = CurrencyExchangeDate.Text;
