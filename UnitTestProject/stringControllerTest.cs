@@ -51,5 +51,11 @@ namespace UnitTestProject
         {
             Assert.AreEqual(stringController.passwordSecurity("Password"), stringController.passwordSecurity("pa2ssword"));
         }
+
+        [TestMethod]
+        public void passwordSecurity_Test2()
+        {
+            Assert.AreEqual(stringController.passwordSecurity("Password"),2);
+        }
     }
 }
