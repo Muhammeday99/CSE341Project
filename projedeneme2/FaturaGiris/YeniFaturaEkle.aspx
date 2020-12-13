@@ -250,7 +250,13 @@ A company uses this software will easily track their process by using features o
 												<tbody>
 													<tr>
 														<td>Döviz Kodu<br></td>
-														<td><select id="CurrencyCode" name="CurrencyCode"><optgroup label="Döviz Kodu"><option value="12" selected="">TRY</option><option value="13">USD</option><option value="14">EUR</option></optgroup></select></td>
+														<td><select id="CurrencyCode" name="CurrencyCode">
+																<optgroup label="Döviz Kodu">
+																	<option value="TRY" selected="">TRY</option>
+																	<option value="USD">USD</option>
+																	<option value="EUR">EUR</option>
+																</optgroup>
+														    </select></td>
 													</tr>
 													<tr>
 														<td style="width: 20%;">Tutar</td>

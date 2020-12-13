@@ -20,7 +20,7 @@ namespace projedeneme2.YeniCariKart
 
         }
         
-        protected void addEntityCard_click(object sender, EventArgs e){
+        protected void AddEntityCard_click(object sender, EventArgs e){
             con.Open();
 
             List<string> inputs =new  List<string>();

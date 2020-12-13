@@ -86,6 +86,7 @@
     <Content Include="AdminPage\AddAccount.aspx" />
     <Content Include="AdminPage\BaseAdminPage.aspx" />
     <Content Include="AdminPage\ShowAccountList.aspx" />
+    <Content Include="FaturaGiris\DeleteInvoice.aspx" />
     <Content Include="FaturaGiris\FaturaGiris.aspx" />
     <Content Include="FaturaGiris\YeniFaturaEkle.aspx" />
     <Content Include="CariKart\CariKart.aspx" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="AdminPage\ShowAccountList.aspx.designer.cs">
       <DependentUpon>ShowAccountList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaGiris\DeleteInvoice.aspx.cs">
+      <DependentUpon>DeleteInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaturaGiris\DeleteInvoice.aspx.designer.cs">
+      <DependentUpon>DeleteInvoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="FaturaGiris\FaturaGiris.aspx.cs">
       <DependentUpon>FaturaGiris.aspx</DependentUpon>

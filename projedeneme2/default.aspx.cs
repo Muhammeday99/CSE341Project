@@ -10,7 +10,7 @@ using System.Configuration;
 using System.Security.Cryptography;
 using System.IO;
 using System.Text;
-
+using projedeneme2.InputControllers;
 namespace projedeneme2
 {
 
@@ -42,7 +42,7 @@ namespace projedeneme2
             string userPassword = string.Empty;
                   
             userEmail = InputEmail.Text;
-            userPassword = (InputPassword.Text);
+            userPassword = encryption.DecryptString(InputPassword.Text);
 
             
             Console.WriteLine("{0}", (userPassword));

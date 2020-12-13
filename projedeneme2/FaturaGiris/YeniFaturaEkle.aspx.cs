@@ -19,90 +19,87 @@ namespace projedeneme2.YeniFaturaEkle
         //SQLCommand – The 'SQLCommand' is a class defined within C#. 
         //This class is used to perform operations of reading and writing into the database.
         //Hence, the first step is to make sure that we create a variable type of this class. 
-        //This variable will then be used in subsequent steps of reading data from our database.
-        
+        //This variable will then be used in subsequent steps of reading data from our database.   
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            con.Open();
-            SqlCommand check = new SqlCommand("SELECT [entityCode] FROM [dbo].[Entity_Card]");
-            check.CommandType = System.Data.CommandType.Text;
-            check.Connection = con;
-
-            string temp = "";
-            SqlDataReader reader = check.ExecuteReader();
-            //The DataReader object is used to get all the data specified by the SQL query.
-            //We can then read all the table rows one by one using the data reader.
-            while (reader.Read())
-            {
-                temp = reader["entityCode"].ToString();
-            }
-
-            entity.Text = temp;
-
-            reader.Close();
-            */
+            
         }
 
-        
-
+ 
         protected void AddNewInvoice_Click(object sender, EventArgs e)
         {
-            //AŞAĞIDAKİ ADDBILL_CLICK METODUNUN BURAYA TAŞINMASI GEREKİYOR. BUTONLARIN ID'LERİNDE DEĞİŞİKLİK YAPTIM. METODDAKİ ID'LERIN YENİSİNE GÖRE UPDATE EDİLMESİ LAZIM. 
-        }
-
-        /*
-        // In this we do get values from BillNo, BillDate,BillDescription,PaymentDate,KDV,Amount Textboxes:
-        protected void AddBill_click(object sender, EventArgs e)
-        {
-            
+            con.Open();
             List<string> inputs = new List<string>();
 
-            string BillNo = BillNoBox.Text;
-            inputs.Add(BillNo);
+            string invoiceNumber = InvoiceNumber.Text;
+            inputs.Add(invoiceNumber);
 
-            string BillDate = DateTime.Now.ToString(BillDateBox.Text);
-            inputs.Add(BillDate);
+            string invoiceDate = DateTime.Now.ToString(InvoiceDate.Text);
+            inputs.Add(invoiceDate);
 
-            //string entityCode = entityCodeBox.Text;
-            string BillDescription = BillDescriptionBox.Text;
-            inputs.Add(BillDescription);
+            string entitycode = entityCode.Text;
+            inputs.Add(entitycode);
 
-            string PaymentDate = DateTime.Now.ToString(PaymentDateBox.Text);
-            inputs.Add(PaymentDate);
+            string invoiceDescription = InvoiceDescription.Text;
+            inputs.Add(invoiceDescription);
 
-            string KDV = Convert.ToString(KDVBox.Text);
-            string Amount = Convert.ToString(AmountBox.Text) ;
+            string paymentDate = DateTime.Now.ToString(PaymentDate.Text);
+            inputs.Add(paymentDate);
+            string currencycode = string.Empty;
+            if(Request.Form["CurrencyCode"] == "TRY")
+            {
+                currencycode = "TRY";
+                inputs.Add(currencycode);
+            }
+            else if(Request.Form["CurrencyCode"] == "USD")
+            {
+                currencycode = "USD";
+                inputs.Add(currencycode);
+            }
+            else if(Request.Form["CurrencyCode"] == "EUR")
+            {
+                currencycode = "EUR";
+                inputs.Add(currencycode);
+            }
+         
+            string amount = Convert.ToString(Amount.Text);
+            inputs.Add(amount);
 
-            if (!stringController.listStringController(inputs)){
+            string kdvPercentage = Convert.ToString(KDVpercentage.Text);
+            inputs.Add(kdvPercentage);
+
+            //Error label BULAMADIM, KALSIN SIMDILIK BURDA SONRA AYARLARIZ.
+          /*  if (!stringController.listStringController(inputs))
+            {
                 //error case, display on label.
                 errorsLabel.Text = "Error, some inputs lenght are less than 2 characters.";
-            }
-            else
-            {
-                //In this part, the bill information received from the text box is added to the entity card db.
-                String q = "INSERT INTO dbo.Bill_info (BillNo, BillDate,BillDescription,PaymentDate,KDV,Amount) VALUES (@BillNo, @BillDate, @BillDescription, @PaymentDate, @KDV, @Amount)";
+            }else{}*/
 
-                SqlCommand cmnd = new SqlCommand(q, con);
+            String q = "INSERT INTO dbo.Invoice_info (InvoiceNumber, InvoiceDate,entityCode,InvoiceDescription,PaymentDate,CurrencyCode,Amount,KDVpercentage) VALUES (@InvoiceNumber, @InvoiceDate, @entityCode,@InvoiceDescription, @PaymentDate,@CurrencyCode, @Amount, @KDVpercentage)";
 
-                cmnd.Parameters.AddWithValue("@BillNo", BillNo);
-                cmnd.Parameters.AddWithValue("@BillDate", BillDate);
-                //cmnd.Parameters.AddWithValue("@entityCode", entityCode);
-                cmnd.Parameters.AddWithValue("@BillDescription", BillDescription);
-                cmnd.Parameters.AddWithValue("@PaymentDate", PaymentDate);
-                cmnd.Parameters.AddWithValue("@KDV", KDV);
-                cmnd.Parameters.AddWithValue("@Amount", Amount);
+            SqlCommand cmnd = new SqlCommand(q, con);
 
-                cmnd.ExecuteNonQuery();
-                
-            }
-            con.Close();
+            cmnd.Parameters.AddWithValue("@InvoiceNumber", invoiceNumber);
+            cmnd.Parameters.AddWithValue("@InvoiceDate", invoiceDate);
+            cmnd.Parameters.AddWithValue("@entityCode", entitycode);
+            cmnd.Parameters.AddWithValue("@InvoiceDescription", invoiceDescription);
+            cmnd.Parameters.AddWithValue("@PaymentDate", paymentDate);
+            cmnd.Parameters.AddWithValue("@CurrencyCode", currencycode);
+            cmnd.Parameters.AddWithValue("@Amount", amount);
+            cmnd.Parameters.AddWithValue("@KDVpercentage", kdvPercentage);
             
+            cmnd.ExecuteNonQuery();
+
+            con.Close();
+
         }
 
+        //TOTAL AMOUNT TEXTBOX OLARAK GOZUKUYOR, DEGISMESI LAZIM, LABEL OLARAK DEGISTIRILMELI
+        //DEGISINCE KULLANACAGIZ BUNU O YUZDEN BURDA KALSIN.Silmeyin !!!
+        /*
         protected void totalAmountCalculator(object sender, EventArgs e)
         {
-            /*
+            
             string KDV = Convert.ToString(KDVBox.Text);
             string Amount = Convert.ToString(AmountBox.Text);
 

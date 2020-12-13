@@ -189,15 +189,21 @@ A company uses this software will easily track their process by using features o
 									<tbody>
 										<tr>
 											<td style="width: 20%;">Döviz Kodu<br></td>
-											<td><select id="CurrencyCode" name="CurrencyCode"><optgroup label="Currency Code"><option value="TRY" selected="">TRY</option><option value="USD" >USD</option><option value="EUR" >EUR</option></optgroup></select></td>
+											<td><select id="CurrencyCode" name="CurrencyCode">
+												<optgroup label="Currency Code">
+													<option value="TRY" selected="">TRY</option>
+													<option value="USD" >USD</option>
+													<option value="EUR" >EUR</option>
+												</optgroup>
+											    </select></td>
 										</tr>
 										<tr>
 											<td>Giriş Tarihi<br></td>
-											<td><asp:TextBox id="CurrencyExchangeDate" TextMode="Date" runat="server"></asp:TextBox></td>
+											<td><asp:TextBox runat="server" TextMode="Date" ID="CurrencyExchangeDate" ></asp:TextBox></td>
 										</tr>
 										<tr>
 											<td>Kur<br></td>
-											<td><asp:TextBox type="number" step="0.1" ID="CurrencyExchangeRate" runat="server"></asp:TextBox></td>
+											<td><asp:TextBox runat="server" type="number" ID="CurrencyExchangeRate" min="0" step="0.01" placeholder="Exchange Rate"></asp:TextBox></td>
 										</tr>
 									</tbody>
 								</table>
