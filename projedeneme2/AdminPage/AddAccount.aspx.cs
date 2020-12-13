@@ -24,12 +24,7 @@ namespace projedeneme2.AdminPage
         }
 
 
-        public string EnryptString(string strEncrypted)
-        {
-            byte[] b = System.Text.ASCIIEncoding.ASCII.GetBytes(strEncrypted);
-            string encrypted = Convert.ToBase64String(b);
-            return encrypted;
-        }
+        
         protected void saveButtonClick(object sender, EventArgs e)
         {
             con.Open();
@@ -66,7 +61,7 @@ namespace projedeneme2.AdminPage
 
                 SqlCommand cmnd = new SqlCommand(q,con);
 
-                cmnd.Parameters.AddWithValue("@Password", EnryptString(uPassword));
+                cmnd.Parameters.AddWithValue("@Password", encryption.EnryptString(uPassword));
                 cmnd.Parameters.AddWithValue("@Status", isAdmin);
                 cmnd.Parameters.AddWithValue("@ProfilePicture", Image1.ImageUrl);
                 cmnd.Parameters.AddWithValue("@UserEmail", uEmail);
