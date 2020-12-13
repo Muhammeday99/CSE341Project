@@ -94,6 +94,8 @@
     <Content Include="default.aspx" />
     <Content Include="DovizKurTanim\DovizKurTanim.aspx" />
     <Content Include="Homepage\Homepage.aspx" />
+    <Content Include="ProfilePictures\unnamed.jpg" />
+    <Content Include="Scripts\ShowAccountPP.js" />
     <Content Include="Scripts\listCurrency.js" />
     <Content Include="Scripts\listCards.js" />
     <Content Include="Web.config" />
@@ -185,6 +187,7 @@
   <ItemGroup>
     <Content Include="CariKart\EntityCards.json" />
     <Content Include="DovizKurTanim\ExchangeList.json" />
+    <Content Include="AdminPage\Users.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

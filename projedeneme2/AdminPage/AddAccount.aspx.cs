@@ -34,7 +34,7 @@ namespace projedeneme2.AdminPage
         {
             con.Open();
 
-            string folderPath = Server.MapPath("~/Files/");
+            string folderPath = Server.MapPath("ProfilePictures/");
 
             //Check whether Directory (Folder) exists.
             if (!Directory.Exists(folderPath))
@@ -43,11 +43,19 @@ namespace projedeneme2.AdminPage
                 Directory.CreateDirectory(folderPath);
             }
 
-            //Save the File to the Directory (Folder).
-            photoUpload.SaveAs(folderPath + Path.GetFileName(photoUpload.FileName));
+            
+            
 
-            //Display the Picture in Image control.
-            Image1.ImageUrl = "~/Files/" + Path.GetFileName(photoUpload.FileName);
+            
+            if(photoUpload.PostedFile != null)
+            {
+                //Save the File to the Directory (Folder).
+                string imgFile = Path.GetFileName(photoUpload.PostedFile.FileName); ;
+                photoUpload.SaveAs(folderPath + imgFile);
+                //Display the Picture in Image control.
+                Image1.ImageUrl = "/../ProfilePictures/" + imgFile;
+            }
+            
 
             List<string> inputs = new List<string>();
             string uEmail = emailBox.Text;

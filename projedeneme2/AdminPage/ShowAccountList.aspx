@@ -38,7 +38,7 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" BackCo
                 </asp:TemplateField>  
                 <asp:TemplateField HeaderText="ProfilePicture">  
                     <ItemTemplate>  
-                        <asp:Label ID="ProfileFotoLabel" runat="server" Text='<%#Eval("ProfilePicture") %>'></asp:Label>  
+                        <asp:image ID="ProfilePicture" ImageUrl="#" runat="server" style="width:45px; height:45px; border-radius:25px;"/> 
                     </ItemTemplate>  
                     <EditItemTemplate>  
                         <asp:TextBox ID="ProfileFotoTextBox" runat="server" Text='<%#Eval("ProfilePicture") %>'></asp:TextBox>  
@@ -64,7 +64,8 @@ OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" BackCo
             <RowStyle BackColor="#e7ceb6"/>  
         </asp:GridView>  
       
-    </div>  
+    </div>
+    <script src="../Scripts/ShowAccountPP.js"></script>
 </form>  
 </body>
 </html>

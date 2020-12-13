@@ -26,6 +26,10 @@ namespace projedeneme2.AdminPage
             if (!IsPostBack){
                 ShowData();
             }
+            JsonConverter convert = new JsonConverter();
+            DataTable table = convert.ToJson("Users");
+            string str = convert.DataTableToJSON(table);
+            convert.WriteToJsonFile(str, "Users.json");
         }
 
         //ShowData method for Displaying Data in Gridview  
