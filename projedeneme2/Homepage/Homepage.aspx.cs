@@ -31,7 +31,7 @@ namespace projedeneme2.Homepage
         }
         protected void Proje_Tanim_click(object sender, EventArgs e)
         {
-            Response.Redirect("../Homepage/Homepage.aspx");
+            Response.Redirect("../ProjeTanim/ProjeTanim.aspx");
         }
         protected void Cari_Kart_click(object sender, EventArgs e)
         {
