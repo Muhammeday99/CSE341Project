@@ -203,7 +203,7 @@ A company uses this software will easily track their process by using features o
 										</tr>
 										<tr>
 											<td>Kur<br></td>
-											<td><asp:TextBox runat="server" type="number" ID="CurrencyExchangeRate" min="0" step="0.01" placeholder="Exchange Rate"></asp:TextBox></td>
+											<td><asp:TextBox runat="server" type="number" ID="CurrencyExchangeRate" min="0" step="0.01" placeholder="Exchange Rate" ReadOnly="true" ></asp:TextBox></td>
 										</tr>
 									</tbody>
 								</table>

@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2.ProjeTanim
 {
-    public partial class ProjeTanım : System.Web.UI.Page
+    public partial class ProjeTanim : System.Web.UI.Page
     {
 
         protected SqlConnection con = databaseConnect.connectToSQL();

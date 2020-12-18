@@ -96,7 +96,7 @@
     <Content Include="DovizKurTanim\DovizKurTanim.aspx" />
     <Content Include="Homepage\Homepage.aspx" />
     <Content Include="ProfilePictures\unnamed.jpg" />
-    <Content Include="ProjeTanim\ProjeTanım.aspx" />
+    <Content Include="ProjeTanim\ProjeTanim.aspx" />
     <Content Include="Scripts\ShowAccountPP.js" />
     <Content Include="Scripts\listCurrency.js" />
     <Content Include="Scripts\listCards.js" />
@@ -191,12 +191,12 @@
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="InputControllers\stringController.cs" />
-    <Compile Include="ProjeTanim\ProjeTanım.aspx.cs">
-      <DependentUpon>ProjeTanım.aspx</DependentUpon>
+    <Compile Include="ProjeTanim\ProjeTanim.aspx.cs">
+      <DependentUpon>ProjeTanim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProjeTanim\ProjeTanım.aspx.designer.cs">
-      <DependentUpon>ProjeTanım.aspx</DependentUpon>
+    <Compile Include="ProjeTanim\ProjeTanim.aspx.designer.cs">
+      <DependentUpon>ProjeTanim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
