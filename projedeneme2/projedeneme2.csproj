@@ -97,6 +97,8 @@
     <Content Include="Homepage\Homepage.aspx" />
     <Content Include="ProfilePictures\unnamed.jpg" />
     <Content Include="ProjeTanim\ProjeTanim.aspx" />
+    <Content Include="ProjeTanim\YeniProjeEkle.aspx" />
+    <Content Include="ProjeTanim\YeniProjeEkle_eskisi.aspx" />
     <Content Include="Scripts\ShowAccountPP.js" />
     <Content Include="Scripts\listCurrency.js" />
     <Content Include="Scripts\listCards.js" />
@@ -197,6 +199,20 @@
     </Compile>
     <Compile Include="ProjeTanim\ProjeTanim.aspx.designer.cs">
       <DependentUpon>ProjeTanim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjeTanim\YeniProjeEkle.aspx.cs">
+      <DependentUpon>YeniProjeEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjeTanim\YeniProjeEkle.aspx.designer.cs">
+      <DependentUpon>YeniProjeEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjeTanim\YeniProjeEkle_eskisi.aspx.cs">
+      <DependentUpon>YeniProjeEkle_eskisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjeTanim\YeniProjeEkle_eskisi.aspx.designer.cs">
+      <DependentUpon>YeniProjeEkle_eskisi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

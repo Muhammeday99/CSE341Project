@@ -5,17 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace projedeneme2.ProjeTanim
+namespace projedeneme2.YeniProjeEkle
 {
-    public partial class ProjeTanim : projedeneme2.Homepage.WebForm1
+    public partial class YeniProjeEkle : projedeneme2.ProjeTanim.ProjeTanim
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void Yeni_Proje_Ekle_Click(object sender, EventArgs e)
+
+        protected void AddNewProject_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/ProjeTanim/YeniProjeEkle.aspx");
+
         }
     }
 }
