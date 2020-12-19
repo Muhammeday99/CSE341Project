@@ -275,7 +275,7 @@ A company uses this software will easily track their process by using features o
 	
 	<script> 
 			const base = 'USD'
-			const api_url = 'https://api.exchangeratesapi.io/latest?base=USD '
+			const api_url = 'https://api.exchangeratesapi.io/latest?base=USD'
 
             async function getApi() {
                 const response = await fetch(api_url);
