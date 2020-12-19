@@ -31,26 +31,26 @@ namespace projedeneme2.DovizKurTanim
 
             //Currently this label is not readable.
 
-            double n_CurrencyExchangeRate = double.Parse(CurrencyExchangeRate.Text, System.Globalization.CultureInfo.InvariantCulture);
-            string n_CurrencyCode = " ";
+            double n_CurrencyExchangeRate = 0;
+            int n_CurrencyCode = -1;
 
             if (Request.Form["CurrencyCode"] == "TRY")
             {
-                n_CurrencyCode = "TRY";
+                n_CurrencyCode = 1;
                 n_CurrencyExchangeRate = double.Parse(TRY.Value, System.Globalization.CultureInfo.InvariantCulture);
-                inputs.Add(n_CurrencyCode);
+                
             }
             else if (Request.Form["CurrencyCode"] == "USD")
             {
-                n_CurrencyCode = "USD";
+                n_CurrencyCode = 2;
                 n_CurrencyExchangeRate = 1;
-                inputs.Add(n_CurrencyCode);
+                
             }
             else if (Request.Form["CurrencyCode"] == "EUR")
             {
-                n_CurrencyCode = "EUR";
+                n_CurrencyCode = 3;
                 n_CurrencyExchangeRate = double.Parse(EUR.Value, System.Globalization.CultureInfo.InvariantCulture);
-                inputs.Add(n_CurrencyCode);
+                
             }
 
             //date of the currency
@@ -62,7 +62,7 @@ namespace projedeneme2.DovizKurTanim
             }
             else
             {
-                string q = "INSERT INTO dbo.Currency (CurrencyCode,CurrencyExchangeDate,CurrencyExchangeRate) VALUES (@CurrencyCode,@CurrencyExchangeDate,@CurrencyExchangeRate)";
+                string q = "INSERT INTO dbo.ExchangeRate (CurrencyCode,CurrencyExchangeDate,CurrencyExchangeRate) VALUES (@CurrencyCode,@CurrencyExchangeDate,@CurrencyExchangeRate)";
                 SqlCommand cmd = new SqlCommand(q, con);
 
                 cmd.Parameters.AddWithValue("@CurrencyCode", n_CurrencyCode);

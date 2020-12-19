@@ -279,13 +279,14 @@ A company uses this software will easily track their process by using features o
 
             async function getApi() {
                 const response = await fetch(api_url);
-                const data = await response.json();
-            }
+				const data = await response.json();
 
+                document.getElementById('USD').value = 1;
+                document.getElementById('EUR').value = data.rates.EUR;
+				document.getElementById('TRY').value = data.rates.TRY;
+            }
+		
 		getApi();
-		document.getElementById('USD').value = 1;
-		document.getElementById('EUR').value = data.rates.EUR;
-        document.getElementById('TRY').value = data.rates.TRY;
 
     </script>	
 	<script src="assets/js/jquery.min.js"></script>
