@@ -307,7 +307,21 @@ A company uses this software will easily track their process by using features o
                                                         <option value="Proje">Proje</option>
                                                     </optgroup>
                                                 </select></td>
-                                            <td><input class="form-control-sm" type="text" id="ProjectExpenseCode" placeholder="Project / Expense Code"><button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#ProjectCodeModal">...</button><br></td>
+                                            <td><input class="form-control-sm" type="text" id="ProjectExpenseCode" placeholder="Project / Expense Code"><button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#ProjectCodeModal">...</button><br>
+                                                <div class="modal fade" role="dialog" tabindex="-1" id="ProjectCodeModal">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Modal Title</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>The content of your modal.</p>
+                                                            </div>
+                                                            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <td><select id="StockKind">
                                                     <optgroup label="Stok Türü">
                                                         <option value="Mekanik" selected="">Mekanik</option>
