@@ -248,7 +248,7 @@ A company uses this software will easily track their process by using features o
                                                     <tbody>
                                                         <tr>
                                                             <td style="width: 20%;">Döviz Kodu<br></td>
-                                                            <td><select id="CurrencyCode" name="CurrencyCode">
+                                                            <td><select id="CurrencyId" name="CurrencyCode">
                                                                     <optgroup label="Currency Code">
                                                                         <option value="TRY" selected="">TRY</option>
                                                                         <option value="USD">USD</option>
@@ -258,7 +258,7 @@ A company uses this software will easily track their process by using features o
                                                         </tr>
                                                         <tr>
                                                             <td>Tutar<br></td>
-                                                            <td><asp:Textbox runat="server" type="number" id="Price" placeholder="Price" min="0"></asp:Textbox></td>
+                                                            <td><asp:Textbox runat="server" type="number" id="Amount" placeholder="Price" min="0"></asp:Textbox></td>
                                                         </tr>
                                                         <tr>
                                                             <td>KDV (yüzde)</td>
@@ -286,7 +286,7 @@ A company uses this software will easily track their process by using features o
                                                     <tbody>
                                                         <tr>
                                                             <td style="width: 20%;">Karşı Tarafın İlgili Kişisi<br></td>
-                                                            <td><asp:Textbox runat="server" id="relatedPerson" placeholder="Related Person" style="min-width: 100%;"></asp:Textbox></td>
+                                                            <td><asp:Textbox runat="server" id="RelatedPerson" placeholder="Related Person" style="min-width: 100%;"></asp:Textbox></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Açıklama</td>
