@@ -42,23 +42,27 @@ namespace projedeneme2.YeniProjeEkle
             string argeInvoiceNumber = Convert.ToString(ArgeInvoiceNumber.Text);
             inputs.Add(argeInvoiceNumber);
             //Currency id sonradan halledicem!!(FK Sıkıntısı var!)
-       /*     string currencyid = string.Empty;
+            string currencyid = string.Empty;
+            int currency;
             if (Request.Form["CurrencyId"] == "TRY")
             {
-                currencyid = "TRY";
+                currency = 1;
+                currencyid = Convert.ToString(currency);
                 inputs.Add(currencyid);
             }
             else if (Request.Form["CurrencyId"] == "USD")
             {
-                currencyid = "USD";
+                currency = 2;
+                currencyid = Convert.ToString(currency);
                 inputs.Add(currencyid);
             }
             else if (Request.Form["CurrencyId"] == "EUR")
             {
-                currencyid = "EUR";
+                currency = 3;
+                currencyid = Convert.ToString(currency);
                 inputs.Add(currencyid);
-            }*/
-
+            }
+            
             string amount = Convert.ToString(Amount.Text);
             inputs.Add(amount);
 
@@ -77,7 +81,7 @@ namespace projedeneme2.YeniProjeEkle
             string projectManager = ProjectManager.Text;
             inputs.Add(projectManager);
 
-            String q = "INSERT INTO dbo.ProjectDefinition (ProjectCode, ProjectName,StartingDate,EndingDate,CustomerCode,OrderCode,ArgeInvoiceNumber,Amount,KDVpercentage,WorkmanshipPricePercentage,RelatedPerson,Pr_description,ProjectManager) VALUES (@ProjectCode, @ProjectName, @StartingDate,@EndingDate, @CustomerCode,@OrderCode, @ArgeInvoiceNumber, @Amount, @KDVpercentage, @WorkmanshipPricePercentage, @RelatedPerson, @Pr_description, @ProjectManager)";
+            String q = "INSERT INTO dbo.ProjectDefinition (ProjectCode, ProjectName,StartingDate,EndingDate,CustomerCode,OrderCode,ArgeInvoiceNumber,CurrencyId,Amount,KDVpercentage,WorkmanshipPricePercentage,RelatedPerson,Pr_description,ProjectManager) VALUES (@ProjectCode, @ProjectName, @StartingDate,@EndingDate, @CustomerCode,@OrderCode, @ArgeInvoiceNumber, @CurrencyId, @Amount, @KDVpercentage, @WorkmanshipPricePercentage, @RelatedPerson, @Pr_description, @ProjectManager)";
 
             SqlCommand cmnd = new SqlCommand(q, con);
 
@@ -88,7 +92,7 @@ namespace projedeneme2.YeniProjeEkle
             cmnd.Parameters.AddWithValue("@CustomerCode", customerCode);
             cmnd.Parameters.AddWithValue("@OrderCode", orderCode);
             cmnd.Parameters.AddWithValue("@ArgeInvoiceNumber", argeInvoiceNumber);
-         //   cmnd.Parameters.AddWithValue("@CurrencyId", currencyid);
+            cmnd.Parameters.AddWithValue("@CurrencyId", currencyid);
             cmnd.Parameters.AddWithValue("@Amount", amount);
             cmnd.Parameters.AddWithValue("@KDVpercentage", kdvPercentage);
             cmnd.Parameters.AddWithValue("@WorkmanshipPricePercentage", worksmanshipPrice);
