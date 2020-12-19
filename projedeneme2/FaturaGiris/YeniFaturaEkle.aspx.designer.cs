@@ -60,6 +60,60 @@ namespace projedeneme2.YeniFaturaEkle
         protected global::System.Web.UI.WebControls.TextBox PaymentDate;
 
         /// <summary>
+        /// InvoiceAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceAmount;
+
+        /// <summary>
+        /// InvoiceKDVamount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceKDVamount;
+
+        /// <summary>
+        /// InvoiceTotalAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox InvoiceTotalAmount;
+
+        /// <summary>
+        /// StockCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox StockCode;
+
+        /// <summary>
+        /// StockName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox StockName;
+
+        /// <summary>
+        /// Count control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Count;
+
+        /// <summary>
         /// Amount control.
         /// </summary>
         /// <remarks>
@@ -87,12 +141,12 @@ namespace projedeneme2.YeniFaturaEkle
         protected global::System.Web.UI.WebControls.TextBox TotalAmount;
 
         /// <summary>
-        /// AddNewInvoice control.
+        /// AddInvoice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AddNewInvoice;
+        protected global::System.Web.UI.WebControls.LinkButton AddInvoice;
     }
 }

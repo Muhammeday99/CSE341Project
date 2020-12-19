@@ -260,15 +260,15 @@ A company uses this software will easily track their process by using features o
 												<tbody>
 													<tr>
 														<td style="width: 20%;">Tutar</td>
-														<td><asp:TextBox runat="server" type="number" id="Amount" placeholder="Amount" ReadOnly="true"></asp:TextBox></td>
+														<td><asp:TextBox runat="server" type="number" id="InvoiceAmount" placeholder="Amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>KDV miktarı</td>
-														<td><asp:TextBox runat="server" type="number" id="KDVamount" min="0" step="0.1" placeholder="KDV amount" ReadOnly="true"></asp:TextBox></td>
+														<td><asp:TextBox runat="server" type="number" id="InvoiceKDVamount" min="0" step="0.1" placeholder="KDV amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Toplam Tutar</td>
-														<td><asp:TextBox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:TextBox></td>
+														<td><asp:TextBox runat="server" type="number" id="InvoiceTotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr></tr>
 													<tr></tr>
@@ -285,7 +285,7 @@ A company uses this software will easily track their process by using features o
                                         <tr>
                                             <th>Yeni Ekle</th>
                                             <th>Tip (Masraf/Proje)</th>
-                                            <th>Proje Kodu</th>
+                                            <th>Proje/Masraf Kodu</th>
                                             <th>Stok Türü</th>
                                             <th>Stok Kodu</th>
                                             <th>Stok Adı</th>
@@ -300,33 +300,44 @@ A company uses this software will easily track their process by using features o
                                     <tbody>
                                         <tr></tr>
                                         <tr>
-                                            <td class="text-center"><a href="#"><span><i class="fa fa-plus"></i></span></a></td>
-                                            <td>Angelica Ramos</td>
-                                            <td>Cell 2<br></td>
-                                            <td>Cell 3<br></td>
-                                            <td>London</td>
-                                            <td>47</td>
-                                            <td>2009/10/09<br></td>
-                                            <td>$1,200,000</td>
-                                            <td>Cell 8</td>
-                                            <td>Cell 9</td>
-                                            <td>Cell 10</td>
-                                            <td>Cell 11</td>
+                                            <td><a href="#"><span><i class="fa fa-plus"></i></span></a></td>
+                                            <td><select id="Type">
+                                                    <optgroup label="Tip">
+                                                        <option value="Masraf" selected="">Masraf</option>
+                                                        <option value="Proje">Proje</option>
+                                                    </optgroup>
+                                                </select></td>
+                                            <td><input class="form-control-sm" type="text" id="ProjectExpenseCode" placeholder="Project / Expense Code"><button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#ProjectCodeModal">...</button><br></td>
+                                            <td><select id="StockKind">
+                                                    <optgroup label="Stok Türü">
+                                                        <option value="Mekanik" selected="">Mekanik</option>
+                                                        <option value="Pinomatik">Pinomatik</option>
+                                                        <option value="Otomasyon">Otomasyon</option>
+                                                    </optgroup>
+                                                </select></td>
+                                            <td><asp:Textbox runat="server" id="StockCode" placeholder="Stock Code"></asp:Textbox></td>
+                                            <td><asp:Textbox runat="server" id="StockName" placeholder="Stock Name"></asp:Textbox></td>
+                                            <td><select id="Unit">
+                                                    <optgroup label="Birim">
+                                                        <option value="Adet" selected="">Adet</option>
+                                                        <option value="Kilogram">Kilogram</option>
+                                                        <option value="Metre">Metre</option>
+                                                    </optgroup>
+                                                </select></td>
+                                            <td><asp:Textbox runat="server" type="number" id="Count" placeholder="Count" min="0" step="1"></asp:Textbox></td>
+                                            <td><asp:Textbox runat="server" type="number" id="Amount" placeholder="Amount" min="0"></asp:Textbox></td>
+                                            <td><select id="KDVpercentage">
+                                                    <optgroup label="KDV oranı">
+                                                        <option value="0" selected="">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="8">8</option>
+                                                        <option value="18">18</option>
+                                                    </optgroup>
+                                                </select></td>
+                                            <td><asp:Textbox runat="server" type="number" id="KDVamount" placeholder="KDV amount" ReadOnly="true"></asp:Textbox></td>
+                                            <td><asp:Textbox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:Textbox></td>
                                         </tr>
-                                        <tr>
-                                            <td class="text-center"><a href="#"><span><i class="fa fa-plus"></i></span></a></td>
-                                            <td>Cell 1</td>
-                                            <td>Cell 2</td>
-                                            <td>Cell 3</td>
-                                            <td>Cell 4</td>
-                                            <td>Cell 5</td>
-                                            <td>Cell 6</td>
-                                            <td>Cell 7</td>
-                                            <td>Cell 8</td>
-                                            <td>Cell 9</td>
-                                            <td>Cell 10</td>
-                                            <td>Cell 11</td>
-                                        </tr>
+                                        <tr></tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -345,10 +356,11 @@ A company uses this software will easily track their process by using features o
                                         </tr>
                                     </tfoot>
                                 </table>
-						</div><asp:LinkButton runat="server" OnClick="AddNewInvoice_Click" class="btn btn-primary" id="AddNewInvoice" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Fatura Ekle</asp:LinkButton></div>
-				</div>
-			</div>
-		</div>
+                            </div><asp:LinkButton runat="server" OnClick="AddNewInvoice_Click" class="btn btn-primary" id="AddInvoice" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Fatura Ekle</asp:LinkButton>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		<footer class="bg-white sticky-footer">
 			<div class="container my-auto">
 				<div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020</span></div>
