@@ -184,7 +184,6 @@ A company uses this software will easily track their process by using features o
 							<div class="table-responsive">
 								<table class="table">
 									<thead>
-										<tr></tr>
 									</thead>
 									<tbody>
 										<tr>
@@ -203,7 +202,10 @@ A company uses this software will easily track their process by using features o
 										</tr>
 										<tr>
 											<td>Kur<br></td>
-											<td><asp:TextBox runat="server" type="number" ID="CurrencyExchangeRate" min="0" step="0.01" placeholder="Exchange Rate" ReadOnly="true" ></asp:TextBox></td>
+											<asp:hiddenfield id="USD" runat="server"/>
+											<asp:hiddenfield id="TRY" runat="server"/>
+											<asp:hiddenfield id="EUR" runat="server"/>
+											<td><asp:Label runat="server" type="number" ID="CurrencyExchangeRate" min="0" step="0.01" placeholder="Exchange Rate" ReadOnly="true" OnTextChanged="CurrencyExchangeRate_TextChanged" ></asp:Label></td>
 										</tr>
 									</tbody>
 								</table>
@@ -270,6 +272,22 @@ A company uses this software will easily track their process by using features o
 			</div>
 		</footer>
 	</div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+	
+	<script> 
+			const base = 'USD'
+			const api_url = 'https://api.exchangeratesapi.io/latest?base=USD '
+
+            async function getApi() {
+                const response = await fetch(api_url);
+                const data = await response.json();
+            }
+
+		getApi();
+		document.getElementById('USD').value = 1;
+		document.getElementById('EUR').value = data.rates.EUR;
+        document.getElementById('TRY').value = data.rates.TRY;
+
+    </script>	
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/chart.min.js"></script>

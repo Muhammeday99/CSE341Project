@@ -232,6 +232,16 @@ A company uses this software will easily track their process by using features o
 														<td>Vade Tarihi<br></td>
 														<td><asp:TextBox runat="server" id="PaymentDate" type="date" name="PaymentDate"></asp:TextBox></td>
 													</tr>
+													<tr>
+														<td>Döviz Kodu<br></td>
+														<td><select id="CurrencyCode" name="CurrencyCode">
+																<optgroup label="Döviz Kodu">
+																	<option value="TRY" selected="">TRY</option>
+																	<option value="USD">USD</option>
+																	<option value="EUR">EUR</option>
+																</optgroup>
+														    </select></td>
+													</tr>
 												</tbody>
 											</table>
 										</div>
@@ -249,26 +259,16 @@ A company uses this software will easily track their process by using features o
 												</thead>
 												<tbody>
 													<tr>
-														<td>Döviz Kodu<br></td>
-														<td><select id="CurrencyCode" name="CurrencyCode">
-																<optgroup label="Döviz Kodu">
-																	<option value="TRY" selected="">TRY</option>
-																	<option value="USD">USD</option>
-																	<option value="EUR">EUR</option>
-																</optgroup>
-														    </select></td>
-													</tr>
-													<tr>
 														<td style="width: 20%;">Tutar</td>
-														<td><asp:TextBox runat="server" type="number" id="Amount" placeholder="Amount"></asp:TextBox></td>
+														<td><asp:TextBox runat="server" type="number" id="InvoiceAmount" placeholder="Amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr>
-														<td>KDV (yüzde)</td>
-														<td><asp:TextBox runat="server" type="number" id="KDVpercentage" min="0" step="0.1" placeholder="KDV Percentage"></asp:TextBox></td>
+														<td>KDV miktarı</td>
+														<td><asp:TextBox runat="server" type="number" id="InvoiceKDVamount" min="0" step="0.1" placeholder="KDV amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Toplam Tutar</td>
-														<td><asp:TextBox runat="server" type="number" id="TotalAmount" placeholder="Total Amount"></asp:TextBox></td>
+														<td><asp:TextBox runat="server" type="number" id="InvoiceTotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr></tr>
 													<tr></tr>
@@ -278,10 +278,104 @@ A company uses this software will easily track their process by using features o
 									</div>
 								</div>
 							</div>
-						</div><asp:LinkButton runat="server" OnClick="AddNewInvoice_Click" class="btn btn-primary" id="AddNewInvoice" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Fatura Ekle</asp:LinkButton></div>
-				</div>
-			</div>
-		</div>
+						</div>
+					<div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="DetailTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Yeni Ekle</th>
+                                            <th>Tip (Masraf/Proje)</th>
+                                            <th>Proje/Masraf Kodu</th>
+                                            <th>Stok Türü</th>
+                                            <th>Stok Kodu</th>
+                                            <th>Stok Adı</th>
+                                            <th>Birim</th>
+                                            <th>Miktarı</th>
+                                            <th>Tutar</th>
+                                            <th>KDV Oranı</th>
+                                            <th>KDV miktarı</th>
+                                            <th>Toplam Tutar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr></tr>
+                                        <tr id ="Content1">
+                                            <td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClientClick="{return false;}"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
+                                            <td><select id="Type">
+                                                    <optgroup label="Tip">
+                                                        <option value="Masraf" selected="">Masraf</option>
+                                                        <option value="Proje">Proje</option>
+                                                    </optgroup>
+                                                </select></td>
+                                            <td><input class="form-control-sm" type="text" id="ProjectExpenseCode" placeholder="Project / Expense Code">
+												<asp:Button runat="server" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ProjectCodeModal" Text="..." OnClientClick ="return false" /><br>
+                                                <div class="modal fade" role="dialog" tabindex="-1" id="ProjectCodeModal">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Modal Title</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>The content of your modal.</p>
+                                                            </div>
+                                                            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><select id="StockKind">
+                                                    <optgroup label="Stok Türü">
+                                                        <option value="Mekanik" selected="">Mekanik</option>
+                                                        <option value="Pinomatik">Pinomatik</option>
+                                                        <option value="Otomasyon">Otomasyon</option>
+                                                    </optgroup>
+                                                </select></td>
+                                            <td><asp:Textbox runat="server" id="StockCode" placeholder="Stock Code"></asp:Textbox></td>
+                                            <td><asp:Textbox runat="server" id="StockName" placeholder="Stock Name"></asp:Textbox></td>
+                                            <td><select id="Unit">
+                                                    <optgroup label="Birim">
+                                                        <option value="Adet" selected="">Adet</option>
+                                                        <option value="Kilogram">Kilogram</option>
+                                                        <option value="Metre">Metre</option>
+                                                    </optgroup>
+                                                </select></td>
+                                            <td><asp:Textbox runat="server" type="number" id="Count" placeholder="Count" min="0" step="1"></asp:Textbox></td>
+                                            <td><asp:Textbox runat="server" type="number" id="Amount" placeholder="Amount" min="0"></asp:Textbox></td>
+                                            <td><select id="KDVpercentage">
+                                                    <optgroup label="KDV oranı">
+                                                        <option value="0" selected="">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="8">8</option>
+                                                        <option value="18">18</option>
+                                                    </optgroup>
+                                                </select></td>
+                                            <td><asp:Textbox runat="server" type="number" id="KDVamount" placeholder="KDV amount" ReadOnly="true"></asp:Textbox></td>
+                                            <td><asp:Textbox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:Textbox></td>
+                                        </tr>
+                                        <tr></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Yeni Ekle</strong><br></td>
+                                            <td><strong>Tip (Masraf/Proje)</strong><br></td>
+                                            <td><strong>Proje Kodu</strong><br></td>
+                                            <td><strong>Stok Türü</strong><br></td>
+                                            <td><strong>Stok Kodu</strong><br></td>
+                                            <td><strong>Stok Adı</strong><br></td>
+                                            <td><strong>Birim</strong><br></td>
+                                            <td><strong>Miktarı</strong><br></td>
+                                            <td><strong>Tutar</strong><br></td>
+                                            <td><strong>KDV Oranı</strong><br></td>
+                                            <td><strong>KDV miktarı</strong><br></td>
+                                            <td><strong>Toplam Tutar</strong><br></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div><asp:LinkButton runat="server" OnClick="AddNewInvoice_Click" class="btn btn-primary" id="AddInvoice" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Fatura Ekle</asp:LinkButton>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		<footer class="bg-white sticky-footer">
 			<div class="container my-auto">
 				<div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020</span></div>
@@ -294,6 +388,7 @@ A company uses this software will easily track their process by using features o
 	<script src="assets/js/bs-init.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
+	<script src="../Scripts/NewInvoiceContent.js"></script>
 	</form>
 </body>
 
