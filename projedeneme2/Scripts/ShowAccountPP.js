@@ -16,6 +16,7 @@ function listElements(Accounts) {
         let imgUrl = Accounts[i].ProfilePicture;
         console.log(imgUrl);
         let imgId = "GridView1_ProfilePicture_" + i;
+        
         let img = document.getElementById(imgId);
         img.setAttribute("src", imgUrl);
     }

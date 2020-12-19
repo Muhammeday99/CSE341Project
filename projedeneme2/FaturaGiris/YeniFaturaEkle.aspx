@@ -280,7 +280,7 @@ A company uses this software will easily track their process by using features o
 							</div>
 						</div>
 					<div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-                                <table class="table my-0" id="dataTable">
+                                <table class="table my-0" id="DetailTable">
                                     <thead>
                                         <tr>
                                             <th>Yeni Ekle</th>
@@ -299,15 +299,16 @@ A company uses this software will easily track their process by using features o
                                     </thead>
                                     <tbody>
                                         <tr></tr>
-                                        <tr>
-                                            <td><a href="#"><span><i class="fa fa-plus"></i></span></a></td>
+                                        <tr id ="Content1">
+                                            <td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClientClick="{return false;}"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
                                             <td><select id="Type">
                                                     <optgroup label="Tip">
                                                         <option value="Masraf" selected="">Masraf</option>
                                                         <option value="Proje">Proje</option>
                                                     </optgroup>
                                                 </select></td>
-                                            <td><input class="form-control-sm" type="text" id="ProjectExpenseCode" placeholder="Project / Expense Code"><button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#ProjectCodeModal">...</button><br>
+                                            <td><input class="form-control-sm" type="text" id="ProjectExpenseCode" placeholder="Project / Expense Code">
+												<asp:Button runat="server" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ProjectCodeModal" Text="..." OnClientClick ="return false" /><br>
                                                 <div class="modal fade" role="dialog" tabindex="-1" id="ProjectCodeModal">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
@@ -387,6 +388,7 @@ A company uses this software will easily track their process by using features o
 	<script src="assets/js/bs-init.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
+	<script src="../Scripts/NewInvoiceContent.js"></script>
 	</form>
 </body>
 
