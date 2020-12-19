@@ -25,17 +25,37 @@ namespace projedeneme2.DovizKurTanim
         protected void AddNewCurrency_Click(object sender, EventArgs e)
         {
             con.Open();
-          
+            List<string> inputs = new List<string>();
+
             //We have 3 inputs: CODE, DATE, RATE.
 
             //Currently this label is not readable.
-            
-            string n_CurrencyCode = Request.Form["CurrencyCode"];
+
+            double n_CurrencyExchangeRate = double.Parse(CurrencyExchangeRate.Text, System.Globalization.CultureInfo.InvariantCulture);
+            string n_CurrencyCode = " ";
+
+            if (Request.Form["CurrencyCode"] == "TRY")
+            {
+                n_CurrencyCode = "TRY";
+                n_CurrencyExchangeRate = double.Parse(TRY.Value, System.Globalization.CultureInfo.InvariantCulture);
+                inputs.Add(n_CurrencyCode);
+            }
+            else if (Request.Form["CurrencyCode"] == "USD")
+            {
+                n_CurrencyCode = "USD";
+                n_CurrencyExchangeRate = 1;
+                inputs.Add(n_CurrencyCode);
+            }
+            else if (Request.Form["CurrencyCode"] == "EUR")
+            {
+                n_CurrencyCode = "EUR";
+                n_CurrencyExchangeRate = double.Parse(EUR.Value, System.Globalization.CultureInfo.InvariantCulture);
+                inputs.Add(n_CurrencyCode);
+            }
 
             //date of the currency
             string n_CurrencyDate = CurrencyExchangeDate.Text;
 
-            double n_CurrencyExchangeRate = double.Parse(CurrencyExchangeRate.Text, System.Globalization.CultureInfo.InvariantCulture);
             if (n_CurrencyExchangeRate < 0)
             {
                 //error label
@@ -53,6 +73,11 @@ namespace projedeneme2.DovizKurTanim
             }
 
             con.Close();
+        }
+
+        protected void CurrencyExchangeRate_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
