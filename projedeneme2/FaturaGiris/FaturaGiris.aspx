@@ -184,115 +184,91 @@ A company uses this software will easily track their process by using features o
 							<div class="col-md-6 text-nowrap">
 								<div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm"><option value="10" selected="">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>&nbsp;</label></div>
 							</div>
-							<div class="col-md-6">
-								<div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
-							</div>
-						</div>
-						<div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-							<table class="table my-0" id="dataTable">
-								<thead>
-									<tr>
-										<th>Tip (Masraf/Proje)</th>
-										<th>Proje Kodu</th>
-										<th>Stok Türü</th>
-										<th>Stok Kodu</th>
-										<th>Stok Adı</th>
-										<th>Birim</th>
-										<th>Miktarı</th>
-										<th>Tutar</th>
-										<th>KDV Oranı</th>
-										<th>KDV miktarı</th>
-										<th>Toplam Tutar</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>Angelica Ramos</td>
-										<td>Cell 2<br></td>
-										<td>Cell 3<br></td>
-										<td>London</td>
-										<td>47</td>
-										<td>2009/10/09<br></td>
-										<td>$1,200,000</td>
-										<td>Cell 8</td>
-										<td>Cell 9</td>
-										<td>Cell 10</td>
-										<td>Cell 11</td>
-									</tr>
-									<tr></tr>
-									<tr></tr>
-									<tr>
-										<td>Cell 1</td>
-										<td>Cell 2</td>
-										<td>Cell 3</td>
-										<td>Cell 4</td>
-										<td>Cell 5</td>
-										<td>Cell 6</td>
-										<td>Cell 7</td>
-										<td>Cell 8</td>
-										<td>Cell 9</td>
-										<td>Cell 10</td>
-										<td>Cell 11</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td><strong>Tip (Masraf/Proje)</strong><br></td>
-										<td><strong>Proje Kodu</strong><br></td>
-										<td><strong>Stok Türü</strong><br></td>
-										<td><strong>Stok Kodu</strong><br></td>
-										<td><strong>Stok Adı</strong><br></td>
-										<td><strong>Birim</strong><br></td>
-										<td><strong>Miktarı</strong><br></td>
-										<td><strong>Tutar</strong><br></td>
-										<td><strong>KDV Oranı</strong><br></td>
-										<td><strong>KDV miktarı</strong><br></td>
-										<td><strong>Toplam Tutar</strong><br></td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-						<div class="row">
-							<div class="col-md-6 align-self-center">
-								<p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-							</div>
-							<div class="col-md-6">
-								<nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-									<ul class="pagination">
-										<li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-										<li class="page-item active"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item"><a class="page-link" href="#">3</a></li>
-										<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<footer class="bg-white sticky-footer">
-			<div class="container my-auto">
-				<div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020</span></div>
-			</div>
-		</footer>
-	</div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+							 <div class="col-md-6">
+                                    <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                </div>
+                            </div>
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Fatura Numarası</th>
+                                            <th>Fatura Tarihi</th>
+                                            <th>Cari Kodu</th>
+                                            <th>Açıklama</th>
+                                            <th>Vade Tarihi</th>
+                                            <th>Döviz Kodu</th>
+                                            <th>Tutar</th>
+                                            <th>KDV miktarı</th>
+                                            <th>Toplam Tutar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Angelica Ramos</td>
+                                            <td>Cell 2<br></td>
+                                            <td>Cell 3<br></td>
+                                            <td>London</td>
+                                            <td>47</td>
+                                            <td>2009/10/09<br></td>
+                                            <td>$1,200,000</td>
+                                            <td>Cell 8</td>
+                                            <td>Cell 9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cell 1</td>
+                                            <td>Cell 2</td>
+                                            <td>Cell 3</td>
+                                            <td>Cell 4</td>
+                                            <td>Cell 5</td>
+                                            <td>Cell 6</td>
+                                            <td>Cell 7</td>
+                                            <td>Cell 8</td>
+                                            <td>Cell 9</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Fatura Numarası</strong><br></td>
+                                            <td><strong>Fatura Tarihi</strong><br></td>
+                                            <td><strong>Cari Kodu</strong><br></td>
+                                            <td><strong>Açıklama</strong><br></td>
+                                            <td><strong>Vade Tarihi</strong><br></td>
+                                            <td><strong>Döviz Kodu</strong><br></td>
+                                            <td><strong>Tutar</strong><br></td>
+                                            <td><strong>KDV miktarı</strong><br></td>
+                                            <td><strong>Toplam Tutar</strong><br></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 align-self-center">
+                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/chart.min.js"></script>

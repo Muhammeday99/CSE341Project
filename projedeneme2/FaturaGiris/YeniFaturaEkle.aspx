@@ -232,6 +232,16 @@ A company uses this software will easily track their process by using features o
 														<td>Vade Tarihi<br></td>
 														<td><asp:TextBox runat="server" id="PaymentDate" type="date" name="PaymentDate"></asp:TextBox></td>
 													</tr>
+													<tr>
+														<td>Döviz Kodu<br></td>
+														<td><select id="CurrencyCode" name="CurrencyCode">
+																<optgroup label="Döviz Kodu">
+																	<option value="TRY" selected="">TRY</option>
+																	<option value="USD">USD</option>
+																	<option value="EUR">EUR</option>
+																</optgroup>
+														    </select></td>
+													</tr>
 												</tbody>
 											</table>
 										</div>
@@ -249,26 +259,16 @@ A company uses this software will easily track their process by using features o
 												</thead>
 												<tbody>
 													<tr>
-														<td>Döviz Kodu<br></td>
-														<td><select id="CurrencyCode" name="CurrencyCode">
-																<optgroup label="Döviz Kodu">
-																	<option value="TRY" selected="">TRY</option>
-																	<option value="USD">USD</option>
-																	<option value="EUR">EUR</option>
-																</optgroup>
-														    </select></td>
-													</tr>
-													<tr>
 														<td style="width: 20%;">Tutar</td>
-														<td><asp:TextBox runat="server" type="number" id="Amount" placeholder="Amount"></asp:TextBox></td>
+														<td><asp:TextBox runat="server" type="number" id="Amount" placeholder="Amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr>
-														<td>KDV (yüzde)</td>
-														<td><asp:TextBox runat="server" type="number" id="KDVpercentage" min="0" step="0.1" placeholder="KDV Percentage"></asp:TextBox></td>
+														<td>KDV miktarı</td>
+														<td><asp:TextBox runat="server" type="number" id="KDVamount" min="0" step="0.1" placeholder="KDV amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr>
 														<td>Toplam Tutar</td>
-														<td><asp:TextBox runat="server" type="number" id="TotalAmount" placeholder="Total Amount"></asp:TextBox></td>
+														<td><asp:TextBox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:TextBox></td>
 													</tr>
 													<tr></tr>
 													<tr></tr>
@@ -278,6 +278,73 @@ A company uses this software will easily track their process by using features o
 									</div>
 								</div>
 							</div>
+						</div>
+					<div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Yeni Ekle</th>
+                                            <th>Tip (Masraf/Proje)</th>
+                                            <th>Proje Kodu</th>
+                                            <th>Stok Türü</th>
+                                            <th>Stok Kodu</th>
+                                            <th>Stok Adı</th>
+                                            <th>Birim</th>
+                                            <th>Miktarı</th>
+                                            <th>Tutar</th>
+                                            <th>KDV Oranı</th>
+                                            <th>KDV miktarı</th>
+                                            <th>Toplam Tutar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr></tr>
+                                        <tr>
+                                            <td class="text-center"><a href="#"><span><i class="fa fa-plus"></i></span></a></td>
+                                            <td>Angelica Ramos</td>
+                                            <td>Cell 2<br></td>
+                                            <td>Cell 3<br></td>
+                                            <td>London</td>
+                                            <td>47</td>
+                                            <td>2009/10/09<br></td>
+                                            <td>$1,200,000</td>
+                                            <td>Cell 8</td>
+                                            <td>Cell 9</td>
+                                            <td>Cell 10</td>
+                                            <td>Cell 11</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><a href="#"><span><i class="fa fa-plus"></i></span></a></td>
+                                            <td>Cell 1</td>
+                                            <td>Cell 2</td>
+                                            <td>Cell 3</td>
+                                            <td>Cell 4</td>
+                                            <td>Cell 5</td>
+                                            <td>Cell 6</td>
+                                            <td>Cell 7</td>
+                                            <td>Cell 8</td>
+                                            <td>Cell 9</td>
+                                            <td>Cell 10</td>
+                                            <td>Cell 11</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Yeni Ekle</strong><br></td>
+                                            <td><strong>Tip (Masraf/Proje)</strong><br></td>
+                                            <td><strong>Proje Kodu</strong><br></td>
+                                            <td><strong>Stok Türü</strong><br></td>
+                                            <td><strong>Stok Kodu</strong><br></td>
+                                            <td><strong>Stok Adı</strong><br></td>
+                                            <td><strong>Birim</strong><br></td>
+                                            <td><strong>Miktarı</strong><br></td>
+                                            <td><strong>Tutar</strong><br></td>
+                                            <td><strong>KDV Oranı</strong><br></td>
+                                            <td><strong>KDV miktarı</strong><br></td>
+                                            <td><strong>Toplam Tutar</strong><br></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
 						</div><asp:LinkButton runat="server" OnClick="AddNewInvoice_Click" class="btn btn-primary" id="AddNewInvoice" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Fatura Ekle</asp:LinkButton></div>
 				</div>
 			</div>

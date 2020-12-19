@@ -81,6 +81,9 @@ namespace projedeneme2.AdminPage
             ShowData();
         }
 
-        
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

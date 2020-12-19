@@ -65,7 +65,7 @@ namespace projedeneme2.YeniFaturaEkle
             string amount = Convert.ToString(Amount.Text);
             inputs.Add(amount);
 
-            string kdvPercentage = Convert.ToString(KDVpercentage.Text);
+            string kdvPercentage = Convert.ToString(KDVamount.Text);
             inputs.Add(kdvPercentage);
 
             //Error label BULAMADIM, KALSIN SIMDILIK BURDA SONRA AYARLARIZ.
