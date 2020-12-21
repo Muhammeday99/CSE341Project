@@ -16,10 +16,10 @@ namespace projedeneme2
 
     /**OUR MAIN WEB FORM. 
     This web form makes the log-in with primary error handles. 
-    
-    ---Enter email
+   #deneme
+    ---Enter emailASASa
     ---Enter password
-    ---ENTER
+    ---ENTERaaAA
      */
     public partial class Default : System.Web.UI.Page
     {

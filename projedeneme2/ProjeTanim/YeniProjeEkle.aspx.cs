@@ -39,38 +39,39 @@ namespace projedeneme2.YeniProjeEkle
             string orderCode = OrderCode.Text;
             inputs.Add(orderCode);
 
-            string argeInvoiceNumber = Convert.ToString(ArgeInvoiceNumber.Text);
-            inputs.Add(argeInvoiceNumber);
-            //Currency id sonradan halledicem!!(FK Sıkıntısı var!)
-            string currencyid = string.Empty;
-            int currency;
-            if (Request.Form["CurrencyId"] == "TRY")
+            int argeInvoiceNumber = Convert.ToInt32(ArgeInvoiceNumber.Text);
+           
+            // inputs.Add(argeInvoiceNumber);
+            
+            // string currencyid = string.Empty;
+            int currency = -1;
+            if (Request.Form["CurrencyCode"] == "TRY")
             {
                 currency = 1;
-                currencyid = Convert.ToString(currency);
-                inputs.Add(currencyid);
+            //    currencyid = Convert.ToString(currency);
+            //    inputs.Add(currencyid);
             }
-            else if (Request.Form["CurrencyId"] == "USD")
+            else if (Request.Form["CurrencyCode"] == "USD")
             {
                 currency = 2;
-                currencyid = Convert.ToString(currency);
-                inputs.Add(currencyid);
+            //    currencyid = Convert.ToString(currency);
+            //     inputs.Add(currencyid);
             }
-            else if (Request.Form["CurrencyId"] == "EUR")
+            else if (Request.Form["CurrencyCode"] == "EUR")
             {
                 currency = 3;
-                currencyid = Convert.ToString(currency);
-                inputs.Add(currencyid);
+            //    currencyid = Convert.ToString(currency);
+            //    inputs.Add(currencyid);
             }
             
-            string amount = Convert.ToString(Amount.Text);
-            inputs.Add(amount);
+            double amount = Convert.ToDouble(Amount.Text);
+           // inputs.Add(amount);
 
-            string kdvPercentage = Convert.ToString(KDVpercentage.Text);
-            inputs.Add(kdvPercentage);
+            double kdvPercentage = Convert.ToDouble(KDVpercentage.Text);
+           // inputs.Add(kdvPercentage);
 
-            string worksmanshipPrice = Convert.ToString(WorkmanshipPricePercentage.Text);
-            inputs.Add(worksmanshipPrice);
+            double worksmanshipPrice = Convert.ToDouble(WorkmanshipPricePercentage.Text);
+           // inputs.Add(worksmanshipPrice);
 
             string relatedPerson = RelatedPerson.Text;
             inputs.Add(relatedPerson);
@@ -92,7 +93,7 @@ namespace projedeneme2.YeniProjeEkle
             cmnd.Parameters.AddWithValue("@CustomerCode", customerCode);
             cmnd.Parameters.AddWithValue("@OrderCode", orderCode);
             cmnd.Parameters.AddWithValue("@ArgeInvoiceNumber", argeInvoiceNumber);
-            cmnd.Parameters.AddWithValue("@CurrencyId", currencyid);
+            cmnd.Parameters.AddWithValue("@CurrencyId", currency);
             cmnd.Parameters.AddWithValue("@Amount", amount);
             cmnd.Parameters.AddWithValue("@KDVpercentage", kdvPercentage);
             cmnd.Parameters.AddWithValue("@WorkmanshipPricePercentage", worksmanshipPrice);
