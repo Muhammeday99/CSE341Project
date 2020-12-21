@@ -102,8 +102,6 @@ namespace projedeneme2.YeniProjeEkle
 
             cmnd.ExecuteNonQuery();
 
-            
-
             con.Close();
         }
     }
