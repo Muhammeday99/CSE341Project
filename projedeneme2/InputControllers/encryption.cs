@@ -24,5 +24,22 @@ namespace projedeneme2.InputControllers
             string encrypted = Convert.ToBase64String(b);
             return encrypted;
         }
+
+        // Normally this decryptString function must be use but ıt doesnt work exactly
+        // public string DecryptString(string encrString)
+        //{
+        //byte[] b;
+        //string decrypted;
+        //try
+        //{
+        //  b = Convert.FromBase64String(encrString);
+        //   decrypted = System.Text.ASCIIEncoding.ASCII.GetString(b);
+        //}
+        //catch (FormatException fe)
+        //{
+        //   decrypted = "";
+        //  }
+        //   return decrypted;
+        //}
     }
 }
