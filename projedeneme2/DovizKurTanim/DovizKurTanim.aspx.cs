@@ -55,7 +55,7 @@ namespace projedeneme2.DovizKurTanim
 
             if (n_CurrencyExchangeRate < 0)
             {
-                //error label
+                 //error label
             }
             else
             {
