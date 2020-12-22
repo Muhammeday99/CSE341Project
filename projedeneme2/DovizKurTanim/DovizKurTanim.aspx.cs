@@ -16,10 +16,7 @@ namespace projedeneme2.DovizKurTanim
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            JsonConverter convert = new JsonConverter();
-            DataTable table = convert.ToJson("Currency");
-            string str = convert.DataTableToJSON(table);
-            convert.WriteToJsonFile(str, "ExchangeList.json");
+            convertToJson();
         }
 
         protected void AddNewCurrency_Click(object sender, EventArgs e)
@@ -73,8 +70,16 @@ namespace projedeneme2.DovizKurTanim
             }
 
             con.Close();
+            convertToJson();
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
-
+        private void convertToJson()
+        {
+            JsonConverter convert = new JsonConverter();
+            DataTable table = convert.ToJson("ExchangeRate");
+            string str = convert.DataTableToJSON(table);
+            convert.WriteToJsonFile(str, "ExchangeList.json");
+        }
         protected void CurrencyExchangeRate_TextChanged(object sender, EventArgs e)
         {
 

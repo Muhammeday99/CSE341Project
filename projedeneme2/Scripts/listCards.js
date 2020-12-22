@@ -1,10 +1,16 @@
 ﻿let Xmlhttp = new XMLHttpRequest();
 let EntityCards;
+let sizeList = document.getElementById("ListSelect");
 Xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         EntityCards = JSON.parse(this.responseText);
         listElements(EntityCards);
-        
+        sizeList.onchange = () => {
+
+            let size = sizeList.options[sizeList.selectedIndex].value;
+
+            listElements(EntityCards, size);
+        }
     }
 }
 
@@ -12,10 +18,12 @@ Xmlhttp.open("GET", "../CariKart/EntityCards.json", true);
 Xmlhttp.send();
 
 
-function listElements(EntityCards) {
+function listElements(EntityCards, size = EntityCards.length) {
     let tablebody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
-
-    for (let i = 0; i < EntityCards.length; i++) {
+    tablebody.innerHTML = "";
+    //console.log(size);
+    for (let i = 0; i < size; i++) {
+        if (i >= EntityCards.length) break;
         let EntityCard = EntityCards[i];
         let Trow = tablebody.insertRow();
         for (let e in EntityCard) {
