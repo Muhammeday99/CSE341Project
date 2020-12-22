@@ -268,7 +268,7 @@ A company uses this software will easily track their process by using features o
 													</tr>
 													<tr>
 														<td>Toplam Tutar</td>
-														<td><asp:TextBox runat="server" type="number" id="InvoiceTotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:TextBox></td>
+														<td><asp:Label runat="server" id="InvoiceTotalAmount" Text="Invoice Total Amount"></asp:Label></td>
 													</tr>
 													<tr></tr>
 													<tr></tr>

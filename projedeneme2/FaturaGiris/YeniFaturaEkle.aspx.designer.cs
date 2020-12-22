@@ -84,7 +84,7 @@ namespace projedeneme2.YeniFaturaEkle
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InvoiceTotalAmount;
+        protected global::System.Web.UI.WebControls.Label InvoiceTotalAmount;
 
         /// <summary>
         /// NewContentBtn control.
