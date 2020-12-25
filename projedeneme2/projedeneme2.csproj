@@ -95,6 +95,7 @@
     <Content Include="default.aspx" />
     <Content Include="DovizKurTanim\DovizKurTanim.aspx" />
     <Content Include="Homepage\Homepage.aspx" />
+    <Content Include="MasrafTanımı\MasrafTanımı.aspx" />
     <Content Include="ProfilePictures\unnamed.jpg" />
     <Content Include="ProjeTanim\ProjeTanim.aspx" />
     <Content Include="ProjeTanim\YeniProjeEkle.aspx" />
@@ -194,6 +195,13 @@
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="InputControllers\stringController.cs" />
+    <Compile Include="MasrafTanımı\MasrafTanımı.aspx.cs">
+      <DependentUpon>MasrafTanımı.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasrafTanımı\MasrafTanımı.aspx.designer.cs">
+      <DependentUpon>MasrafTanımı.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProjeTanim\ProjeTanim.aspx.cs">
       <DependentUpon>ProjeTanim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
