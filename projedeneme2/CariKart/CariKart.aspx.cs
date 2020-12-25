@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.Services;
 //using projedeneme2.Homepage;
 
 
@@ -24,5 +25,17 @@ namespace projedeneme2.CariKart
             Response.Redirect("/CariKart/YeniCariKart.aspx");
         }
 
+        [WebMethod]
+        public static string getUserInfo()
+        {
+
+            JsonConverter convert = new JsonConverter();
+
+            return convert.getRowInfo("Users", "UserID", "1");
+        }
+
     }
+
+    
+
 }

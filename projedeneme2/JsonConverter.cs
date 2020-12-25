@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Windows;
 
+
 namespace projedeneme2
 {
     public class JsonConverter
@@ -16,6 +17,12 @@ namespace projedeneme2
         protected SqlDataAdapter Dadapt;
         protected DataTable table = new DataTable();
         protected DataRow Drow;
+        
+        public SqlConnection GetConnection()
+        {
+            return con;
+        }
+
         public DataTable ToJson(string TableName)
         {
             Dadapt = new SqlDataAdapter("select * from " + TableName, con);
@@ -35,6 +42,34 @@ namespace projedeneme2
         {
             string p1 = HttpContext.Current.Server.MapPath(".") + "\\";
             System.IO.File.WriteAllText(Path.Combine(p1, FileName), JSONString);
+        }
+
+        
+        public string getRowInfo(string tableName,string column,string id)
+        {
+
+            /*DataTable temp = c.ToJson(table);
+            temp.Rows.Find()*/
+            con.Open();
+            SqlCommand command = new SqlCommand("select * from " + tableName + " where " + column + "='" + id +"'", con);
+            Dadapt = new SqlDataAdapter("select * from " + tableName + " where " + column + "='" + id + "'", con);
+            Dadapt.Fill(table);
+            
+
+            
+            SqlDataReader data = command.ExecuteReader();
+            Object[] values = new Object[data.FieldCount];
+            //data.GetValues(values);
+            /*int count = data.FieldCount;
+            if (data.Read())
+            {
+                foreach(DataRow in )
+                 data.GetString(data.GetOrdinal("UserEmail"));
+            }*/
+
+            con.Close();
+            
+            return JsonConvert.SerializeObject(table);
         }
     }
 }

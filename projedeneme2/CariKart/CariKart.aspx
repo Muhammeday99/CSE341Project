@@ -23,6 +23,7 @@ A company uses this software will easily track their process by using features o
 
 <body id="page-top">
 	<form runat="server">
+	<asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
 	<div id="wrapper">
 		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="color: rgb(0,85,164);background: rgb(49,115,163);min-width: auto;max-width: 250;">
 			<div class="container-fluid d-flex flex-column p-0">
@@ -250,14 +251,14 @@ A company uses this software will easily track their process by using features o
 			</div>
 		</footer>
 	</div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
-	<script src="assets/js/jquery.min.js"></script>
+	<!--<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/chart.min.js"></script>
 	<script src="assets/js/bs-init.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-	<script src="assets/js/theme.js"></script>
-	
+	<script src="assets/js/theme.js"></script>-->
 	<script src="../Scripts/listCards.js"></script>
+	<!--<script src="../Scripts/listCards.js"></script>-->
 	</form>
 </body>
 
