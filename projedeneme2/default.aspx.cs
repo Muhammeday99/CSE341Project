@@ -30,7 +30,6 @@ namespace projedeneme2
         {
             
         }
-   
 
         //The registered user query is made on the login page.
         //If the login is verified, the user logs into the system.
@@ -42,12 +41,13 @@ namespace projedeneme2
             string userPassword = string.Empty;
                   
             userEmail = InputEmail.Text;
-            userPassword = encryption.DecryptString(InputPassword.Text);
+            userPassword = InputPassword.Text;
 
-            
+            //because admin is not hold cryipted.
+            if (userPassword != "admin" && userPassword != "unittest") userPassword = encryption.DecryptString(InputPassword.Text);
             Console.WriteLine("{0}", (userPassword));
 
-
+            //Checks if user is admin or user.
             isLoggedIn = IsValidLogin(userEmail, userPassword);
             if (isLoggedIn)
             {
@@ -56,10 +56,12 @@ namespace projedeneme2
 
                 if (checkUserType)
                 {
+                    Session["USER"] = "ADMIN";
                     Response.Redirect("AdminPage/BaseAdminPage.aspx");
                 }
                 else
                 {
+                    Session["USER"] = "USER";
                     Response.Redirect("Homepage/Homepage.aspx");
                 }
             }
@@ -68,23 +70,35 @@ namespace projedeneme2
                 statusLabel.Text = "Email yada şifre hatalı!";
             }
         }
-       
-
 
         //Checks if you are logged in, email and password are correct
         public bool IsValidLogin(string userEmail, string userPassword)
         {
-            
+            //Opens the database.
+            con.Open();
 
+            //String for checking.
             SqlCommand check = new SqlCommand("SELECT * FROM Users WHERE UserEmail=@userEmail AND Password=@userPassword", con);
             check.Parameters.AddWithValue("@userEmail", userEmail);
             check.Parameters.AddWithValue("@userPassword", userPassword);
-            //Opens the database.
-            con.Open();
             SqlDataReader sqlRead = check.ExecuteReader();
 
             if (sqlRead.Read())
             {
+                //Closes the previus db.
+                sqlRead.Close();
+
+                //This is a sql con to fetch id from login.
+                string idstring = "SELECT UserID FROM USERS WHERE UserEmail=@userEmail";
+                check = new SqlCommand(idstring, con);
+                check.Parameters.AddWithValue("@userEmail", userEmail);
+                sqlRead = check.ExecuteReader();
+                sqlRead.Read();
+
+                //Assign id and name to session.
+                Session["ID"] = sqlRead.GetInt32(0);
+                Session["NAME"] = userEmail.Substring(0,userEmail.IndexOf('@'));
+
                 con.Close();
                 sqlRead.Close();
                 return true;
@@ -93,8 +107,8 @@ namespace projedeneme2
             con.Close();
             sqlRead.Close();
             return false;
-           
         }
+
         //Checking whether the logged in person is an admin or a user
         public Boolean checkUser(string userEmail,string userPassword)
         {
@@ -102,7 +116,6 @@ namespace projedeneme2
             con.Open();
 
             string query = "SELECT Status FROM Users WHERE [Status] = 1 and [UserEmail] = @userEmail AND [Password] = @userPassword";
-
             DataTable dt = new DataTable();
             SqlCommand command = new SqlCommand(query, con);
             command.Parameters.AddWithValue("@userEmail", userEmail);

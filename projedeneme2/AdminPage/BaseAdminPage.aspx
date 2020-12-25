@@ -10,10 +10,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Admin Page<br />
-            <br />
-&nbsp;&nbsp;&nbsp;
-            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;Merhaba,
+            <asp:Label ID="EmailLabel" runat="server"></asp:Label>
+            .<br />
             <br />
             <asp:Button ID="newUserButton" runat="server" Height="40px" OnClick="newUserButton_Click" Text="Yeni Kullanıcı" Width="160px" PostBackUrl="~//AdminPage/AddAccount.aspx" />
             <br />

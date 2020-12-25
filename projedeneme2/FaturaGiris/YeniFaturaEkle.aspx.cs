@@ -25,27 +25,33 @@ namespace projedeneme2.YeniFaturaEkle
             
         }
 
- 
         protected void AddNewInvoice_Click(object sender, EventArgs e)
         {
+            //Opens the sql database, and list of inputs.
             con.Open();
             List<string> inputs = new List<string>();
 
+            //Fatura Numarası
             string invoiceNumber = InvoiceNumber.Text;
             inputs.Add(invoiceNumber);
 
+            //Fatura Tarihi
             string invoiceDate = DateTime.Now.ToString(InvoiceDate.Text);
-            inputs.Add(invoiceDate);
 
+            //Cari Kodu
             string entitycode = entityCode.Text;
             inputs.Add(entitycode);
 
+            //Açıklama
             string invoiceDescription = InvoiceDescription.Text;
             inputs.Add(invoiceDescription);
 
+            //Vade Tarihi
             string paymentDate = DateTime.Now.ToString(PaymentDate.Text);
             inputs.Add(paymentDate);
-            string currencycode = string.Empty;
+
+            //Döviz Kodu
+            string currencycode = "NON";
             if(Request.Form["CurrencyCode"] == "TRY")
             {
                 currencycode = "TRY";
@@ -61,37 +67,29 @@ namespace projedeneme2.YeniFaturaEkle
                 currencycode = "EUR";
                 inputs.Add(currencycode);
             }
-         
+
+            /*
             string amount = Convert.ToString(Amount.Text);
             inputs.Add(amount);
 
             string kdvPercentage = Convert.ToString(KDVamount.Text);
             inputs.Add(kdvPercentage);
+            */
+
+            
+
+
+            
 
             //Error label BULAMADIM, KALSIN SIMDILIK BURDA SONRA AYARLARIZ.
-          /*  if (!stringController.listStringController(inputs))
-            {
+            if (!stringController.listStringController(inputs)){
                 //error case, display on label.
-                errorsLabel.Text = "Error, some inputs lenght are less than 2 characters.";
-            }else{}*/
+            }else{
 
-            String q = "INSERT INTO dbo.Invoice_info (InvoiceNumber, InvoiceDate,entityCode,InvoiceDescription,PaymentDate,CurrencyCode,Amount,KDVpercentage) VALUES (@InvoiceNumber, @InvoiceDate, @entityCode,@InvoiceDescription, @PaymentDate,@CurrencyCode, @Amount, @KDVpercentage)";
-
-            SqlCommand cmnd = new SqlCommand(q, con);
-
-            cmnd.Parameters.AddWithValue("@InvoiceNumber", invoiceNumber);
-            cmnd.Parameters.AddWithValue("@InvoiceDate", invoiceDate);
-            cmnd.Parameters.AddWithValue("@entityCode", entitycode);
-            cmnd.Parameters.AddWithValue("@InvoiceDescription", invoiceDescription);
-            cmnd.Parameters.AddWithValue("@PaymentDate", paymentDate);
-            cmnd.Parameters.AddWithValue("@CurrencyCode", currencycode);
-            cmnd.Parameters.AddWithValue("@Amount", amount);
-            cmnd.Parameters.AddWithValue("@KDVpercentage", kdvPercentage);
-            
-            cmnd.ExecuteNonQuery();
+                
+            }
 
             con.Close();
-
         }
 
         //TOTAL AMOUNT TEXTBOX OLARAK GOZUKUYOR, DEGISMESI LAZIM, LABEL OLARAK DEGISTIRILMELI

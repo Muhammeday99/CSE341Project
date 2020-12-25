@@ -21,7 +21,17 @@ namespace projedeneme2.AdminPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            conn.Open();
+
+            try {
+                EmailLabel.Text = (string)Session["NAME"];
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            conn.Close();
         }
 
         /**This function loads a new page that lists all users on our database.*/
