@@ -44,7 +44,7 @@ namespace projedeneme2
             userPassword = InputPassword.Text;
 
             //because admin is not hold cryipted.
-            if (userPassword != "admin" && userPassword != "unittest") userPassword = encryption.DecryptString(InputPassword.Text);
+            if (userPassword != "admin" && userPassword != "unittest" && userPassword !="123456789") userPassword = encryption.DecryptString(InputPassword.Text);
             Console.WriteLine("{0}", (userPassword));
 
             //Checks if user is admin or user.
