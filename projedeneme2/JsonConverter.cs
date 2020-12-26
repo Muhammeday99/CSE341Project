@@ -55,18 +55,6 @@ namespace projedeneme2
             Dadapt = new SqlDataAdapter("select * from " + tableName + " where " + column + "='" + id + "'", con);
             Dadapt.Fill(table);
             
-
-            
-            SqlDataReader data = command.ExecuteReader();
-            Object[] values = new Object[data.FieldCount];
-            //data.GetValues(values);
-            /*int count = data.FieldCount;
-            if (data.Read())
-            {
-                foreach(DataRow in )
-                 data.GetString(data.GetOrdinal("UserEmail"));
-            }*/
-
             con.Close();
             
             return JsonConvert.SerializeObject(table);

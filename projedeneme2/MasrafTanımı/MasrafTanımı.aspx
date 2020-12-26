@@ -9,6 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
         <div>
             <div class="table-responsive">
                 <table class="table">
@@ -42,6 +43,7 @@
             <asp:Button ID="DeleteButton" runat="server" Text="Sil" OnClick="DeleteButton_Click" />
 
         </div>
+
     </form>
 </body>
 </html>

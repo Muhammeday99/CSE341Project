@@ -20,15 +20,15 @@ namespace projedeneme2.AdminPage
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
         
         protected void saveButtonClick(object sender, EventArgs e)
         {
             con.Open();
 
-            string folderPath = Server.MapPath("ProfilePictures/");
-
+            string folderPath = Server.MapPath("../ProfilePictures/");
+            Console.WriteLine(folderPath);
             //Check whether Directory (Folder) exists.
             if (!Directory.Exists(folderPath))
             {
@@ -42,13 +42,21 @@ namespace projedeneme2.AdminPage
                 {
                     //Save the File to the Directory (Folder).
                     string imgFile = Path.GetFileName(photoUpload.PostedFile.FileName); ;
+                    System.Diagnostics.Debug.WriteLine(imgFile);
+                    System.Diagnostics.Debug.WriteLine(folderPath);
                     photoUpload.SaveAs(folderPath + imgFile);
                     //Display the Picture in Image control.
                     Image1.ImageUrl = "/../ProfilePictures/" + imgFile;
+                    System.Diagnostics.Debug.WriteLine(Image1.ImageUrl);
+
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("Hello");
                 }
             }catch(Exception exc)
             {
-                //There is nothing to do, this can happen.
+                System.Diagnostics.Debug.WriteLine(folderPath);
             }
 
             List<string> inputs = new List<string>();

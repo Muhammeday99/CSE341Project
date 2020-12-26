@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -10,9 +11,10 @@ namespace projedeneme2.Homepage
     public partial class WebForm1 : System.Web.UI.Page
     {
 
+        public static string ID = " ";
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            ID = Session["ID"].ToString();
         }
         protected void Homepage_click(object sender, EventArgs e)
         {
@@ -93,6 +95,15 @@ namespace projedeneme2.Homepage
         protected void Hata_Tespit_click(object sender, EventArgs e)
         {
             Response.Redirect("../Homepage/Homepage.aspx");
+        }
+
+        [WebMethod]
+        public static string getUserInfo()
+        {
+
+            JsonConverter convert = new JsonConverter();
+
+            return convert.getRowInfo("Users", "UserID", ID);
         }
     }
 }

@@ -9,6 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">  
+        <asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
     <div>      
         <asp:GridView ID="GridView1" runat="server" DataKeyNames="InvoiceNumber" AutoGenerateColumns="False" CellPadding="6" OnRowCancelingEdit="GridView1_RowCancelingEdit" 
    OnRowDeleting="GridView1_RowDeleting" EmptyDataText="No records has been added." BackColor="#000066"> 
