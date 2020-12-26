@@ -105,5 +105,14 @@ namespace projedeneme2.Homepage
 
             return convert.getRowInfo("Users", "UserID", ID);
         }
+
+        [WebMethod]
+        public static string getCompanyInfo()
+        {
+
+            JsonConverter convert = new JsonConverter();
+
+            return convert.getRowInfo("CompanyInfo", "ID", "1");
+        }
     }
 }

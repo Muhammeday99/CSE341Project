@@ -382,7 +382,7 @@ A company uses this software will easily track their process by using features o
 						<div class="card-body" style="height: auto;">
 							<h4 class="card-title" id="companyInformation">Şirket Bilgileri</h4>
 							<div class="table-responsive">
-								<table class="table">
+								<table id="CompanyInfoTable" class="table">
 									<thead>
 										<tr></tr>
 									</thead>
@@ -419,13 +419,11 @@ A company uses this software will easily track their process by using features o
 											<td>Banka Numarası (IBAN)</td>
 											<td id="companyBankAccountNumber"></td>
 										</tr>
-										<tr></tr>
-										<tr></tr>
-										<tr></tr>
+										
 									</tbody>
 								</table>
 							</div>
-							<p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+							
 						</div>
 					</div>
 				</div>
@@ -446,6 +444,7 @@ A company uses this software will easily track their process by using features o
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
 	<script src="../Scripts/ShowUserInfo.js"></script>
+	<script src="../Scripts/listCompanyInfo.js"></script>
 </body>
 
 </html>
