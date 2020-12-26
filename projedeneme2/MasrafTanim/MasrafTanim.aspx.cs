@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace projedeneme2.MasrafTanımı
+namespace projedeneme2.MasrafTanim
 {
-    public partial class MasrafTanımı : System.Web.UI.Page
+    public partial class MasrafTanim : projedeneme2.Homepage.WebForm1
     {
         protected SqlConnection con = databaseConnect.connectToSQL();
         protected void Page_Load(object sender, EventArgs e)
@@ -17,7 +17,7 @@ namespace projedeneme2.MasrafTanımı
 
         }
 
-        protected void SaveButton_Click(object sender, EventArgs e)
+        protected void AddNewExpense_Click(object sender, EventArgs e)
         {
             con.Open();
             string expenseCode = ExpenseCode.Text;
@@ -30,19 +30,20 @@ namespace projedeneme2.MasrafTanımı
             cmnd.Parameters.AddWithValue("@ExpenseCode", expenseCode);
             cmnd.Parameters.AddWithValue("@expenseName", expenseName);
             cmnd.Parameters.AddWithValue("@expenseDate", expenseDate);
+            //ADD EXPENSE AMOUNT LAZIM. ONU UNUTMUŞUM. DATABASE'E DE EKLENMESİ LAZIM.
 
             cmnd.ExecuteNonQuery();
 
             con.Close();
         }
 
-        protected void DeleteButton_Click(object sender, EventArgs e)
+        protected void DeleteExpense_Click(object sender, EventArgs e)
         {
             /*Expense Code girerek silme işlemi yapıyor, şimdilik burda kalsın
-            SqlCommand cmd = new SqlCommand(@"DELETE FROM [dbo].[Expense_Info] WHERE [ExpenseCode] ='" + ExpenseCode.Text + "'", con);
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();*/
+           SqlCommand cmd = new SqlCommand(@"DELETE FROM [dbo].[Expense_Info] WHERE [ExpenseCode] ='" + ExpenseCode.Text + "'", con);
+           con.Open();
+           cmd.ExecuteNonQuery();
+           con.Close();*/
         }
     }
 }
