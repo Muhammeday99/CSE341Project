@@ -29,9 +29,9 @@ namespace projedeneme2.MasrafTanim
             SqlCommand cmnd = new SqlCommand(q, con);
 
             cmnd.Parameters.AddWithValue("@ExpenseCode", expenseCode);
-            cmnd.Parameters.AddWithValue("@expenseName", expenseName);
-            cmnd.Parameters.AddWithValue("@expenseDate", expenseDate);
-            cmnd.Parameters.AddWithValue("@expenseAmount", expenseAmount);
+            cmnd.Parameters.AddWithValue("@ExpenseName", expenseName);
+            cmnd.Parameters.AddWithValue("@ExpenseDate", expenseDate);
+            cmnd.Parameters.AddWithValue("@ExpenseAmount", expenseAmount);
 
             cmnd.ExecuteNonQuery();
 
