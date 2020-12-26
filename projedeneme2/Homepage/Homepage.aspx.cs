@@ -12,9 +12,13 @@ namespace projedeneme2.Homepage
     {
 
         public static string ID = " ";
+        public static string NAME = " ";
+        public static string ProfilePicture = " ";
         protected void Page_Load(object sender, EventArgs e)
         {
             ID = Session["ID"].ToString();
+            NAME = Session["NAME"].ToString();
+            ProfilePicture = Session["ProfilePicture"].ToString();
         }
         protected void Homepage_click(object sender, EventArgs e)
         {
@@ -98,12 +102,12 @@ namespace projedeneme2.Homepage
         }
 
         [WebMethod]
-        public static string getUserInfo()
+        public static string[] getUserInfo()
         {
 
-            JsonConverter convert = new JsonConverter();
+            string[] info = { NAME, ProfilePicture };
 
-            return convert.getRowInfo("Users", "UserID", ID);
+            return info;
         }
 
         [WebMethod]
@@ -113,6 +117,15 @@ namespace projedeneme2.Homepage
             JsonConverter convert = new JsonConverter();
 
             return convert.getRowInfo("CompanyInfo", "ID", "1");
+        }
+
+        [WebMethod]
+        public static string getProjectsInfo()
+        {
+
+            JsonConverter convert = new JsonConverter();
+
+            return convert.TableToJSON("ProjectDefinition");
         }
     }
 }

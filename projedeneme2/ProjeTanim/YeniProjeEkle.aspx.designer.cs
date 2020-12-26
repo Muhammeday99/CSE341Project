@@ -51,13 +51,13 @@ namespace projedeneme2.YeniProjeEkle
         protected global::System.Web.UI.WebControls.TextBox EndingDate;
 
         /// <summary>
-        /// CustomerCode control.
+        /// EntityCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CustomerCode;
+        protected global::System.Web.UI.WebControls.TextBox EntityCode;
 
         /// <summary>
         /// OrderCode control.

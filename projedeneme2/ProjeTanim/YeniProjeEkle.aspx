@@ -218,8 +218,8 @@ A company uses this software will easily track their process by using features o
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td style="width: 20%;">Müşteri Kodu</td>
-                                                            <td><asp:Textbox runat="server" id="CustomerCode" placeholder="Customer Code" style="min-width: 100%;"></asp:Textbox></td>
+                                                            <td style="width: 20%;">Cari Kodu</td>
+                                                            <td><asp:Textbox runat="server" id="EntityCode" placeholder="Entity Code" style="min-width: 100%;"></asp:Textbox></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Sipariş Kodu</td>

@@ -60,6 +60,13 @@ namespace projedeneme2
             return JsonConvert.SerializeObject(table);
         }
 
+        public string TableToJSON(string TableName)
+        {
+            table = ToJson(TableName);
+            string str = DataTableToJSON(table);
+            return str;
+        }
+
         public string strToJSON(string str)
         {
             return JsonConvert.SerializeObject(str);

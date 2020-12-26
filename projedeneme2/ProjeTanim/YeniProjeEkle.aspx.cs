@@ -33,8 +33,8 @@ namespace projedeneme2.YeniProjeEkle
             string endingDate = DateTime.Now.ToString(EndingDate.Text);
             inputs.Add(endingDate);
 
-            string customerCode = CustomerCode.Text;
-            inputs.Add(customerCode);
+            string entityCode = EntityCode.Text;
+            inputs.Add(entityCode);
 
             string orderCode = OrderCode.Text;
             inputs.Add(orderCode);
@@ -82,7 +82,7 @@ namespace projedeneme2.YeniProjeEkle
             string projectManager = ProjectManager.Text;
             inputs.Add(projectManager);
 
-            String q = "INSERT INTO dbo.ProjectDefinition (ProjectCode, ProjectName,StartingDate,EndingDate,CustomerCode,OrderCode,ArgeInvoiceNumber,CurrencyId,Amount,KDVpercentage,WorkmanshipPricePercentage,RelatedPerson,Pr_description,ProjectManager) VALUES (@ProjectCode, @ProjectName, @StartingDate,@EndingDate, @CustomerCode,@OrderCode, @ArgeInvoiceNumber, @CurrencyId, @Amount, @KDVpercentage, @WorkmanshipPricePercentage, @RelatedPerson, @Pr_description, @ProjectManager)";
+            String q = "INSERT INTO dbo.ProjectDefinition (ProjectCode, ProjectName,StartingDate,EndingDate,CustomerCode,OrderCode,ArgeInvoiceNumber,CurrencyId,Amount,KDVpercentage,WorkmanshipPricePercentage,RelatedPerson,Pr_description,ProjectManager) VALUES (@ProjectCode, @ProjectName, @StartingDate,@EndingDate, @EntityCode,@OrderCode, @ArgeInvoiceNumber, @CurrencyId, @Amount, @KDVpercentage, @WorkmanshipPricePercentage, @RelatedPerson, @Pr_description, @ProjectManager)";
 
             SqlCommand cmnd = new SqlCommand(q, con);
 
@@ -90,7 +90,7 @@ namespace projedeneme2.YeniProjeEkle
             cmnd.Parameters.AddWithValue("@ProjectName", projectName);
             cmnd.Parameters.AddWithValue("@StartingDate", startingDate);
             cmnd.Parameters.AddWithValue("@EndingDate", endingDate);
-            cmnd.Parameters.AddWithValue("@CustomerCode", customerCode);
+            cmnd.Parameters.AddWithValue("@EntityCode", entityCode);
             cmnd.Parameters.AddWithValue("@OrderCode", orderCode);
             cmnd.Parameters.AddWithValue("@ArgeInvoiceNumber", argeInvoiceNumber);
             cmnd.Parameters.AddWithValue("@CurrencyId", currency);

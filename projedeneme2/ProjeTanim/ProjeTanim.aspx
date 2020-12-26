@@ -191,15 +191,14 @@ A company uses this software will easily track their process by using features o
                                     <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
                                 </div>
                             </div>
-                            <div class="table-responsive table mt-2" id="dataTable_div" role="grid" aria-describedby="dataTable_info">
-                                <table class="table my-0" id="dataTable">
+                            <div class="table-responsive table mt-2" id="ProjectsTable_div" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="ProjectsTable">
                                     <thead>
                                         <tr>
                                             <th>Proje Kodu</th>
                                             <th>Proje Adı</th>
                                             <th>Başlangıç Tarihi</th>
-                                            <th>Bitiş Tarihi</th>
-                                            <th>Müşteri Kodu</th>
+                                            <th>Bitiş Tarihi</th>      
                                             <th>Sipariş Kodu</th>
                                             <th>Arge Fatura No</th>
                                             <th>Cari Kodu</th>
@@ -216,26 +215,7 @@ A company uses this software will easily track their process by using features o
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Angelica Ramos</td>
-                                            <td>Cell 2<br></td>
-                                            <td>Software Engineer<br></td>
-                                            <td>London</td>
-                                            <td>47</td>
-                                            <td>2009/10/09<br></td>
-                                            <td>$1,200,000</td>
-                                            <td>Cell 8</td>
-                                            <td>Cell 9</td>
-                                            <td>Cell 10</td>
-                                            <td>Cell 11</td>
-                                            <td>Cell 12</td>
-                                            <td>Cell 13</td>
-                                            <td>Cell 14</td>
-                                            <td>Cell 15</td>
-                                            <td>Cell 15</td>
-                                            <td>Cell 15</td>
-                                            <td>Cell 15</td>
-                                        </tr>
+                                        
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -243,7 +223,6 @@ A company uses this software will easily track their process by using features o
                                             <td><strong>Proje Adı</strong><br></td>
                                             <td><strong>Başlangıç Tarihi</strong><br></td>
                                             <td><strong>Bitiş Tarihi</strong><br></td>
-                                            <td><strong>Müşteri Kodu</strong><br></td>
                                             <td><strong>Sipariş Kodu</strong><br></td>
                                             <td><strong>Arge Fatura No</strong><br></td>
                                             <td><strong>Cari Kodu</strong><br></td>
@@ -295,6 +274,8 @@ A company uses this software will easily track their process by using features o
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="../Scripts/ShowUserInfo.js"></script>
+    <script src="../Scripts/listProjects.js"></script>
+
     </form>
 </body>
 
