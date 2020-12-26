@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MasrafTanim.aspx.cs" Inherits="projedeneme2.MasrafTanim.MasrafTanim" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MasrafTanim.aspx.cs" Inherits="projedeneme2.MasrafTanim.MasrafTanimWebForm" %>
 
 <!DOCTYPE html>
 <html>
@@ -217,10 +217,10 @@ A company uses this software will easily track their process by using features o
                                             </select>&nbsp;</label></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                     <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
                                 </div>
                             </div>
-                            <div class="table-responsive table mt-2" id="dataTable_div" role="grid" aria-describedby="dataTable_info">
+                            <div class="table-responsive table mt-2" id="currencyTable" role="grid" aria-describedby="currencyTable_info">
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
@@ -235,13 +235,14 @@ A company uses this software will easily track their process by using features o
                                         <tr>
                                             <td>EC125</td>
                                             <td>Telefon Faturası</td>
-                                            <td>19.05.2020175</td>
-                                            <td><asp:Button runat="server" class="btn btn-warning btn-sm" id="DeleteExpense" Text="Sil" OnClick="DeleteExpense_Click"></asp:Button></td>
+                                            <td>19.05.2020</td>
+                                            <td>175</td>
+                                            <td><asp:Button runat="server" text="Sil" class="btn btn-warning btn-sm" OnClick="DeleteExpense_Click" id="DeleteExpense"></asp:Button></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td><strong>Masraf Kodu                                <td><strong>Masraf Kodu</strong><br></td>
+                                            <td><strong>Masraf Kodu</strong><br></td>
                                             <td><strong>Masraf Adı</strong><br></td>
                                             <td><strong>Masraf Tarihi</strong><br></td>
                                             <td><strong>Masraf Tutarı</strong><br></td>

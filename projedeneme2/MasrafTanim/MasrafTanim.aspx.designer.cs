@@ -11,7 +11,7 @@ namespace projedeneme2.MasrafTanim
 {
 
 
-    public partial class MasrafTanim
+    public partial class MasrafTanimWebForm
     {
 
         /// <summary>

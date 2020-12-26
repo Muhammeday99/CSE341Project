@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2.MasrafTanim
 {
-    public partial class MasrafTanim : projedeneme2.Homepage.WebForm1
+    public partial class MasrafTanimWebForm : projedeneme2.Homepage.WebForm1
     {
         protected SqlConnection con = databaseConnect.connectToSQL();
         protected void Page_Load(object sender, EventArgs e)
