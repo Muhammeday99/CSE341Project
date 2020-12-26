@@ -23,14 +23,15 @@ namespace projedeneme2.MasrafTanim
             string expenseCode = ExpenseCode.Text;
             string expenseName = ExpenseName.Text;
             string expenseDate = DateTime.Now.ToString(ExpenseDate.Text);
+            double expenseAmount = Convert.ToDouble(ExpenseAmount.Text);
 
-            String q = "INSERT INTO dbo.Expense_Info (ExpenseCode,ExpenseName,ExpenseDate) VALUES (@ExpenseCode, @ExpenseName, @ExpenseDate)";
+            String q = "INSERT INTO dbo.Expense_Info (ExpenseCode,ExpenseName,ExpenseDate, ExpenseAmount) VALUES (@ExpenseCode, @ExpenseName, @ExpenseDate, @ExpenseAmount)";
             SqlCommand cmnd = new SqlCommand(q, con);
 
             cmnd.Parameters.AddWithValue("@ExpenseCode", expenseCode);
             cmnd.Parameters.AddWithValue("@expenseName", expenseName);
             cmnd.Parameters.AddWithValue("@expenseDate", expenseDate);
-            //ADD EXPENSE AMOUNT LAZIM. ONU UNUTMUŞUM. DATABASE'E DE EKLENMESİ LAZIM.
+            cmnd.Parameters.AddWithValue("@expenseAmount", expenseAmount);
 
             cmnd.ExecuteNonQuery();
 
