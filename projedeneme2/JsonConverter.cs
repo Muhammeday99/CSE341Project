@@ -59,5 +59,10 @@ namespace projedeneme2
             
             return JsonConvert.SerializeObject(table);
         }
+
+        public string strToJSON(string str)
+        {
+            return JsonConvert.SerializeObject(str);
+        }
     }
 }

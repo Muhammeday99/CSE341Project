@@ -22,13 +22,12 @@ Xmlhttp.open("GET", "../DovizKurTanim/ExchangeList.json", true);
 Xmlhttp.send();
 
 
-function nextPage() {
-    let next = listPage[listPage.length-1].getElementsByTagName("a");
-    next.onclick = () => {
-        let size = sizeList.options[sizeList.selectedIndex].value;
 
-        listElements(ExchangeList,size,)
-    }
+let next = listPage[listPage.length-1].getElementsByTagName("a");
+next.onclick = () => {
+    let size = sizeList.options[sizeList.selectedIndex].value;
+
+    listElements(ExchangeList, size, Index + size);
 }
 
 function listElements(ExchangeList, size = ExchangeList.length,startIndex=0)
