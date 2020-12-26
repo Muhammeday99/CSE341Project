@@ -9,9 +9,10 @@ namespace projedeneme2.Homepage
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+           
         }
         protected void Homepage_click(object sender, EventArgs e)
         {
