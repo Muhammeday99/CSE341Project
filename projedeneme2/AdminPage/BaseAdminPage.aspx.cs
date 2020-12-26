@@ -22,7 +22,7 @@ namespace projedeneme2.AdminPage
         protected void Page_Load(object sender, EventArgs e)
         {
             try {
-                if ((string)Session["NAME"] = null) EmailLabel.Text = "unnamed";
+                if ((string)Session["NAME"] == null) EmailLabel.Text = "unnamed";
                 else EmailLabel.Text = (string)Session["NAME"];
                 
             }
