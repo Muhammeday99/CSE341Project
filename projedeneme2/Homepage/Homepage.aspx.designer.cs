@@ -15,11 +15,11 @@ namespace projedeneme2.Homepage
     {
 
         /// <summary>
-        /// sidebarToggleTop control.
+        /// sidebarToggleTop denetimi.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button sidebarToggleTop;
 
