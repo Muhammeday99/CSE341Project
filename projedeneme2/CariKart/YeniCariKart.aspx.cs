@@ -22,25 +22,19 @@ namespace projedeneme2.YeniCariKart
         
         protected void AddEntityCard_click(object sender, EventArgs e){
             con.Open();
-
             List<string> inputs =new  List<string>();
 
-            /*
-            string n_entityKind = entityKind.Text;
-            inputs.Add(n_entityKind);
-            somehow it is a boolean.*/
+            //ENTITYKIND
+            bool n_entityKind;
+            if (Request.Form["entityKind"] == "Firma") n_entityKind = true;
+            else if (Request.Form["entityKind"] == "Şahıs") n_entityKind = false;
+            else n_entityKind = true;
 
-            //DÜZELTİMESİ LAZIM, ÇALIŞMAYACAK.
-            bool n_entityKind = true;
-
-            /*
-            string n_entityType = entityType.Text;
-            inputs.Add(n_entityType);
-            somehow it is a boolean.*/
-
-            //DÜZELTİMESİ LAZIM, ÇALIŞMAYACAK.
-            bool n_entityType = false;
-
+            bool n_entityType;
+            if (Request.Form["entityType"] == "Müşteri") n_entityType = true;
+            else if (Request.Form["entityType"] == "Tedarikçi") n_entityType = false;
+            else n_entityType = true;
+            
             //name of the entity.
             string n_entityName = entityName.Text;
             inputs.Add(n_entityName);
@@ -94,26 +88,33 @@ namespace projedeneme2.YeniCariKart
             }
             else
             {
-                String q = "INSERT INTO dbo.Entity_Card (entityKind,entityType,entityName,entityCode,entityAddress,entityEmail,phoneNumber,entityFaxNumber,taxNumber,bankAccountNumber,relatedPerson,Pr_description,paymentTerm) VALUES (@entityKind,@entityType,@entityName,@entityCode,@entityAddress,@entityEmail,@phoneNumber,@entityFaxNumber,@taxNumber,@bankAccountNumber,@relatedPerson,@Pr_description,@paymentTerm)";
-                SqlCommand cmnd = new SqlCommand(q, con);
+                try
+                {
+                    String q = "INSERT INTO dbo.Entity_Card (entityKind,entityType,entityName,entityCode,entityAddress,entityEmail,phoneNumber,entityFaxNumber,taxNumber,bankAccountNumber,relatedPerson,Pr_description,paymentTerm) VALUES (@entityKind,@entityType,@entityName,@entityCode,@entityAddress,@entityEmail,@phoneNumber,@entityFaxNumber,@taxNumber,@bankAccountNumber,@relatedPerson,@Pr_description,@paymentTerm)";
+                    SqlCommand cmnd = new SqlCommand(q, con);
 
-                cmnd.Parameters.AddWithValue("@entityKind", n_entityKind);
-                cmnd.Parameters.AddWithValue("@entityType", n_entityType);
-                cmnd.Parameters.AddWithValue("@entityName", n_entityName);
-                cmnd.Parameters.AddWithValue("@entityCode", n_entityCode);
-                cmnd.Parameters.AddWithValue("@entityAddress", n_entityAddress);
-                cmnd.Parameters.AddWithValue("@entityEmail", n_entityEmail);
-                cmnd.Parameters.AddWithValue("@phoneNumber", n_phoneNumber);
-                cmnd.Parameters.AddWithValue("@entityFaxNumber", n_entityFaxNumber);
-                cmnd.Parameters.AddWithValue("@taxNumber", n_taxNumber);
-                cmnd.Parameters.AddWithValue("@bankAccountNumber", n_bankAccountNumber);
-                cmnd.Parameters.AddWithValue("@relatedPerson", n_relatedPerson);
-                cmnd.Parameters.AddWithValue("@Pr_description", n_Pr_description);
-                cmnd.Parameters.AddWithValue("@paymentTerm", n_paymentTerm);
-                
-                //Exceptionleri Handle Et ve Cari kart eklendikten sonra Cari kart Syfasina donsun 
-                //Exceptionlerden biri Entity Codelar unique olmalari lazim iki ayni kod olamaz exception firlat
-                cmnd.ExecuteNonQuery();
+                    cmnd.Parameters.AddWithValue("@entityKind", n_entityKind);
+                    cmnd.Parameters.AddWithValue("@entityType", n_entityType);
+                    cmnd.Parameters.AddWithValue("@entityName", n_entityName);
+                    cmnd.Parameters.AddWithValue("@entityCode", n_entityCode);
+                    cmnd.Parameters.AddWithValue("@entityAddress", n_entityAddress);
+                    cmnd.Parameters.AddWithValue("@entityEmail", n_entityEmail);
+                    cmnd.Parameters.AddWithValue("@phoneNumber", n_phoneNumber);
+                    cmnd.Parameters.AddWithValue("@entityFaxNumber", n_entityFaxNumber);
+                    cmnd.Parameters.AddWithValue("@taxNumber", n_taxNumber);
+                    cmnd.Parameters.AddWithValue("@bankAccountNumber", n_bankAccountNumber);
+                    cmnd.Parameters.AddWithValue("@relatedPerson", n_relatedPerson);
+                    cmnd.Parameters.AddWithValue("@Pr_description", n_Pr_description);
+                    cmnd.Parameters.AddWithValue("@paymentTerm", n_paymentTerm);
+
+                    //Exceptionleri Handle Et ve Cari kart eklendikten sonra Cari kart Syfasina donsun 
+                    //Exceptionlerden biri Entity Codelar unique olmalari lazim iki ayni kod olamaz exception firlat
+                    cmnd.ExecuteNonQuery();
+                }
+                catch(Exception exc)
+                {
+
+                }
             }
 
             con.Close();

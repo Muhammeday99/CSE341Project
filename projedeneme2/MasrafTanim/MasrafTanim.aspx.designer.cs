@@ -7,21 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projedeneme2.MasrafTanımı
+namespace projedeneme2.MasrafTanim
 {
 
 
-    public partial class MasrafTanımı
+    public partial class MasrafTanimWebForm
     {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// ExpenseCode control.
@@ -51,21 +42,30 @@ namespace projedeneme2.MasrafTanımı
         protected global::System.Web.UI.WebControls.TextBox ExpenseDate;
 
         /// <summary>
-        /// SaveButton control.
+        /// ExpenseAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveButton;
+        protected global::System.Web.UI.WebControls.TextBox ExpenseAmount;
 
         /// <summary>
-        /// DeleteButton control.
+        /// AddNewExpense control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteButton;
+        protected global::System.Web.UI.WebControls.Button AddNewExpense;
+
+        /// <summary>
+        /// DeleteExpense control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteExpense;
     }
 }

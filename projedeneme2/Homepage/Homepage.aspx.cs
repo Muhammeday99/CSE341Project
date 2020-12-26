@@ -46,7 +46,7 @@ namespace projedeneme2.Homepage
         }
         protected void Masraf_Tanimi_click(object sender, EventArgs e)
         {
-            Response.Redirect("../Homepage/Homepage.aspx");
+            Response.Redirect("../MasrafTanim/MasrafTanim.aspx");
         }
         protected void Fatura_Giris_click(object sender, EventArgs e)
         {

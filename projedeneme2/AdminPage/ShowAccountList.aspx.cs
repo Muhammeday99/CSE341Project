@@ -12,6 +12,7 @@ using System.Configuration;
 using System.Drawing;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using projedeneme2.InputControllers;
 //Registered users are listed in this section. User information is only controlled and changed by admin.
 namespace projedeneme2.AdminPage
 {
@@ -63,9 +64,8 @@ namespace projedeneme2.AdminPage
             //CheckBox Status = GridView1.Rows[e.RowIndex].FindControl("StatusCheckBox") as CheckBox;
             //Check Box not fix
             con.Open();
-            
 
-            SqlCommand cmd = new SqlCommand("Update Users set Password='" + password.Text + "',ProfilePicture='" + profilephoto.Text + "',UserEmail='" + email.Text + "'where UserID='" + id + "'", con);
+            SqlCommand cmd = new SqlCommand("Update Users set Password='" + encryption.DecryptString(password.Text) + "',ProfilePicture='" + profilephoto.Text + "',UserEmail='" + email.Text + "'where UserID='" + id + "'", con);
             cmd.ExecuteNonQuery();
 
             con.Close();
