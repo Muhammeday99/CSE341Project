@@ -86,6 +86,7 @@ namespace projedeneme2.AdminPage
             con.Close();
         }
 
+        //This method clears those inputs.
         private bool clearInputs()
         {
             try

@@ -16,22 +16,20 @@ namespace projedeneme2.AdminPage
      */
     public partial class BaseAdminPage : System.Web.UI.Page
     {
-
+        //Connection to db
         protected SqlConnection conn = databaseConnect.connectToSQL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            conn.Open();
-
             try {
-                EmailLabel.Text = (string)Session["NAME"];
+                if ((string)Session["NAME"] = null) EmailLabel.Text = "unnamed";
+                else EmailLabel.Text = (string)Session["NAME"];
+                
             }
             catch(Exception ex)
             {
-
+                Console.WriteLine("Error happened while fething name from session.");
             }
-
-            conn.Close();
         }
 
         /**This function loads a new page that lists all users on our database.*/
