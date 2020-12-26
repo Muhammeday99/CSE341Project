@@ -22,8 +22,6 @@ namespace projedeneme2.AdminPage
         {
 
         }
-
-
         
         protected void saveButtonClick(object sender, EventArgs e)
         {
@@ -38,33 +36,38 @@ namespace projedeneme2.AdminPage
                 Directory.CreateDirectory(folderPath);
             }
 
-            
-            
-
-            
-            if(photoUpload.PostedFile != null)
+            try
             {
-                //Save the File to the Directory (Folder).
-                string imgFile = Path.GetFileName(photoUpload.PostedFile.FileName); ;
-                photoUpload.SaveAs(folderPath + imgFile);
-                //Display the Picture in Image control.
-                Image1.ImageUrl = "/../ProfilePictures/" + imgFile;
+                if (photoUpload.PostedFile != null)
+                {
+                    //Save the File to the Directory (Folder).
+                    string imgFile = Path.GetFileName(photoUpload.PostedFile.FileName); ;
+                    photoUpload.SaveAs(folderPath + imgFile);
+                    //Display the Picture in Image control.
+                    Image1.ImageUrl = "/../ProfilePictures/" + imgFile;
+                }
+            }catch(Exception exc)
+            {
+                //There is nothing to do, this can happen.
             }
-            
 
             List<string> inputs = new List<string>();
+            
+            //mail input
             string uEmail = emailBox.Text;
             inputs.Add(uEmail);
 
+            //password input
             string uPassword = passwordBox.Text;
             inputs.Add(uPassword);
+
+            //checks if admin or not.
             Boolean isAdmin = adminOrNot.Checked;
 
             if (!uEmail.Contains('@') || (!stringController.listStringController(inputs))){
                 errorLabel.Text = "Your email should contain @, and password needs to be longer than 1 character.";
             }
             else{
-
                 String q = "INSERT INTO dbo.Users (Password,Status,ProfilePicture,UserEmail) VALUES (@Password, @Status,@ProfilePicture, @UserEmail)";
 
                 SqlCommand cmnd = new SqlCommand(q,con);
@@ -75,7 +78,30 @@ namespace projedeneme2.AdminPage
                 cmnd.Parameters.AddWithValue("@UserEmail", uEmail);
 
                 cmnd.ExecuteNonQuery();
+
+                //clears inputs.
+                clearInputs();
             }
+
+            con.Close();
+        }
+
+        private bool clearInputs()
+        {
+            try
+            {
+                emailBox.Text = null;
+                passwordBox.Text = null;
+                adminOrNot.Checked = false;
+                photoUpload = null;
+            }
+            catch(Exception exc)
+            {
+                Console.WriteLine("Some error happened.");
+                return false;
+            }
+      
+            return true;
         }
 
         protected void passwordtext_Changed(object sender, EventArgs e)
@@ -100,8 +126,6 @@ namespace projedeneme2.AdminPage
                     passwordLevelLabel.Text = "Şifre güvenliği : Çok iyi.";
                     break;
             }
-
-
         }
     }
 }
