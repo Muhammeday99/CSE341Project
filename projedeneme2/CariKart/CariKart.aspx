@@ -165,7 +165,7 @@ A company uses this software will easily track their process by using features o
 							</li>
 							<div class="d-none d-sm-block topbar-divider"></div>
 							<li class="nav-item dropdown no-arrow">
-								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span id="UserNameSpan" class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img id="ProfilePicture" class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
 									<div
 										class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
 										<a
@@ -258,6 +258,7 @@ A company uses this software will easily track their process by using features o
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>-->
 	<script src="../Scripts/listCards.js"></script>
+	<script src="../Scripts/ShowUserInfo.js"></script>
 	<!--<script src="../Scripts/listCards.js"></script>-->
 	</form>
 </body>

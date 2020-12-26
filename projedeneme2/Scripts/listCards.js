@@ -19,12 +19,6 @@ Xmlhttp.open("GET", "../CariKart/EntityCards.json", true);
 Xmlhttp.send();
 
 
-function f() {
-    return PageMethods.getUserInfo(OnSuccess);
-}
-function OnSuccess(response, userContext, methodName) {
-    console.log(response);
-}
 
 
 function listElements(EntityCards, size = EntityCards.length) {

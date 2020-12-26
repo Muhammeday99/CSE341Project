@@ -1,6 +1,8 @@
 ﻿let Xmlhttp = new XMLHttpRequest();
 let ExchangeList;
 let sizeList = document.getElementById("CurrencyListSize");
+let listPage = document.getElementById("listPage").getElementsByTagName("li");
+let Index = 0;
 Xmlhttp.onreadystatechange = function () {
     
     if (this.readyState == 4 && this.status == 200)
@@ -10,7 +12,7 @@ Xmlhttp.onreadystatechange = function () {
         sizeList.onchange = () => {
             
             let size = sizeList.options[sizeList.selectedIndex].value;
-            console.log(size);
+            
             listElements(ExchangeList, size);
         }
     }
@@ -20,13 +22,22 @@ Xmlhttp.open("GET", "../DovizKurTanim/ExchangeList.json", true);
 Xmlhttp.send();
 
 
-function listElements(ExchangeList, size = ExchangeList.length)
+function nextPage() {
+    let next = listPage[listPage.length-1].getElementsByTagName("a");
+    next.onclick = () => {
+        let size = sizeList.options[sizeList.selectedIndex].value;
+
+        listElements(ExchangeList,size,)
+    }
+}
+
+function listElements(ExchangeList, size = ExchangeList.length,startIndex=0)
 {
     let tablebody = document.getElementById("CurrencyDataTable").getElementsByTagName("tbody")[0];
     tablebody.innerHTML = "";
     console.log(size);
 
-    for (let i = 0; i < size; i++)
+    for (let i = startIndex; i < size; i++)
     {
         let Element = ExchangeList[i];
         let Trow = tablebody.insertRow();

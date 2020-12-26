@@ -35,19 +35,20 @@ namespace projedeneme2.DovizKurTanim
             {
                 n_CurrencyCode = 1;
                 n_CurrencyExchangeRate = double.Parse(TRY.Value, System.Globalization.CultureInfo.InvariantCulture);
-                
+                CurrencyExchangeRate.Text = TRY.Value + " ₺";
             }
             else if (Request.Form["CurrencyCode"] == "USD")
             {
                 n_CurrencyCode = 2;
                 n_CurrencyExchangeRate = 1;
-                
+                CurrencyExchangeRate.Text = 1 + " $";
+
             }
             else if (Request.Form["CurrencyCode"] == "EUR")
             {
                 n_CurrencyCode = 3;
                 n_CurrencyExchangeRate = double.Parse(EUR.Value, System.Globalization.CultureInfo.InvariantCulture);
-                
+                CurrencyExchangeRate.Text = 1 + " €";
             }
 
             //date of the currency
@@ -59,14 +60,20 @@ namespace projedeneme2.DovizKurTanim
             }
             else
             {
-                string q = "INSERT INTO dbo.ExchangeRate (CurrencyCode,CurrencyExchangeDate,CurrencyExchangeRate) VALUES (@CurrencyCode,@CurrencyExchangeDate,@CurrencyExchangeRate)";
-                SqlCommand cmd = new SqlCommand(q, con);
+                try
+                {
+                    string q = "INSERT INTO dbo.ExchangeRate (CurrencyCode,CurrencyExchangeDate,CurrencyExchangeRate) VALUES (@CurrencyCode,@CurrencyExchangeDate,@CurrencyExchangeRate)";
+                    SqlCommand cmd = new SqlCommand(q, con);
 
-                cmd.Parameters.AddWithValue("@CurrencyCode", n_CurrencyCode);
-                cmd.Parameters.AddWithValue("@CurrencyExchangeDate", n_CurrencyDate);
-                cmd.Parameters.AddWithValue("@CurrencyExchangeRate", n_CurrencyExchangeRate);
+                    cmd.Parameters.AddWithValue("@CurrencyCode", n_CurrencyCode);
+                    cmd.Parameters.AddWithValue("@CurrencyExchangeDate", n_CurrencyDate);
+                    cmd.Parameters.AddWithValue("@CurrencyExchangeRate", n_CurrencyExchangeRate);
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                }catch(Exception exc)
+                {
+                    Console.WriteLine(exc.ToString());
+                }
             }
 
             con.Close();
