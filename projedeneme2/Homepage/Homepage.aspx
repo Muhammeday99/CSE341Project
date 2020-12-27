@@ -392,6 +392,10 @@ A company uses this software will easily track their process by using features o
 											<td id="companyName"></td>
 										</tr>
 										<tr>
+											<td>Web Site</td>
+											<td id="companyWebSite"></td>
+										</tr>
+										<tr>
 											<td>Adres</td>
 											<td id="companyAddress"></td>
 										</tr>
