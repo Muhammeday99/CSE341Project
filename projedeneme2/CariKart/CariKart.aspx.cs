@@ -18,7 +18,7 @@ namespace projedeneme2.CariKart
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ID = Session["ID"].ToString();
+            //ID = Session["ID"].ToString();
             JsonConverter convert = new JsonConverter();
             DataTable table = convert.ToJson("Entity_Card");
             string str = convert.DataTableToJSON(table);
