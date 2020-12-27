@@ -16,9 +16,17 @@ namespace projedeneme2.Homepage
         public static string ProfilePicture = " ";
         protected void Page_Load(object sender, EventArgs e)
         {
-            ID = Session["ID"].ToString();
-            NAME = Session["NAME"].ToString();
-            ProfilePicture = Session["ProfilePicture"].ToString();
+            try
+            {
+                ID = Session["ID"].ToString();
+                NAME = Session["NAME"].ToString();
+                ProfilePicture = Session["ProfilePicture"].ToString();
+            }catch(System.NullReferenceException exc)
+            {
+                ID = "noID";
+                NAME = "noname";
+                ProfilePicture = " ";
+            }
         }
         protected void Homepage_click(object sender, EventArgs e)
         {

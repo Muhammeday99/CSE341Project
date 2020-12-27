@@ -20,22 +20,62 @@ namespace projedeneme2.MasrafTanim
         protected void AddNewExpense_Click(object sender, EventArgs e)
         {
             con.Open();
-            string expenseCode = ExpenseCode.Text;
-            string expenseName = ExpenseName.Text;
-            string expenseDate = DateTime.Now.ToString(ExpenseDate.Text);
-            double expenseAmount = Convert.ToDouble(ExpenseAmount.Text);
+           
+            List<string> inputs = new List<string>();
+            SqlCommand command;
+            SqlDataReader dataReader;
+            string sql, output = "";
+            int flag = 0;
 
-            String q = "INSERT INTO dbo.Expense_Info (ExpenseCode,ExpenseName,ExpenseDate, ExpenseAmount) VALUES (@ExpenseCode, @ExpenseName, @ExpenseDate, @ExpenseAmount)";
-            SqlCommand cmnd = new SqlCommand(q, con);
+            sql = "Select ExpenseCode,ExpenseName,ExpenseDate,ExpenseAmount from Expense_Info";
+            command = new SqlCommand(sql, con);
 
-            cmnd.Parameters.AddWithValue("@ExpenseCode", expenseCode);
-            cmnd.Parameters.AddWithValue("@ExpenseName", expenseName);
-            cmnd.Parameters.AddWithValue("@ExpenseDate", expenseDate);
-            cmnd.Parameters.AddWithValue("@ExpenseAmount", expenseAmount);
+            dataReader = command.ExecuteReader();
 
-            cmnd.ExecuteNonQuery();
-
+            while (dataReader.Read())
+            {
+                output = output + dataReader.GetValue(0);
+                inputs.Add(output);
+                output = "";
+            }
             con.Close();
+            con.Open();
+            try
+            {   
+                string expenseCode = ExpenseCode.Text;
+                //Check unique or not
+                for (int i = 0; i < inputs.Count; i++)
+                {
+                    if (expenseCode == inputs[i])
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if(flag != 1)
+                {
+                    string expenseName = ExpenseName.Text;
+                    string expenseDate = DateTime.Now.ToString(ExpenseDate.Text);
+                    double expenseAmount = Convert.ToDouble(ExpenseAmount.Text);
+
+                    String q = "INSERT INTO dbo.Expense_Info (ExpenseCode,ExpenseName,ExpenseDate, ExpenseAmount) VALUES (@ExpenseCode, @ExpenseName, @ExpenseDate, @ExpenseAmount)";
+                    SqlCommand cmnd = new SqlCommand(q, con);
+
+                    cmnd.Parameters.AddWithValue("@ExpenseCode", expenseCode);
+                    cmnd.Parameters.AddWithValue("@ExpenseName", expenseName);
+                    cmnd.Parameters.AddWithValue("@ExpenseDate", expenseDate);
+                    cmnd.Parameters.AddWithValue("@ExpenseAmount", expenseAmount);
+
+                    cmnd.ExecuteNonQuery();
+                }   
+                con.Close();
+            }
+            catch(Exception exp)
+            {
+
+            }
+
+            
         }
 
         protected void DeleteExpense_Click(object sender, EventArgs e)
