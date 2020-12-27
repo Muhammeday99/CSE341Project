@@ -61,13 +61,10 @@ function listElements(ExchangeList, size = ExchangeList.length,startIndex=0)
 {
     let tablebody = document.getElementById("CurrencyDataTable").getElementsByTagName("tbody")[0];
     tablebody.innerHTML = "";
-    console.log(size);
-    console.log(startIndex);
     let finishIndex = Number(size) + Number(startIndex)
     if (finishIndex > ExchangeList.length) {
         finishIndex = ExchangeList.length;
     }
-    console.log(finishIndex);
     for (let i = startIndex; i < finishIndex; i++)
     {
         let Element = ExchangeList[i];
