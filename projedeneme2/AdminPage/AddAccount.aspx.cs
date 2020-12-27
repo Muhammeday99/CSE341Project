@@ -65,6 +65,14 @@ namespace projedeneme2.AdminPage
             string uEmail = emailBox.Text;
             inputs.Add(uEmail);
 
+            //mail input
+            string uName = nameTextbox.Text;
+            inputs.Add(uName);
+
+            //mail input
+            string uSurname = surnameTextbox.Text;
+            inputs.Add(uSurname);
+
             //password input
             string uPassword = passwordBox.Text;
             inputs.Add(uPassword);
@@ -76,7 +84,7 @@ namespace projedeneme2.AdminPage
                 errorLabel.Text = "Your email should contain @, and password needs to be longer than 1 character.";
             }
             else{
-                String q = "INSERT INTO dbo.Users (Password,Status,ProfilePicture,UserEmail) VALUES (@Password, @Status,@ProfilePicture, @UserEmail)";
+                String q = "INSERT INTO dbo.Users (Password,Status,ProfilePicture,UserEmail,UserName,UserSurname) VALUES (@Password, @Status,@ProfilePicture, @UserEmail,@UserName,@UserSurname)";
 
                 SqlCommand cmnd = new SqlCommand(q,con);
 
@@ -84,6 +92,8 @@ namespace projedeneme2.AdminPage
                 cmnd.Parameters.AddWithValue("@Status", isAdmin);
                 cmnd.Parameters.AddWithValue("@ProfilePicture", Image1.ImageUrl);
                 cmnd.Parameters.AddWithValue("@UserEmail", uEmail);
+                cmnd.Parameters.AddWithValue("@UserName", uName);
+                cmnd.Parameters.AddWithValue("@UserSurname", uSurname);
 
                 cmnd.ExecuteNonQuery();
 
