@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projedeneme2.Homepage
+namespace projedeneme2.MasrafTanim
 {
 
 
-    public partial class WebForm1
+    public partial class MasrafTanimWebForm
     {
 
         /// <summary>
@@ -24,39 +24,57 @@ namespace projedeneme2.Homepage
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// sidebarToggleTop control.
+        /// ExpenseCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sidebarToggleTop;
+        protected global::System.Web.UI.WebControls.TextBox ExpenseCode;
 
         /// <summary>
-        /// formCheck1 control.
+        /// ExpenseName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox formCheck1;
+        protected global::System.Web.UI.WebControls.TextBox ExpenseName;
 
         /// <summary>
-        /// formCheck2 control.
+        /// ExpenseDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox formCheck2;
+        protected global::System.Web.UI.WebControls.TextBox ExpenseDate;
 
         /// <summary>
-        /// formCheck3 control.
+        /// ExpenseAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox formCheck3;
+        protected global::System.Web.UI.WebControls.TextBox ExpenseAmount;
+
+        /// <summary>
+        /// AddNewExpense control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddNewExpense;
+
+        /// <summary>
+        /// DeleteExpense control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteExpense;
     }
 }

@@ -44,7 +44,7 @@ namespace projedeneme2
             userPassword = InputPassword.Text;
 
             //because admin is not hold cryipted.
-            if (userPassword != "admin" && userPassword != "unittest") userPassword = encryption.DecryptString(InputPassword.Text);
+            if (userPassword != "admin" && userPassword != "unittest" && userPassword !="123456789") userPassword = encryption.DecryptString(InputPassword.Text);
             Console.WriteLine("{0}", (userPassword));
 
             //Checks if user is admin or user.
@@ -94,10 +94,20 @@ namespace projedeneme2
                 check.Parameters.AddWithValue("@userEmail", userEmail);
                 sqlRead = check.ExecuteReader();
                 sqlRead.Read();
+                Session["ID"] = sqlRead.GetInt32(0);
+                sqlRead.Close();
+
+                //This is a sql con to fetch id from login.
+                string PPstring = "SELECT ProfilePicture FROM USERS WHERE UserEmail=@userEmail";
+                check = new SqlCommand(PPstring, con);
+                check.Parameters.AddWithValue("@userEmail", userEmail);
+                sqlRead = check.ExecuteReader();
+                sqlRead.Read();
 
                 //Assign id and name to session.
-                Session["ID"] = sqlRead.GetInt32(0);
+                
                 Session["NAME"] = userEmail.Substring(0,userEmail.IndexOf('@'));
+                Session["ProfilePicture"] = sqlRead.GetString(0);
 
                 con.Close();
                 sqlRead.Close();

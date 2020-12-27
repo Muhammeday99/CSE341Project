@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -9,9 +10,23 @@ namespace projedeneme2.Homepage
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+
+        public static string ID = " ";
+        public static string NAME = " ";
+        public static string ProfilePicture = " ";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                ID = Session["ID"].ToString();
+                NAME = Session["NAME"].ToString();
+                ProfilePicture = Session["ProfilePicture"].ToString();
+            }catch(System.NullReferenceException exc)
+            {
+                ID = "noID";
+                NAME = "noname";
+                ProfilePicture = " ";
+            }
         }
         protected void Homepage_click(object sender, EventArgs e)
         {
@@ -43,7 +58,7 @@ namespace projedeneme2.Homepage
         }
         protected void Masraf_Tanimi_click(object sender, EventArgs e)
         {
-            Response.Redirect("../Homepage/Homepage.aspx");
+            Response.Redirect("../MasrafTanim/MasrafTanim.aspx");
         }
         protected void Fatura_Giris_click(object sender, EventArgs e)
         {
@@ -92,6 +107,33 @@ namespace projedeneme2.Homepage
         protected void Hata_Tespit_click(object sender, EventArgs e)
         {
             Response.Redirect("../Homepage/Homepage.aspx");
+        }
+
+        [WebMethod]
+        public static string[] getUserInfo()
+        {
+
+            string[] info = { NAME, ProfilePicture };
+
+            return info;
+        }
+
+        [WebMethod]
+        public static string getCompanyInfo()
+        {
+
+            JsonConverter convert = new JsonConverter();
+
+            return convert.getRowInfo("CompanyInfo", "ID", "1");
+        }
+
+        [WebMethod]
+        public static string getProjectsInfo()
+        {
+
+            JsonConverter convert = new JsonConverter();
+
+            return convert.TableToJSON("ProjectDefinition");
         }
     }
 }

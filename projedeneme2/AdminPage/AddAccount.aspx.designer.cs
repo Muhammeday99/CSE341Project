@@ -60,6 +60,24 @@ namespace projedeneme2.AdminPage
         protected global::System.Web.UI.WebControls.FileUpload photoUpload;
 
         /// <summary>
+        /// nameTextbox denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nameTextbox;
+
+        /// <summary>
+        /// surnameTextbox denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox surnameTextbox;
+
+        /// <summary>
         /// Image1 denetimi.
         /// </summary>
         /// <remarks>

@@ -23,6 +23,7 @@ A company uses this software will easily track their process by using features o
 
 <body id="page-top">
     <form runat="server">
+        <asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
 	<div id="wrapper">
 		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="color: rgb(0,85,164);background: rgb(49,115,163);min-width: auto;max-width: 250;">
 			<div class="container-fluid d-flex flex-column p-0">
@@ -159,7 +160,7 @@ A company uses this software will easily track their process by using features o
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span id="UserNameSpan" class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img id="ProfilePicture" class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
@@ -190,15 +191,14 @@ A company uses this software will easily track their process by using features o
                                     <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
                                 </div>
                             </div>
-                            <div class="table-responsive table mt-2" id="dataTable_div" role="grid" aria-describedby="dataTable_info">
-                                <table class="table my-0" id="dataTable">
+                            <div class="table-responsive table mt-2" id="ProjectsTable_div" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="ProjectsTable">
                                     <thead>
                                         <tr>
                                             <th>Proje Kodu</th>
                                             <th>Proje Adı</th>
                                             <th>Başlangıç Tarihi</th>
-                                            <th>Bitiş Tarihi</th>
-                                            <th>Müşteri Kodu</th>
+                                            <th>Bitiş Tarihi</th>      
                                             <th>Sipariş Kodu</th>
                                             <th>Arge Fatura No</th>
                                             <th>Cari Kodu</th>
@@ -215,26 +215,7 @@ A company uses this software will easily track their process by using features o
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar2.jpeg">Angelica Ramos</td>
-                                            <td>Cell 2<br></td>
-                                            <td>Software Engineer<br></td>
-                                            <td>London</td>
-                                            <td>47</td>
-                                            <td>2009/10/09<br></td>
-                                            <td>$1,200,000</td>
-                                            <td>Cell 8</td>
-                                            <td>Cell 9</td>
-                                            <td>Cell 10</td>
-                                            <td>Cell 11</td>
-                                            <td>Cell 12</td>
-                                            <td>Cell 13</td>
-                                            <td>Cell 14</td>
-                                            <td>Cell 15</td>
-                                            <td>Cell 15</td>
-                                            <td>Cell 15</td>
-                                            <td>Cell 15</td>
-                                        </tr>
+                                        
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -242,7 +223,6 @@ A company uses this software will easily track their process by using features o
                                             <td><strong>Proje Adı</strong><br></td>
                                             <td><strong>Başlangıç Tarihi</strong><br></td>
                                             <td><strong>Bitiş Tarihi</strong><br></td>
-                                            <td><strong>Müşteri Kodu</strong><br></td>
                                             <td><strong>Sipariş Kodu</strong><br></td>
                                             <td><strong>Arge Fatura No</strong><br></td>
                                             <td><strong>Cari Kodu</strong><br></td>
@@ -293,6 +273,9 @@ A company uses this software will easily track their process by using features o
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="../Scripts/ShowUserInfo.js"></script>
+    <script src="../Scripts/listProjects.js"></script>
+
     </form>
 </body>
 

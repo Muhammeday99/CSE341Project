@@ -26,6 +26,15 @@
         <asp:FileUpload ID="photoUpload" runat="server" />
         <br />
         <br />
+        Kişi Bilgileri:<br />
+        <br />
+        İsim:<br />
+        <asp:TextBox ID="nameTextbox" runat="server" EnableTheming="True"></asp:TextBox>
+        <br />
+        Soyisim:<br />
+        <asp:TextBox ID="surnameTextbox" runat="server"></asp:TextBox>
+        <br />
+        <br />
         <asp:Image ID="Image1" runat="server" Height = "100" Width = "100" />
         <br />
         <asp:CheckBox ID="adminOrNot" runat="server" Text="Admin yetkileri" />

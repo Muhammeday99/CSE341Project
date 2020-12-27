@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="YeniProjeEkle.aspx.cs" Inherits="projedeneme2.YeniProjeEkle.YeniProjeEkle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MasrafTanim.aspx.cs" Inherits="projedeneme2.MasrafTanim.MasrafTanimWebForm" %>
 
 <!DOCTYPE html>
 <html>
@@ -70,7 +70,7 @@ A company uses this software will easily track their process by using features o
 					<li class="nav-item"><asp:LinkButton class="nav-link" OnClick="Hata_Tespit_click" runat="server" style="padding-top: 0.4em;padding-bottom: 0.4em;"><i class="fa fa-star" style="width: 1.5em;"></i><span>Hata Tespit</span></asp:LinkButton></li>
 				</ul><a href="#"></a>
 				<div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div><a href="register.html"></a></div>
-		</nav>
+        </nav>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
@@ -160,7 +160,7 @@ A company uses this software will easily track their process by using features o
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span id="UserNameSpan" class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img id="ProfilePicture" class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
@@ -170,149 +170,104 @@ A company uses this software will easily track their process by using features o
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Proje Tanımı</h3>
+                    <h3 class="text-dark mb-4">Masraf Tanımı</h3>
+                    <div class="col" style="margin-bottom: 3%;padding-right: 0px;padding-left: 0px;">
+                        <div class="card" style="height: 100%;">
+                            <div class="card-body">
+                                <h4 class="card-title">Yeni Masraf Ekle</h4>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 20%;">Masraf Kodu<br></td>
+                                                <td><asp:TextBox runat="server" id="ExpenseCode" placeholder="Expense Code" name="ExpenseCode"></asp:TextBox></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Masraf Adı<br></td>
+                                                <td><asp:TextBox runat="server" id="ExpenseName" placeholder="Expense Name" name="ExpenseName"></asp:TextBox></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Masraf Tarihi<br></td>
+                                                <td><asp:TextBox runat="server" id="ExpenseDate" type="date"></asp:TextBox></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Masraf Tutarı</td>
+                                                <td><asp:TextBox runat="server" type="number" id="ExpenseAmount" name="ExpenseAmount" min="0" placeholder="Expense Amount" step="1"></asp:TextBox></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><asp:Button runat="server" class="btn btn-primary" text="Yeni Masraf Ekle" id="AddNewExpense" OnClick="AddNewExpense_Click" style="float: left;background: rgb(49,115,163);margin-top: 2%;"></asp:Button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card shadow">
-                        <div class="card-header py-3"><span>Yeni Proje Ekle</span></div>
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 font-weight-bold">Masraf Tanımları</p>
+                        </div>
                         <div class="card-body">
-                            <div class="row" style="height: 100%;">
-                                <div class="col">
-                                    <div class="card" style="height: 97%;">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Temel Bilgiler</h4>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr></tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="width: 20%;">Proje Kodu<br></td>
-                                                            <td><asp:Textbox runat="server" id="ProjectCode" placeholder="Project Code" style="min-width: 100%;"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Proje Adı<br></td>
-                                                            <td><asp:Textbox runat="server" id="ProjectName" placeholder="Project Name" style="min-width: 100%;"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Başlangıç Tarihi<br></td>
-                                                            <td><asp:Textbox runat="server" TextMode="Date" id="StartingDate" name="StartingDate"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Bitiş Tarihi<br></td>
-                                                            <td><asp:Textbox runat="server" TextMode="Date" id="EndingDate" name="EndingDate"></asp:Textbox></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6 text-nowrap">
+                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm">
+                                                <option value="10" selected="">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>&nbsp;</label></div>
                                 </div>
-                                <div class="col">
-                                    <div class="card" style="height: 97%;">
-                                        <div class="card-body">
-                                            <h4 class="card-title">İletişim Bilgileri</h4>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr></tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="width: 20%;">Cari Kodu</td>
-                                                            <td><asp:Textbox runat="server" id="EntityCode" placeholder="Entity Code" style="min-width: 100%;"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Sipariş Kodu</td>
-                                                            <td><asp:Textbox runat="server" id="OrderCode" placeholder="Order Code" style="min-width: 100%;"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Arge Fatura No</td>
-                                                            <td><asp:Textbox runat="server" id="ArgeInvoiceNumber" placeholder="Arge Invoice Number" style="min-width: 100%;"></asp:Textbox></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-6">
+                                     <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
                                 </div>
                             </div>
-                            <div class="row" style="height: 100%;">
-                                <div class="col">
-                                    <div class="card" style="height: 97%;">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Fiyat Bilgileri</h4>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr></tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="width: 20%;">Döviz Kodu<br></td>
-                                                            <td><select id="CurrencyId" name="CurrencyCode">
-                                                                    <optgroup label="Currency Code">
-                                                                        <option value="TRY" selected="">TRY</option>
-                                                                        <option value="USD">USD</option>
-                                                                        <option value="EUR">EUR</option>
-                                                                    </optgroup>
-                                                                </select></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Tutar<br></td>
-                                                            <td><asp:Textbox runat="server" type="number" id="Amount" placeholder="Price" min="0"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>KDV (yüzde)</td>
-                                                            <td><asp:Textbox runat="server" type="number" id="KDVpercentage" min="0" step="0.1" placeholder="KDV Percentage"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>İşçilik Ücreti (Yüzde)<br></td>
-                                                            <td><asp:Textbox runat="server" type="number" id="WorkmanshipPricePercentage" min="0" step="0.1" placeholder="Workmanship Percentage"></asp:Textbox></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="table-responsive table mt-2" id="currencyTable" role="grid" aria-describedby="currencyTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Masraf Kodu</th>
+                                            <th>Masraf Adı</th>
+                                            <th>Masraf Tarihi</th>
+                                            <th>Masraf Tutarı</th>
+                                            <th>Sil?</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>EC125</td>
+                                            <td>Telefon Faturası</td>
+                                            <td>19.05.2020</td>
+                                            <td>175</td>
+                                            <td><asp:Button runat="server" text="Sil" class="btn btn-warning btn-sm" OnClick="DeleteExpense_Click" id="DeleteExpense"></asp:Button></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Masraf Kodu</strong><br></td>
+                                            <td><strong>Masraf Adı</strong><br></td>
+                                            <td><strong>Masraf Tarihi</strong><br></td>
+                                            <td><strong>Masraf Tutarı</strong><br></td>
+                                            <td><strong>Sil?</strong><br></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 align-self-center">
+                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
                                 </div>
-                                <div class="col">
-                                    <div class="card" style="height: 97%;">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Diğer Bilgiler</h4>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr></tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="width: 20%;">Karşı Tarafın İlgili Kişisi<br></td>
-                                                            <td><asp:Textbox runat="server" id="RelatedPerson" placeholder="Related Person" style="min-width: 100%;"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Açıklama</td>
-                                                            <td><asp:Textbox runat="server" id="Pr_description" placeholder="Description" style="min-width: 100%;"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Proje Yetkilisi</td>
-                                                            <td><asp:Textbox runat="server" id="ProjectManager" placeholder="Project Manager" style="min-width: 100%;"></asp:Textbox></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-																<div class="form-check"><input class="form-check-input"
-																		type="checkbox" id="IsPassive">
-                                                                        <label class="form-check-label" id="IsPassiveLabel"
-																		for="IsPassive">Pasif?</label></div>
-															</td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-6">
+                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                        </ul>
+                                    </nav>
                                 </div>
-                            </div><asp:LinkButton runat="server" OnClick="AddNewProject_Click" class="btn btn-primary" id="AddNewProject"  style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Proje Ekle</asp:LinkButton>
+                            </div>
                         </div>
                     </div>
                 </div>

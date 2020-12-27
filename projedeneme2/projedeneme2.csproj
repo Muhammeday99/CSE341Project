@@ -95,11 +95,14 @@
     <Content Include="default.aspx" />
     <Content Include="DovizKurTanim\DovizKurTanim.aspx" />
     <Content Include="Homepage\Homepage.aspx" />
-    <Content Include="MasrafTanımı\MasrafTanımı.aspx" />
+    <Content Include="MasrafTanim\MasrafTanim.aspx" />
     <Content Include="ProfilePictures\unnamed.jpg" />
     <Content Include="ProjeTanim\ProjeTanim.aspx" />
     <Content Include="ProjeTanim\YeniProjeEkle.aspx" />
     <Content Include="ProjeTanim\YeniProjeEkle_eskisi.aspx" />
+    <Content Include="Scripts\listProjects.js" />
+    <Content Include="Scripts\listCompanyInfo.js" />
+    <Content Include="Scripts\ShowUserInfo.js" />
     <Content Include="Scripts\NewInvoiceContent.js" />
     <Content Include="Scripts\ShowAccountPP.js" />
     <Content Include="Scripts\listCurrency.js" />
@@ -195,12 +198,12 @@
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="InputControllers\stringController.cs" />
-    <Compile Include="MasrafTanımı\MasrafTanımı.aspx.cs">
-      <DependentUpon>MasrafTanımı.aspx</DependentUpon>
+    <Compile Include="MasrafTanim\MasrafTanim.aspx.cs">
+      <DependentUpon>MasrafTanim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MasrafTanımı\MasrafTanımı.aspx.designer.cs">
-      <DependentUpon>MasrafTanımı.aspx</DependentUpon>
+    <Compile Include="MasrafTanim\MasrafTanim.aspx.designer.cs">
+      <DependentUpon>MasrafTanim.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProjeTanim\ProjeTanim.aspx.cs">
       <DependentUpon>ProjeTanim.aspx</DependentUpon>

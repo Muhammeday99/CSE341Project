@@ -13,8 +13,12 @@ namespace projedeneme2.CariKart
 {
     public partial class WebForm1 : projedeneme2.Homepage.WebForm1
     {
+
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //ID = Session["ID"].ToString();
             JsonConverter convert = new JsonConverter();
             DataTable table = convert.ToJson("Entity_Card");
             string str = convert.DataTableToJSON(table);
@@ -25,14 +29,7 @@ namespace projedeneme2.CariKart
             Response.Redirect("/CariKart/YeniCariKart.aspx");
         }
 
-        [WebMethod]
-        public static string getUserInfo()
-        {
-
-            JsonConverter convert = new JsonConverter();
-
-            return convert.getRowInfo("Users", "UserID", "1");
-        }
+        
 
     }
 

@@ -23,6 +23,7 @@ A company uses this software will easily track their process by using features o
 
 <body id="page-top">
     <form runat="server">
+		<asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
 	<div id="wrapper">
 		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="color: rgb(0,85,164);background: rgb(49,115,163);min-width: auto;max-width: 250;">
 			<div class="container-fluid d-flex flex-column p-0">
@@ -164,14 +165,24 @@ A company uses this software will easily track their process by using features o
 							</li>
 							<div class="d-none d-sm-block topbar-divider"></div>
 							<li class="nav-item dropdown no-arrow">
-								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img id="ProfilePicture" class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
-									<div
-										class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
-										<a
-											class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
-											<div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a></div>
-					</div>
-					</li>
+								<div class="nav-item dropdown no-arrow">
+									<a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
+										<span id="UserNameSpan" class="d-none d-lg-inline mr-2 text-gray-600 small"></span>
+										<img id="ProfilePicture" class="border rounded-circle img-profile" src="">
+									</a>
+									<div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+										<a class="dropdown-item" href="#">
+											<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+										<a class="dropdown-item" href="#">
+											<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+										<a class="dropdown-item" href="#">
+											<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
+											<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">
+											<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+									</div>
+								</div>
+							</li>
 					</ul>
 			</div>
 			</nav>
@@ -371,7 +382,7 @@ A company uses this software will easily track their process by using features o
 						<div class="card-body" style="height: auto;">
 							<h4 class="card-title" id="companyInformation">Şirket Bilgileri</h4>
 							<div class="table-responsive">
-								<table class="table">
+								<table id="CompanyInfoTable" class="table">
 									<thead>
 										<tr></tr>
 									</thead>
@@ -408,13 +419,11 @@ A company uses this software will easily track their process by using features o
 											<td>Banka Numarası (IBAN)</td>
 											<td id="companyBankAccountNumber"></td>
 										</tr>
-										<tr></tr>
-										<tr></tr>
-										<tr></tr>
+										
 									</tbody>
 								</table>
 							</div>
-							<p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+							
 						</div>
 					</div>
 				</div>
@@ -434,7 +443,8 @@ A company uses this software will easily track their process by using features o
 	<script src="assets/js/bs-init.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
-	<script src="../Scripts/ShowAccountPP.js"></script>
+	<script src="../Scripts/ShowUserInfo.js"></script>
+	<script src="../Scripts/listCompanyInfo.js"></script>
 </body>
 
 </html>

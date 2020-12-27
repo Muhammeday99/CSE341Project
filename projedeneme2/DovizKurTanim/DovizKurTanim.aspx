@@ -23,6 +23,7 @@ A company uses this software will easily track their process by using features o
 
 <body id="page-top">
 	<form runat="server">
+		<asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
 	<div id="wrapper">
 		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="color: rgb(0,85,164);background: rgb(49,115,163);min-width: auto;max-width: 250;">
 			<div class="container-fluid d-flex flex-column p-0">
@@ -164,7 +165,7 @@ A company uses this software will easily track their process by using features o
 							</li>
 							<div class="d-none d-sm-block topbar-divider"></div>
 							<li class="nav-item dropdown no-arrow">
-								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span id="UserNameSpan" class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img id="ProfilePicture" class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
 									<div
 										class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
 										<a
@@ -221,7 +222,7 @@ A company uses this software will easily track their process by using features o
 							<div class="col-md-6 text-nowrap">
 								<div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
 									<label>Show&nbsp;
-										<select class="form-control form-control-sm custom-select custom-select-sm" id="CurrencyListSize">
+										<select class="form-control form-control-sm custom-select custom-select-sm" id="ListSize">
 											<option selected="selected">select</option>
 											<option value="1">1</option><option value="10">10</option>
 											<option value="25">25</option><option value="50">50</option>
@@ -257,16 +258,14 @@ A company uses this software will easily track their process by using features o
 						</div>
 						<div class="row">
 							<div class="col-md-6 align-self-center">
-								<p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+								<p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite"></p>
 							</div>
 							<div class="col-md-6">
 								<nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-									<ul class="pagination">
-										<li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-										<li class="page-item active"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item"><a class="page-link" href="#">3</a></li>
-										<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+									<ul id="listPage" class="pagination">
+										<li class="page-item"><a class="page-link" href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+										
+										<li class="page-item"><a class="page-link" href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 									</ul>
 								</nav>
 							</div>
@@ -305,6 +304,7 @@ A company uses this software will easily track their process by using features o
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
 	<script src="../Scripts/listCurrency.js"></script>
+	<script src="../Scripts/ShowUserInfo.js"></script>
 	</form>
 </body>
 
