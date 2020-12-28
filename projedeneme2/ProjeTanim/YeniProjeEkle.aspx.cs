@@ -82,7 +82,7 @@ namespace projedeneme2.YeniProjeEkle
             string projectManager = ProjectManager.Text;
             inputs.Add(projectManager);
 
-            String q = "INSERT INTO dbo.ProjectDefinition (ProjectCode, ProjectName,StartingDate,EndingDate,CustomerCode,OrderCode,ArgeInvoiceNumber,CurrencyId,Amount,KDVpercentage,WorkmanshipPricePercentage,RelatedPerson,Pr_description,ProjectManager) VALUES (@ProjectCode, @ProjectName, @StartingDate,@EndingDate, @EntityCode,@OrderCode, @ArgeInvoiceNumber, @CurrencyId, @Amount, @KDVpercentage, @WorkmanshipPricePercentage, @RelatedPerson, @Pr_description, @ProjectManager)";
+            String q = "INSERT INTO dbo.ProjectDefinition (ProjectCode, ProjectName,StartingDate,EndingDate,EntityId,OrderCode,ArgeInvoiceNumber,ExchangeRateId,Amount,KDVpercentage,WorkmanshipPricePercentage,RelatedPerson,Pr_description,ProjectManager) VALUES (@ProjectCode, @ProjectName, @StartingDate,@EndingDate, @EntityCode,@OrderCode, @ArgeInvoiceNumber, @CurrencyId, @Amount, @KDVpercentage, @WorkmanshipPricePercentage, @RelatedPerson, @Pr_description, @ProjectManager)";
 
             SqlCommand cmnd = new SqlCommand(q, con);
 
