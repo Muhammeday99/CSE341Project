@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2.FaturaGiris
 {
-    public partial class FaturaGirisWebForm : projedeneme2.Homepage.WebForm1
+    public partial class FaturaGirisWebForm : projedeneme2.Homepage.Homepage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

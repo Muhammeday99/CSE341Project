@@ -11,7 +11,7 @@ namespace projedeneme2.DovizKurTanim
 {
 
 
-    public partial class WebForm1
+    public partial class DovizKurTanim
     {
 
         /// <summary>

@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2.YeniCariKart
 {
-    public partial class WebForm1 : projedeneme2.CariKart.WebForm1
+    public partial class YeniCariKart : projedeneme2.CariKart.CariKart
     {
 
         protected SqlConnection con = databaseConnect.connectToSQL();

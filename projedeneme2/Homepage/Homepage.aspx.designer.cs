@@ -11,7 +11,7 @@ namespace projedeneme2.Homepage
 {
 
 
-    public partial class WebForm1
+    public partial class Homepage
     {
 
         /// <summary>

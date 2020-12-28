@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="projedeneme2.AdminPage.AddAccount">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAQBAAAAACACAAAAAEAASQAIAQAABAAAAAAACICAQA=</HashCode>
+      <FileName>AdminPage\AddAccount.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.AdminPage.BaseAdminPage">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAEAAAAAAAAAAAAIQQAAAAAAIAAAAICAAA=</HashCode>
+      <FileName>AdminPage\BaseAdminPage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.AdminPage.ShowAccountList">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAAAAAAAAAAAAQAAAARAAAAAIAAAEAAAAAAIgAAA=</HashCode>
+      <FileName>AdminPage\ShowAccountList.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.CariKart.CariKart">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>CariKart\CariKart.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.YeniCariKart.YeniCariKart">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="projedeneme2.CariKart.CariKart" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="1.925" />
+        <Point X="4.75" Y="2.058" />
+        <Point X="4.625" Y="2.058" />
+        <Point X="4.625" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAEAAAAAAIBAAAAgRAAAAgQAAAAAgYAgAIAAgA=</HashCode>
+      <FileName>CariKart\YeniCariKart.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.DovizKurTanim.DovizKurTanim">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAIAAAAAAAAAAAQABARAAAAAAEAAAAAIEAGA=</HashCode>
+      <FileName>DovizKurTanim\DovizKurTanim.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.FaturaGiris.DeleteInvoice">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAgACAAAAAAAUAAIAAAAAAAAAAAAAIgAAA=</HashCode>
+      <FileName>FaturaGiris\DeleteInvoice.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.FaturaGiris.FaturaGirisWebForm">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAA=</HashCode>
+      <FileName>FaturaGiris\FaturaGiris.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.Homepage.Homepage">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAIkkAAIAICgAQiIABSAGIAAACAAAgABACQQAIcAEA=</HashCode>
+      <FileName>Homepage\Homepage.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.InputControllers.encryption">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputControllers\encryption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.InputControllers.stringController">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputControllers\stringController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.MasrafTanim.MasrafTanimWebForm">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEABIAAgAAAAAAAAAAUAAgAAAIEAABAAAAAIAAAA=</HashCode>
+      <FileName>MasrafTanim\MasrafTanim.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.ProjeTanim.ProjeTanim">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>ProjeTanim\ProjeTanim.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.YeniProjeEkle.YeniProjeEkle">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIQAAAAAAAICAAAAQCAAAAgIAAAAAAAMIIAAiA=</HashCode>
+      <FileName>ProjeTanim\YeniProjeEkle.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.databaseConnect">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>databaseConnect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.Default">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAANAECAAAIAgAA=</HashCode>
+      <FileName>default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.JsonConverter">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAACAAAAAAAggBAAIAAAQAAQAAAAAAAIAAAABAAAAA=</HashCode>
+      <FileName>JsonConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

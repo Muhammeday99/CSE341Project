@@ -232,6 +232,7 @@
     <Content Include="CariKart\EntityCards.json" />
     <Content Include="DovizKurTanim\ExchangeList.json" />
     <Content Include="AdminPage\Users.json" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace projedeneme2.DovizKurTanim
 {
-    public partial class WebForm1 : projedeneme2.Homepage.WebForm1
+    public partial class DovizKurTanim : projedeneme2.Homepage.Homepage
     {
 
         protected SqlConnection con = databaseConnect.connectToSQL();

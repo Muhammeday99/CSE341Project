@@ -11,7 +11,7 @@ using System.Web.Services;
 
 namespace projedeneme2.CariKart
 {
-    public partial class WebForm1 : projedeneme2.Homepage.WebForm1
+    public partial class CariKart : projedeneme2.Homepage.Homepage
     {
 
         

@@ -11,7 +11,7 @@ namespace projedeneme2.CariKart
 {
 
 
-    public partial class WebForm1
+    public partial class CariKart
     {
     }
 }

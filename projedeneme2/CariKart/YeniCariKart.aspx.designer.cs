@@ -11,7 +11,7 @@ namespace projedeneme2.YeniCariKart
 {
 
 
-    public partial class WebForm1
+    public partial class YeniCariKart
     {
 
         /// <summary>

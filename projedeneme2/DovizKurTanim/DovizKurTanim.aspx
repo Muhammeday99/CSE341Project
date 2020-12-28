@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DovizKurTanim.aspx.cs" Inherits="projedeneme2.DovizKurTanim.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DovizKurTanim.aspx.cs" Inherits="projedeneme2.DovizKurTanim.DovizKurTanim" %>
 
 <!DOCTYPE html>
 <html>
