@@ -281,10 +281,9 @@ A company uses this software will easily track their process by using features o
 							</div>
 						</div>
 					<div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-                                <table class="table my-0" id="DetailTable">
+                                <table class="table my-0" id="AddNewContent">
                                     <thead>
                                         <tr>
-                                            <th>Yeni Ekle</th>
                                             <th>Tip (Masraf/Proje)</th>
                                             <th>Proje/Masraf Kodu</th>
                                             <th>Stok Türü</th>
@@ -296,12 +295,11 @@ A company uses this software will easily track their process by using features o
                                             <th>KDV Oranı</th>
                                             <th>KDV miktarı</th>
                                             <th>Toplam Tutar</th>
+											<th>Yeni Ekle</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr></tr>
                                         <tr id ="Content1">
-                                            <td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClientClick="{return false;}"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
                                             <td><select id="Type">
                                                     <optgroup label="Tip">
                                                         <option value="Masraf" selected="">Masraf</option>
@@ -352,12 +350,36 @@ A company uses this software will easily track their process by using features o
                                                 </select></td>
                                             <td><asp:Textbox runat="server" type="number" id="KDVamount" placeholder="KDV amount" ReadOnly="true"></asp:Textbox></td>
                                             <td><asp:Textbox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:Textbox></td>
+											<td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClientClick="{return false;}"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
                                         </tr>
-                                        <tr></tr>
+
+                                    </tbody>
+                                    
+                                </table>
+                            </div>
+							
+							<div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="ContentTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Tip (Masraf/Proje)</th>
+                                            <th>Proje/Masraf Kodu</th>
+                                            <th>Stok Türü</th>
+                                            <th>Stok Kodu</th>
+                                            <th>Stok Adı</th>
+                                            <th>Birim</th>
+                                            <th>Miktarı</th>
+                                            <th>Tutar</th>
+                                            <th>KDV Oranı</th>
+                                            <th>KDV miktarı</th>
+                                            <th>Toplam Tutar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td><strong>Yeni Ekle</strong><br></td>
                                             <td><strong>Tip (Masraf/Proje)</strong><br></td>
                                             <td><strong>Proje Kodu</strong><br></td>
                                             <td><strong>Stok Türü</strong><br></td>
@@ -372,7 +394,9 @@ A company uses this software will easily track their process by using features o
                                         </tr>
                                     </tfoot>
                                 </table>
-                            </div><asp:LinkButton runat="server" OnClick="AddNewInvoice_Click" class="btn btn-primary" id="AddInvoice" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Fatura Ekle</asp:LinkButton>
+                            </div>
+						
+						<asp:LinkButton runat="server" OnClick="AddNewInvoice_Click" class="btn btn-primary" id="AddInvoice" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Fatura Ekle</asp:LinkButton>
                         </div>
                     </div>
                 </div>
