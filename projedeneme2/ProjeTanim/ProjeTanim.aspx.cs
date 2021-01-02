@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -12,10 +13,13 @@ namespace projedeneme2.ProjeTanim
     public partial class ProjeTanim : projedeneme2.Homepage.Homepage
     {
         protected SqlConnection con = databaseConnect.connectToSQL();
-        protected List<String> inputs = new List<string>();
+        protected static List<string> entityCodes = new List<string>();
+        protected static List<string> currencyCodes = new List<string>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            entityCodes.Clear();
+            currencyCodes.Clear();
             Take_Entity_Card_Info();
             Take_Exchange_Rate_Info();
         }
@@ -26,7 +30,7 @@ namespace projedeneme2.ProjeTanim
         protected void Take_Entity_Card_Info()
         {
             con.Open();
-            List<string> inputs = new List<string>();
+            
             SqlCommand command;
             SqlDataReader dataReader;
             string sql, output = "";
@@ -39,11 +43,10 @@ namespace projedeneme2.ProjeTanim
                 //Take entityCode info from database
                 output = output + dataReader.GetValue(0);
                 //Add entityCode to inputs list
-                inputs.Add(output);
                 //Take entityName info from database
-                output = output + dataReader.GetValue(1);
+                output = output + " " + dataReader.GetValue(1);
                 //Add entityName to inputs list
-                inputs.Add(output);
+                entityCodes.Add(output);
                 output = "";
             }
             con.Close();
@@ -51,7 +54,7 @@ namespace projedeneme2.ProjeTanim
         protected void Take_Exchange_Rate_Info()
         {
             con.Open();
-            List<string> inputs = new List<string>();
+            
             SqlCommand command;
             SqlDataReader dataReader;
             string sql, output = "";
@@ -64,14 +67,31 @@ namespace projedeneme2.ProjeTanim
                 //Take CurrencyCode info from database
                 output = output + dataReader.GetValue(0);
                 //Add CurrencyCode to inputs list
-                inputs.Add(output);
                 //Take CurrencyExchangeRate info from database
-                output = output + dataReader.GetValue(1);
+                output = output + " " + dataReader.GetValue(1);
                 //Add CurrencyExchangeRate to inputs list
-                inputs.Add(output);
+                currencyCodes.Add(output);
                 output = "";
             }
             con.Close();
         }
+
+        [WebMethod]
+        public static string getProjectsInfo()
+        {
+            JsonConverter converter = new JsonConverter();
+            return converter.TableToJSON("ProjectDefinition");
+        }
+
+        [WebMethod]
+        public static string[] getEntityInfo()
+        {
+            JsonConverter converter = new JsonConverter();
+            string[] info = { converter.strlistToJSON(entityCodes), converter.strlistToJSON(currencyCodes) };
+            return info;
+        }
+
+
+
     }
 }

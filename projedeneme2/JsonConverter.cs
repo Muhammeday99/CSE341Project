@@ -71,5 +71,11 @@ namespace projedeneme2
         {
             return JsonConvert.SerializeObject(str);
         }
+
+        public string strlistToJSON(List<string> str)
+        {
+            return JsonConvert.SerializeObject(str);
+        }
+
     }
 }

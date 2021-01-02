@@ -1,13 +1,24 @@
 ﻿let ProjectsInfo;
+let Entities;
+let ExchangeRates;
+let currencies = ["TRY", "USD", "EUR"];
 let sizeList = document.getElementById("ListSize");
 let listPage = document.getElementById("listPage").getElementsByTagName("li");
 let next = listPage[listPage.length - 1].getElementsByTagName("a")[0];
 let prev = listPage[0].getElementsByTagName("a")[0];
 let info = document.getElementById("dataTable_info");
 let Index = 0;
-PageMethods.getProjectsInfo(OnSuccess);
+PageMethods.getProjectsInfo(OnSuccessProject);
+PageMethods.getEntityInfo(OnSuccessEntity);
 
-function OnSuccess(response) {
+function OnSuccessEntity(response) {
+    console.log(response);
+    console.log(JSON.parse(response[1]));
+    Entities = JSON.parse(response[0]);
+    ExchangeRates = JSON.parse(response[1]);
+}
+
+function OnSuccessProject(response) {
     ProjectsInfo = JSON.parse(response);
     console.log(ProjectsInfo);
     sizeList.options[0].value = ProjectsInfo.length;
@@ -62,8 +73,27 @@ function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
         for (let e in Project) {
             if (e != "id") {
                 let cell = row.insertCell();
-                let element = Project[e];
-                let node = document.createTextNode(element);
+                let element;
+                let node;
+                if (e == "EntityId") {
+                    let code = Project[e] - 1;
+                    element = Entities[code].split(" ")[0];
+                    node = document.createTextNode(element);
+                    cell.appendChild(node);
+                    cell = row.insertCell();
+                    element = Entities[code].split(" ")[1];
+                } else if (e == "ExchangeRateId") {
+                    let code = Project[e] - 1;
+                    let currency = ExchangeRates[code].split(" ")[0];
+                    element = currencies[currency - 1];
+                    node = document.createTextNode(element);
+                    cell.appendChild(node);
+                    cell = row.insertCell();
+                    element = ExchangeRates[code].split(" ")[1];
+                } else {
+                    element = Project[e];
+                }
+                node = document.createTextNode(element);
                 cell.appendChild(node);
             }
         }
