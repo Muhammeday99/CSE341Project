@@ -127,13 +127,6 @@ namespace projedeneme2.Homepage
             return convert.getRowInfo("CompanyInfo", "ID", "1");
         }
 
-        [WebMethod]
-        public static string getProjectsInfo()
-        {
-
-            JsonConverter convert = new JsonConverter();
-
-            return convert.TableToJSON("ProjectDefinition");
-        }
+        
     }
 }
