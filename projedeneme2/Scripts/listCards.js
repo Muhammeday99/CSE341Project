@@ -83,11 +83,11 @@ function listElements(EntityCards, size = EntityCards.length, startIndex = 0) {
                         value = "Supplier";
                     }
                 }
+
+                let text = document.createTextNode(value);
+
+                Tcell.appendChild(text);
             }
-
-            let text = document.createTextNode(value);
-
-            Tcell.appendChild(text);
         }
     }
 }
