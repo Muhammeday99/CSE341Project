@@ -8,19 +8,17 @@ let next = listPage[listPage.length - 1].getElementsByTagName("a")[0];
 let prev = listPage[0].getElementsByTagName("a")[0];
 let info = document.getElementById("dataTable_info");
 let Index = 0;
-PageMethods.getProjectsInfo(OnSuccessProject);
 PageMethods.getEntityInfo(OnSuccessEntity);
+PageMethods.getProjectsInfo(OnSuccessProject);
 
 function OnSuccessEntity(response) {
-    console.log(response);
-    console.log(JSON.parse(response[1]));
     Entities = JSON.parse(response[0]);
+    
     ExchangeRates = JSON.parse(response[1]);
 }
 
 function OnSuccessProject(response) {
     ProjectsInfo = JSON.parse(response);
-    console.log(ProjectsInfo);
     sizeList.options[0].value = ProjectsInfo.length;
     info.innerHTML = "Showing " + Number(Index + 1) + " to " + ProjectsInfo.length + " of " + ProjectsInfo.length;
     listProjects(ProjectsInfo);
@@ -31,7 +29,7 @@ sizeList.onchange = () => {
     if (size > ProjectsInfo.length) size = ProjectsInfo.length;
     Index = 0;
     info.innerHTML = "Showing " + Number(Index + 1) + " to " + Number(Index + size) + " of " + ProjectsInfo.length;
-    listElements(ProjectsInfo, size, Index);
+    listProjects(ProjectsInfo, size, Index);
 }
 
 next.onclick = () => {
@@ -47,7 +45,7 @@ next.onclick = () => {
     }
 
     info.innerHTML = "Showing " + Number(Index + 1) + " to " + Number(end) + " of " + ProjectsInfo.length;
-    listElements(ProjectsInfo, size, Index);
+    listProjects(ProjectsInfo, size, Index);
 }
 prev.onclick = () => {
     let size = Number(sizeList.options[sizeList.selectedIndex].value);
@@ -57,7 +55,7 @@ prev.onclick = () => {
         Index = 0;
     }
     info.innerHTML = "Showing " + Number(Index + 1) + " to " + Number(Index + size) + " of " + ProjectsInfo.length;
-    listElements(ProjectsInfo, size, Index);
+    listProjects(ProjectsInfo, size, Index);
 }
 
 function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
@@ -76,7 +74,7 @@ function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
                 let element;
                 let node;
                 if (e == "EntityId") {
-                    let code = Project[e] - 1;
+                    let code = Number(Project[e]) - 1;
                     element = Entities[code].split(" ")[0];
                     node = document.createTextNode(element);
                     cell.appendChild(node);
@@ -85,6 +83,7 @@ function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
                 } else if (e == "ExchangeRateId") {
                     let code = Project[e] - 1;
                     let currency = ExchangeRates[code].split(" ")[0];
+                    console.log(currency);
                     element = currencies[currency - 1];
                     node = document.createTextNode(element);
                     cell.appendChild(node);
