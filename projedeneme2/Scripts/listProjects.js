@@ -82,13 +82,14 @@ function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
                     element = Entities[code].split(" ")[1];
                 } else if (e == "ExchangeRateId") {
                     let code = Project[e] - 1;
-                    let currency = ExchangeRates[code].split(" ")[0];
+                    console.log(ExchangeRates);
+                    let currency = ExchangeRates[0].split(" ")[0];
                     console.log(currency);
                     element = currencies[currency - 1];
                     node = document.createTextNode(element);
                     cell.appendChild(node);
                     cell = row.insertCell();
-                    element = ExchangeRates[code].split(" ")[1];
+                    element = ExchangeRates[0].split(" ")[1];
                 } else {
                     element = Project[e];
                 }

@@ -93,7 +93,7 @@ namespace projedeneme2.YeniProjeEkle
             cmnd.Parameters.AddWithValue("@EntityCode", entityCode);
             cmnd.Parameters.AddWithValue("@OrderCode", orderCode);
             cmnd.Parameters.AddWithValue("@ArgeInvoiceNumber", argeInvoiceNumber);
-            cmnd.Parameters.AddWithValue("@CurrencyId", currency);
+            cmnd.Parameters.AddWithValue("@CurrencyId", 53);
             cmnd.Parameters.AddWithValue("@Amount", amount);
             cmnd.Parameters.AddWithValue("@KDVpercentage", kdvPercentage);
             cmnd.Parameters.AddWithValue("@WorkmanshipPricePercentage", worksmanshipPrice);

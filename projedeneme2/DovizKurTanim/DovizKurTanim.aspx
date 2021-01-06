@@ -240,8 +240,8 @@ A company uses this software will easily track their process by using features o
 								<thead>
 									<tr>
 										<th>Döviz Kodu</th>
-										<th>Kur</th>
 										<th>Kur Tarihi</th>
+										<th>Kur</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -250,8 +250,8 @@ A company uses this software will easily track their process by using features o
 								<tfoot>
 									<tr>
 										<td><strong>Döviz Kodu</strong></td>
-										<td><strong>Kur</strong></td>
 										<td><strong>Kur Tarihi</strong></td>
+										<td><strong>Kur</strong></td>
 									</tr>
 								</tfoot>
 							</table>
@@ -282,19 +282,37 @@ A company uses this software will easily track their process by using features o
 	</div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
 	
 	<script> 
-			const base = 'USD'
-			const api_url = 'https://api.exchangeratesapi.io/latest?base=USD'
-
-            async function getApi() {
-                const response = await fetch(api_url);
-				const data = await response.json();
-
-                document.getElementById('USD').value = 1;
-                document.getElementById('EUR').value = data.rates.EUR;
-				document.getElementById('TRY').value = data.rates.TRY;
-            }
+		let base = "TRY";
+		let api_url;
+		const list = document.getElementById("CurrencyCode");
+		const dateBox = document.getElementById("CurrencyExchangeDate");
+		let currentDate = "2021-01-06";
+        
+        async function getApi() {
+			const response = await fetch(api_url);
+			const data = await response.json();
+			console.log(data);
+            document.getElementById('USD').value = data.rates.TRY;
+			document.getElementById('EUR').value = data.rates.TRY;
+			console.log(document.getElementById('EUR').value);
+            document.getElementById('TRY').value = 1;
+		}
+		list.onchange = () => {
+			base = list.options[list.selectedIndex].value;
+			api_url = 'https://api.exchangeratesapi.io/' + currentDate + '?base=' + base;
+			console.log(api_url);
+            getApi();
+		}
+		dateBox.onchange = () => {
+			currentDate = dateBox.value;
+			console.log(currentDate);
+			console.log(base);
+			api_url = 'https://api.exchangeratesapi.io/' + currentDate + '?base=' + base;
+            console.log(api_url);
+            getApi();
+		}
+        getApi();
 		
-		getApi();
 
     </script>	
 	<script src="assets/js/jquery.min.js"></script>

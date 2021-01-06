@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -76,6 +77,14 @@ namespace projedeneme2.MasrafTanim
             }
 
             
+        }
+
+        [WebMethod]
+        public static string getExpenses()
+        {
+            JsonConverter converter = new JsonConverter();
+
+            return converter.TableToJSON("Expense_Info");
         }
 
         protected void DeleteExpense_Click(object sender, EventArgs e)

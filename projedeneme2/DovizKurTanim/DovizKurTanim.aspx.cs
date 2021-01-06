@@ -34,23 +34,26 @@ namespace projedeneme2.DovizKurTanim
             if (Request.Form["CurrencyCode"] == "TRY")
             {
                 n_CurrencyCode = 1;
-                n_CurrencyExchangeRate = double.Parse(TRY.Value, System.Globalization.CultureInfo.InvariantCulture);
+                
+                n_CurrencyExchangeRate = 1.0;
                 CurrencyExchangeRate.Text = TRY.Value + " ₺";
             }
             else if (Request.Form["CurrencyCode"] == "USD")
             {
                 n_CurrencyCode = 2;
-                n_CurrencyExchangeRate = 1;
+                System.Diagnostics.Debug.WriteLine(USD.Value);
+                n_CurrencyExchangeRate = double.Parse(USD.Value);
                 CurrencyExchangeRate.Text = 1 + " $";
 
             }
             else if (Request.Form["CurrencyCode"] == "EUR")
             {
                 n_CurrencyCode = 3;
-                n_CurrencyExchangeRate = double.Parse(EUR.Value, System.Globalization.CultureInfo.InvariantCulture);
+                System.Diagnostics.Debug.WriteLine(EUR.Value);
+                n_CurrencyExchangeRate = double.Parse(EUR.Value);
                 CurrencyExchangeRate.Text = 1 + " €";
             }
-
+            
             //date of the currency
             string n_CurrencyDate = CurrencyExchangeDate.Text;
 
