@@ -33,8 +33,8 @@ namespace projedeneme2.YeniProjeEkle
             string endingDate = DateTime.Now.ToString(EndingDate.Text);
             inputs.Add(endingDate);
 
-            string entityCode = EntityCode.Text;
-            inputs.Add(entityCode);
+            int entityCode = Int32.Parse(EntityCode.Text);
+            inputs.Add(entityCode.ToString());
 
             string orderCode = OrderCode.Text;
             inputs.Add(orderCode);
