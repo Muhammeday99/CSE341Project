@@ -67,19 +67,21 @@ function listElements(EntityCards, size = EntityCards.length, startIndex = 0) {
         let EntityCard = EntityCards[i];
         let Trow = tablebody.insertRow();
         for (let e in EntityCard) {
-            let Tcell = Trow.insertCell();
-            let value = EntityCard[e];
-            if (e == "entityKind") {
-                if (value == true) {
-                    value = "Legal Entity";
-                } else {
-                    value = "Person";
-                }
-            } else if (e == "entityType") {
-                if (value == true) {
-                    value = "Client";
-                } else {
-                    value = "Supplier";
+            if (e != "Id") {
+                let Tcell = Trow.insertCell();
+                let value = EntityCard[e];
+                if (e == "entityKind") {
+                    if (value == true) {
+                        value = "Legal Entity";
+                    } else {
+                        value = "Person";
+                    }
+                } else if (e == "entityType") {
+                    if (value == true) {
+                        value = "Client";
+                    } else {
+                        value = "Supplier";
+                    }
                 }
             }
 
