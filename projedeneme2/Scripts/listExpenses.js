@@ -79,6 +79,9 @@ function listExpenses(expenses, size = expenses.length, startIndex = 0) {
         let Tcell = Trow.insertCell();
         let btn = document.createElement("button");
         btn.setAttribute("id", "delete" + i);
+        btn.addEventListener("click", () => {
+            Tbody.deleteRow(i);
+        })
         //btn.type = "submit";
         btn.innerHTML = "Sil?";
         btn.setAttribute("class", "btn btn-warning btn-sm");
