@@ -102,6 +102,7 @@ namespace projedeneme2.YeniProjeEkle
             cmnd.Parameters.AddWithValue("@ProjectManager", projectManager);
 
             cmnd.ExecuteNonQuery();
+            errorLabel.Text = "Added successfully..";
 
             con.Close();
         }

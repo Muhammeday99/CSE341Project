@@ -50,6 +50,7 @@ namespace projedeneme2.MasrafTanim
                     if (expenseCode == inputs[i])
                     {
                         flag = 1;
+                        errorLabel.Text = "Adding operation failed!";
                         break;
                     }
                 }
@@ -68,6 +69,7 @@ namespace projedeneme2.MasrafTanim
                     cmnd.Parameters.AddWithValue("@ExpenseAmount", expenseAmount);
 
                     cmnd.ExecuteNonQuery();
+                    errorLabel.Text = "Added successfully..";
                 }   
                 con.Close();
             }

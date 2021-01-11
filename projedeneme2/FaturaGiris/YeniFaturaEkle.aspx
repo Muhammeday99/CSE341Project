@@ -401,6 +401,7 @@ A company uses this software will easily track their process by using features o
                     </div>
                 </div>
             </div>
+		<asp:Label ID="errorLabel" runat="server" Text="" style="text-align:center" Font-Bold="true" Font-Size="X-Large" CssClass="StrongText"></asp:Label>
 		<footer class="bg-white sticky-footer">
 			<div class="container my-auto">
 				<div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020</span></div>

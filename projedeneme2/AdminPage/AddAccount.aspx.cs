@@ -96,7 +96,7 @@ namespace projedeneme2.AdminPage
                 cmnd.Parameters.AddWithValue("@UserSurname", uSurname);
 
                 cmnd.ExecuteNonQuery();
-
+                errorLabel.Text = "Added successfully..";
                 //clears inputs.
                 clearInputs();
             }
