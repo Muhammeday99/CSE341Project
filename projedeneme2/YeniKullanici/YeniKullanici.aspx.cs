@@ -58,7 +58,7 @@ namespace projedeneme2.YeniKullanici
             List<string> inputs = new List<string>();
 
             //mail input
-            string uEmail = email.Text;
+            string uEmail = Email.Text;
             inputs.Add(uEmail);
 
             //mail input
@@ -70,7 +70,7 @@ namespace projedeneme2.YeniKullanici
             inputs.Add(uSurname);
 
             //password input
-            string uPassword = password.Text;
+            string uPassword = Password.Text;
             inputs.Add(uPassword);
 
             //checks if admin or not.
@@ -106,8 +106,8 @@ namespace projedeneme2.YeniKullanici
         {
             try
             {
-                email.Text = null;
-                password.Text = null;
+                Email.Text = null;
+                Password.Text = null;
                 AdminAuthorizationCheckbox.Checked = false;
                 photoUpload = null;
             }
@@ -122,7 +122,7 @@ namespace projedeneme2.YeniKullanici
 
         protected void passwordtext_Changed(object sender, EventArgs e)
         {
-            string password = password.Text;
+            string password = Password.Text;
             int securityLevel = stringController.passwordSecurity(password);
 
             switch (securityLevel)

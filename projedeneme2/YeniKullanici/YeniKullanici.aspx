@@ -174,7 +174,8 @@ A company uses this software will easily track their process by using features o
                     <div class="row mb-3">
                         <div class="col-lg-4" style="padding-right: 12px;">
                             <div class="card mb-3">
-                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/dogs/image2.jpeg" width="160" height="160">
+                                <div class="card-body text-center shadow">
+                                    <asp:Image ID="Image1" runat="server" class="rounded-circle border rounded-0 mb-3 mt-4"  width="160" height="160"/>
                                     <div class="mb-3">
                                         <asp:FileUpload runat="server" ID="photoUpload" Text="Fotoğraf Ekle" class="btn btn-primary btn-sm" style="background: rgb(49,115,163);"></asp:FileUpload>
                                     </div>
@@ -193,14 +194,21 @@ A company uses this software will easily track their process by using features o
                                                 <div class="form-row">
                                                     <div class="col">
                                                         <div class="form-group"><label for="email"><strong>E-posta adresi</strong></label>
-                                                            <asp:Textbox runat="server" class="form-control" type="email" placeholder="kullanici@ornek.com" name="email" ID="email"></asp:Textbox>
+                                                            <asp:Textbox runat="server" class="form-control" type="email" placeholder="kullanici@ornek.com" name="email" ID="Email"></asp:Textbox>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col">
                                                         <div class="form-group"><label for="email"><strong>Şifresi</strong></label>
-                                                            <asp:Textbox runat="server" class="form-control" type="password" id="password"></asp:Textbox>
+                                                            <asp:Textbox runat="server" class="form-control" type="password" id="Password"></asp:Textbox>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="passwordSecurity"><strong>Şifre Gücü</strong></label>
+                                                             <asp:Label ID="passwordLevelLabel" runat="server" Text="Yok"></asp:Label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -230,6 +238,7 @@ A company uses this software will easily track their process by using features o
                             </div>
                         </div>
                     </div><asp:Button runat="server" Text="Yeni Kullanıcı Ekle" Onclick="AddNewUser_Click" class="btn btn-primary" id="AddNewUser" style="float: right;background: rgb(49,115,163);"></asp:Button>
+                    <asp:Label ID="errorLabel" runat="server" Text="."></asp:Label>
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
