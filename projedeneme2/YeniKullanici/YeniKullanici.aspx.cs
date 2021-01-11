@@ -8,22 +8,17 @@ using System.Web.UI.WebControls;
 using System.IO;
 using projedeneme2.InputControllers;
 
-
-//In this section, the new user is added. It is determined whether the new user will be in the admin status or not.
-//Also, the photo of the new user is added here so that users is gained identity .
-namespace projedeneme2.AdminPage
+namespace projedeneme2.YeniKullanici
 {
-    public partial class AddAccount : System.Web.UI.Page
+    public partial class YeniKullanici : projedeneme2.Homepage.Homepage
     {
-
         protected SqlConnection con = databaseConnect.connectToSQL();
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
-        
-        protected void saveButtonClick(object sender, EventArgs e)
+
+        protected void AddNewUser_Click(object sender, EventArgs e)
         {
             con.Open();
 
@@ -54,39 +49,42 @@ namespace projedeneme2.AdminPage
                 {
                     System.Diagnostics.Debug.WriteLine("Hello");
                 }
-            }catch(Exception exc)
+            }
+            catch (Exception exc)
             {
                 System.Diagnostics.Debug.WriteLine(folderPath);
             }
 
             List<string> inputs = new List<string>();
-            
+
             //mail input
-            string uEmail = emailBox.Text;
+            string uEmail = email.Text;
             inputs.Add(uEmail);
 
             //mail input
-            string uName = nameTextbox.Text;
+            string uName = FirstName.Text;
             inputs.Add(uName);
 
             //mail input
-            string uSurname = surnameTextbox.Text;
+            string uSurname = LastName.Text;
             inputs.Add(uSurname);
 
             //password input
-            string uPassword = passwordBox.Text;
+            string uPassword = password.Text;
             inputs.Add(uPassword);
 
             //checks if admin or not.
-            Boolean isAdmin = adminOrNot.Checked;
+            Boolean isAdmin = AdminAuthorizationCheckbox.Checked;
 
-            if (!uEmail.Contains('@') || (!stringController.listStringController(inputs))){
+            if (!uEmail.Contains('@') || (!stringController.listStringController(inputs)))
+            {
                 errorLabel.Text = "Your email should contain @, and password needs to be longer than 1 character.";
             }
-            else{
+            else
+            {
                 String q = "INSERT INTO dbo.Users (Password,Status,ProfilePicture,UserEmail,UserName,UserSurname) VALUES (@Password, @Status,@ProfilePicture, @UserEmail,@UserName,@UserSurname)";
 
-                SqlCommand cmnd = new SqlCommand(q,con);
+                SqlCommand cmnd = new SqlCommand(q, con);
 
                 cmnd.Parameters.AddWithValue("@Password", encryption.EnryptString(uPassword));
                 cmnd.Parameters.AddWithValue("@Status", isAdmin);
@@ -103,32 +101,32 @@ namespace projedeneme2.AdminPage
 
             con.Close();
         }
-
         //This method clears those inputs.
         private bool clearInputs()
         {
             try
             {
-                emailBox.Text = null;
-                passwordBox.Text = null;
-                adminOrNot.Checked = false;
+                email.Text = null;
+                password.Text = null;
+                AdminAuthorizationCheckbox.Checked = false;
                 photoUpload = null;
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 Console.WriteLine("Some error happened.");
                 return false;
             }
-      
+
             return true;
         }
 
         protected void passwordtext_Changed(object sender, EventArgs e)
         {
-            string password = passwordBox.Text;
+            string password = password.Text;
             int securityLevel = stringController.passwordSecurity(password);
 
-            switch (securityLevel) {
+            switch (securityLevel)
+            {
                 case 0:
                     passwordLevelLabel.Text = "UYARI: Şifre güvenliği çok düşük. Özel karakterler, büyük ve küçük karakterler kullanabilirsiniz.";
                     break;

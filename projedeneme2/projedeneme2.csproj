@@ -97,6 +97,7 @@
     <Content Include="Homepage\Homepage.aspx" />
     <Content Include="MasrafTanim\MasrafTanim.aspx" />
     <Content Include="ProfilePictures\unnamed.jpg" />
+    <Content Include="Profil\Profil.aspx" />
     <Content Include="ProjeTanim\ProjeTanim.aspx" />
     <Content Include="ProjeTanim\YeniProjeEkle.aspx" />
     <Content Include="ProjeTanim\YeniProjeEkle_eskisi.aspx" />
@@ -109,6 +110,7 @@
     <Content Include="Scripts\listCurrency.js" />
     <Content Include="Scripts\listCards.js" />
     <Content Include="Web.config" />
+    <Content Include="YeniKullanici\YeniKullanici.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminPage\AddAccount.aspx.cs">
@@ -206,6 +208,13 @@
     <Compile Include="MasrafTanim\MasrafTanim.aspx.designer.cs">
       <DependentUpon>MasrafTanim.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Profil\Profil.aspx.cs">
+      <DependentUpon>Profil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profil\Profil.aspx.designer.cs">
+      <DependentUpon>Profil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProjeTanim\ProjeTanim.aspx.cs">
       <DependentUpon>ProjeTanim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,6 +237,13 @@
       <DependentUpon>YeniProjeEkle_eskisi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YeniKullanici\YeniKullanici.aspx.cs">
+      <DependentUpon>YeniKullanici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YeniKullanici\YeniKullanici.aspx.designer.cs">
+      <DependentUpon>YeniKullanici.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="CariKart\EntityCards.json" />

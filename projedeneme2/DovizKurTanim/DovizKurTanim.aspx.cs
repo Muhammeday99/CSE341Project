@@ -59,7 +59,9 @@ namespace projedeneme2.DovizKurTanim
 
             if (n_CurrencyExchangeRate < 0)
             {
-                 //error label
+                //error label
+                errorLabel.Text = "Adding operation failed!";
+
             }
             else
             {
@@ -73,7 +75,9 @@ namespace projedeneme2.DovizKurTanim
                     cmd.Parameters.AddWithValue("@CurrencyExchangeRate", n_CurrencyExchangeRate);
 
                     cmd.ExecuteNonQuery();
-                }catch(Exception exc)
+                    errorLabel.Text = "Added successfully..";
+                }
+                catch (Exception exc)
                 {
                     Console.WriteLine(exc.ToString());
                 }

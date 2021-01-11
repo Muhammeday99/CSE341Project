@@ -85,6 +85,7 @@ namespace projedeneme2.YeniCariKart
             if (!stringController.listStringController(inputs))
             {
                 //error label triggers
+                errorLabel.Text = "Adding operation failed!";
             }
             else
             {
@@ -110,8 +111,9 @@ namespace projedeneme2.YeniCariKart
                     //Exceptionleri Handle Et ve Cari kart eklendikten sonra Cari kart Syfasina donsun 
                     //Exceptionlerden biri Entity Codelar unique olmalari lazim iki ayni kod olamaz exception firlat
                     cmnd.ExecuteNonQuery();
+                    errorLabel.Text = "Added successfully..";
                 }
-                catch(Exception exc)
+                catch (Exception exc)
                 {
 
                 }

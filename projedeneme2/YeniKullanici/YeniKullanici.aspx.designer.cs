@@ -7,65 +7,74 @@
 // </otomatik üretildi>
 //------------------------------------------------------------------------------
 
-namespace projedeneme2.MasrafTanim
+namespace projedeneme2.YeniKullanici
 {
 
 
-    public partial class MasrafTanimWebForm
+    public partial class YeniKullanici
     {
 
         /// <summary>
-        /// ExpenseCode denetimi.
+        /// photoUpload denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ExpenseCode;
+        protected global::System.Web.UI.WebControls.FileUpload photoUpload;
 
         /// <summary>
-        /// ExpenseName denetimi.
+        /// email denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ExpenseName;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// ExpenseDate denetimi.
+        /// password denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ExpenseDate;
+        protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
-        /// ExpenseAmount denetimi.
+        /// FirstName denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ExpenseAmount;
+        protected global::System.Web.UI.WebControls.TextBox FirstName;
 
         /// <summary>
-        /// AddNewExpense denetimi.
+        /// LastName denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddNewExpense;
+        protected global::System.Web.UI.WebControls.TextBox LastName;
 
         /// <summary>
-        /// errorLabel denetimi.
+        /// AdminAuthorizationCheckbox denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorLabel;
+        protected global::System.Web.UI.WebControls.CheckBox AdminAuthorizationCheckbox;
+
+        /// <summary>
+        /// AddNewUser denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddNewUser;
     }
 }

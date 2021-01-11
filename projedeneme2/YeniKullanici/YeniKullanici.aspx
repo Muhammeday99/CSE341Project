@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MasrafTanim.aspx.cs" Inherits="projedeneme2.MasrafTanim.MasrafTanimWebForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="YeniKullanici.aspx.cs" Inherits="projedeneme2.YeniKullanici.YeniKullanici" %>
 
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@ A company uses this software will easily track their process by using features o
 
 <body id="page-top">
     <form runat="server">
-        <asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
+		<asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
 	<div id="wrapper">
 		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="color: rgb(0,85,164);background: rgb(49,115,163);min-width: auto;max-width: 250;">
 			<div class="container-fluid d-flex flex-column p-0">
@@ -70,17 +70,17 @@ A company uses this software will easily track their process by using features o
 					<li class="nav-item"><asp:LinkButton class="nav-link" OnClick="Hata_Tespit_click" runat="server" style="padding-top: 0.4em;padding-bottom: 0.4em;"><i class="fa fa-star" style="width: 1.5em;"></i><span>Hata Tespit</span></asp:LinkButton></li>
 				</ul><a href="#"></a>
 				<div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div><a href="register.html"></a></div>
-        </nav>
-        <div class="d-flex flex-column" id="content-wrapper">
-            <div id="content">
-                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
-                        <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                            </div>
-                        </form>
-                        <ul class="nav navbar-nav flex-nowrap ml-auto">
+		</nav>
+		<div class="d-flex flex-column" id="content-wrapper">
+			<div id="content">
+				<nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+					<div class="container-fluid"><asp:Button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button" runat="server"></asp:Button>
+						<form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+							<div class="input-group"><asp:TextBox class="bg-light form-control border-0 small"  placeholder="Search for ..." runat="server"></asp:TextBox>
+								<div class="input-group-append"><asp:Button class="btn btn-primary py-0" type="button" runat="server"></asp:Button></div>
+							</div>
+						</form>
+						<ul class="nav navbar-nav flex-nowrap ml-auto">
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
                                     <form class="form-inline mr-auto navbar-search w-100">
@@ -160,7 +160,7 @@ A company uses this software will easily track their process by using features o
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span id="UserNameSpan" class="d-none d-lg-inline mr-2 text-gray-600 small"></span><img id="ProfilePicture" class="border rounded-circle img-profile"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
@@ -170,104 +170,68 @@ A company uses this software will easily track their process by using features o
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Masraf Tanımı</h3>
-                    <div class="col" style="margin-bottom: 3%;padding-right: 0px;padding-left: 0px;">
-                        <div class="card" style="height: 100%;">
-                            <div class="card-body">
-                                <h4 class="card-title">Yeni Masraf Ekle</h4>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr></tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 20%;">Masraf Kodu<br></td>
-                                                <td><asp:TextBox runat="server" id="ExpenseCode" placeholder="Expense Code" name="ExpenseCode"></asp:TextBox></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Masraf Adı<br></td>
-                                                <td><asp:TextBox runat="server" id="ExpenseName" placeholder="Expense Name" name="ExpenseName"></asp:TextBox></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Masraf Tarihi<br></td>
-                                                <td><asp:TextBox runat="server" id="ExpenseDate" type="date"></asp:TextBox></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Masraf Tutarı</td>
-                                                <td><asp:TextBox runat="server" type="number" id="ExpenseAmount" name="ExpenseAmount" min="0" placeholder="Expense Amount" step="1"></asp:TextBox></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div><asp:Button runat="server" class="btn btn-primary" text="Yeni Masraf Ekle" id="AddNewExpense" OnClick="AddNewExpense_Click" style="float: left;background: rgb(49,115,163);margin-top: 2%;"></asp:Button>
+                    <h3 class="text-dark mb-4">Yeni Kullanıcı Ekle</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-4" style="padding-right: 12px;">
+                            <div class="card mb-3">
+                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/dogs/image2.jpeg" width="160" height="160">
+                                    <div class="mb-3">
+                                        <asp:FileUpload runat="server" ID="photoUpload" Text="Fotoğraf Ekle" class="btn btn-primary btn-sm" style="background: rgb(49,115,163);"></asp:FileUpload>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card shadow">
-                        <div class="card-header py-3">
-                            <p class="text-primary m-0 font-weight-bold">Masraf Tanımları</p>
-                        </div>
-                        <div class="card-body">
+                        <div class="col-lg-8">
                             <div class="row">
-                                <div class="col-md-6 text-nowrap">
-                                    <div class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;
-                                        <select id="sizeList" class="form-control form-control-sm custom-select custom-select-sm">
-                                                <option value="select" selected="">select</option>
-                                                <option value="1" >1</option>
-                                                <option value="10" >10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>&nbsp;</label></div>
-                                </div>
-                                <div class="col-md-6">
-                                     <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
-                                </div>
-                            </div>
-                            <div class="table-responsive table mt-2" id="currencyTable" role="grid" aria-describedby="currencyTable_info">
-                                <table class="table my-0" id="expenseTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Masraf Kodu</th>
-                                            <th>Masraf Adı</th>
-                                            <th>Masraf Tarihi</th>
-                                            <th>Masraf Tutarı</th>
-                                            <th>Sil?</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td><strong>Masraf Kodu</strong><br></td>
-                                            <td><strong>Masraf Adı</strong><br></td>
-                                            <td><strong>Masraf Tarihi</strong><br></td>
-                                            <td><strong>Masraf Tutarı</strong><br></td>
-                                            <td><strong>Sil?</strong><br></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 align-self-center">
-                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite"></p>
-                                </div>
-                                <div class="col-md-6">
-                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                        <ul id="listPage" class="pagination">
-                                            <li class="page-item"><a class="page-link" href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                          
-                                            <li class="page-item"><a class="page-link" href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                        </ul>
-                                    </nav>
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold">Kullanıcı Bilgileri</p>
+                                        </div>
+                                        <div class="card-body" style="padding: 19px;">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="email"><strong>E-posta adresi</strong></label>
+                                                            <asp:Textbox runat="server" class="form-control" type="email" placeholder="kullanici@ornek.com" name="email" ID="email"></asp:Textbox>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="email"><strong>Şifresi</strong></label>
+                                                            <asp:Textbox runat="server" class="form-control" type="password" id="password"></asp:Textbox>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="first_name"><strong>İsim</strong></label>
+                                                            <asp:Textbox runat="server" class="form-control" ID="FirstName" placeholder="Ahmet" name="first_name"></asp:Textbox>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group"><label for="last_name"><strong>Soyisim</strong></label>
+                                                            <asp:Textbox runat="server" class="form-control" id="LastName" placeholder="Yılmaz" name="last_name"></asp:Textbox>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group"><label id="AdminAuthorization" style="margin-right: 1%;" for="AdminAuthorization"><strong>Admin Yetkileri?</strong></label>
+                                                            <asp:Checkbox runat="server" ID="AdminAuthorizationCheckbox"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div><asp:Button runat="server" Text="Yeni Kullanıcı Ekle" Onclick="AddNewUser_Click" class="btn btn-primary" id="AddNewUser" style="float: right;background: rgb(49,115,163);"></asp:Button>
                 </div>
             </div>
-            <asp:Label ID="errorLabel" runat="server" Text="" style="text-align:center" Font-Bold="true" Font-Size="X-Large" CssClass="StrongText"></asp:Label>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
                     <div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020</span></div>
@@ -281,8 +245,7 @@ A company uses this software will easily track their process by using features o
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
-    <script src="../Scripts/ShowUserInfo.js"></script>
-    <script src="../Scripts/listExpenses.js"></script>
+
     </form>
 </body>
 
