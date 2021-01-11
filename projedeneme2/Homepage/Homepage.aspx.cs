@@ -34,7 +34,7 @@ namespace projedeneme2.Homepage
         }
         protected void User_Profile_click(object sender, EventArgs e)
         {
-            Response.Redirect("../Homepage/Homepage.aspx");
+            Response.Redirect("../Profil/Profil.aspx");
         }
         protected void Login_click(object sender, EventArgs e)
         {
