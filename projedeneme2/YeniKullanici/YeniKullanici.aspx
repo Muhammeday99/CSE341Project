@@ -176,7 +176,7 @@ A company uses this software will easily track their process by using features o
                             <div class="card mb-3">
                                 <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/dogs/image2.jpeg" width="160" height="160">
                                     <div class="mb-3">
-                                        <asp:FileUpload runat="server" Text="Fotoğraf Ekle" class="btn btn-primary btn-sm" style="background: rgb(49,115,163);"></asp:FileUpload>
+                                        <asp:FileUpload runat="server" ID="photoUpload" Text="Fotoğraf Ekle" class="btn btn-primary btn-sm" style="background: rgb(49,115,163);"></asp:FileUpload>
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@ A company uses this software will easily track their process by using features o
                                                 <div class="form-row">
                                                     <div class="col">
                                                         <div class="form-group"><label for="email"><strong>E-posta adresi</strong></label>
-                                                            <asp:Textbox runat="server" class="form-control" type="email" placeholder="kullanici@ornek.com" name="email"></asp:Textbox>
+                                                            <asp:Textbox runat="server" class="form-control" type="email" placeholder="kullanici@ornek.com" name="email" ID="email"></asp:Textbox>
                                                         </div>
                                                     </div>
                                                 </div>
