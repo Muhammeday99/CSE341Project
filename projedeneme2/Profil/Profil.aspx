@@ -174,9 +174,9 @@ A company uses this software will easily track their process by using features o
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
-                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/dogs/image2.jpeg" width="160" height="160">
+                                <div class="card-body text-center shadow"><img class="rounded-circle border rounded-0 mb-3 mt-4" width="160" height="160">
                                     <div class="mb-3">
-                                        <asp:Button runat="server" text="Fotoğraf Değiştir" class="btn btn-primary btn-sm" style="background: rgb(49,115,163);"></asp:Button></div>
+                                        <asp:FileUpload runat="server" text="Fotoğraf Değiştir" class="btn btn-primary btn-sm" style="background: rgb(49,115,163);"/>Fotoğraf Değiştir</div>
                                 </div>
                             </div>
                         </div>
@@ -189,15 +189,28 @@ A company uses this software will easily track their process by using features o
                                     <form>
                                         <div class="form-row">
                                             <div class="col">
-                                                <div class="form-group"><label for="email"><strong>E-posta adresi</strong></label><input class="form-control" type="email" placeholder="kullanici@ornek.com" name="email" readonly=""></div>
+                                                <div class="form-group"><label for="email"><strong>E-posta adresi</strong></label>
+                                                    <asp:Textbox runat="server" class="form-control" type="email" placeholder="kullanici@ornek.com" name="email" ReadOnly="true"></asp:Textbox>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col">
-                                                <div class="form-group"><label for="first_name"><strong>İsim</strong></label><input class="form-control" type="text" placeholder="Ahmet" name="first_name" readonly=""></div>
+                                                <div class="form-group"><label for="first_name"><strong>İsim</strong></label>
+                                                    <asp:Textbox runat="server" class="form-control" placeholder="Ahmet" name="first_name" readonly="true"></asp:Textbox>
+                                                </div>
                                             </div>
                                             <div class="col">
-                                                <div class="form-group"><label for="last_name"><strong>Soyisim</strong></label><input class="form-control" type="text" placeholder="Yılmaz" name="last_name" readonly=""></div>
+                                                <div class="form-group"><label for="last_name"><strong>Soyisim</strong></label>
+                                                    <asp:Textbox runat="server" class="form-control" placeholder="Yılmaz" name="last_name" readonly="true"></asp:Textbox>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group"><label for="email"><strong>Çalışan Durumu</strong></label>
+                                                    <asp:Textbox runat="server" class="form-control" placeholder="Admin / Standard User" readonly="true"></asp:Textbox>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
