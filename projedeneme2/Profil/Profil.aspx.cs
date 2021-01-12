@@ -19,11 +19,11 @@ namespace projedeneme2.Profil
         protected void listUserButton_Click(object sender, EventArgs e)
         {
             //Bu şimdilik eski sayfaya gidiyor, sonra yeni yere gidecek..
-            Response.Redirect("AdminPage/ShowAccountList.aspx");
+            Response.Redirect("../Kullanicilar/KullaniciListesi.aspx");
         }
         protected void newUserButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../YeniKullanici/YeniKullanici.aspx");
+            Response.Redirect("../Kullanicilar/YeniKullanici.aspx");
         }
         
     }

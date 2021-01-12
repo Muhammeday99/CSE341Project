@@ -18,9 +18,9 @@ namespace projedeneme2.Homepage
         {
             try
             {
-                ID = Session["ID"].ToString();
-                NAME = Session["NAME"].ToString();
-                ProfilePicture = Session["ProfilePicture"].ToString();
+               // ID = Session["ID"].ToString();
+              //  NAME = Session["NAME"].ToString();
+              //  ProfilePicture = Session["ProfilePicture"].ToString();
             }catch(System.NullReferenceException exc)
             {
                 ID = "noID";
