@@ -350,7 +350,7 @@ A company uses this software will easily track their process by using features o
                                                 </select></td>
                                             <td><asp:Textbox runat="server" type="number" id="KDVamount" placeholder="KDV amount" ReadOnly="true"></asp:Textbox></td>
                                             <td><asp:Textbox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:Textbox></td>
-											<td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClientClick="{return false;}"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
+											<td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClientClick="addNewSubInvoice"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
                                         </tr>
 
                                     </tbody>

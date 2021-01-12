@@ -49,8 +49,8 @@ namespace projedeneme2.YeniFaturaEkle
         }
 
         List<subinvoiceContent> subinvoiceList = new List<subinvoiceContent>();
-
         protected SqlConnection con = databaseConnect.connectToSQL();
+        protected double total = 0;
 
         //SQLCommand – The 'SQLCommand' is a class defined within C#. 
         //This class is used to perform operations of reading and writing into the database.
@@ -86,21 +86,18 @@ namespace projedeneme2.YeniFaturaEkle
             inputs.Add(invoiceDescription);
 
             //Döviz Kodu
-            string currencycode = "NON";
+            int currencycode = 1;
             if(Request.Form["CurrencyCode"] == "TRY")
             {
-                currencycode = "TRY";
-                inputs.Add(currencycode);
+                currencycode = 1;
             }
             else if(Request.Form["CurrencyCode"] == "USD")
             {
-                currencycode = "USD";
-                inputs.Add(currencycode);
+                currencycode = 2;
             }
             else if(Request.Form["CurrencyCode"] == "EUR")
             {
-                currencycode = "EUR";
-                inputs.Add(currencycode);
+                currencycode = 3;
             }
 
             //Error label BULAMADIM, KALSIN SIMDILIK BURDA SONRA AYARLARIZ.
@@ -108,47 +105,53 @@ namespace projedeneme2.YeniFaturaEkle
                 //error case, display on label.
             }else{
 
-                String q = "INSERT INTO Invoice_info (InvoiceNumber,InvoiceDate,entityCode,InvoiceDescription,PaymentDate,Amount,KDVpercantage,CurrencyId) VALUES ()";
+                String q = "INSERT INTO Invoice_info (InvoiceNumber,InvoiceDate,entityCode,InvoiceDescription,PaymentDate,Amount,CurrencyId) VALUES (@InvoiceNumber,@InvoiceDate,@entityCode,@InvoiceDescription,@PaymentDate,@Amount,@CurrencyId)";
+                SqlCommand cmnd = new SqlCommand(q, con);
 
+                string a = " ";
 
+                cmnd.Parameters.AddWithValue("@InvoiceNumber",invoiceNumber);
+                cmnd.Parameters.AddWithValue("@InvoiceDate", invoiceDate);
+                cmnd.Parameters.AddWithValue("@entityCode", entitycode);
+                cmnd.Parameters.AddWithValue("@InvoiceDescription", invoiceDescription);
+                cmnd.Parameters.AddWithValue("@PaymentDate", paymentDate);
+                cmnd.Parameters.AddWithValue("@Amount", subinvoiceList.Count);
+                cmnd.Parameters.AddWithValue("@CurrencyId", currencycode);
 
+                cmnd.ExecuteNonQuery();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                //GETS THE ID FOR SUBINVOICE.
+                q = "SELECT ID FROM Invoice_info WHERE InvoiceNumber=@InvoiceNumber";
+                cmnd = new SqlCommand(q, con);
+                cmnd.Parameters.AddWithValue("@InvoiceNumber", invoiceNumber);
+                SqlDataReader sqlRead = cmnd.ExecuteReader();
+                sqlRead.Read();
+                int id = sqlRead.GetInt32(0);
+                sqlRead.Close();
 
                 
+
+
+
             }
 
             con.Close();
         }
 
-        protected void addNewTotal(string newSubTotal)
+        protected double addNewTotal(string newSubTotal)
         {
             double newSub = double.Parse(newSubTotal);
-            double total = double.Parse(InvoiceTotalAmount.Text);
 
             total = total + newSub;
             InvoiceTotalAmount.Text = total.ToString();
-            InvoiceTotalAmount.Text = "WHAT";
+
+            return total;
         }
 
         public void addNewSubInvoice(object sender, EventArgs e)
         {
-            InvoiceTotalAmount.Text = "213";
-            
-
+            addNewTotal(TotalAmount.Text);
+            Response.Redirect("Homepage/Homepage.aspx");
             con.Open();
             subinvoiceContent newContent = new subinvoiceContent();
 
