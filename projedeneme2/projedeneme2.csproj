@@ -102,6 +102,7 @@
     <Content Include="ProjeTanim\ProjeTanim.aspx" />
     <Content Include="ProjeTanim\YeniProjeEkle.aspx" />
     <Content Include="ProjeTanim\YeniProjeEkle_eskisi.aspx" />
+    <Content Include="Scripts\Profile.js" />
     <Content Include="Scripts\listExpenses.js" />
     <Content Include="Scripts\listProjects.js" />
     <Content Include="Scripts\listCompanyInfo.js" />

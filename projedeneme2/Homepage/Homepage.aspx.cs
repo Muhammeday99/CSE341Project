@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -112,9 +113,19 @@ namespace projedeneme2.Homepage
 		[WebMethod]
 		public static string[] getUserInfo()
 		{
-
-			string[] info = { NAME, ProfilePicture };
-
+			SqlConnection con = databaseConnect.connectToSQL();
+			con.Open();
+			SqlCommand cmd = new SqlCommand("select UserName,UserSurname,UserEmail,ProfilePicture,Status from Users where UserID = @ID;", con);
+			cmd.Parameters.AddWithValue("@ID", Int32.Parse(ID));
+			SqlDataReader dataReader = cmd.ExecuteReader();
+			string[] info = new string[5];
+			while (dataReader.Read())
+			{
+				for (int i = 0; i < info.Length; i++)
+				{
+					info[i] = dataReader.GetValue(i).ToString();
+				}
+			}
 			return info;
 		}
 

@@ -5,7 +5,7 @@ PageMethods.getUserInfo(OnSuccess);
 
 function OnSuccess(response, userContext, methodName) {
     UNspan.innerHTML = response[0];
-    UserPP.setAttribute("src", response[1]);
+    UserPP.setAttribute("src", response[3]);
 }
 
 

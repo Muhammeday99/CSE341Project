@@ -22,7 +22,7 @@ A company uses this software will easily track their process by using features o
 </head>
 
 <body id="page-top">
-    <form runat="server">
+	<form runat="server">
 		<asp:ScriptManager ID='ScriptManager1' runat='server' EnablePageMethods='true' />
 	<div id="wrapper">
 		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="color: rgb(0,85,164);background: rgb(49,115,163);min-width: auto;max-width: 250;">
@@ -81,165 +81,167 @@ A company uses this software will easily track their process by using features o
 							</div>
 						</form>
 						<ul class="nav navbar-nav flex-nowrap ml-auto">
-                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                                    <form class="form-inline mr-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="badge badge-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="mr-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 12, 2019</span>
-                                                <p>A new monthly report is ready to download!</p>
-                                            </div>
-                                        </a><a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="mr-3">
-                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 7, 2019</span>
-                                                <p>$290.29 has been deposited into your account!</p>
-                                            </div>
-                                        </a><a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="mr-3">
-                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 2, 2019</span>
-                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
-                                            </div>
-                                        </a><a class="text-center dropdown-item small text-gray-500" href="#">Show All Alerts</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-envelope fa-fw"></i><span class="badge badge-danger badge-counter">7</span></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">
-                                                <div class="bg-success status-indicator"></div>
-                                            </div>
-                                            <div class="font-weight-bold">
-                                                <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
-                                                <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
-                                            </div>
-                                        </a><a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar2.jpeg">
-                                                <div class="status-indicator"></div>
-                                            </div>
-                                            <div class="font-weight-bold">
-                                                <div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
-                                                <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
-                                            </div>
-                                        </a><a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar3.jpeg">
-                                                <div class="bg-warning status-indicator"></div>
-                                            </div>
-                                            <div class="font-weight-bold">
-                                                <div class="text-truncate"><span>Last month's report looks great, I am very happy with the progress so far, keep up the good work!</span></div>
-                                                <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
-                                            </div>
-                                        </a><a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar5.jpeg">
-                                                <div class="bg-success status-indicator"></div>
-                                            </div>
-                                            <div class="font-weight-bold">
-                                                <div class="text-truncate"><span>Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</span></div>
-                                                <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
-                                            </div>
-                                        </a><a class="text-center dropdown-item small text-gray-500" href="#">Show All Alerts</a>
-                                    </div>
-                                </div>
-                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown"></div>
-                            </li>
-                            <div class="d-none d-sm-block topbar-divider"></div>
-                            <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
-                                    <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Profil</h3>
-                    <div class="row mb-3">
-                        <div class="col-lg-4">
-                            <div class="card mb-3">
-                                <div class="card-body text-center shadow"><img class="rounded-circle border rounded-0 mb-3 mt-4" width="160" height="160">
-                                    <div class="mb-3">
-                                        <asp:FileUpload runat="server" text="Fotoğraf Değiştir" class="btn btn-primary btn-sm" style="background: rgb(49,115,163);"/>Fotoğraf Değiştir</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="card shadow mb-3">
-                                <div class="card-header py-3">
-                                    <p class="text-primary m-0 font-weight-bold">Kullanıcı Bilgileri</p>
-                                </div>
-                                <div class="card-body" style="padding-bottom: 0;">
-                                    <form>
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-group"><label for="email"><strong>E-posta adresi</strong></label>
-                                                    <asp:Textbox runat="server" class="form-control" type="email" placeholder="kullanici@ornek.com" name="email" ReadOnly="true"></asp:Textbox>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-group"><label for="first_name"><strong>İsim</strong></label>
-                                                    <asp:Textbox runat="server" class="form-control" placeholder="Ahmet" name="first_name" readonly="true"></asp:Textbox>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group"><label for="last_name"><strong>Soyisim</strong></label>
-                                                    <asp:Textbox runat="server" class="form-control" placeholder="Yılmaz" name="last_name" readonly="true"></asp:Textbox>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <div class="form-group"><label for="status"><strong>Çalışan Durumu</strong></label>
-                                                    <asp:Textbox runat="server" class="form-control" placeholder="Admin / Standard User" readonly="true"></asp:Textbox>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-lg-4">
-                            <asp:Button runat="server" OnClick="listUserButton_Click" Text="Kullanıcıları Listele" class="btn btn-primary" id="ListUsers" style="float: left;background: rgb(49,115,163);"></asp:Button>
-                            <asp:Button runat="server" OnClick="newUserButton_Click" Text="Yeni Kullanıcı Ekle" class="btn btn-primary" id="AddNewUser" style="float: right;background: rgb(49,115,163);"></asp:Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer class="bg-white sticky-footer">
-                <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020</span></div>
-                </div>
-            </footer>
-        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/chart.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-    <script src="assets/js/theme.js"></script>
-    </form>
+							<li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
+								<div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
+									<form class="form-inline mr-auto navbar-search w-100">
+										<div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+											<div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+										</div>
+									</form>
+								</div>
+							</li>
+							<li class="nav-item dropdown no-arrow mx-1">
+								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="badge badge-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i></a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+										<h6 class="dropdown-header">alerts center</h6><a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+											</div>
+											<div><span class="small text-gray-500">December 12, 2019</span>
+												<p>A new monthly report is ready to download!</p>
+											</div>
+										</a><a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
+											</div>
+											<div><span class="small text-gray-500">December 7, 2019</span>
+												<p>$290.29 has been deposited into your account!</p>
+											</div>
+										</a><a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
+											</div>
+											<div><span class="small text-gray-500">December 2, 2019</span>
+												<p>Spending Alert: We've noticed unusually high spending for your account.</p>
+											</div>
+										</a><a class="text-center dropdown-item small text-gray-500" href="#">Show All Alerts</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown no-arrow mx-1">
+								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-envelope fa-fw"></i><span class="badge badge-danger badge-counter">7</span></a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+										<h6 class="dropdown-header">alerts center</h6><a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">
+												<div class="bg-success status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
+												<p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
+											</div>
+										</a><a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar2.jpeg">
+												<div class="status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
+												<p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
+											</div>
+										</a><a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar3.jpeg">
+												<div class="bg-warning status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate"><span>Last month's report looks great, I am very happy with the progress so far, keep up the good work!</span></div>
+												<p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
+											</div>
+										</a><a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar5.jpeg">
+												<div class="bg-success status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate"><span>Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</span></div>
+												<p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
+											</div>
+										</a><a class="text-center dropdown-item small text-gray-500" href="#">Show All Alerts</a>
+									</div>
+								</div>
+								<div class="shadow dropdown-list dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown"></div>
+							</li>
+							<div class="d-none d-sm-block topbar-divider"></div>
+							<li class="nav-item dropdown no-arrow">
+								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span id="UserNameSpan" class="d-none d-lg-inline mr-2 text-gray-600 small"></span><img id="ProfilePicture" class="border rounded-circle img-profile" src="#"></a>
+									<div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
+										<div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="container-fluid">
+					<h3 class="text-dark mb-4">Profil</h3>
+					<div class="row mb-3">
+						<div class="col-lg-4">
+							<div class="card mb-3">
+								<div class="card-body text-center shadow"><img id="PPOverview" src="#" class="rounded-circle border rounded-0 mb-3 mt-4" width="160" height="160">
+									<div class="mb-3">
+										<asp:FileUpload runat="server" ID="PPUpload" text="Fotoğraf Değiştir" class="btn btn-primary btn-sm" style="background: rgb(49,115,163);"/>Fotoğraf Değiştir</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<div class="card shadow mb-3">
+								<div class="card-header py-3">
+									<p class="text-primary m-0 font-weight-bold">Kullanıcı Bilgileri</p>
+								</div>
+								<div class="card-body" style="padding-bottom: 0;">
+									<form>
+										<div class="form-row">
+											<div class="col">
+												<div class="form-group"><label for="email"><strong>E-posta adresi</strong></label>
+													<asp:Textbox runat="server" ID="Email" class="form-control" type="email" placeholder="kullanici@ornek.com" name="email" ReadOnly="true"></asp:Textbox>
+												</div>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="col">
+												<div class="form-group"><label for="first_name"><strong>İsim</strong></label>
+													<asp:Textbox runat="server" ID="UserName" class="form-control" placeholder="Ahmet" name="first_name" readonly="true"></asp:Textbox>
+												</div>
+											</div>
+											<div class="col">
+												<div class="form-group"><label for="last_name"><strong>Soyisim</strong></label>
+													<asp:Textbox runat="server" ID="UserSurname" class="form-control" placeholder="Yılmaz" name="last_name" readonly="true"></asp:Textbox>
+												</div>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="col">
+												<div class="form-group"><label for="status"><strong>Çalışan Durumu</strong></label>
+													<asp:Textbox runat="server" ID="UserStatus" class="form-control" placeholder="Admin / Standard User" readonly="true"></asp:Textbox>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-lg-4">
+							<asp:Button runat="server" OnClick="listUserButton_Click" Text="Kullanıcıları Listele" class="btn btn-primary" id="ListUsers" style="float: left;background: rgb(49,115,163);"></asp:Button>
+							<asp:Button runat="server" OnClick="newUserButton_Click" Text="Yeni Kullanıcı Ekle" class="btn btn-primary" id="AddNewUser" style="float: right;background: rgb(49,115,163);"></asp:Button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="bg-white sticky-footer">
+				<div class="container my-auto">
+					<div class="text-center my-auto copyright"><span>Copyright © 5M Macro 2020</span></div>
+				</div>
+			</footer>
+		</div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/chart.min.js"></script>
+	<script src="assets/js/bs-init.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+	<script src="assets/js/theme.js"></script>
+	<script src="../Scripts/ShowUserInfo.js"></script>
+	<script src="../Scripts/Profile.js"></script>
+	</form>
 </body>
 
 </html>
