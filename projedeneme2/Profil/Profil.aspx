@@ -208,7 +208,7 @@ A company uses this software will easily track their process by using features o
                                         </div>
                                         <div class="form-row">
                                             <div class="col">
-                                                <div class="form-group"><label for="email"><strong>Çalışan Durumu</strong></label>
+                                                <div class="form-group"><label for="status"><strong>Çalışan Durumu</strong></label>
                                                     <asp:Textbox runat="server" class="form-control" placeholder="Admin / Standard User" readonly="true"></asp:Textbox>
                                                 </div>
                                             </div>
