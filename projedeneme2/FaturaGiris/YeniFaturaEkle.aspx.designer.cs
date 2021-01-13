@@ -87,6 +87,15 @@ namespace projedeneme2.YeniFaturaEkle
         protected global::System.Web.UI.WebControls.Label InvoiceTotalAmount;
 
         /// <summary>
+        /// ProjectExpenseCode denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ProjectExpenseCode;
+
+        /// <summary>
         /// StockCode denetimi.
         /// </summary>
         /// <remarks>

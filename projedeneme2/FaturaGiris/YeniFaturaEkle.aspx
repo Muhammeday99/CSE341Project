@@ -306,7 +306,7 @@ A company uses this software will easily track their process by using features o
                                                         <option value="Proje">Proje</option>
                                                     </optgroup>
                                                 </select></td>
-                                            <td><input class="form-control-sm" type="text" id="ProjectExpenseCode" placeholder="Project / Expense Code">
+                                            <td><asp:Textbox class="form-control-sm" runat="server" ID="ProjectExpenseCode" placeholder="Project / Expense Code"></asp:Textbox>
 												<asp:Button runat="server" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ProjectCodeModal" Text="..." OnClientClick ="return false" /><br>
                                                 <div class="modal fade" role="dialog" tabindex="-1" id="ProjectCodeModal">
                                                     <div class="modal-dialog" role="document">
@@ -318,6 +318,7 @@ A company uses this software will easily track their process by using features o
                                                                 <p>The content of your modal.</p>
                                                             </div>
                                                             <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                             Save</button></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -350,7 +351,7 @@ A company uses this software will easily track their process by using features o
                                                 </select></td>
                                             <td><asp:Textbox runat="server" type="number" id="KDVamount" placeholder="KDV amount" ReadOnly="true"></asp:Textbox></td>
                                             <td><asp:Textbox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:Textbox></td>
-											<td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClientClick="addNewSubInvoice"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
+											<td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClick="addNewSubInvoice"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
                                         </tr>
 
                                     </tbody>
@@ -362,8 +363,7 @@ A company uses this software will easily track their process by using features o
                                 <table class="table my-0" id="ContentTable">
                                     <thead>
                                         <tr>
-                                            <th>Tip (Masraf/Proje)</th>
-                                            <th>Proje/Masraf Kodu</th>
+                                            <th>Tip (Masraf/Proje) <th>Proje/Masraf Kodu</th>
                                             <th>Stok Türü</th>
                                             <th>Stok Kodu</th>
                                             <th>Stok Adı</th>

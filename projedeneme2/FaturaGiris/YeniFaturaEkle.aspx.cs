@@ -151,7 +151,7 @@ namespace projedeneme2.YeniFaturaEkle
         public void addNewSubInvoice(object sender, EventArgs e)
         {
             addNewTotal(TotalAmount.Text);
-            Response.Redirect("Homepage/Homepage.aspx");
+            System.Diagnostics.Debug.WriteLine("works");
             con.Open();
             subinvoiceContent newContent = new subinvoiceContent();
 
