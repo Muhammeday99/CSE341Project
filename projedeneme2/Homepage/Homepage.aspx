@@ -196,8 +196,8 @@ A company uses this software will easily track their process by using features o
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
-                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Cari Kart Sayısı</span></div>
-                                            <div class="text-dark font-weight-bold h5 mb-0"><span>32</span></div>
+                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span >Cari Kart Sayısı</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="Entity_Card_Count"></span></div>
                                         </div>
                                         <div class="col-auto"><i class="far fa-id-card fa-2x text-gray-300"></i></div>
                                     </div>
@@ -210,7 +210,7 @@ A company uses this software will easily track their process by using features o
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
                                             <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Toplam Masraf</span></div>
-                                            <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="Total_Expense"></span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                     </div>
@@ -225,7 +225,7 @@ A company uses this software will easily track their process by using features o
                                             <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>Fatura Sayısı</span></div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>23</span></div>
+                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span id="Invoice_Count"></span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -240,7 +240,7 @@ A company uses this software will easily track their process by using features o
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
                                             <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>T. Fatura Tutarı</span></div>
-                                            <div class="text-dark font-weight-bold h5 mb-0"><span>287 TL</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="Total_Invoice_Amount"></span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-money-bill-wave fa-2x text-gray-300"></i></div>
                                     </div>
@@ -254,25 +254,25 @@ A company uses this software will easily track their process by using features o
                                 <div class="card-header py-3">
                                     <h6 class="text-primary font-weight-bold m-0">Projeler</h6>
                                 </div>
-                                <ul class="list-group list-group-flush">
+                                <ul id="ProjectList" class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col mr-2">
-                                                <h6 class="mb-0"><strong>Proje 1</strong></h6>
+                                                <h6 class="mb-0"><strong></strong></h6>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col mr-2">
-                                                <h6 class="mb-0"><strong>Proje 2</strong></h6>
+                                                <h6 class="mb-0"><strong></strong></h6>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col mr-2">
-                                                <h6 class="mb-0"><strong>Proje 3</strong></h6>
+                                                <h6 class="mb-0"><strong></strong></h6>
                                             </div>
                                         </div>
                                     </li>
@@ -287,7 +287,7 @@ A company uses this software will easily track their process by using features o
                                             <div class="row align-items-center no-gutters">
                                                 <div class="col mr-2">
                                                     <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Proje Sayısı</span></div>
-                                                    <div class="text-dark font-weight-bold h5 mb-0"><span>12</span></div>
+                                                    <div class="text-dark font-weight-bold h5 mb-0"><span id="Project_Count"></span></div>
                                                 </div>
                                                 <div class="col-auto"><i class="fas fa-project-diagram fa-2x text-gray-300"></i></div>
                                             </div>
@@ -300,7 +300,7 @@ A company uses this software will easily track their process by using features o
                                             <div class="row align-items-center no-gutters">
                                                 <div class="col mr-2">
                                                     <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Toplam Proje Tutarı</span></div>
-                                                    <div class="text-dark font-weight-bold h5 mb-0"><span>$500</span></div>
+                                                    <div class="text-dark font-weight-bold h5 mb-0"><span id="Total_Project_Amount"></span></div>
                                                 </div>
                                                 <div class="col-auto"><i class="fas fa-money-bill fa-2x text-gray-300"></i></div>
                                             </div>
@@ -315,7 +315,7 @@ A company uses this software will easily track their process by using features o
                                                     <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>Bugünün Dolar kuru</span></div>
                                                     <div class="row no-gutters align-items-center">
                                                         <div class="col-auto">
-                                                            <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>7,18 TL</span></div>
+                                                            <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span id="Todays_USD_ExchangeRate"></span></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -330,7 +330,7 @@ A company uses this software will easily track their process by using features o
                                             <div class="row align-items-center no-gutters">
                                                 <div class="col mr-2">
                                                     <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Çalışan Sayısı</span></div>
-                                                    <div class="text-dark font-weight-bold h5 mb-0"><span>18</span></div>
+                                                    <div class="text-dark font-weight-bold h5 mb-0"><span id="Worker_Count"></span></div>
                                                 </div>
                                                 <div class="col-auto"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-person fa-2x text-gray-300">
                                                         <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
@@ -415,6 +415,7 @@ A company uses this software will easily track their process by using features o
 	<script src="assets/js/theme.js"></script>
 	<script src="../Scripts/ShowUserInfo.js"></script>
 	<script src="../Scripts/listCompanyInfo.js"></script>
+	<script src="../Scripts/HomePageInfo.js"></script>
 </body>
 
 </html>

@@ -292,16 +292,14 @@ A company uses this software will easily track their process by using features o
         async function getApi() {
 			const response = await fetch(api_url);
 			const data = await response.json();
-			console.log(data);
+
             document.getElementById('USD').value = data.rates.TRY;
 			document.getElementById('EUR').value = data.rates.TRY;
-			console.log(document.getElementById('EUR').value);
             document.getElementById('TRY').value = 1;
 		}
 		list.onchange = () => {
 			base = list.options[list.selectedIndex].value;
 			api_url = 'https://api.exchangeratesapi.io/' + currentDate + '?base=' + base;
-			console.log(api_url);
             getApi();
 		}
 		dateBox.onchange = () => {

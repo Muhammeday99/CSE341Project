@@ -138,6 +138,79 @@ namespace projedeneme2.Homepage
 			return convert.getRowInfo("CompanyInfo", "ID", "1");
 		}
 
-		
+		[WebMethod]
+
+		public static int[] getCountInfo()
+        {
+			int[] info = new int[4];
+			string[] tables = { "Entity_Card", "Invoice_Info", "ProjectDefinition", "Users" };
+			SqlConnection con = databaseConnect.connectToSQL();
+			con.Open();
+
+
+			for (int i = 0; i < 4; ++i) {
+
+				SqlCommand cmd = new SqlCommand("Select Count(*) from " + tables[i], con);
+				SqlDataReader dataReader = cmd.ExecuteReader();
+				if (dataReader.Read())
+				{
+					info[i] = dataReader.GetInt32(0);
+				}
+				dataReader.Close();
+			}
+			return info;
+		}
+
+		[WebMethod]
+
+		public static float[] getTotalAmounts() {
+			float[] total = new float[3];
+			string[] tables = { "Invoice_Info", "ProjectDefinition", "Expense_Info" };
+			SqlConnection con = databaseConnect.connectToSQL();
+			con.Open();
+			SqlCommand cmd;
+			SqlDataReader dataReader;
+
+			for (int i = 0; i < 2; ++i)
+			{
+
+				cmd = new SqlCommand("Select Sum(Amount + Amount*KDVpercentage*0.01) from " + tables[i], con);
+				dataReader = cmd.ExecuteReader();
+				if (dataReader.Read())
+				{
+					string t = dataReader.GetValue(0).ToString();
+					total[i] = float.Parse(t);
+				}
+				dataReader.Close();
+			}
+
+			cmd = new SqlCommand("Select Sum(ExpenseAmount) from " + tables[2], con);
+			dataReader = cmd.ExecuteReader();
+			if (dataReader.Read())
+			{
+				string t = dataReader.GetValue(0).ToString();
+				total[2] = float.Parse(t);
+			}
+			dataReader.Close();
+			return total;
+		}
+
+		[WebMethod]
+
+		public static List<string> getProjectNames() {
+			List<string> names = new List<string>();
+
+			SqlConnection con = databaseConnect.connectToSQL();
+			con.Open();
+			SqlCommand cmd = new SqlCommand("Select ProjectName from ProjectDefinition", con);
+			SqlDataReader dataReader = cmd.ExecuteReader();
+			
+            while (dataReader.Read())
+            {
+				names.Add(dataReader.GetString(0));
+            }
+
+			return names;
+		}
 	}
 }
