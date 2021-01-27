@@ -151,7 +151,7 @@ namespace projedeneme2.YeniFaturaEkle
         public void addNewSubInvoice(object sender, EventArgs e)
         {
             addNewTotal(TotalAmount.Text);
-            System.Diagnostics.Debug.WriteLine("works");
+
             con.Open();
             subinvoiceContent newContent = new subinvoiceContent();
 
@@ -218,6 +218,7 @@ namespace projedeneme2.YeniFaturaEkle
             }
 
             subinvoiceList.Add(newContent);
+            
         }
 
         //TOTAL AMOUNT TEXTBOX OLARAK GOZUKUYOR, DEGISMESI LAZIM, LABEL OLARAK DEGISTIRILMELI

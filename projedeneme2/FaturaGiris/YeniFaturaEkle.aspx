@@ -318,10 +318,9 @@ A company uses this software will easily track their process by using features o
                                                                 <p>The content of your modal.</p>
                                                             </div>
                                                             <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
-                             Save</button></div>
+															</div>
                                                         </div>
                                                     </div>
-                                                </div>
                                             </td>
                                             <td><select id="StockKind">
                                                     <optgroup label="Stok Türü">
@@ -350,9 +349,16 @@ A company uses this software will easily track their process by using features o
                                                     </optgroup>
                                                 </select></td>
                                             <td><asp:Textbox runat="server" type="number" id="KDVamount" placeholder="KDV amount" ReadOnly="true"></asp:Textbox></td>
-                                            <td><asp:Textbox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ReadOnly="true"></asp:Textbox></td>
-											<td id="ButtonCell1"><asp:LinkButton ID="NewContentBtn" runat="server" OnClick="addNewSubInvoice"><span><i class="fa fa-plus"></i></span></asp:LinkButton></td>
-                                        </tr>
+                                            <td><asp:Textbox runat="server" type="number" id="TotalAmount" placeholder="Total Amount" ></asp:Textbox></td>
+											<td id="ButtonCell1">
+												<asp:UpdatePanel runat="server">
+												<ContentTemplate>
+												<asp:Button class="btn btn-primary" ID="NewContentBtn" runat="server" OnClick="addNewSubInvoice" OnClientClick="addNewInvoice();" Text="Add" />
+												</ContentTemplate>
+												</asp:UpdatePanel>	
+											</td>
+												
+										</tr>
 
                                     </tbody>
                                     
