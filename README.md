@@ -108,14 +108,14 @@ Mainly Visual Studio and some basic helper programs. We chose **C# / asp.net** a
 
 
  ## Requirements
-* __ASP.NET__
-* __C#__
-* __JavaScript__
+ - ASP.NET
+ - C#
+ - JavaScript
 
  ## A great system for :
-* __Company project system__
-* __Company website with multiple user or contributors__
-* __Companies need to tracking projects__
+ - Company project system
+ - Company website with multiple user or contributors
+ - Companies need to tracking projects
 
  ## Use Case Diagram for First Presentation
  ![usecase](https://user-images.githubusercontent.com/43350594/101244626-b1ffb480-3718-11eb-8a59-98520c8562c4.png)
