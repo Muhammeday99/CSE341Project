@@ -1,180 +1,121 @@
-# Project-Tracking-System-for-Automation-Companies
+# Project Tracking System for Automation Companies
 ## 5M Macro Developers
 
-* __Muhammed Salih Yılmaz__
-* __İlkan Mert Okul__
-* __Muhammet Fikret Atar__
-* __Mert Can Beşirli__
-* __Muhammed Eyüp__
+- Muhammed Salih Yılmaz
+- İlkan Mert Okul
+- Muhammet Fikret Atar
+- Mert Can Beşirli
+- Muhammed Eyüp
 
-## Backlog
-* __User --> adminUser, standardUser__
+## What is it?
 
-* __User (admin or standard) always requires email and password.__
+Project Tracking System is exactly what its name suggests. It is a helper program for companies (mainly automation companies) that needs their stuff shown to them in an orderly manner. They must track what is going on in their company financially to function properly, and take actions accordingly.
 
-* __When the program is prepared for the first time, the first admin will be added to the database directly.__
+5M Macro's Project Tracking System focuses on everything financial. Our software's services does not know what is going on in the project's background. We can summary the application as follows:
 
-### Admin User Menu's
-* __Add new account__
+- Progress for work
+- Paying fees to various clients
+- Work done by company employees
 
-* __The added user is admin or not?__
+A company uses this software will easily track their process by using features of this software mentioned above.
 
-* __Show List User__
+## Main Functions of the Program
 
-* __Change the user's email or password__
+#### Entity Cards
 
-### Standard User Menu's
-* __Change Password__
+An entity card is an accounting term. En ERP and Accounting Programs, just like 5M Macro's Project Tracking System, an entity card is used to represent the company or organization using the system to represent another person or legal entity, whom there is a customer-creditor relationship exist, to keep track of their records.
 
-* __Send notification message to admin(Not done yet!)__
+We are holding some data such as type, kind, name, code, email, phone etcetera... User of the system enters these variables and the data is sent to the database, where it can be accessed after the fact.
 
-### Entity Card
-(All of the information of other companies or persons with whom the company that will use the system has a creditor relationship)
-* __entityKind: legal entity OR person__
+#### Expense Definition
 
-* __entityType (client OR supplier)__
+Every company has its own expenses, say phone bills, electricity bills, car expenses, renting fees, wages of the personnel and so on. If a company is serious about its future, it must hold these expenses somewhere. What we have, is just for that.
 
-* __entityName__
+#### Project Definition
 
-* __entityCode__
+Something
 
-* __Adress__
+#### Currency Definition
 
-* __entityEmail__
+Something else
 
-* __entityPhoneNumber__
+#### Invoice Entry
 
-* __entityFaxNumber__
+something3
 
-* __taxOffice__
+## What have we done while developing the program?
 
-* __taxNumber__
+- ##### 1st Week
 
-* __bankAccountNumber__
+  - something
 
-* __relatedPerson__
+- ##### 2nd Week
 
-* __Description__
+  - something
 
-* __paymentTerm__
+- ##### 3rd Week
 
-### Create New Current Card
-* __When the button is pressed, all these fields above will appear blank. Below will be the SAVE button.__
+  - something
 
-### SAVE CURRENT CARD
-* __When this button is pressed in the create card section, it will send all of them to the database.__
+- ##### 4th Week
 
-### CURRENT CARD LIST
-* __List the Saved Current Cards. When clicking on each account, an extra window will open and only information about that account will be displayed. There is no edit permission, but there is an edit button.__
+  - something
 
-### DELETE CURRENT CARD
-* __It will delete the current card printed on it from the database.__
+- ##### 5th Week
 
-### EDIT CURRENT CARD
-* __It will open permission to edit the current card printed on it. It will save below.__
+  - something
 
-### ADD BILL
+- ##### 6th Week
 
-#### Add New Bill
-* __Bill Number__
+  - something
 
-* __Billing Date__
+- ##### 7th Week
 
-* __Entity Code__
+  - something
 
-* __Description__
+- ##### 8th Week
 
-* __Payment Date__
+  - something
 
-* __Currency Code – TRY, EUR, USD__
+- ##### 9th Week
 
-* __Amount__
+  - something
 
-* __KDV(Standart accepted %18)__
+- ##### 10th Week
 
-* __Total Amount__
+  - something
 
-* __It will send and add it to the database when you click save, in the same way as in the Current Card.__
+- ##### 11th Week
 
-#### List Bill
-* __The same as the Current Card should appear on the main screen with all invoices listed. At the top right there will be the add new invoice button.__
+  - something
 
-#### Edit Bill
-* __As with the Current Card, it will open the editing permission when pressed. It will save below.__
+## What is the future of the software?
 
-#### Delete Bill
-* __It will delete the printed bill from the database.__
+It will be very good.
 
-#### Search Bill(Not Priority present!)
-* __The search button will search and list something as you type in the menu, which appears as if adding an bill.__
+## What model did we use?
 
-### PROJECT DESCRIPTION
-* __Project Code__
+We used very good models.
 
-* __Project Name__
+## What architecture did we use?
 
-* __Customer Code__
+We used very good architectures.
 
-* __Order Code__
+## What tools did we use in development stages?
 
-* __Billing Number__
+Mainly Visual Studio and some basic helper programs. We chose **C# / asp.net** as the main language and **HTML/CSS** for the frontend, and lastly **Javascript** for scripting.
 
-* __Starting Date__
 
-* __Ending Date__
-
-* __Currency Code – TRY, EUR, USD__
-
-* __Price__
-
-* __KDV__
-
-* __Labor costs__
-
-* __Total Amount__
-
-* __Project Manager(Check project active or not)__
-
-* __Description__
-
-#### List Project
-* __The same as the Current Card should appear on the main screen with all invoices listed. At the top right there will be the add new bill button.__
-
-#### Edit Project
-* __As with the Current Card, it will open the permission to edit when pressed. It will save below.__
-
-#### Delete Project
-* __It will delete the printed bill from the database.__
-
-#### Search Project(Not priority present!)
-* __The search button will search and list something as you type in the menu, which appears as if adding an bill.__
-
-#### Print
-
-#### Account Card
-
-### EXCHANGE RATE DEFINITION
-* __Currency Code – TRY, EUR, USD__
-
-* __Date__
-
-* __Exchange rate__
-
-#### Add Currency
-
-#### List Currency
-
-#### Delete Currency
 
  ## Requirements
-* __ASP.NET__
-* __C#__
-* __JavaScript__
+ - ASP.NET
+ - C#
+ - JavaScript
 
  ## A great system for :
-* __Company project system__
-* __Company website with multiple user or contributors__
-* __Companies need to tracking projects__
+ - Company project system
+ - Company website with multiple user or contributors
+ - Companies need to tracking projects
 
  ## Use Case Diagram for First Presentation
  ![usecase](https://user-images.githubusercontent.com/43350594/101244626-b1ffb480-3718-11eb-8a59-98520c8562c4.png)
