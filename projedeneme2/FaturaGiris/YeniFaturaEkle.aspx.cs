@@ -58,7 +58,7 @@ namespace projedeneme2.YeniFaturaEkle
         //This variable will then be used in subsequent steps of reading data from our database.   
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            InvoiceTotalAmount.Text = "0";
         }
 
         protected void AddNewInvoice_Click(object sender, EventArgs e)
@@ -115,12 +115,13 @@ namespace projedeneme2.YeniFaturaEkle
                 cmnd.Parameters.AddWithValue("@entityCode", entitycode);
                 cmnd.Parameters.AddWithValue("@InvoiceDescription", invoiceDescription);
                 cmnd.Parameters.AddWithValue("@PaymentDate", paymentDate);
-                cmnd.Parameters.AddWithValue("@Amount", subinvoiceList.Count);
+                cmnd.Parameters.AddWithValue("@Amount", double.Parse(Session["Total"].ToString()));
                 cmnd.Parameters.AddWithValue("@CurrencyId", currencycode);
 
                 cmnd.ExecuteNonQuery();
 
                 //GETS THE ID FOR SUBINVOICE.
+                /*
                 q = "SELECT ID FROM Invoice_info WHERE InvoiceNumber=@InvoiceNumber";
                 cmnd = new SqlCommand(q, con);
                 cmnd.Parameters.AddWithValue("@InvoiceNumber", invoiceNumber);
@@ -128,24 +129,18 @@ namespace projedeneme2.YeniFaturaEkle
                 sqlRead.Read();
                 int id = sqlRead.GetInt32(0);
                 sqlRead.Close();
-
-                
-
-
-
+                */
             }
 
             con.Close();
         }
 
-        protected double addNewTotal(string newSubTotal)
+        protected void addNewTotal(string newSubTotal)
         {
             double newSub = double.Parse(newSubTotal);
 
-            total = total + newSub;
+            Session["Total"] = double.Parse(Session["Total"].ToString()) + newSub;
             InvoiceTotalAmount.Text = total.ToString();
-
-            return total;
         }
 
         public void addNewSubInvoice(object sender, EventArgs e)
@@ -218,7 +213,37 @@ namespace projedeneme2.YeniFaturaEkle
             }
 
             subinvoiceList.Add(newContent);
+
+
+            String q = "INSERT INTO SubInvoice (InvoiceId,Type,ProjectId,ExpenseId,StockType,StockCode,StockName,Unit,StockAmount,Amount,KDV) VALUES (@InvoiceId,@Type,@ProjectId,@ExpenseId,@StockType,@StockCode,@StockName,@Unit,@StockAmount,@Amount,@KDV)";
+            SqlCommand cmnd = new SqlCommand(q, con);
+
+            newContent.invoiceId = 1;
+
+            cmnd.Parameters.AddWithValue("@InvoiceId",newContent.invoiceId);
+            cmnd.Parameters.AddWithValue("@Type",newContent.type);
+            if(newContent.type)
+            {
+                cmnd.Parameters.AddWithValue("@ExpenseId", newContent.projectORexpenseId);
+                cmnd.Parameters.AddWithValue("@ProjectId", 6);
+            }
+            else
+            {
+                cmnd.Parameters.AddWithValue("@ProjectId", newContent.projectORexpenseId);
+                cmnd.Parameters.AddWithValue("@ExpenseId", 6);
+            }
             
+            cmnd.Parameters.AddWithValue("@StockType", newContent.stockType);
+            cmnd.Parameters.AddWithValue("@StockCode", newContent.stockCode);
+            cmnd.Parameters.AddWithValue("@StockName", newContent.stockName);
+            cmnd.Parameters.AddWithValue("@Unit", newContent.unit);
+            cmnd.Parameters.AddWithValue("@StockAmount", newContent.stockAmount);
+            cmnd.Parameters.AddWithValue("@Amount", newContent.amount);
+            cmnd.Parameters.AddWithValue("@KDV", newContent.KDV);
+
+            cmnd.ExecuteNonQuery();
+
+            con.Close();
         }
 
         //TOTAL AMOUNT TEXTBOX OLARAK GOZUKUYOR, DEGISMESI LAZIM, LABEL OLARAK DEGISTIRILMELI

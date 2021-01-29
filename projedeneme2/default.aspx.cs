@@ -28,7 +28,7 @@ namespace projedeneme2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Session["Total"] = 0; 
         }
 
         //The registered user query is made on the login page.
