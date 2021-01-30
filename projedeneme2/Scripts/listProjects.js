@@ -1,6 +1,6 @@
 ﻿let ProjectsInfo;
-let Entities;
-let ExchangeRates;
+let Entities = [];
+let ExchangeRates = [];
 let currencies = ["TRY", "USD", "EUR"];
 let sizeList = document.getElementById("ListSize");
 let listPage = document.getElementById("listPage").getElementsByTagName("li");
@@ -9,17 +9,22 @@ let prev = listPage[0].getElementsByTagName("a")[0];
 let info = document.getElementById("dataTable_info");
 let Index = 0;
 PageMethods.getEntityInfo(OnSuccessEntity);
-PageMethods.getProjectsInfo(OnSuccessProject);
+
 
 function OnSuccessEntity(response) {
-    Entities = JSON.parse(response[0]);
-    
+    Entities.push(...JSON.parse(response[0]));
+    console.log("Ent");
+    console.log(Entities);
     ExchangeRates = JSON.parse(response[1]);
+    PageMethods.getProjectsInfo(OnSuccessProject);
 }
 
 function OnSuccessProject(response) {
     ProjectsInfo = JSON.parse(response);
     sizeList.options[0].value = ProjectsInfo.length;
+    console.log(Entities);
+    console.log(ExchangeRates);
+    console.log(ProjectsInfo)
     info.innerHTML = "Showing " + Number(Index + 1) + " to " + ProjectsInfo.length + " of " + ProjectsInfo.length;
     listProjects(ProjectsInfo);
 }

@@ -9,14 +9,17 @@ using System.Web.UI.WebControls;
 
 namespace projedeneme2.Homepage
 {
+	
 	public partial class Homepage : System.Web.UI.Page
 	{
-
+		protected static SqlConnection con = databaseConnect.connectToSQL();
 		public static string ID = " ";
 		public static string NAME = " ";
 		public static string ProfilePicture = " ";
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			con.Close();
+			con.Open();
 			try
 			{
 				ID = Session["ID"].ToString();
@@ -29,6 +32,7 @@ namespace projedeneme2.Homepage
 				ProfilePicture = " ";
 			}
 		}
+
 		protected void Homepage_click(object sender, EventArgs e)
 		{
 			Response.Redirect("../Homepage/Homepage.aspx");
@@ -113,8 +117,6 @@ namespace projedeneme2.Homepage
 		[WebMethod]
 		public static string[] getUserInfo()
 		{
-			SqlConnection con = databaseConnect.connectToSQL();
-			con.Open();
 			SqlCommand cmd = new SqlCommand("select UserName,UserSurname,UserEmail,ProfilePicture,Status from Users where UserID = @ID;", con);
 			cmd.Parameters.AddWithValue("@ID", Int32.Parse(ID));
 			SqlDataReader dataReader = cmd.ExecuteReader();
@@ -126,6 +128,7 @@ namespace projedeneme2.Homepage
 					info[i] = dataReader.GetValue(i).ToString();
 				}
 			}
+			dataReader.Close();
 			return info;
 		}
 
@@ -144,8 +147,6 @@ namespace projedeneme2.Homepage
         {
 			int[] info = new int[4];
 			string[] tables = { "Entity_Card", "Invoice_Info", "ProjectDefinition", "Users" };
-			SqlConnection con = databaseConnect.connectToSQL();
-			con.Open();
 
 
 			for (int i = 0; i < 4; ++i) {
@@ -166,8 +167,6 @@ namespace projedeneme2.Homepage
 		public static float[] getTotalAmounts() {
 			float[] total = new float[3];
 			string[] tables = { "Invoice_Info", "ProjectDefinition", "Expense_Info" };
-			SqlConnection con = databaseConnect.connectToSQL();
-			con.Open();
 			SqlCommand cmd;
 			SqlDataReader dataReader;
 
@@ -200,8 +199,6 @@ namespace projedeneme2.Homepage
 		public static List<string> getProjectNames() {
 			List<string> names = new List<string>();
 
-			SqlConnection con = databaseConnect.connectToSQL();
-			con.Open();
 			SqlCommand cmd = new SqlCommand("Select ProjectName from ProjectDefinition", con);
 			SqlDataReader dataReader = cmd.ExecuteReader();
 			
@@ -209,7 +206,7 @@ namespace projedeneme2.Homepage
             {
 				names.Add(dataReader.GetString(0));
             }
-
+			dataReader.Close();
 			return names;
 		}
 	}

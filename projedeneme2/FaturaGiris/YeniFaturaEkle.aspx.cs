@@ -105,7 +105,7 @@ namespace projedeneme2.YeniFaturaEkle
                 //error case, display on label.
             }else{
 
-                String q = "INSERT INTO Invoice_info (InvoiceNumber,InvoiceDate,entityCode,InvoiceDescription,PaymentDate,Amount,CurrencyId) VALUES (@InvoiceNumber,@InvoiceDate,@entityCode,@InvoiceDescription,@PaymentDate,@Amount,@CurrencyId)";
+                String q = "INSERT INTO Invoice_info (InvoiceNumber,InvoiceDate,entityCode,InvoiceDescription,PaymentDate,CurrencyId,Amount) VALUES (@InvoiceNumber,@InvoiceDate,@entityCode,@InvoiceDescription,@PaymentDate,@CurrencyId,@Amount)";
                 SqlCommand cmnd = new SqlCommand(q, con);
 
                 string a = " ";

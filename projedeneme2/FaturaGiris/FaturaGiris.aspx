@@ -185,10 +185,13 @@ A company uses this software will easily track their process by using features o
 							<div class="col-md-6 text-nowrap">
 								<div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
 									<label>Show&nbsp;
-										<select class="form-control form-control-sm custom-select custom-select-sm">
-											<option value="10" selected="">10</option><option value="25">25</option>
+										<select id="ListSelect" class="form-control form-control-sm custom-select custom-select-sm">
+											<option selected="selected">Select</option>
+											<option value="1">1</option>
+											<option value="10" >10</option>
+											<option value="25">25</option>
 											<option value="50">50</option>
-											<option value="100">100</option>
+											
 										</select>&nbsp;
 									</label>
 								</div>
@@ -197,7 +200,7 @@ A company uses this software will easily track their process by using features o
                                     <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
                                 </div>
                             </div>
-                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                            <div class="table-responsive table mt-2" id="dataTable_div" role="grid" aria-describedby="dataTable_info">
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
@@ -213,28 +216,7 @@ A company uses this software will easily track their process by using features o
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Angelica Ramos</td>
-                                            <td>Cell 2<br></td>
-                                            <td>Cell 3<br></td>
-                                            <td>London</td>
-                                            <td>47</td>
-                                            <td>2009/10/09<br></td>
-                                            <td>$1,200,000</td>
-                                            <td>Cell 8</td>
-                                            <td>Cell 9</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cell 1</td>
-                                            <td>Cell 2</td>
-                                            <td>Cell 3</td>
-                                            <td>Cell 4</td>
-                                            <td>Cell 5</td>
-                                            <td>Cell 6</td>
-                                            <td>Cell 7</td>
-                                            <td>Cell 8</td>
-                                            <td>Cell 9</td>
-                                        </tr>
+                                        
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -257,11 +239,8 @@ A company uses this software will easily track their process by using features o
                                 </div>
                                 <div class="col-md-6">
                                     <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                        <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <ul id="listPage" class="pagination">
+                                            <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
                                             <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
                                         </ul>
                                     </nav>
@@ -285,6 +264,7 @@ A company uses this software will easily track their process by using features o
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
 	<script src="assets/js/theme.js"></script>
 	<script src="../Scripts/ShowUserInfo.js"></script>
+	<script src="../Scripts/listInvoices.js"></script>
 	</form>
 </body>
 
