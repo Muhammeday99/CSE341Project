@@ -8,6 +8,7 @@ let next = listPage[listPage.length - 1].getElementsByTagName("a")[0];
 let prev = listPage[0].getElementsByTagName("a")[0];
 let info = document.getElementById("dataTable_info");
 let Index = 0;
+
 PageMethods.getEntityInfo(OnSuccessEntity);
 
 
@@ -22,9 +23,7 @@ function OnSuccessEntity(response) {
 function OnSuccessProject(response) {
     ProjectsInfo = JSON.parse(response);
     sizeList.options[0].value = ProjectsInfo.length;
-    console.log(Entities);
-    console.log(ExchangeRates);
-    console.log(ProjectsInfo)
+    
     info.innerHTML = "Showing " + Number(Index + 1) + " to " + ProjectsInfo.length + " of " + ProjectsInfo.length;
     listProjects(ProjectsInfo);
 }
@@ -94,8 +93,18 @@ function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
                     node = document.createTextNode(element);
                     cell.appendChild(node);
                     cell = row.insertCell();
-                    element = ExchangeRates[0].split(" ")[1];
-                } else {
+                    element = ExchangeRates[0].split(" ")[1].substring(0, 4);
+                    console.log(element.substring(0,4));
+                } else if (e == "Pr_description") {
+                    let amount = Number(Project["Amount"]);
+                    let KDVP = Number(Project["KDVpercentage"]);
+                    let WorkP = Number(Project["WorkmanshipPricePercentage"]);
+                    let KDV = amount * KDVP * 0.01;
+                    let workmanshipAmount = (amount + KDV) * WorkP * 0.01;
+                    let total = amount + KDV + workmanshipAmount;
+                    element = total;
+                }
+                else {
                     element = Project[e];
                 }
                 node = document.createTextNode(element);

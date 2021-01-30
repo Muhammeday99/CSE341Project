@@ -213,7 +213,6 @@ A company uses this software will easily track their process by using features o
                                             <th>Toplam Maliyeti<br></th>
                                             <th>Açıklama<br></th>
                                             <th>Proje Yetkilisi<br></th>
-                                            <th>Durumu</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -237,7 +236,6 @@ A company uses this software will easily track their process by using features o
                                             <td><strong>Toplam Maliyeti</strong><br></td>
                                             <td><strong>Açıklama</strong><br></td>
                                             <td><strong>Proje Yetkilisi</strong><br></td>
-                                            <td><strong>Durumu</strong><br></td>
                                         </tr>
                                     </tfoot>
                                 </table>

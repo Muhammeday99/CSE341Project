@@ -74,6 +74,7 @@ function listElements(ExchangeList, size = ExchangeList.length,startIndex=0)
             if (e == "Id") continue;
             let Tcell = Trow.insertCell();
             let value = Element[e];
+
             if (e == "CurrencyExchangeDate") {
                 let date = new Date(value);
                 value = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
@@ -83,8 +84,10 @@ function listElements(ExchangeList, size = ExchangeList.length,startIndex=0)
                 else if (value == 2) value = "USD";
                 else if (value == 3) value = "EUR";
             }
+            if (e == "CurrencyExchangeRate") {
+                value = Element[e].toString().substring(0, 5);
+            }
             let text = document.createTextNode(value);
-
             Tcell.appendChild(text);
         }
     }
