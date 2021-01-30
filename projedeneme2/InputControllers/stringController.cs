@@ -18,7 +18,7 @@ namespace projedeneme2.InputControllers
 
         static public bool singleStringController(string input)
         {
-            if (input.Length < 2) return false;
+            if (input.Length < 1) return false;
             return true;
         }
 

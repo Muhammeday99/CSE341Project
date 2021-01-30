@@ -339,7 +339,7 @@ A company uses this software will easily track their process by using features o
                                     </div>
                                 </div>
                             </div>
-                        </div><asp:LinkButton runat="server" OnClick="AddEntityCard_click" class="btn btn-primary" id="addEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;">Yeni Cari Kart Ekle</asp:LinkButton></div>
+                        </div><asp:Button runat="server" OnClick="AddEntityCard_click" class="btn btn-primary" id="NewEntityCard" style="float: right;background: rgb(49,115,163);margin-top: 2%;" text="Yeni Cari Kart Ekle"/></div>
                 </div>
             </div>
 		</div>
