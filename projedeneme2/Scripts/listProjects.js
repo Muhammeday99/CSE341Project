@@ -8,15 +8,13 @@ let next = listPage[listPage.length - 1].getElementsByTagName("a")[0];
 let prev = listPage[0].getElementsByTagName("a")[0];
 let info = document.getElementById("dataTable_info");
 let Index = 0;
-
+let ExchangeRate;
 PageMethods.getEntityInfo(OnSuccessEntity);
 
 
 function OnSuccessEntity(response) {
-    Entities.push(...JSON.parse(response[0]));
-    console.log("Ent");
-    console.log(Entities);
-    ExchangeRates = JSON.parse(response[1]);
+    Entities.push(...JSON.parse(response));
+
     PageMethods.getProjectsInfo(OnSuccessProject);
 }
 
@@ -85,16 +83,11 @@ function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
                     cell = row.insertCell();
                     element = Entities[code].split(" ")[1];
                 } else if (e == "ExchangeRateId") {
-                    let code = Project[e] - 1;
-                    console.log(ExchangeRates);
-                    let currency = ExchangeRates[0].split(" ")[0];
-                    console.log(currency);
-                    element = currencies[currency - 1];
-                    node = document.createTextNode(element);
-                    cell.appendChild(node);
-                    cell = row.insertCell();
-                    element = ExchangeRates[0].split(" ")[1].substring(0, 4);
-                    console.log(element.substring(0,4));
+                    
+                    getExchangeRate(Project[e], Project["StartingDate"].substring(0, 10), row, cell);
+
+                    continue;
+
                 } else if (e == "Pr_description") {
                     let amount = Number(Project["Amount"]);
                     let KDVP = Number(Project["KDVpercentage"]);
@@ -103,6 +96,10 @@ function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
                     let workmanshipAmount = (amount + KDV) * WorkP * 0.01;
                     let total = amount + KDV + workmanshipAmount;
                     element = total;
+                } else if (e == "StartingDate" || e == "EndingDate") {
+                    element = Project[e];
+                    let date = new Date(element);
+                    element = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
                 }
                 else {
                     element = Project[e];
@@ -112,4 +109,42 @@ function listProjects(Projectslist, size = Projectslist.length, startIndex=0) {
             }
         }
     }
+}
+
+const getExchangeRate = (id, date, row,cell) => {
+    let base;
+
+    
+    switch (id) {
+        case 1:
+            base = "TRY";
+            break;
+        case 2:
+            base = "USD";
+            break;
+        case 3:
+            base = "EUR";
+            break;
+    }
+
+    let node = document.createTextNode(base);
+    cell.appendChild(node);
+
+    cell = row.insertCell();
+
+    let api_url = 'https://api.exchangeratesapi.io/' + date + '?base=' + base;
+    console.log(api_url);
+    getApi(api_url,cell);
+}
+
+async function getApi(api_url,cell) {
+    const response = await fetch(api_url);
+    const data = await response.json();
+
+    const ER = await data.rates.TRY;
+    console.log(ER);
+    
+    let node = document.createTextNode(ER.toFixed(3));
+    console.log(node);
+    cell.appendChild(node);
 }

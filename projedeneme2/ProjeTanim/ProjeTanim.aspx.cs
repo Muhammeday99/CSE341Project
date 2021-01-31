@@ -84,10 +84,10 @@ namespace projedeneme2.ProjeTanim
         }
 
         [WebMethod]
-        public static string[] getEntityInfo()
+        public static string getEntityInfo()
         {
             JsonConverter converter = new JsonConverter();
-            string[] info = { converter.strlistToJSON(entityCodes), converter.strlistToJSON(currencyCodes) };
+            string info = converter.strlistToJSON(entityCodes);
             return info;
         }
 
