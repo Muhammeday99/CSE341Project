@@ -245,7 +245,7 @@ namespace projedeneme2.YeniFaturaEkle
                 cmnd.ExecuteNonQuery();
             }catch(Exception ex)
             {
-
+                errorLabel.Text = "THERE IS NO SUCH PROJECT !!";
             }
             
             con.Close();
