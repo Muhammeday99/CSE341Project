@@ -214,35 +214,40 @@ namespace projedeneme2.YeniFaturaEkle
 
             subinvoiceList.Add(newContent);
 
-
-            String q = "INSERT INTO SubInvoice (InvoiceId,Type,ProjectId,ExpenseId,StockType,StockCode,StockName,Unit,StockAmount,Amount,KDV) VALUES (@InvoiceId,@Type,@ProjectId,@ExpenseId,@StockType,@StockCode,@StockName,@Unit,@StockAmount,@Amount,@KDV)";
-            SqlCommand cmnd = new SqlCommand(q, con);
-
-            newContent.invoiceId = 1;
-
-            cmnd.Parameters.AddWithValue("@InvoiceId",newContent.invoiceId);
-            cmnd.Parameters.AddWithValue("@Type",newContent.type);
-            if(newContent.type)
+            try
             {
-                cmnd.Parameters.AddWithValue("@ExpenseId", newContent.projectORexpenseId);
-                cmnd.Parameters.AddWithValue("@ProjectId", 6);
-            }
-            else
+                String q = "INSERT INTO SubInvoice (InvoiceId,Type,ProjectId,ExpenseId,StockType,StockCode,StockName,Unit,StockAmount,Amount,KDV) VALUES (@InvoiceId,@Type,@ProjectId,@ExpenseId,@StockType,@StockCode,@StockName,@Unit,@StockAmount,@Amount,@KDV)";
+                SqlCommand cmnd = new SqlCommand(q, con);
+
+                newContent.invoiceId = 1;
+
+                cmnd.Parameters.AddWithValue("@InvoiceId", newContent.invoiceId);
+                cmnd.Parameters.AddWithValue("@Type", newContent.type);
+                if (newContent.type)
+                {
+                    cmnd.Parameters.AddWithValue("@ExpenseId", newContent.projectORexpenseId);
+                    cmnd.Parameters.AddWithValue("@ProjectId", 6);
+                }
+                else
+                {
+                    cmnd.Parameters.AddWithValue("@ProjectId", newContent.projectORexpenseId);
+                    cmnd.Parameters.AddWithValue("@ExpenseId", 6);
+                }
+
+                cmnd.Parameters.AddWithValue("@StockType", newContent.stockType);
+                cmnd.Parameters.AddWithValue("@StockCode", newContent.stockCode);
+                cmnd.Parameters.AddWithValue("@StockName", newContent.stockName);
+                cmnd.Parameters.AddWithValue("@Unit", newContent.unit);
+                cmnd.Parameters.AddWithValue("@StockAmount", newContent.stockAmount);
+                cmnd.Parameters.AddWithValue("@Amount", newContent.amount);
+                cmnd.Parameters.AddWithValue("@KDV", newContent.KDV);
+
+                cmnd.ExecuteNonQuery();
+            }catch(Exception ex)
             {
-                cmnd.Parameters.AddWithValue("@ProjectId", newContent.projectORexpenseId);
-                cmnd.Parameters.AddWithValue("@ExpenseId", 6);
+
             }
             
-            cmnd.Parameters.AddWithValue("@StockType", newContent.stockType);
-            cmnd.Parameters.AddWithValue("@StockCode", newContent.stockCode);
-            cmnd.Parameters.AddWithValue("@StockName", newContent.stockName);
-            cmnd.Parameters.AddWithValue("@Unit", newContent.unit);
-            cmnd.Parameters.AddWithValue("@StockAmount", newContent.stockAmount);
-            cmnd.Parameters.AddWithValue("@Amount", newContent.amount);
-            cmnd.Parameters.AddWithValue("@KDV", newContent.KDV);
-
-            cmnd.ExecuteNonQuery();
-
             con.Close();
         }
 
