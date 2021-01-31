@@ -39,14 +39,14 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAQAEAAAAAAIBAAAAgRAAAAgQAAAAAgYAgAIAAgA=</HashCode>
+      <HashCode>AAAAAQAEAAAAAAABgAAAgTAAAAgQAAAAAgYAgAIAAgA=</HashCode>
       <FileName>CariKart\YeniCariKart.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="projedeneme2.DovizKurTanim.DovizKurTanim">
     <Position X="7.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAIAAAAAAAAAAAQABARAAAAAAEAAAAAIEAGA=</HashCode>
+      <HashCode>AAAAAAAgAIAAAAAAAAAAASABARAAAAAAEAAAAAIEAGA=</HashCode>
       <FileName>DovizKurTanim\DovizKurTanim.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,14 +60,14 @@
   <Class Name="projedeneme2.FaturaGiris.FaturaGirisWebForm">
     <Position X="7.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIQAAA=</HashCode>
       <FileName>FaturaGiris\FaturaGiris.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="projedeneme2.Homepage.Homepage">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BQAIkkAAIAICgAQiIABSAGIAAACAAAgABACQQAIcAEA=</HashCode>
+      <HashCode>BQAIkkAAIAICgAQiIABCAWIABACAABgABACQQAIACEA=</HashCode>
       <FileName>Homepage\Homepage.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -88,21 +88,21 @@
   <Class Name="projedeneme2.MasrafTanim.MasrafTanimWebForm">
     <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEABIAAgAAAAAAAAAAUAAgAAAIEAABAAAAAIAAAA=</HashCode>
+      <HashCode>AAAAEABAAAgBAAAAAAAAASAAgAAAIEAABAAAAAIAAAA=</HashCode>
       <FileName>MasrafTanim\MasrafTanim.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="projedeneme2.ProjeTanim.ProjeTanim">
     <Position X="9.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAAgEAAAAAQAAAAQQQAAgAAAAAAAACAAAAIAAAA=</HashCode>
       <FileName>ProjeTanim\ProjeTanim.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="projedeneme2.YeniProjeEkle.YeniProjeEkle">
     <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAIQAAAAAAAICAAAAQCAAAAgIAAAAAAAMIIAAiA=</HashCode>
+      <HashCode>EAAAAAIQAAAAAAAICAAAASCAAAAgIAAAAAAAMIIAAiA=</HashCode>
       <FileName>ProjeTanim\YeniProjeEkle.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -114,7 +114,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="projedeneme2.Default">
-    <Position X="9.25" Y="6" Width="1.5" />
+    <Position X="9.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAANAECAAAIAgAA=</HashCode>
       <FileName>default.aspx.cs</FileName>
@@ -123,8 +123,43 @@
   <Class Name="projedeneme2.JsonConverter">
     <Position X="11" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAACAAAAAAAggBAAIAAAQAAQAAAAAAAIAAAABAAAAA=</HashCode>
+      <HashCode>QAAACAAAAAgAggBAAIAAAQAAQAAAAAAAIAAAABAAAAA=</HashCode>
       <FileName>JsonConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.Profil.Profil">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAQAAAAAAASQAAAAAAQgACAIAAgA=</HashCode>
+      <FileName>Profil\Profil.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.Kullanicilar.KullaniciListesi">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAAAAAAAAAAAAAAAAARAAAAAIAAAEAAAAAAIgAAA=</HashCode>
+      <FileName>Kullanicilar\KullaniciListesi.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.YeniKullanici.YeniKullanici">
+    <Position X="12.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACCACAAAAQEAASQAAAAAAhACAAACAAIAAAg=</HashCode>
+      <FileName>Kullanicilar\YeniKullanici.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projedeneme2.YeniFaturaEkle.YeniFaturaEkleWebForm">
+    <Position X="4" Y="7" Width="1.5" />
+    <NestedTypes>
+      <Class Name="projedeneme2.YeniFaturaEkle.YeniFaturaEkleWebForm.subinvoiceContent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FaturaGiris\YeniFaturaEkle.aspx.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAFABCAAAEQAIAAAgAAATSCAAUECACCAkQAACIAAAA=</HashCode>
+      <FileName>FaturaGiris\YeniFaturaEkle.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
