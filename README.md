@@ -60,13 +60,21 @@ Projects have expenses, and must be maintained. "What did we use in this project
 
 We would like to sell the application to as many users and firms as possible. This is the main reason why we decided to the the program as it is right now: To be able to develop it further.
 
-## What model did we use?
+## What design did we use?
 
-We used very good models.
+- Creational Patterns
+
+ - Prototype: We used some base objects to use in our many webform’s codebehind. This really helped us to maintain our code and easily reuse same methods from our objects to control and manipulate software and its data.
+
+- Behavioral Patterns
+ 
+ - Null Object: When user inputs have no or invalid value, we set up those values to a default value before user does something to check if they are valid or not.
 
 ## What architecture did we use?
 
-We used very good architectures.
+Mainly, our project is based on "Client-Server" architecture model. Because our software is designed to provide functions and datas from server, to many clients.
+
+But we used some other architecture models too. One of them is Pipe-And-Filter and it helped us through to maintain security. Our software’s users need to enter a password to log in. With this model, we transform the entered password to a crypted form to save at our database.
 
 ## What tools did we use in development stages?
 
