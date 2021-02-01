@@ -33,65 +33,32 @@ Every company has its own expenses, say phone bills, electricity bills, car expe
 
 #### Project Definition
 
-Something
+Since R&D companies' main work stuff is creating projects for other firms, they have to maintain and track what new projects they are doing at the moment. With this feature of 5M Macro's Project Tracking System, the firm can have a broad understanding of its projects.
 
 #### Currency Definition
 
-Something else
+R&D firms work usually with other countries as well; not everyone uses TRY. Adding new currency to use it in other parts of the program, is therefore essential.
 
 #### Invoice Entry
 
-something3
+Projects have expenses, and must be maintained. "What did we use in this project and how much did it cost" is a very basic question that needs to be answered correcty. Thus we have invoice entry.
 
 ## What have we done while developing the program?
 
-- ##### 1st Week
-
-  - something
-
-- ##### 2nd Week
-
-  - something
-
-- ##### 3rd Week
-
-  - something
-
-- ##### 4th Week
-
-  - something
-
-- ##### 5th Week
-
-  - something
-
-- ##### 6th Week
-
-  - something
-
-- ##### 7th Week
-
-  - something
-
-- ##### 8th Week
-
-  - something
-
-- ##### 9th Week
-
-  - something
-
-- ##### 10th Week
-
-  - something
-
-- ##### 11th Week
-
-  - something
+- First of all, we started to do market research. What could we do to further develop this application so that it could fit our customer's needs and other potential customers. Due to that, we had done some meetings with a contact man, who happens to be a developer, in a Automation Company. He helped us gain knowledge about the backend stuff and led us the starting way.
+- Later in the following days, our front end squad gave the initial UI of the web application, so that our backend staff would be able to work in it, without thinking too much.
+- We had some repetative coding parts finished before we started the Object Oriented part of the program.
+- We decided that we couldn't finish the whole app in time due to the sheer size; and came to the conclusion that it would be wise to finish the very basic parts needed. This would help us open the way to develop the program further, if there happens to be free time.
+- While front end staff was working behind the scenes, without too much coding that is being sent to the main branch, backend staff was working on hte frontlines.
+- The database was firstly Microsoft's own database, but it was not a free to use one. We had to change it due to our financial status.
+- Database kept growing each day, when we added new implementations to the program.
+- As the time comes to the 2nd presentation, our project was nearly finished, and we only had to do some bug fixes.
+- Lastly, as of end of January, our program was at the place that we expected.
+- Along the ways, obviously we had done our backlogs, gave each person a jobs etc.
 
 ## What is the future of the software?
 
-It will be very good.
+We would like to sell the application to as many users and firms as possible. This is the main reason why we decided to the the program as it is right now: To be able to develop it further.
 
 ## What model did we use?
 
