@@ -98,3 +98,4 @@ Mainly Visual Studio and some basic helper programs. We chose **C# / asp.net** a
  ![anasayfa](https://user-images.githubusercontent.com/43350594/106442120-f646d100-648b-11eb-8718-af591f4a0e2e.jpeg)
  
  ## Fatura Ekle Page
+ ![fatura ekle](https://user-images.githubusercontent.com/43350594/106442615-884ed980-648c-11eb-96e7-a19258a51563.jpeg)
