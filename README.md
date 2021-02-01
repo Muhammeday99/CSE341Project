@@ -68,7 +68,7 @@ We would like to sell the application to as many users and firms as possible. Th
 
 - Behavioral Patterns
  
- - Null Object: When user inputs have no or invalid value, we set up those values to a default value before user does something to check if they are valid or not.
+   - Null Object: When user inputs have no or invalid value, we set up those values to a default value before user does something to check if they are valid or not.
 
 ## What architecture did we use?
 
@@ -79,8 +79,6 @@ But we used some other architecture models too. One of them is Pipe-And-Filter a
 ## What tools did we use in development stages?
 
 Mainly Visual Studio and some basic helper programs. We chose **C# / asp.net** as the main language and **HTML/CSS** for the frontend, and lastly **Javascript** for scripting.
-
-
 
  ## Requirements
  - ASP.NET
@@ -100,5 +98,3 @@ Mainly Visual Studio and some basic helper programs. We chose **C# / asp.net** a
  
  ## Homepage Page(The net image will change later !)
  ![homepagepic](https://user-images.githubusercontent.com/43350594/101244943-8aa9e700-371a-11eb-8f29-90de09ed0632.png)
-
- 
