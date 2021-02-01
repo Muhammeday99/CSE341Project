@@ -90,11 +90,11 @@ Mainly Visual Studio and some basic helper programs. We chose **C# / asp.net** a
  - Company website with multiple user or contributors
  - Companies need to tracking projects
 
- ## Use Case Diagram for First Presentation
- ![usecase](https://user-images.githubusercontent.com/43350594/101244626-b1ffb480-3718-11eb-8a59-98520c8562c4.png)
  
  ## Login Screen Page
  ![loginscreen](https://user-images.githubusercontent.com/43350594/101244874-00618300-371a-11eb-8d52-7957da811e0a.png)
  
- ## Homepage Page(The net image will change later !)
- ![homepagepic](https://user-images.githubusercontent.com/43350594/101244943-8aa9e700-371a-11eb-8f29-90de09ed0632.png)
+ ## Homepage Page
+ ![anasayfa](https://user-images.githubusercontent.com/43350594/106442120-f646d100-648b-11eb-8718-af591f4a0e2e.jpeg)
+ 
+ ## Fatura Ekle Page
