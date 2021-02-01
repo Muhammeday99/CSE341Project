@@ -64,7 +64,7 @@ We would like to sell the application to as many users and firms as possible. Th
 
 - Creational Patterns
 
- - Prototype: We used some base objects to use in our many webform’s codebehind. This really helped us to maintain our code and easily reuse same methods from our objects to control and manipulate software and its data.
+  - Prototype: We used some base objects to use in our many webform’s codebehind. This really helped us to maintain our code and easily reuse same methods from our objects to control and manipulate software and its data.
 
 - Behavioral Patterns
  
